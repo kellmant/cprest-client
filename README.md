@@ -5,7 +5,7 @@
 <dd><p>Variable required from auth/mycpapi.js file</p>
 </dd>
 <dt><a href="#mycred">mycred</a></dt>
-<dd><p>create auth/mycpapi.js</p>
+<dd><p>Variable required from auth/mycpauth.js</p>
 </dd>
 </dl>
 
@@ -55,7 +55,7 @@ create auth/mycpapi.js file
 <a name="mycred"></a>
 
 ## mycred
-create auth/mycpapi.js
+Variable required from auth/mycpauth.js
 
 **Kind**: global constant  
 **Params**: <code>Object</code> credentials - auth/mycpauth.js  

@@ -28,7 +28,7 @@ const showpretty = require('prettyjson')
  */
 const myapisite = require('./auth/mycpapi')
 /**
- * create auth/mycpapi.js
+ * Variable required from auth/mycpauth.js
  * @params {Object} credentials - auth/mycpauth.js
  * @example 
  * create auth/mycpauth.js file
