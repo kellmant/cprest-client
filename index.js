@@ -27,6 +27,7 @@ const fs = require('fs');
  * }
  */
 const myapisite = require('./auth/mycpapi')
+
 /**
  * Variable required from auth/mycpauth.js
  * @params {Object} credentials - auth/mycpauth.js
@@ -39,9 +40,13 @@ const myapisite = require('./auth/mycpapi')
  */
 const mycred = require('./auth/mycpauth')
 
-const Classdata = require('./cpclass')
-const toApi = new Classdata(myapisite.chkp)
-
+/**
+ * Class Method for API callout builder
+ * @class
+ *
+ */
+const CpApiClass = require('./cpclass')
+const toApi = new CpApiClass(myapisite.chkp)
 
 const details = {}
 details.uid = 'uid'
@@ -75,10 +80,10 @@ startSession(mycred)
 .then(sessiontoken => setSession(sessiontoken))
 .then(() => showObjects(nodata, runcmd))
 .then(objid => whereUsed(objid))
+.then(content => writeJson(content))
 .then(() => endSession())
 .then(exitstat => console.log(exitstat))
-.then(() => checkObj(usedobj))
-//.then(content => writeJson(content))
+.then(() => checkUse(usedobj))
 .then(thindat => console.dir(thindat))
 //.then(showdat => showJson(showdat))
 //.then(prettyout => console.log(prettyout))
@@ -179,15 +184,15 @@ async function whereUsed(objarr) {
 	}
 }
 
-async function checkObj(host) {
+async function checkUse(host) {
 	try {
-		console.log('host is type ' + typeof host)
-		//console.log(typeof host)
+		var myip = Object.keys(host)
+		console.log(myip + ' usage check')
 	        //Object.keys(host).forEach(k => (!host[k] && host[k] !== undefined) && delete host[k]);
-		Object.keys(host[ip]).forEach(uid => {
-			console.log(typeof host[ip][uid])
-			console.log(Object.keys(host[ip][uid]))
-			console.log(Object.values(host[ip][uid]))
+		Object.keys(host[myip]).forEach(uid => {
+			var myuid = Object.keys(host[myip][uid])
+			console.log(Object.values(host[myip][uid]))
+			//console.log(Object.values(myuid))
 		});
 		/*
 		for (var uid in host) {
@@ -198,11 +203,10 @@ async function checkObj(host) {
 			myreturn = host[uid]
 		}
 		*/
-		console.log('returning host object . . . ')
-		//console.log(myreturn.length)
-		return host
+		console.log(myip + ' returning used object . . . ')
+		return host[myip]
 	} catch (err) {
-		console.log('error in checkObj : ' + err)
+		console.log('error in checkUse : ' + err)
 	}
 }
 
