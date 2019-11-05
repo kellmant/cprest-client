@@ -6,7 +6,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 
-const showpretty = require('prettyjson')
+//const showpretty = require('prettyjson')
 
 /**
  * Variable required from auth/mycpapi.js file
@@ -79,9 +79,9 @@ startSession(mycred)
 .then(exitstat => console.log(exitstat))
 .then(() => checkObj(usedobj))
 //.then(content => writeJson(content))
-//.then(thindat => console.dir(thindat))
-.then(showdat => showJson(showdat))
-.then(prettyout => console.log(prettyout))
+.then(thindat => console.dir(thindat))
+//.then(showdat => showJson(showdat))
+//.then(prettyout => console.log(prettyout))
 //.then(() => console.log(Object.getOwnPropertyNames(usedobj[ip]) + ' ' + runcmd + ' indexed from api data'))
 //.then(() => console.log(Object.values(usedobj[ip]) + ' ' + runcmd + ' indexed from api data'))
 .catch(endSession)
@@ -185,13 +185,9 @@ async function checkObj(host) {
 		//console.log(typeof host)
 	        //Object.keys(host).forEach(k => (!host[k] && host[k] !== undefined) && delete host[k]);
 		Object.keys(host[ip]).forEach(uid => {
-			//var distinctTypes = [...new Set(host.map(x => x))]
 			console.log(typeof host[ip][uid])
 			console.log(Object.keys(host[ip][uid]))
-		        //distinctTypes = distinctTypes.filter(n => n)
-			//console.log(typeof distinctTypes)
-			//console.log(host[uid].length)
-			//myreturn[uid] = host[uid]
+			console.log(Object.values(host[ip][uid]))
 		});
 		/*
 		for (var uid in host) {
