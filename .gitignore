@@ -19,9 +19,9 @@ diff.json
 .gitconfig
 .git-credentials
 .java/
-playground/*
 auth/*
-!playground/README.md
+*.json
+!package.json
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
