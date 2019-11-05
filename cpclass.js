@@ -1,7 +1,8 @@
-// class method constructor 
-// cp api json callout to api
-//
-
+/**
+ * Class Method for API callout builder
+ * @class
+ *
+ */
 module.exports = class ApiCall {
 	constructor (base) {
 		this.options = base
