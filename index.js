@@ -186,13 +186,32 @@ async function whereUsed(objarr) {
 
 async function checkUse(host) {
 	try {
+		var res = new Map()
 		var myip = Object.keys(host)
 		console.log(myip + ' usage check')
 	        //Object.keys(host).forEach(k => (!host[k] && host[k] !== undefined) && delete host[k]);
+		console.log('Object COUNT: ' + countOf(host[myip]))
 		Object.keys(host[myip]).forEach(uid => {
-			var myuid = Object.keys(host[myip][uid])
-			console.log(Object.values(host[myip][uid]))
+			var ids = host[myip][uid]
+			//var myuid = Object.keys(host[myip][uid])
+			var myuid = Object.keys(ids)
+			//(Object.values(host[myip][uid])).forEach(nk => {
+			Object.values(myuid).forEach(nk => {
+				//console.log(nk + ' new key entry' )
+				//	console.log(ids[nk])
+					res.set(nk, ids[nk])
+				/*
+				Object.entries(nk).forEach(mk => {
+					Object.entries(mk).forEach(lk => {
+						console.log(Object.keys(lk) + ' list props')
+						res.set(Object.keys(lk), Object.values(lk))
+					});
+				});
+				*/
+				//res.set(Object.keys(nk), Object.values(nk))
+			});
 			//console.log(Object.values(myuid))
+			//console.log(res)
 		});
 		/*
 		for (var uid in host) {
@@ -204,7 +223,9 @@ async function checkUse(host) {
 		}
 		*/
 		console.log(myip + ' returning used object . . . ')
-		return host[myip]
+		console.log('res data: ' + typeof res)
+		console.log(res.size)
+		return res
 	} catch (err) {
 		console.log('error in checkUse : ' + err)
 	}
@@ -301,4 +322,8 @@ async function writeJson (content) {
 // easy way to wait
 function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function countOf(obj) {
+	return Object.keys(obj).length
 }
