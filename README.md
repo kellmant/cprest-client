@@ -1,11 +1,18 @@
+## Classes
+
+<dl>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
+<dd></dd>
+</dl>
+
 ## Constants
 
 <dl>
 <dt><a href="#myapisite">myapisite</a></dt>
-<dd><p>Variable required from auth/mycpapi.js file</p>
+<dd><p>Variable required from auth/mycpapi.json file</p>
 </dd>
 <dt><a href="#mycred">mycred</a></dt>
-<dd><p>Variable required from auth/mycpauth.js</p>
+<dd><p>Variable required from auth/mycpauth.json</p>
 </dd>
 </dl>
 
@@ -25,10 +32,19 @@
 </dd>
 </dl>
 
+<a name="CpApiClass"></a>
+
+## CpApiClass
+**Kind**: global class  
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass()
+Class Method for API callout builder
+
 <a name="myapisite"></a>
 
 ## myapisite
-Variable required from auth/mycpapi.js file
+Variable required from auth/mycpapi.json file
 
 **Kind**: global constant  
 
@@ -39,7 +55,7 @@ Variable required from auth/mycpapi.js file
 
 **Example**  
 ```js
-create auth/mycpapi.js file
+create auth/mycpapi.json file
 {
 	"chkp": {
 		"host": "SET.YOUR.HOSTNAME",
@@ -55,13 +71,13 @@ create auth/mycpapi.js file
 <a name="mycred"></a>
 
 ## mycred
-Variable required from auth/mycpauth.js
+Variable required from auth/mycpauth.json
 
 **Kind**: global constant  
 **Params**: <code>Object</code> credentials - auth/mycpauth.js  
 **Example**  
 ```js
-create auth/mycpauth.js file
+create auth/mycpauth.json file
 {
 		"user": "apiuser",
 		"password": "PASSWORD"

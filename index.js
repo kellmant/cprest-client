@@ -9,11 +9,11 @@ const fs = require('fs');
 //const showpretty = require('prettyjson')
 
 /**
- * Variable required from auth/mycpapi.js file
+ * Variable required from auth/mycpapi.json file
  * @param {Object[]} myapisite - Setup API hostname
  * @param {Object} myapisite.apihost - mycpapi.js
  * @example
- * create auth/mycpapi.js file
+ * create auth/mycpapi.json file
  * {
  *	"chkp": {
  *		"host": "SET.YOUR.HOSTNAME",
@@ -29,10 +29,10 @@ const fs = require('fs');
 const myapisite = require('./auth/mycpapi')
 
 /**
- * Variable required from auth/mycpauth.js
+ * Variable required from auth/mycpauth.json
  * @params {Object} credentials - auth/mycpauth.js
  * @example 
- * create auth/mycpauth.js file
+ * create auth/mycpauth.json file
  * {
  *		"user": "apiuser",
  *		"password": "PASSWORD"
