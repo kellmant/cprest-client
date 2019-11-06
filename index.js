@@ -1,6 +1,5 @@
 /** cprest client access for API
  */
-
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 'use strict'
 const https = require('https')
@@ -76,20 +75,16 @@ if (process.argv[2]) {
 main()
 
 async function main() {
-startSession(mycred)
-.then(sessiontoken => setSession(sessiontoken))
-.then(() => showObjects(nodata, runcmd))
-.then(objid => whereUsed(objid))
-.then(content => writeJson(content))
-.then(() => endSession())
-.then(exitstat => console.log(exitstat))
-.then(() => checkUse(usedobj))
-.then(thindat => console.dir(thindat))
-//.then(showdat => showJson(showdat))
-//.then(prettyout => console.log(prettyout))
-//.then(() => console.log(Object.getOwnPropertyNames(usedobj[ip]) + ' ' + runcmd + ' indexed from api data'))
-//.then(() => console.log(Object.values(usedobj[ip]) + ' ' + runcmd + ' indexed from api data'))
-.catch(endSession)
+	startSession(mycred)
+		.then(sessiontoken => setSession(sessiontoken))
+		.then(() => showObjects(nodata, runcmd))
+		.then(objid => whereUsed(objid))
+		.then(content => writeJson(content))
+		.then(() => endSession())
+		.then(exitstat => console.log(exitstat))
+		.then(() => checkUse(usedobj))
+		.then(thindat => console.dir(thindat))
+	.catch(endSession)
 }
 
 /** 
@@ -193,25 +188,10 @@ async function checkUse(host) {
 		console.log('Object COUNT: ' + countOf(host[myip]))
 		Object.keys(host[myip]).forEach(uid => {
 			var ids = host[myip][uid]
-			//var myuid = Object.keys(host[myip][uid])
 			var myuid = Object.keys(ids)
-			//(Object.values(host[myip][uid])).forEach(nk => {
 			Object.values(myuid).forEach(nk => {
-				//console.log(nk + ' new key entry' )
-				//	console.log(ids[nk])
 					res.set(nk, ids[nk])
-				/*
-				Object.entries(nk).forEach(mk => {
-					Object.entries(mk).forEach(lk => {
-						console.log(Object.keys(lk) + ' list props')
-						res.set(Object.keys(lk), Object.values(lk))
-					});
-				});
-				*/
-				//res.set(Object.keys(nk), Object.values(nk))
 			});
-			//console.log(Object.values(myuid))
-			//console.log(res)
 		});
 		/*
 		for (var uid in host) {
