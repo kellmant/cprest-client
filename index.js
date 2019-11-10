@@ -58,6 +58,9 @@ details.ful = 'full'
 var usedarr = []
 var usedobj = {}
 
+//var myres = {}
+const objdata = {}
+
 var limit = '500'
 var runcmd = 'show-objects'
 
@@ -79,11 +82,12 @@ async function main() {
 		.then(sessiontoken => setSession(sessiontoken))
 		.then(() => showObjects(nodata, runcmd))
 		.then(objid => whereUsed(objid))
-		.then(content => writeJson(content))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
-		.then(() => checkUse(usedobj))
-		.then(thindat => console.dir(thindat))
+		.then(() => doParse(usedobj))
+		//.then(() => checkUse(usedobj))
+		//.then(myout => writeJson(myout))
+		.then(thindat => console.log(thindat))
 	.catch(endSession)
 }
 
@@ -181,33 +185,55 @@ async function whereUsed(objarr) {
 
 async function checkUse(host) {
 	try {
-		var res = new Map()
+		const myres = {}
+		const myid = {}
+		const myuse = {}
 		var myip = Object.keys(host)
+		myres[myip] = []
 		console.log(myip + ' usage check')
-	        //Object.keys(host).forEach(k => (!host[k] && host[k] !== undefined) && delete host[k]);
 		console.log('Object COUNT: ' + countOf(host[myip]))
 		Object.keys(host[myip]).forEach(uid => {
 			var ids = host[myip][uid]
 			var myuid = Object.keys(ids)
+			myid[myuid] = []
 			Object.values(myuid).forEach(nk => {
-					res.set(nk, ids[nk])
+					Object.keys(ids[nk]).forEach(objuse => {
+						myuse[objuse] = []
+						//myres[myip][myuid][objuse] = []
+						myuse[objuse] = myuse[objuse].concat(ids[nk][objuse])
+						//myuse[objuse].push(ids[nk][objuse])
+						console.log(objuse + ' => ' + ids[nk][objuse])
+						//myres[myip][myuid][objuse] = myres[myip][myuid][objuse].concat(ids[nk][objuse])
+						//res.set(objuse, ids[nk][objuse])
+						myid[myuid] = myid[myuid].concat(myuse)
+					});
 			});
+			myres[myip] = myres[myip].concat(myid)
 		});
-		/*
-		for (var uid in host) {
-			console.log('uid ' + uid)
-			console.log('host ' + host)
-			console.log(typeof host[uid])
-			console.log(host.length)
-			myreturn = host[uid]
-		}
-		*/
 		console.log(myip + ' returning used object . . . ')
-		console.log('res data: ' + typeof res)
-		console.log(res.size)
-		return res
+		console.log('res data: ' + typeof myres)
+		return myres
 	} catch (err) {
 		console.log('error in checkUse : ' + err)
+	}
+}
+
+async function doParse(objdat) {
+	try {
+		console.log('Doing Search of IP : ' + ip)
+		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
+		Object.keys(objdat[ip]).forEach(uid => {
+			console.log(Object.keys(objdat[ip][uid]))
+			Object.keys(objdat[ip][uid]).forEach(used => {
+				//console.log(Object.keys(objdat[ip][uid][used]).length)
+				console.log(Object.entries(objdat[ip][uid][used]))
+			});
+			console.log('---')
+		});
+		console.log('returning object data')
+		return objdat
+	} catch (err) {
+		console.log('error in doParse : ' + err)
 	}
 }
 
@@ -289,8 +315,11 @@ async function callOut(options, postData) {
 async function writeJson (content) {
         try {
                 var newfile = nodata.filter + '.json'
+		console.log('writing file . . . ' + newfile)
+		console.log(typeof content)
                 const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
                 //file written successfully
+		console.log(content)
                 console.log('Json data written to ' + newfile)
                 console.log('  --  ')
                 return content
