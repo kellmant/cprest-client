@@ -27,7 +27,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#uid">uid</a> : <code>Object</code></dt>
+<dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
 </dd>
 </dl>
@@ -97,7 +97,7 @@ Object use for an IP
 
 <a name="uid"></a>
 
-## uid : <code>Object</code>
+## uid : <code>Array.&lt;Object&gt;</code>
 where-used returned data format
 
 **Kind**: global typedef  
@@ -122,22 +122,24 @@ where-used returned data format
 ```js
 { ip: [
        {
-         uid: {
-	      used-directly: {
-	       total: 0,
-	        access-control-rules[],
-	        nat-rules[],
-	        threat-prevention-rules[],
-	        objects[]
-	        },
-	      used-indirectly: {
-	       total: 0,
-	        access-control-rules[],
-	        nat-rules[],
-	        threat-prevention-rules[],
-	        objects[]
+         uid: [
+         	  { 
+	          used-directly: {
+	       			  total: 0,
+	        		  access-control-rules[],
+	        		  nat-rules[],
+	        		  threat-prevention-rules[],
+	        		  objects[]
+	        		  },
+	      	  used-indirectly: {
+	       			  total: 0,
+	        		  access-control-rules[],
+	        		  nat-rules[],
+	        		  threat-prevention-rules[],
+	        		  objects[]
+	        		  }
              }
-          }
+          ] 
        }
     ]
  }

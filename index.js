@@ -126,7 +126,7 @@ async function showObjects(mydata, mycmd) {
 
 /**
  * where-used returned data format
- * @typedef {Object} uid - Array of Host objects by UID
+ * @typedef {Object[]} uid - Array of Host objects by UID
  * @property {Object} used-directly - Direct use of object
  * @property {Number} used-directly.total - Total count of usage
  * @property {Object[]} used-directly.objects - Array of object dependencies
@@ -142,22 +142,24 @@ async function showObjects(mydata, mycmd) {
  * @example 
  * { ip: [
  *        {
- *          uid: {
- * 	      used-directly: {
- * 	       total: 0,
- * 	        access-control-rules[],
- * 	        nat-rules[],
- * 	        threat-prevention-rules[],
- * 	        objects[]
- * 	        },
- * 	      used-indirectly: {
- * 	       total: 0,
- * 	        access-control-rules[],
- * 	        nat-rules[],
- * 	        threat-prevention-rules[],
- * 	        objects[]
+ *          uid: [
+ *          	  { 
+ * 	          used-directly: {
+ * 	       			  total: 0,
+ * 	        		  access-control-rules[],
+ * 	        		  nat-rules[],
+ * 	        		  threat-prevention-rules[],
+ * 	        		  objects[]
+ * 	        		  },
+ * 	      	  used-indirectly: {
+ * 	       			  total: 0,
+ * 	        		  access-control-rules[],
+ * 	        		  nat-rules[],
+ * 	        		  threat-prevention-rules[],
+ * 	        		  objects[]
+ * 	        		  }
  *              }
- *           }
+ *           ] 
  *        }
  *     ]
  *  }
