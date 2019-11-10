@@ -51,7 +51,7 @@ Variable required from auth/mycpapi.json file
 | Param | Type | Description |
 | --- | --- | --- |
 | myapisite | <code>Array.&lt;Object&gt;</code> | Setup API hostname |
-| myapisite.apihost | <code>Object</code> | mycpapi.js |
+| myapisite.apihost | <code>Object</code> | mycpapi.json |
 
 **Example**  
 ```js
@@ -74,7 +74,7 @@ create auth/mycpapi.json file
 Variable required from auth/mycpauth.json
 
 **Kind**: global constant  
-**Params**: <code>Object</code> credentials - auth/mycpauth.js  
+**Params**: <code>Object</code> credentials - auth/mycpauth.json  
 **Example**  
 ```js
 create auth/mycpauth.json file

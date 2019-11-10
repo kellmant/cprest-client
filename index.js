@@ -10,7 +10,7 @@ const fs = require('fs');
 /**
  * Variable required from auth/mycpapi.json file
  * @param {Object[]} myapisite - Setup API hostname
- * @param {Object} myapisite.apihost - mycpapi.js
+ * @param {Object} myapisite.apihost - mycpapi.json
  * @example
  * create auth/mycpapi.json file
  * {
@@ -29,7 +29,7 @@ const myapisite = require('./auth/mycpapi')
 
 /**
  * Variable required from auth/mycpauth.json
- * @params {Object} credentials - auth/mycpauth.js
+ * @params {Object} credentials - auth/mycpauth.json
  * @example 
  * create auth/mycpauth.json file
  * {
