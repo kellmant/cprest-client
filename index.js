@@ -225,10 +225,17 @@ async function doParse(objdat) {
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
 		Object.keys(objdat[ip]).forEach(uid => {
-			console.log(Object.keys(objdat[ip][uid]))
-			Object.keys(objdat[ip][uid]).forEach(used => {
-				//console.log(Object.keys(objdat[ip][uid][used]).length)
-				console.log(Object.entries(objdat[ip][uid][used]))
+			//console.log(Object.keys(objdat[ip][uid]))
+			Object.keys(objdat[ip][uid]).forEach(usetype => {
+					//console.log(Object.keys(objdat[ip][uid][usetype]))
+				console.log(usetype)
+				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
+					console.log(used + ' : ')
+					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
+					console.log(objdat[ip][uid][usetype][used])
+					//console.log(Object.values(objdat[ip][uid][usetype]))
+					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
+				});
 			});
 			console.log('---')
 		});
