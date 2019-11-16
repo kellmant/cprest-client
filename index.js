@@ -7,6 +7,10 @@ const fs = require('fs');
 
 //const showpretty = require('prettyjson')
 
+const get = (p, o) =>
+  p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)
+
+
 /**
  * Variable required from auth/mycpapi.json file
  * @param {Object[]} myapisite - Setup API hostname
@@ -47,10 +51,7 @@ const mycred = require('./auth/mycpauth')
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 
-const details = {}
-details.uid = 'uid'
-details.std = 'standard'
-details.ful = 'full'
+var details = 'uid'
 
 //var objarr = []
 //var objdata = {}
@@ -59,35 +60,56 @@ var usedarr = []
 var usedobj = {}
 
 //var myres = {}
-const objdata = {}
+//const objdata = {}
 
 var limit = '500'
 var runcmd = 'show-objects'
 
 var sessionid = {}
+var myfilename = 'dump'
 
 var nodata = {}
 if (process.argv[2]) {
         ip = process.argv[2]
         nodata.filter = ip
+	myfilename = ip
 	nodata['ip-only'] = true
 	nodata.type = 'host'
 	usedobj[ip] = []
 }
 
 main()
+//.then(admins)
 
 async function main() {
 	startSession(mycred)
 		.then(sessiontoken => setSession(sessiontoken))
 		.then(() => showObjects(nodata, runcmd))
-		.then(objid => whereUsed(objid))
+		.then(objid => checkObject(objid))
+		.then(clean => whereUsed(clean))
+		//.then(myout => writeJson(myout))
+		.then(() => doParse(usedobj))
+		.then(chkuse => getObjectUse(chkuse))
+		//.then(tagit => tagObject(tagit))
+		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
-		.then(() => doParse(usedobj))
-		//.then(() => checkUse(usedobj))
-		//.then(myout => writeJson(myout))
-		.then(thindat => console.log(thindat))
+		//.then(thindat => console.log(thindat))
+	.catch(endSession)
+}
+
+async function admins() {
+	mycred.domain = 'System Data'
+	details = 'standard'
+	runcmd = 'show-administrators'
+	myfilename = 'admins'
+	nodata = {}
+	startSession(mycred)
+	.then(sessiontoken => setSession(sessiontoken))
+	.then(() => showObjects(nodata, runcmd))
+	.then(myout => writeJson(myout))
+	.then(thindat => console.log(thindat))
+	.then(() => endSession())
 	.catch(endSession)
 }
 
@@ -102,11 +124,13 @@ async function showObjects(mydata, mycmd) {
         try {
 		var objdata = {}
 		var objarr = []
+		var cleanarr = []
                 mydata.offset = 0
-                mydata['details-level'] = details.uid
+                mydata['details-level'] = details
                 mydata.limit = limit
                 console.log('showing session')
                 var setit = toApi.doPost(mydata, mycmd)
+		//toApi.showOpt()
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
                 if (objdata.total > objdata.to) {
@@ -123,6 +147,43 @@ async function showObjects(mydata, mycmd) {
                 console.log('error in showObjects : ' + err)
         }
 }
+
+/** 
+ * Object verify IP matches filter
+ * @function checkObject
+ * @param {String[]} uid - UID to verify IP address filter
+ * @returns {uid[]} -  array of safe UID's to verify usage against
+ */
+
+
+async function checkObject(objarr) {
+	try {
+		var mydata = {}
+		var mytagged = []
+		var myreturn = []
+		mycmd = 'show-object'
+                //mydata['details-level'] = details
+		for (var x in objarr) {
+			let myobj = objarr[x]
+			mydata.uid = myobj
+                	var setit = toApi.doPost(mydata, mycmd)
+                	let indat = await callOut(setit.options, setit.postData)
+			if (indat.object['ipv4-address'] === ip) {
+				console.log(indat.object)
+				mytagged = mytagged.concat(indat.object)
+				myreturn = myreturn.concat(indat.object.uid)
+			} else {
+				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
+			}
+		}
+		let tagdata = await tagObject(mytagged)
+		return myreturn
+	} catch (err) {
+		console.log('error in checkObject : ' + err)
+	}
+}
+
+
 
 /**
  * where-used returned data format
@@ -169,7 +230,7 @@ async function whereUsed(objarr) {
 	try {
 		var mydata = {}
 		mycmd = 'where-used'
-                mydata['details-level'] = details.std
+                mydata['details-level'] = details
                 mydata.indirect = true
 		for (var x in objarr) {
 			let myreturn = {}
@@ -185,62 +246,110 @@ async function whereUsed(objarr) {
 	}
 }
 
-async function checkUse(host) {
+async function getObjectUse(isused) {
 	try {
-		const myres = {}
+		var myres = []
 		const myid = {}
-		const myuse = {}
-		var myip = Object.keys(host)
-		myres[myip] = []
-		console.log(myip + ' usage check')
-		console.log('Object COUNT: ' + countOf(host[myip]))
-		Object.keys(host[myip]).forEach(uid => {
-			var ids = host[myip][uid]
-			var myuid = Object.keys(ids)
-			myid[myuid] = []
-			Object.values(myuid).forEach(nk => {
-					Object.keys(ids[nk]).forEach(objuse => {
-						myuse[objuse] = []
-						//myres[myip][myuid][objuse] = []
-						myuse[objuse] = myuse[objuse].concat(ids[nk][objuse])
-						//myuse[objuse].push(ids[nk][objuse])
-						console.log(objuse + ' => ' + ids[nk][objuse])
-						//myres[myip][myuid][objuse] = myres[myip][myuid][objuse].concat(ids[nk][objuse])
-						//res.set(objuse, ids[nk][objuse])
-						myid[myuid] = myid[myuid].concat(myuse)
-					});
-			});
-			myres[myip] = myres[myip].concat(myid)
+		var myuse = []
+		Object.keys(isused).forEach(uid => {
+			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], isused))
 		});
-		console.log(myip + ' returning used object . . . ')
-		console.log('res data: ' + typeof myres)
-		return myres
+		let unique = [...new Set(myres)]
+		myuse = myuse.concat(await getUsedObject(unique))
+		let tagdata = await tagObject(myuse)
+		return myuse
 	} catch (err) {
-		console.log('error in checkUse : ' + err)
+		console.log('error in getObjectUse : ' + err)
+	}
+}
+
+async function getUsedObject(objarr) {
+	try {
+		var mydata = {}
+		var myreturn = []
+		mycmd = 'show-object'
+                //mydata['details-level'] = details
+		for (var x in objarr) {
+			let myobj = objarr[x]
+			mydata.uid = myobj
+                	var setit = toApi.doPost(mydata, mycmd)
+                	let indat = await callOut(setit.options, setit.postData)
+			//console.log(indat.object.type)
+			myreturn = myreturn.concat(indat.object)
+		}
+		return myreturn
+	} catch (err) {
+		console.log('error in getUsedObject : ' + err)
+	}
+}
+
+async function tagObject(myobj) {
+	try {
+		var tags = {}
+		tags.add = 'DELETE'
+		var mydata = {}
+		var myreturn = []
+                //mydata['details-level'] = details
+		for (var x in myobj) {
+			mydata.uid = myobj[x].uid
+			mydata.tags = tags
+			mycmd = 'set-' + myobj[x].type
+                	var setit = toApi.doPost(mydata, mycmd)
+                	let indat = await callOut(setit.options, setit.postData)
+			//console.log(mycmd)
+			//console.log(mydata)
+			myreturn = myreturn.concat(indat)
+		}
+		let mypub = await pubSession()
+		return mypub
+	} catch (err) {
+		console.log('error in tagObject : ' + err)
 	}
 }
 
 async function doParse(objdat) {
 	try {
+		//const myres = {}
+		const myret = {}
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
 		Object.keys(objdat[ip]).forEach(uid => {
-			//console.log(Object.keys(objdat[ip][uid]))
 			Object.keys(objdat[ip][uid]).forEach(usetype => {
-					//console.log(Object.keys(objdat[ip][uid][usetype]))
 				console.log(usetype)
+				myret[usetype] = []
 				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
-					console.log(used + ' : ')
+					var myres = {}
+					myres[used] = []
+					//console.log(used + ' : ')
+					if (objdat[ip][uid][usetype][used]['total'] > 0) {
+						mytotal = objdat[ip][uid][usetype][used]['total']
+						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
+						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
+							//console.log(arrs + ' ' + Object.keys(objdat[ip][uid][usetype][used][arrs]).length)
+							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
+								let myarrs = {}
+								myarrs[arrs] = []
+								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
+								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
+								//console.log(objdat[ip][uid][usetype][used][arrs])
+								console.log(mycnt + ' ' + arrs )
+								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
+								myres[used] = myres[used].concat(myarrs)
+							}
+						});
+						myret[usetype] = myret[usetype].concat(myres)
+					}
+					//console.log(objdat[ip][uid][usetype][used])
 					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
-					console.log(objdat[ip][uid][usetype][used])
 					//console.log(Object.values(objdat[ip][uid][usetype]))
 					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
 				});
+				//myret[usetype] = myres
 			});
 			console.log('---')
 		});
 		console.log('returning object data')
-		return objdat
+		return myret
 	} catch (err) {
 		console.log('error in doParse : ' + err)
 	}
@@ -279,6 +388,20 @@ async function setSession(mysession) {
         } catch (err) {
                 console.log('error in setSession')
                 console.log(err)
+        }
+}
+
+async function pubSession() {
+        try {
+                console.log('publishing session')
+		var mycmd = 'publish'
+		var nodata = {}
+                var mysession = await callOut(toApi.doPost(nodata, mycmd).options, toApi.doPost(nodata, mycmd).postData)
+               	//toApi.showOpt()
+		await sleep(3000)
+                return mysession
+        } catch (err) {
+                console.log('error in pubSession : ' + err)
         }
 }
 
@@ -323,7 +446,7 @@ async function callOut(options, postData) {
 // save api output as json data to file
 async function writeJson (content) {
         try {
-                var newfile = nodata.filter + '.json'
+                var newfile = myfilename + '.json'
 		console.log('writing file . . . ' + newfile)
 		console.log(typeof content)
                 const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))

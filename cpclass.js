@@ -10,7 +10,7 @@ module.exports = class ApiCall {
             } 
 	showOpt () {
 		if (this.options) {
-			console.log(this.options)
+			console.log(this)
 		} 
 		if (this.data) {
 			console.log(this.data)
