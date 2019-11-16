@@ -22,6 +22,9 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
+<dd><p>Object verify IP matches filter</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -94,6 +97,18 @@ Object use for an IP
 | Param | Type | Description |
 | --- | --- | --- |
 | ip | <code>String</code> | IP address to search for |
+
+<a name="checkObject"></a>
+
+## checkObject(uid) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
+Object verify IP matches filter
+
+**Kind**: global function  
+**Returns**: [<code>Array.&lt;uid&gt;</code>](#uid) - -  array of safe UID's to verify usage against  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>Array.&lt;String&gt;</code> | UID to verify IP address filter |
 
 <a name="uid"></a>
 
