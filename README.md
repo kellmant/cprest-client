@@ -19,7 +19,7 @@
 ## Functions
 
 <dl>
-<dt><a href="#get">get(uid, usedobj)</a></dt>
+<dt><a href="#get">get(getProps, usedobj)</a></dt>
 <dd><p>Traverse object collected in object</p>
 </dd>
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
@@ -128,14 +128,14 @@ create auth/mycpauth.json file
 ```
 <a name="get"></a>
 
-## get(uid, usedobj)
+## get(getProps, usedobj)
 Traverse object collected in object
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | <code>Array</code> | Get object proerties and values with arry of filters |
+| getProps | <code>Array.&lt;String&gt;</code> | Get object proerties and values with arry of filters |
 | usedobj | <code>Array.&lt;Object&gt;</code> | Used objects returned in an array of |
 
 **Example**  

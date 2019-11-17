@@ -8,7 +8,7 @@ const fs = require('fs');
 
 /**
  * Traverse object collected in object
- * @param {Array} uid - Get object proerties and values with arry of filters
+ * @param {String[]} getProps - Get object proerties and values with arry of filters
  * @param {Object[]} usedobj - Used objects returned in an array of
  * @example
  * collect an array of objects that match search: 
