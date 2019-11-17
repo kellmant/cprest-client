@@ -10,6 +10,12 @@ const fs = require('fs');
  * Traverse object collected in object
  * @param {Array} getProp - Get object proerties and values with arry of filters
  * @param {Object[]} used - Used objects returned in an array of
+ * @example
+ * collect an array of objects that match search: 
+ * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
+ * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrol-rules'], usedobj))
+ * Or get a specific value, like the total count from the API:
+ * myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
  */ 
 const get = (p, o) =>
   p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)

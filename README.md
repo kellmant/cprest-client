@@ -138,6 +138,14 @@ Traverse object collected in object
 | getProp | <code>Array</code> | Get object proerties and values with arry of filters |
 | used | <code>Array.&lt;Object&gt;</code> | Used objects returned in an array of |
 
+**Example**  
+```js
+collect an array of objects that match search: 
+myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
+myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrol-rules'], usedobj))
+Or get a specific value, like the total count from the API:
+myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
+```
 <a name="showObjects"></a>
 
 ## showObjects(ip) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
