@@ -56,7 +56,6 @@ var details = 'uid'
 //var objarr = []
 //var objdata = {}
 
-var usedarr = []
 var usedobj = {}
 
 //var myres = {}
@@ -150,7 +149,7 @@ async function showObjects(mydata, mycmd) {
 
 /** 
  * Object verify IP matches filter
- * @function checkObject
+ * @function checkObject Object verify IP matches filter
  * @param {String[]} uid - UID to verify IP address filter
  * @returns {uid[]} -  array of safe UID's to verify usage against
  */
@@ -226,6 +225,11 @@ async function checkObject(objarr) {
  *  }
  */
 
+ /**
+  * @function whereUsed Determine where a set of objects is used in Check Point policies
+  * @param {Object[]} objarr Any array of objects containing filter values by UID
+  * @return {Object[]} An array of objects where the parameter values were found in policy
+  */ 
 async function whereUsed(objarr) {
 	try {
 		var mydata = {}
@@ -246,6 +250,11 @@ async function whereUsed(objarr) {
 	}
 }
 
+ /**
+  * @function getObjectUse Determine where a set of objects is used in Check Point policies
+  * @param {Object[]} isused An Check Point host object array prepared by doParse
+  * @return {Object[]} An array of objects where the parameter values were found in policy
+  */
 async function getObjectUse(isused) {
 	try {
 		var myres = []
@@ -263,6 +272,11 @@ async function getObjectUse(isused) {
 	}
 }
 
+ /**
+  * @function getUsedObject Recursively discover the use of a host object against Check Point policy
+  * @param {Object[]} objarr An Check Point object 
+  * @return {Object[]} An array of objects where the parameter values were found in policy
+  */
 async function getUsedObject(objarr) {
 	try {
 		var mydata = {}
@@ -283,6 +297,11 @@ async function getUsedObject(objarr) {
 	}
 }
 
+/** 
+ * @function tagObject 
+ * @param {Object[]} myobj An array of tags to be added to a Check Point host object
+ * @return {Object} Returns the session handler after tagging operations are concluded
+ */
 async function tagObject(myobj) {
 	try {
 		var tags = {}
@@ -307,6 +326,11 @@ async function tagObject(myobj) {
 	}
 }
 
+/**
+ * @function doParse Given a set of objects returns by the Check Point API, 
+ * @param {*} objdat An array of objects where the parameter values were already found in policy
+ * @return {Object[]} The parsed and prepared Check Point host object array
+ */
 async function doParse(objdat) {
 	try {
 		//const myres = {}
@@ -356,6 +380,11 @@ async function doParse(objdat) {
 }
 
 // pretty show json data to console
+/**
+ * @function showJson
+ * @param {json} obj 
+ * @return {json} A prettifed version of the json object using prettyjson library
+ */
 async function showJson(obj) {
     return (showpretty.render(obj, {
               keysColor: 'blue',
@@ -364,7 +393,11 @@ async function showJson(obj) {
     }));
 }
 
-// start a check point api session
+/**
+ * @function startSession Create an authenticated session with the Check Point API
+ * @param {json} myauth Credentials used for API access
+ * @return {Object} The prepared session handler
+ */
 async function startSession(myauth) {
         try {
                 console.log('starting session')
@@ -379,6 +412,10 @@ async function startSession(myauth) {
 }
 
 // set session token to header
+/**
+ * @function setSession Set the session handler for a Check Point API connection
+ * @param {Object} mysession A Check Point API session handler
+ */
 async function setSession(mysession) {
         try {
                 console.log('setting session')
@@ -391,6 +428,10 @@ async function setSession(mysession) {
         }
 }
 
+/**
+ * @function pubSession Publish data to the Check Point API via a callout to HTTP POST
+ * @return {Object} mysession A Check Point API session handler
+ */
 async function pubSession() {
         try {
                 console.log('publishing session')
@@ -405,7 +446,12 @@ async function pubSession() {
         }
 }
 
+
 // end session and expire token from header
+/**
+ * @function endSession Safely logout from the Check Point API
+ * @return {Object} The completed Check Point API session handler
+ */
 async function endSession() {
         try {
                 console.log('ending session')
@@ -419,6 +465,11 @@ async function endSession() {
 }
 
 // go get the rest api data
+/**
+ * 
+ * @param {json} options 
+ * @param {*} postData 
+ */
 async function callOut(options, postData) {
     return new Promise((resolve, reject) => {
             var req = https.request(options, (res) => {
@@ -444,6 +495,10 @@ async function callOut(options, postData) {
 }
 
 // save api output as json data to file
+/**
+ * @function writeJson
+ * @param {json} content 
+ */
 async function writeJson (content) {
         try {
                 var newfile = myfilename + '.json'
@@ -461,10 +516,20 @@ async function writeJson (content) {
 }
 
 // easy way to wait
+/**
+ * @function sleep Promise'd sleep function to account for API round trip delays
+ * @param {int} ms Number of milliseconds to sleep  by
+ * @return {Object} The completed promise after x time has passed
+ */
 function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+/**
+ * @function Count the nmber of keys in use for a given object
+ * @param {Object} obj The object to be checked
+ * @return {int} The number of keys in use
+ */
 function countOf(obj) {
 	return Object.keys(obj).length
 }
