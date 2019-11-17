@@ -9,7 +9,7 @@ const fs = require('fs');
 /**
  * Traverse object collected in object
  * @param {Array} getProp - Get object proerties and values with arry of filters
- * @param {Object[]} used - Used objects returned in an array of
+ * @param {Object[]} usedobj - Used objects returned in an array of
  * @example
  * collect an array of objects that match search: 
  * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
