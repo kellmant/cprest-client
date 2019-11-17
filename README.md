@@ -22,35 +22,44 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
-<dt><a href="#checkObject Object verify IP matches filter">checkObject Object verify IP matches filter(uid)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
-<dt><a href="#whereUsed Determine where a set of objects is used in Check Point policies">whereUsed Determine where a set of objects is used in Check Point policies(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd></dd>
-<dt><a href="#getObjectUse Determine where a set of objects is used in Check Point policies">getObjectUse Determine where a set of objects is used in Check Point policies(isused)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd></dd>
-<dt><a href="#getUsedObject Recursively discover the use of a host object against Check Point policy">getUsedObject Recursively discover the use of a host object against Check Point policy(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd></dd>
+<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Determine where a set of objects is used in Check Point policies</p>
+</dd>
+<dt><a href="#getObjectUse">getObjectUse(isused)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Determine where a set of objects is used in Check Point policies</p>
+</dd>
+<dt><a href="#getUsedObject">getUsedObject(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Recursively discover the use of a host object against Check Point policy</p>
+</dd>
 <dt><a href="#tagObject">tagObject(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#doParse Given a set of objects returns by the Check Point API,">doParse Given a set of objects returns by the Check Point API,(objdat)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd></dd>
+<dt><a href="#doParse">doParse(objdat)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Given a set of objects returns by the Check Point API,</p>
+</dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
 <dd></dd>
-<dt><a href="#startSession Create an authenticated session with the Check Point API">startSession Create an authenticated session with the Check Point API(myauth)</a> ⇒ <code>Object</code></dt>
-<dd></dd>
-<dt><a href="#setSession Set the session handler for a Check Point API connection">setSession Set the session handler for a Check Point API connection(mysession)</a></dt>
-<dd></dd>
-<dt><a href="#pubSession Publish data to the Check Point API via a callout to HTTP POST">pubSession Publish data to the Check Point API via a callout to HTTP POST()</a> ⇒ <code>Object</code></dt>
-<dd></dd>
-<dt><a href="#endSession Safely logout from the Check Point API">endSession Safely logout from the Check Point API()</a> ⇒ <code>Object</code></dt>
-<dd></dd>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code>Object</code></dt>
+<dd><p>Create an authenticated session with the Check Point API</p>
+</dd>
+<dt><a href="#setSession">setSession(mysession)</a></dt>
+<dd><p>Set the session handler for a Check Point API connection</p>
+</dd>
+<dt><a href="#pubSession">pubSession()</a> ⇒ <code>Object</code></dt>
+<dd><p>Publish data to the Check Point API via a callout to HTTP POST</p>
+</dd>
+<dt><a href="#endSession">endSession()</a> ⇒ <code>Object</code></dt>
+<dd><p>Safely logout from the Check Point API</p>
+</dd>
 <dt><a href="#callOut">callOut(options, postData)</a></dt>
 <dd></dd>
 <dt><a href="#writeJson">writeJson(content)</a></dt>
 <dd></dd>
-<dt><a href="#sleep Promised sleep function to account for API round trip delays">sleep Promised sleep function to account for API round trip delays(ms)</a> ⇒ <code>Object</code></dt>
-<dd></dd>
+<dt><a href="#sleep">sleep(ms)</a> ⇒ <code>Object</code></dt>
+<dd><p>Promise&#39;d sleep function to account for API round trip delays</p>
+</dd>
 <dt><a href="#Count the nmber of keys in use for a given object">Count the nmber of keys in use for a given object(obj)</a> ⇒ <code>int</code></dt>
 <dd></dd>
 </dl>
@@ -126,9 +135,9 @@ Object use for an IP
 | --- | --- | --- |
 | ip | <code>String</code> | IP address to search for |
 
-<a name="checkObject Object verify IP matches filter"></a>
+<a name="checkObject"></a>
 
-## checkObject Object verify IP matches filter(uid) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
+## checkObject(uid) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
 Object verify IP matches filter
 
 **Kind**: global function  
@@ -138,9 +147,11 @@ Object verify IP matches filter
 | --- | --- | --- |
 | uid | <code>Array.&lt;String&gt;</code> | UID to verify IP address filter |
 
-<a name="whereUsed Determine where a set of objects is used in Check Point policies"></a>
+<a name="whereUsed"></a>
 
-## whereUsed Determine where a set of objects is used in Check Point policies(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
+## whereUsed(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
+Determine where a set of objects is used in Check Point policies
+
 **Kind**: global function  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
 
@@ -148,9 +159,11 @@ Object verify IP matches filter
 | --- | --- | --- |
 | objarr | <code>Array.&lt;Object&gt;</code> | Any array of objects containing filter values by UID |
 
-<a name="getObjectUse Determine where a set of objects is used in Check Point policies"></a>
+<a name="getObjectUse"></a>
 
-## getObjectUse Determine where a set of objects is used in Check Point policies(isused) ⇒ <code>Array.&lt;Object&gt;</code>
+## getObjectUse(isused) ⇒ <code>Array.&lt;Object&gt;</code>
+Determine where a set of objects is used in Check Point policies
+
 **Kind**: global function  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
 
@@ -158,9 +171,11 @@ Object verify IP matches filter
 | --- | --- | --- |
 | isused | <code>Array.&lt;Object&gt;</code> | An Check Point host object array prepared by doParse |
 
-<a name="getUsedObject Recursively discover the use of a host object against Check Point policy"></a>
+<a name="getUsedObject"></a>
 
-## getUsedObject Recursively discover the use of a host object against Check Point policy(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
+## getUsedObject(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
+Recursively discover the use of a host object against Check Point policy
+
 **Kind**: global function  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
 
@@ -178,9 +193,11 @@ Object verify IP matches filter
 | --- | --- | --- |
 | myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
 
-<a name="doParse Given a set of objects returns by the Check Point API,"></a>
+<a name="doParse"></a>
 
-## doParse Given a set of objects returns by the Check Point API,(objdat) ⇒ <code>Array.&lt;Object&gt;</code>
+## doParse(objdat) ⇒ <code>Array.&lt;Object&gt;</code>
+Given a set of objects returns by the Check Point API,
+
 **Kind**: global function  
 **Returns**: <code>Array.&lt;Object&gt;</code> - The parsed and prepared Check Point host object array  
 
@@ -198,9 +215,11 @@ Object verify IP matches filter
 | --- | --- |
 | obj | <code>json</code> | 
 
-<a name="startSession Create an authenticated session with the Check Point API"></a>
+<a name="startSession"></a>
 
-## startSession Create an authenticated session with the Check Point API(myauth) ⇒ <code>Object</code>
+## startSession(myauth) ⇒ <code>Object</code>
+Create an authenticated session with the Check Point API
+
 **Kind**: global function  
 **Returns**: <code>Object</code> - The prepared session handler  
 
@@ -208,23 +227,29 @@ Object verify IP matches filter
 | --- | --- | --- |
 | myauth | <code>json</code> | Credentials used for API access |
 
-<a name="setSession Set the session handler for a Check Point API connection"></a>
+<a name="setSession"></a>
 
-## setSession Set the session handler for a Check Point API connection(mysession)
+## setSession(mysession)
+Set the session handler for a Check Point API connection
+
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | mysession | <code>Object</code> | A Check Point API session handler |
 
-<a name="pubSession Publish data to the Check Point API via a callout to HTTP POST"></a>
+<a name="pubSession"></a>
 
-## pubSession Publish data to the Check Point API via a callout to HTTP POST() ⇒ <code>Object</code>
+## pubSession() ⇒ <code>Object</code>
+Publish data to the Check Point API via a callout to HTTP POST
+
 **Kind**: global function  
 **Returns**: <code>Object</code> - mysession A Check Point API session handler  
-<a name="endSession Safely logout from the Check Point API"></a>
+<a name="endSession"></a>
 
-## endSession Safely logout from the Check Point API() ⇒ <code>Object</code>
+## endSession() ⇒ <code>Object</code>
+Safely logout from the Check Point API
+
 **Kind**: global function  
 **Returns**: <code>Object</code> - The completed Check Point API session handler  
 <a name="callOut"></a>
@@ -246,9 +271,11 @@ Object verify IP matches filter
 | --- | --- |
 | content | <code>json</code> | 
 
-<a name="sleep Promised sleep function to account for API round trip delays"></a>
+<a name="sleep"></a>
 
-## sleep Promised sleep function to account for API round trip delays(ms) ⇒ <code>Object</code>
+## sleep(ms) ⇒ <code>Object</code>
+Promise'd sleep function to account for API round trip delays
+
 **Kind**: global function  
 **Returns**: <code>Object</code> - The completed promise after x time has passed  
 

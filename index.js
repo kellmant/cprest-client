@@ -149,7 +149,7 @@ async function showObjects(mydata, mycmd) {
 
 /** 
  * Object verify IP matches filter
- * @function checkObject Object verify IP matches filter
+ * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
  * @returns {uid[]} -  array of safe UID's to verify usage against
  */
@@ -226,7 +226,8 @@ async function checkObject(objarr) {
  */
 
  /**
-  * @function whereUsed Determine where a set of objects is used in Check Point policies
+  * Determine where a set of objects is used in Check Point policies
+  * @function whereUsed
   * @param {Object[]} objarr Any array of objects containing filter values by UID
   * @return {Object[]} An array of objects where the parameter values were found in policy
   */ 
@@ -251,7 +252,8 @@ async function whereUsed(objarr) {
 }
 
  /**
-  * @function getObjectUse Determine where a set of objects is used in Check Point policies
+  * Determine where a set of objects is used in Check Point policies
+  * @function getObjectUse 
   * @param {Object[]} isused An Check Point host object array prepared by doParse
   * @return {Object[]} An array of objects where the parameter values were found in policy
   */
@@ -273,7 +275,8 @@ async function getObjectUse(isused) {
 }
 
  /**
-  * @function getUsedObject Recursively discover the use of a host object against Check Point policy
+  * Recursively discover the use of a host object against Check Point policy
+  * @function getUsedObject 
   * @param {Object[]} objarr An Check Point object 
   * @return {Object[]} An array of objects where the parameter values were found in policy
   */
@@ -327,7 +330,8 @@ async function tagObject(myobj) {
 }
 
 /**
- * @function doParse Given a set of objects returns by the Check Point API, 
+ * Given a set of objects returns by the Check Point API, 
+ * @function doParse 
  * @param {*} objdat An array of objects where the parameter values were already found in policy
  * @return {Object[]} The parsed and prepared Check Point host object array
  */
@@ -394,7 +398,8 @@ async function showJson(obj) {
 }
 
 /**
- * @function startSession Create an authenticated session with the Check Point API
+ * Create an authenticated session with the Check Point API
+ * @function startSession 
  * @param {json} myauth Credentials used for API access
  * @return {Object} The prepared session handler
  */
@@ -413,7 +418,8 @@ async function startSession(myauth) {
 
 // set session token to header
 /**
- * @function setSession Set the session handler for a Check Point API connection
+ * Set the session handler for a Check Point API connection
+ * @function setSession 
  * @param {Object} mysession A Check Point API session handler
  */
 async function setSession(mysession) {
@@ -429,7 +435,8 @@ async function setSession(mysession) {
 }
 
 /**
- * @function pubSession Publish data to the Check Point API via a callout to HTTP POST
+ * Publish data to the Check Point API via a callout to HTTP POST
+ * @function pubSession 
  * @return {Object} mysession A Check Point API session handler
  */
 async function pubSession() {
@@ -449,7 +456,8 @@ async function pubSession() {
 
 // end session and expire token from header
 /**
- * @function endSession Safely logout from the Check Point API
+ * Safely logout from the Check Point API
+ * @function endSession 
  * @return {Object} The completed Check Point API session handler
  */
 async function endSession() {
@@ -517,7 +525,8 @@ async function writeJson (content) {
 
 // easy way to wait
 /**
- * @function sleep Promise'd sleep function to account for API round trip delays
+ * Promise'd sleep function to account for API round trip delays
+ * @function sleep 
  * @param {int} ms Number of milliseconds to sleep  by
  * @return {Object} The completed promise after x time has passed
  */
