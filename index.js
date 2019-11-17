@@ -5,8 +5,12 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 
-//const showpretty = require('prettyjson')
 
+/**
+ * Traverse object collected in object
+ * @param {Array} getProp - Get object proerties and values with arry of filters
+ * @param {Object[]} used - Used objects returned in an array of
+ */ 
 const get = (p, o) =>
   p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)
 
