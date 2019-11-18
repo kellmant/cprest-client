@@ -263,11 +263,11 @@ async function whereUsed(objarr) {
 async function parseObjectUse(objdat) {
 	try {
 		var myres = []
-		//Object.keys(cleanobj[ip]).forEach(uid => {
+		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			//myres = myres.concat(get([uid, '0'], cleanobj[ip]))
-			myres = myres.concat(objdat)
-		//});
+			myres = myres.concat(get([uid, '0'], objdat))
+			//myres = myres.concat(objdat)
+		});
 		//let unique = [...new Set(myres)]
 		return myres
 	} catch (err) {
