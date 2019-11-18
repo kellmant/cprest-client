@@ -545,7 +545,8 @@ function sleep(ms) {
 }
 
 /**
- * @function Count the nmber of keys in use for a given object
+ * the number of keys in use for a given object
+ * @function Count 
  * @param {Object} obj The object to be checked
  * @return {int} The number of keys in use
  */

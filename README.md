@@ -63,8 +63,9 @@
 <dt><a href="#sleep">sleep(ms)</a> ⇒ <code>Object</code></dt>
 <dd><p>Promise&#39;d sleep function to account for API round trip delays</p>
 </dd>
-<dt><a href="#Count the nmber of keys in use for a given object">Count the nmber of keys in use for a given object(obj)</a> ⇒ <code>int</code></dt>
-<dd></dd>
+<dt><a href="#Count">Count(obj)</a> ⇒ <code>int</code></dt>
+<dd><p>the number of keys in use for a given object</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -306,9 +307,11 @@ Promise'd sleep function to account for API round trip delays
 | --- | --- | --- |
 | ms | <code>int</code> | Number of milliseconds to sleep  by |
 
-<a name="Count the nmber of keys in use for a given object"></a>
+<a name="Count"></a>
 
-## Count the nmber of keys in use for a given object(obj) ⇒ <code>int</code>
+## Count(obj) ⇒ <code>int</code>
+the number of keys in use for a given object
+
 **Kind**: global function  
 **Returns**: <code>int</code> - The number of keys in use  
 
