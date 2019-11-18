@@ -266,7 +266,7 @@ async function parseObjectUse(objdat) {
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
 			myres['objects'] = []
-			myres['objects'] = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
+			myres['objects'] = myres['objects'].concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
 			//myres = myres.concat(objdat)
 		});
 		//let unique = [...new Set(myres)]
