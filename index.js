@@ -97,7 +97,7 @@ async function main() {
 		.then(objid => checkObject(objid))
 		.then(clean => whereUsed(clean))
 		.then(myuse => doParse(myuse))
-		//.then(inuse => parseObjectUse(inuse))
+		.then(inuse => parseObjectUse(inuse))
 		//.then(tagit => tagObject(tagit))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
