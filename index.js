@@ -67,7 +67,7 @@ var details = 'uid'
 //var objdata = {}
 
 var usedobj = {}
-
+var cleanobj = {}
 //var myres = {}
 //const objdata = {}
 
@@ -96,6 +96,7 @@ async function main() {
 		.then(() => showObjects(nodata, runcmd))
 		.then(objid => checkObject(objid))
 		.then(clean => whereUsed(clean))
+		.then(myuse => doParse(myuse))
 		.then(() => parseObjectUse())
 		//.then(tagit => tagObject(tagit))
 		.then(myout => writeJson(myout))
@@ -262,9 +263,9 @@ async function whereUsed(objarr) {
 async function parseObjectUse() {
 	try {
 		var myres = []
-		Object.keys(usedobj[ip]).forEach(uid => {
+		Object.keys(cleanobj[ip]).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres = myres.concat(get([uid, '0'], usedobj[ip]))
+			myres = myres.concat(get([uid, '0'], cleanobj[ip]))
 			//myres = myres.concat(usedobj[ip][uid])
 		});
 		//let unique = [...new Set(myres)]
@@ -361,13 +362,12 @@ async function tagObject(myobj) {
 async function doParse(objdat) {
 	try {
 		//const myres = {}
-		const myret = {}
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
 		Object.keys(objdat[ip]).forEach(uid => {
 			Object.keys(objdat[ip][uid]).forEach(usetype => {
 				console.log(usetype)
-				myret[usetype] = []
+				cleanobj[usetype] = []
 				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
 					var myres = {}
 					myres[used] = []
@@ -388,19 +388,14 @@ async function doParse(objdat) {
 								myres[used] = myres[used].concat(myarrs)
 							}
 						});
-						myret[usetype] = myret[usetype].concat(myres)
+						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
-					//console.log(objdat[ip][uid][usetype][used])
-					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
-					//console.log(Object.values(objdat[ip][uid][usetype]))
-					//console.log(Object.entries(objdat[ip][uid][usetype][used]))
 				});
-				//myret[usetype] = myres
 			});
 			console.log('---')
 		});
 		console.log('returning object data')
-		return myret
+		return cleanobj
 	} catch (err) {
 		console.log('error in doParse : ' + err)
 	}
