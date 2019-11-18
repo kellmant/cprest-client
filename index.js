@@ -97,7 +97,7 @@ async function main() {
 		.then(objid => checkObject(objid))
 		.then(clean => whereUsed(clean))
 		.then(myuse => doParse(myuse))
-		.then(() => parseObjectUse())
+		.then(inuse => parseObjectUse(inuse))
 		//.then(tagit => tagObject(tagit))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
@@ -260,13 +260,13 @@ async function whereUsed(objarr) {
 	}
 }
 
-async function parseObjectUse() {
+async function parseObjectUse(objdat) {
 	try {
 		var myres = []
 		//Object.keys(cleanobj[ip]).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
 			//myres = myres.concat(get([uid, '0'], cleanobj[ip]))
-			myres = myres.concat(cleanobj)
+			myres = myres.concat(objdat)
 		//});
 		//let unique = [...new Set(myres)]
 		return myres
