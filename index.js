@@ -96,9 +96,7 @@ async function main() {
 		.then(() => showObjects(nodata, runcmd))
 		.then(objid => checkObject(objid))
 		.then(clean => whereUsed(clean))
-		//.then(myout => writeJson(myout))
-		.then(() => doParse(usedobj))
-		.then(chkuse => getObjectUse(chkuse))
+		.then(() => parseObjectUse())
 		//.then(tagit => tagObject(tagit))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
@@ -258,6 +256,19 @@ async function whereUsed(objarr) {
 		return usedobj
 	} catch (err) {
 		console.log('error in whereUsed : ' + err)
+	}
+}
+
+async function parseObjectUse() {
+	try {
+		var myres = []
+		Object.keys(usedobj[ip]).forEach(uid => {
+			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip]))
+		});
+		//let unique = [...new Set(myres)]
+		return myres
+	} catch (err) {
+		console.log('error in getObjectUse : ' + err)
 	}
 }
 
