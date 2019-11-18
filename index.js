@@ -263,9 +263,9 @@ async function whereUsed(objarr) {
 async function parseObjectUse(objdat) {
 	try {
 		var myres = {}
+		myres['objects'] = []
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres['objects'] = []
 			myres['objects'] = myres['objects'].concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
 			//myres = myres.concat(objdat)
 		});
