@@ -271,7 +271,7 @@ async function parseObjectUse() {
 		//let unique = [...new Set(myres)]
 		return myres
 	} catch (err) {
-		console.log('error in getObjectUse : ' + err)
+		console.log('error in parseObjectUse : ' + err)
 	}
 }
 
