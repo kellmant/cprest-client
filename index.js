@@ -293,7 +293,7 @@ async function parseObjectUse(objdat) {
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
 					//console.log(mychk)
-					allobjs[mygroups] = allobjs[mygroups].concat(mychk.members)
+					allobjs[mygroups] = allobjs[mygroups].concat(mychk.members.uid)
 				//}
 			}
 		}
