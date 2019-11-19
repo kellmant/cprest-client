@@ -98,7 +98,7 @@ async function main() {
 		.then(clean => whereUsed(clean))
 		.then(myuse => doParse(myuse))
 		.then(inuse => parseObjectUse(inuse))
-		//.then(tagit => tagObject(tagit))
+		.then(tagit => tagObjects(tagit))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -184,7 +184,7 @@ async function checkObject(objarr) {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
 		}
-		let tagdata = await tagObject(mytagged)
+		let tagdata = await tagObjects(mytagged)
 		return myreturn
 	} catch (err) {
 		console.log('error in checkObject : ' + err)
@@ -352,11 +352,11 @@ async function getType(myobj) {
 }
 
 /** 
- * @function tagObject 
+ * @function tagObjects 
  * @param {Object[]} myobj An array of tags to be added to a Check Point host object
  * @return {Object} Returns the session handler after tagging operations are concluded
  */
-async function tagObject(myobj) {
+async function tagObjects(myobj) {
 	try {
 		var tags = {}
 		tags.add = 'DELETE'
