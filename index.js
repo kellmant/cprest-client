@@ -302,6 +302,7 @@ async function parseRuleUse(objdat) {
 		//myres = [...new Set(myres)]
 		for (var x of myres) {
 			if (x) {
+				console.log(x.rule)
 				myret = myret.concat(x)
 			}
 		}
