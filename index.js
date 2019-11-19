@@ -295,7 +295,10 @@ async function parseObjectUse(objdat) {
 					memarr = memarr.concat(gmem.uid)
 				});
 				let smembers = memarr.filter(x => allobjs[myuids].includes(x))
-				allobjs[mygroups] = allobjs[mygroups].concat(smembers)
+				let members = {}
+				members.remove = smembers.join()
+				mygrp.members = members
+				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
 					//console.log(mychk)
