@@ -273,7 +273,7 @@ async function parseObjectUse(objdat) {
 		//let unique = [...new Set(myres)]
 		myres = [...new Set(myres)]
 		for (var x in myres) {
-			mychk += getType(myres[x])
+			mychk += await getType(myres[x])
 		}
 		return mychk
 	} catch (err) {
