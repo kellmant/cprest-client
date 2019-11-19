@@ -306,7 +306,8 @@ async function parseRuleUse(objdat) {
 				drule.uid = x.rule
 				drule.layer = x.layer
 				//console.log(x.rule)
-				myret = myret.concat(drule)
+				myret = myret.concat(await getRule(drule))
+				//myret = myret.concat(drule)
 			}
 		}
 		//	let mychk = await getType(myres[x])
@@ -383,6 +384,19 @@ async function getType(myobj) {
 		return await indat.object
 	} catch (err) {
 		console.log('error in getType : ' + err)
+	}
+}
+
+async function getRule(myobj) {
+	try {
+		mycmd = 'show-access-rule'
+        //mydata['details-level'] = details
+        var setit = toApi.doPost(myobj, mycmd)
+        let indat = await callOut(setit.options, setit.postData)
+			//console.log(indat.object.type)
+		return await indat.object
+	} catch (err) {
+		console.log('error in getRule : ' + err)
 	}
 }
 
