@@ -312,6 +312,7 @@ async function parseRuleUse(objdat) {
 				rulechk.layer = ruleobj.layer
 				rulechk.name = ruleobj.name
 				rulechk.source = ruleobj.source
+				rulechk.destination = ruleobj.destination
 				myret = myret.concat(rulechk)
 			}
 		}
