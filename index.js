@@ -301,9 +301,12 @@ async function parseRuleUse(objdat) {
 		//let unique = [...new Set(myres)]
 		//myres = [...new Set(myres)]
 		for (var x of myres) {
-			if (x) {
-				console.log(x.rule)
-				myret = myret.concat(x)
+			if (x.rule) {
+				let drule = {}
+				drule.rule = x.rule
+				drule.layer = x.layer
+				//console.log(x.rule)
+				myret = myret.concat(drule)
 			}
 		}
 		//	let mychk = await getType(myres[x])
