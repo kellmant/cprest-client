@@ -390,7 +390,7 @@ async function getType(myobj) {
 async function getRule(myobj) {
 	try {
 		mycmd = 'show-access-rule'
-        mydata['details-level'] = details
+        myobj['details-level'] = details
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
 			//console.log(indat.object.type)
