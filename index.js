@@ -99,6 +99,7 @@ async function main() {
 		.then(myuse => doParse(myuse))
 		.then(inuse => parseObjectUse(inuse))
 		.then(tagit => tagObjects(tagit))
+		.then(() => parseRuleUse(cleanobj))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -267,6 +268,33 @@ async function parseObjectUse(objdat) {
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
 			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
+			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
+			//myres = myres.concat(objdat)
+		});
+		//let unique = [...new Set(myres)]
+		myres = [...new Set(myres)]
+		for (var x in myres) {
+			let mychk = await getType(myres[x])
+			if (mychk.type === 'group') {
+				let mygrp = {}
+				mygrp.type = mychk.type
+				mygrp.uid = mychk.uid
+				myret = myret.concat(mygrp)
+			}
+		}
+		return myret
+	} catch (err) {
+		console.log('error in parseObjectUse : ' + err)
+	}
+}
+
+async function parseRuleUse(objdat) {
+	try {
+		var myres = []
+		var myret = []
+		Object.keys(objdat).forEach(uid => {
+			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
+			myres = myres.concat(get([uid, '0', 'used-directly', '0'], objdat))
 			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
 			//myres = myres.concat(objdat)
 		});
