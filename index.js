@@ -317,7 +317,7 @@ async function parseRuleUse(objdat) {
 				let sremove = ruleobj.source.filter(x => myuids.includes(x))
 				if (sremove.length > 0) {
 					console.log(sremove + ' src remove ' + sremove.length)
-					let remove = sremove
+					let remove = remove.sremove
 					rulechk.source = remove
 				}
 				//rulechk.source = remove
