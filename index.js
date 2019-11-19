@@ -301,7 +301,7 @@ async function parseRuleUse(objdat) {
 		//let unique = [...new Set(myres)]
 		//myres = [...new Set(myres)]
 		for (var x of myres) {
-			if (x.rule) {
+			if (x) {
 				let drule = {}
 				drule.rule = x.rule
 				drule.layer = x.layer
