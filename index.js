@@ -300,11 +300,13 @@ async function parseRuleUse(objdat) {
 		});
 		//let unique = [...new Set(myres)]
 		myres = [...new Set(myres)]
-		//for (var x in myres) {
+		for (var x in myres) {
+			console.log(myres[x])
+		}
 		//	let mychk = await getType(myres[x])
 		//	if (mychk.type === 'group') {
-		//		let mygrp = {}
-		//		mygrp.type = mychk.type
+				//let mygrp = {}
+				//mygrp.type = mychk.type
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
