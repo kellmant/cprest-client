@@ -290,7 +290,8 @@ async function parseObjectUse(objdat) {
 				mygrp.type = mychk.type
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
-				allobjs[mygroups] = allobjs[mygroups].concat(mygrp.uid)
+				mygrp.members = mychk.members
+				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 			}
 		}
 		return myret
