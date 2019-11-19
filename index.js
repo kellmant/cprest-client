@@ -298,7 +298,6 @@ async function parseObjectUse(objdat) {
 				let members = {}
 				members.remove = smembers.join()
 				mygrp.members = members
-				delete mygrp.type
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
