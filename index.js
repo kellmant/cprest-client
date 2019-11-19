@@ -394,7 +394,7 @@ async function getRule(myobj) {
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
 			//console.log(indat.object.type)
-		return await indat.object
+		return await indat
 	} catch (err) {
 		console.log('error in getRule : ' + err)
 	}
