@@ -309,7 +309,7 @@ async function parseRuleUse(objdat) {
 				drule.layer = x.layer
 				let ruleobj = await getRule(drule)
 				//console.log(drule.uid)
-				console.log(cleangroups)
+				//console.log(cleangroups)
 				let rulechk = {}
 				rulechk.uid = ruleobj.uid
 				rulechk.layer = ruleobj.layer
@@ -326,6 +326,7 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
+		console.log(cleangroups)
 		return myret
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
