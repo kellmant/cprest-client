@@ -314,9 +314,9 @@ async function parseRuleUse(objdat) {
 				rulechk.uid = ruleobj.uid
 				rulechk.layer = ruleobj.layer
 				rulechk.name = ruleobj.name
-				rulechk.source = ruleobj.source.filter(x => myuids.includes(x))
+				rulechk.source.remove = ruleobj.source.filter(x => myuids.includes(x))
 				//rulechk.oldsource = ruleobj.source
-				rulechk.destination = ruleobj.destination.filter(x => myuids.includes(x))
+				rulechk.destination.remove = ruleobj.destination.filter(x => myuids.includes(x))
 				//rulechk.olddestination = ruleobj.destination
 				myret = myret.concat(rulechk)
 			}
