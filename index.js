@@ -409,7 +409,7 @@ async function getType(myobj) {
 	try {
 		var mydata = {}
 		mycmd = 'show-object'
-        //mydata['details-level'] = details
+        mydata['details-level'] = 'full'
 		mydata.uid = myobj
         var setit = toApi.doPost(mydata, mycmd)
         let indat = await callOut(setit.options, setit.postData)
