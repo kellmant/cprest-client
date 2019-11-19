@@ -307,7 +307,6 @@ async function parseRuleUse(objdat) {
 		//		mygrp.type = mychk.type
 		//		mygrp.uid = mychk.uid
 				myret = myret.concat(myres[x])
-			}
 		}
 		return myret
 	} catch (err) {
