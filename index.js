@@ -70,6 +70,7 @@ var usedobj = {}
 var cleanobj = {}
 var cleangroups = []
 var myuids = []
+var myrules = []
 //var myres = {}
 //const objdata = {}
 
@@ -293,7 +294,6 @@ async function parseObjectUse(objdat) {
 async function parseRuleUse(objdat) {
 	try {
 		var myres = []
-		var myret = []
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
 			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'access-control-rules'], objdat))
@@ -331,7 +331,7 @@ async function parseRuleUse(objdat) {
 					rulechk.destination = destination
 				}
 				//rulechk.olddestination = ruleobj.destination
-				myret = myret.concat(rulechk)
+				myrules = myrules.concat(rulechk)
 			}
 		}
 		//	let mychk = await getType(myres[x])
@@ -341,8 +341,7 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
-		console.log(myuids)
-		return myret
+		return myrules
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
 	}
