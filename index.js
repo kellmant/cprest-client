@@ -271,7 +271,8 @@ async function parseObjectUse(objdat) {
 		});
 		//let unique = [...new Set(myres)]
 		myres = [...new Set(myres)]
-		return myres
+		let mycheck = getUsedObject(myres)
+		return mycheck
 	} catch (err) {
 		console.log('error in parseObjectUse : ' + err)
 	}
