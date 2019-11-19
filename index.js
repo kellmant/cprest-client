@@ -69,6 +69,7 @@ var details = 'uid'
 var usedobj = {}
 var cleanobj = {}
 var cleangroups = []
+var myuids = []
 //var myres = {}
 //const objdata = {}
 
@@ -170,7 +171,6 @@ async function checkObject(objarr) {
 	try {
 		var mydata = {}
 		var mytagged = []
-		var myreturn = []
 		mycmd = 'show-object'
                 //mydata['details-level'] = details
 		for (var x in objarr) {
@@ -181,13 +181,13 @@ async function checkObject(objarr) {
 			if (indat.object['ipv4-address'] === ip) {
 				console.log(indat.object.uid)
 				mytagged = mytagged.concat(indat.object)
-				myreturn = myreturn.concat(indat.object.uid)
+				myuids = myuids.concat(indat.object.uid)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
 		}
 		let tagdata = await tagObjects(mytagged)
-		return myreturn
+		return myuids
 	} catch (err) {
 		console.log('error in checkObject : ' + err)
 	}
