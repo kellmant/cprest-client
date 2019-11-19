@@ -303,7 +303,7 @@ async function parseRuleUse(objdat) {
 		for (var x of myres) {
 			if (x) {
 				let drule = {}
-				drule.rule = x.rule
+				drule.uid = x.rule
 				drule.layer = x.layer
 				//console.log(x.rule)
 				myret = myret.concat(drule)
