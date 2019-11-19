@@ -178,7 +178,7 @@ async function checkObject(objarr) {
                 	var setit = toApi.doPost(mydata, mycmd)
                 	let indat = await callOut(setit.options, setit.postData)
 			if (indat.object['ipv4-address'] === ip) {
-				console.log(indat.object)
+				console.log(indat.object.uid)
 				mytagged = mytagged.concat(indat.object)
 				myreturn = myreturn.concat(indat.object.uid)
 			} else {
@@ -306,6 +306,7 @@ async function parseRuleUse(objdat) {
 				drule.uid = x.rule
 				drule.layer = x.layer
 				let ruleobj = await getRule(drule)
+				console.log(ruleobj)
 				myret = myret.concat(drule)
 			}
 		}
@@ -389,7 +390,7 @@ async function getType(myobj) {
 async function getRule(myobj) {
 	try {
 		mycmd = 'show-access-rule'
-        //mydata['details-level'] = details
+        mydata['details-level'] = details
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
 			//console.log(indat.object.type)
