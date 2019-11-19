@@ -68,9 +68,17 @@ var details = 'uid'
 
 var usedobj = {}
 var cleanobj = {}
+var allobjs = {}
+var mygroups = 'group'
+allobjs[mygroups] = []
+var myuids = 'object'
+allobjs[myuids] = []
+var myrules = 'access-rule'
+allobjs[myrules] = []
+
 var cleangroups = []
-var myuids = []
-var myrules = []
+//var myuids = []
+//var myrules = []
 //var myres = {}
 //const objdata = {}
 
@@ -182,13 +190,13 @@ async function checkObject(objarr) {
 			if (indat.object['ipv4-address'] === ip) {
 				console.log(indat.object.uid)
 				mytagged = mytagged.concat(indat.object)
-				myuids = myuids.concat(indat.object.uid)
+				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
 		}
 		let tagdata = await tagObjects(mytagged)
-		return myuids
+		return allobjs[myuids]
 	} catch (err) {
 		console.log('error in checkObject : ' + err)
 	}
@@ -282,7 +290,7 @@ async function parseObjectUse(objdat) {
 				mygrp.type = mychk.type
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
-				cleangroups = cleangroups.concat(mygrp.uid)
+				allobjs[mygroups] = allobjs[mygroups].concat(mygrp.uid)
 			}
 		}
 		return myret
@@ -331,7 +339,7 @@ async function parseRuleUse(objdat) {
 					rulechk.destination = destination
 				}
 				//rulechk.olddestination = ruleobj.destination
-				myrules = myrules.concat(rulechk)
+				allobjs[myrules] = allobjs[myrules].concat(rulechk)
 			}
 		}
 		//	let mychk = await getType(myres[x])
@@ -341,7 +349,7 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
-		return myrules
+		return allobjs
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
 	}
