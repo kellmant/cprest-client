@@ -304,20 +304,20 @@ async function parseRuleUse(objdat) {
 		//myres = [...new Set(myres)]
 		for (var x of myres) {
 			if (x) {
-				let drule = {}
-				drule.uid = x.rule
-				drule.layer = x.layer
-				let ruleobj = await getRule(drule)
+				let rule = {}
+				rule.uid = x.rule
+				rule.layer = x.layer
+				let ruleobj = await getRule(rule)
 				//console.log(drule.uid)
 				//console.log(cleangroups)
 				let rulechk = {}
 				rulechk.uid = ruleobj.uid
 				rulechk.layer = ruleobj.layer
 				rulechk.name = ruleobj.name
-				rulechk.source = ruleobj.source.filter(x => !myuids.includes(x))
-				rulechk.oldsource = ruleobj.source
-				rulechk.destination = ruleobj.destination.filter(x => !myuids.includes(x))
-				rulechk.olddestination = ruleobj.destination
+				rulechk.source = ruleobj.source.filter(x => myuids.includes(x))
+				//rulechk.oldsource = ruleobj.source
+				rulechk.destination = ruleobj.destination.filter(x => myuids.includes(x))
+				//rulechk.olddestination = ruleobj.destination
 				myret = myret.concat(rulechk)
 			}
 		}
