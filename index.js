@@ -299,9 +299,9 @@ async function parseRuleUse(objdat) {
 			//myres = myres.concat(objdat)
 		});
 		//let unique = [...new Set(myres)]
-		myres = [...new Set(myres)]
+		//myres = [...new Set(myres)]
 		for (var x of myres) {
-			console.log(x.rule)
+			myret = myret.concat(x)
 		}
 		//	let mychk = await getType(myres[x])
 		//	if (mychk.type === 'group') {
@@ -310,7 +310,7 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
-		return myres
+		return myret
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
 	}
