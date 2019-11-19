@@ -318,7 +318,7 @@ async function parseRuleUse(objdat) {
 				if (sremove.length > 0) {
 					console.log(sremove + ' src remove ' + sremove.length)
 					let source = {}
-					source.remove = sremove
+					source.remove = sremove.join()
 					rulechk.source = source
 				}
 				//rulechk.source = remove
@@ -327,7 +327,7 @@ async function parseRuleUse(objdat) {
 				if (dremove.length > 0) {
 					console.log(dremove + ' dst remove ' + dremove.length)
 					let destination = {}
-					destination.remove = dremove
+					destination.remove = dremove.join()
 					rulechk.destination = destination
 				}
 				//rulechk.olddestination = ruleobj.destination
