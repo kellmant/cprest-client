@@ -309,7 +309,7 @@ async function parseRuleUse(objdat) {
 				drule.layer = x.layer
 				let ruleobj = await getRule(drule)
 				//console.log(drule.uid)
-				//console.log(ruleobj.uid)
+				console.log(cleangroups)
 				let rulechk = {}
 				rulechk.uid = ruleobj.uid
 				rulechk.layer = ruleobj.layer
