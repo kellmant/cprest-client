@@ -68,6 +68,7 @@ var details = 'uid'
 
 var usedobj = {}
 var cleanobj = {}
+var cleangroups = []
 //var myres = {}
 //const objdata = {}
 
@@ -280,6 +281,7 @@ async function parseObjectUse(objdat) {
 				mygrp.type = mychk.type
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
+				cleangroups = cleangroups.concat(mygrp.uid)
 			}
 		}
 		return myret
