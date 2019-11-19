@@ -291,10 +291,10 @@ async function parseObjectUse(objdat) {
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
-				if (mychk.length > 0) {
+				//if (mychk.length > 0) {
 					//console.log(mychk)
 					allobjs[mygroups] = allobjs[mygroups].concat(mychk)
-				}
+				//}
 			}
 		}
 		return myret
