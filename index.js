@@ -314,11 +314,12 @@ async function parseRuleUse(objdat) {
 				rulechk.uid = ruleobj.uid
 				rulechk.layer = ruleobj.layer
 				rulechk.name = ruleobj.name
-				rulechk.source = {}
-				rulechk.source.remove = ruleobj.source.filter(x => myuids.includes(x))
+				let sremove = ruleobj.source.filter(x => myuids.includes(x))
+				console.log('src remove ' + sremove.length)
 				//rulechk.source = remove
 				//rulechk.oldsource = ruleobj.source
-				rulechk.destination = ruleobj.destination.filter(x => myuids.includes(x))
+				let dremove = ruleobj.destination.filter(x => myuids.includes(x))
+				console.log('dst remove ' + dremove.length)
 				//rulechk.olddestination = ruleobj.destination
 				myret = myret.concat(rulechk)
 			}
