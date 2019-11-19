@@ -301,7 +301,7 @@ async function parseRuleUse(objdat) {
 		//let unique = [...new Set(myres)]
 		myres = [...new Set(myres)]
 		for (var x of myres) {
-			console.log(x)
+			console.log(x.rule)
 		}
 		//	let mychk = await getType(myres[x])
 		//	if (mychk.type === 'group') {
