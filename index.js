@@ -274,8 +274,11 @@ async function parseObjectUse(objdat) {
 		myres = [...new Set(myres)]
 		for (var x in myres) {
 			let mychk = await getType(myres[x])
-			if (mychk === 'group') {
-				myret = myret.concat(myres[x])
+			if (mychk.type === 'group') {
+				let mygrp = {}
+				mygrp.type = mychk.type
+				mygrp.uid = mychk.uid
+				myret = myret.concat(mygrp)
 			}
 		}
 		return myret
@@ -342,7 +345,7 @@ async function getType(myobj) {
         var setit = toApi.doPost(mydata, mycmd)
         let indat = await callOut(setit.options, setit.postData)
 			//console.log(indat.object.type)
-		return await indat.object.type
+		return await indat.object
 	} catch (err) {
 		console.log('error in getType : ' + err)
 	}
