@@ -282,7 +282,7 @@ async function parseObjectUse(objdat) {
 			//myres = myres.concat(objdat)
 		});
 		//let unique = [...new Set(myres)]
-		myres = [...new Set(myres)]
+		//myres = [...new Set(myres)]
 		for (var x in myres) {
 			let mychk = await getType(myres[x])
 			if (mychk.type === 'group') {
@@ -298,6 +298,7 @@ async function parseObjectUse(objdat) {
 				let members = {}
 				members.remove = smembers.join()
 				mygrp.members = members
+				delete mygrp.type
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
