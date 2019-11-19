@@ -339,7 +339,7 @@ async function getType(myobj) {
         var setit = toApi.doPost(mydata, mycmd)
         let indat = await callOut(setit.options, setit.postData)
 			//console.log(indat.object.type)
-		return await indat.object
+		return await indat.object.type
 	} catch (err) {
 		console.log('error in getType : ' + err)
 	}
