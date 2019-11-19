@@ -290,13 +290,14 @@ async function parseObjectUse(objdat) {
 				mygrp.type = mychk.type
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
+				let memarr = []
 				Object.values(mychk.members).forEach(gmem => {
-					console.log(gmem.uid)
+					memarr = memarr.concat(gmem.uid)
 				});
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
 					//console.log(mychk)
-					allobjs[mygroups] = allobjs[mygroups].concat(mychk.members.uid)
+					allobjs[mygroups] = allobjs[mygroups].concat(memarr)
 				//}
 			}
 		}
