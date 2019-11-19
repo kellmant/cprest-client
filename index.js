@@ -271,8 +271,10 @@ async function parseObjectUse(objdat) {
 		});
 		//let unique = [...new Set(myres)]
 		myres = [...new Set(myres)]
-		let mycheck = getUsedObject(myres)
-		return mycheck
+		for (var x in myres) {
+			console.log(getType(myres[x]))
+		}
+		return myres
 	} catch (err) {
 		console.log('error in parseObjectUse : ' + err)
 	}
@@ -324,6 +326,21 @@ async function getUsedObject(objarr) {
 		return myreturn
 	} catch (err) {
 		console.log('error in getUsedObject : ' + err)
+	}
+}
+
+async function getType(myobj) {
+	try {
+		var mydata = {}
+		mycmd = 'show-object'
+        //mydata['details-level'] = details
+		mydata.uid = myobj
+        var setit = toApi.doPost(mydata, mycmd)
+        let indat = await callOut(setit.options, setit.postData)
+			//console.log(indat.object.type)
+		return indat.object
+	} catch (err) {
+		console.log('error in getType : ' + err)
 	}
 }
 
