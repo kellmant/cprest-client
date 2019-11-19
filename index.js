@@ -294,7 +294,7 @@ async function parseRuleUse(objdat) {
 		var myret = []
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres = myres.concat(get([uid, '0', 'used-directly', '0'], objdat))
+			myres = myres.concat(get([uid, '0', 'used-directly', '1'], objdat))
 			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
 			//myres = myres.concat(objdat)
 		});
