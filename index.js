@@ -299,19 +299,19 @@ async function parseRuleUse(objdat) {
 			//myres = myres.concat(objdat)
 		});
 		//let unique = [...new Set(myres)]
-		myres = [...new Set(myres)]
+		//myres = [...new Set(myres)]
 		for (var x in myres) {
-			let mychk = await getType(myres[x])
-			if (mychk.type === 'group') {
-				let mygrp = {}
-				mygrp.type = mychk.type
-				mygrp.uid = mychk.uid
-				myret = myret.concat(mygrp)
+		//	let mychk = await getType(myres[x])
+		//	if (mychk.type === 'group') {
+		//		let mygrp = {}
+		//		mygrp.type = mychk.type
+		//		mygrp.uid = mychk.uid
+				myret = myret.concat(myres[x])
 			}
 		}
 		return myret
 	} catch (err) {
-		console.log('error in parseObjectUse : ' + err)
+		console.log('error in parseRuleUse : ' + err)
 	}
 }
 
