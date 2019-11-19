@@ -326,7 +326,7 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
-		console.log(cleangroups)
+		console.log(myuids)
 		return myret
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
