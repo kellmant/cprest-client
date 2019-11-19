@@ -306,7 +306,7 @@ async function parseRuleUse(objdat) {
 				drule.uid = x.rule
 				drule.layer = x.layer
 				let ruleobj = await getRule(drule)
-				console.log(drule.uid)
+				//console.log(drule.uid)
 				console.log(ruleobj.uid)
 				let rulechk = {}
 				rulechk.uid = ruleobj.uid
