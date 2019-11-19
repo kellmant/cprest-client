@@ -306,7 +306,7 @@ async function parseRuleUse(objdat) {
 				drule.uid = x.rule
 				drule.layer = x.layer
 				let ruleobj = await getRule(drule)
-				myret = myret.concat(ruleobj)
+				myret = myret.concat(drule)
 			}
 		}
 		//	let mychk = await getType(myres[x])
