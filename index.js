@@ -379,10 +379,10 @@ async function parseRuleUse(objdat) {
 		//		myret = myret.concat(myres[x])
 		//}
 		for (var x of allobjs[myrules]) {
+			let source = {}
+			let asource = []
+			let rulechk = {}
 			if (x.source) {
-				let source = {}
-				let asource = []
-				let rulechk = {}
 				rulechk.uid = x.uid
 				rulechk.layer = x.layer
 				for (var y of x.source.remove) {
