@@ -108,11 +108,11 @@ async function main() {
 		.then(sessiontoken => setSession(sessiontoken))
 		.then(() => showObjects(nodata, runcmd))
 		.then(objid => checkObject(objid))
-		.then(clean => whereUsed(clean))
-		.then(myuse => doParse(myuse))
+		//.then(clean => whereUsed(clean))
+		//.then(myuse => doParse(myuse))
 		//.then(myout => writeJson(myout))
-		.then(inuse => parseObjectUse(inuse))
-		.then(tagit => tagObjects(tagit))
+		.then(() => parseObjectUse(allobj[myuids]))
+		//.then(tagit => tagObjects(tagit))
 		.then(() => parseRuleUse(cleanobj))
 		.then(() => parseNatUse(cleanobj))
 		.then(() => parseThreatUse(cleanobj))
@@ -279,18 +279,18 @@ async function whereUsed(objarr) {
 
 async function parseObjectUse(objdat) {
 	try {
-		var myres = []
+		//var myres = []
 		var myret = []
-		Object.keys(objdat).forEach(uid => {
+		//Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
+		//	myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
 			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
 			//myres = myres.concat(objdat)
-		});
+		//});
 		//let unique = [...new Set(myres)]
-		myres = [...new Set(myres)]
-		for (var x in myres) {
-			let mychk = await getType(myres[x])
+		//myres = [...new Set(myres)]
+		for (var x of objdat) {
+			let mychk = await getType(x)
 			if (mychk.type === 'group') {
 				let mygrp = {}
 				mygrp.type = mychk.type
@@ -317,7 +317,7 @@ async function parseObjectUse(objdat) {
 				allobjs[garbage] = allobjs[garbage].concat(badobj)
 			}
 		}
-		return myret
+		return allobjs
 	} catch (err) {
 		console.log('error in parseObjectUse : ' + err)
 	}
@@ -550,16 +550,22 @@ async function doParse(objdat) {
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
 								let myarrs = {}
 								myarrs[arrs] = []
+								var myobjarr = []
 								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
+								/*
 								if (used === 'used-directly' && arrs === 'objects') {
 									let myused = objdat[ip][uid][usetype][used][arrs]
-									myused.type = arrs
-									myused.stamp = 'TESTING'
+									//myused.type = arrs
+									//myused.stamp = 'TESTING'
+									myobjarr = myobjarr.concat(myused)
 									console.log('I WOULDA PARSED THIS : ' + myused)
-									allobjs[garbage] = allobjs[garbage].concat(myused)
+								}
+								*/
+								//await parseObjectUse(allobjs[myuids])
+									//allobjs[garbage] = allobjs[garbage].concat(myused)
 								}
 								//allobjs[uid]
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
