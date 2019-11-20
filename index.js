@@ -379,7 +379,7 @@ async function parseRuleUse(objdat) {
 		//		myret = myret.concat(myres[x])
 		//}
 		for (var x of allobjs[myrules]) {
-			let source = {}
+			//let source = {}
 			let asource = []
 			let rulechk = {}
 			if (x.source) {
@@ -391,6 +391,7 @@ async function parseRuleUse(objdat) {
 					console.log(theobj.name)
 					console.log(x)
 				}
+				let source = {}
 				source.add = asource
 				rulechk.source = source
 			} 
