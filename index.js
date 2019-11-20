@@ -572,8 +572,8 @@ async function doParse(objdat) {
 		//const myres = {}
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
-		if (Object.values(objdat[ip]).length = 0) {
-			throw (err)
+		if (Object.values(objdat[ip]).length < 0) {
+			throw new Error('No HOST OBJECTS FOUND')
 		}
 		var myobjarr = []
 		var myacl = []
