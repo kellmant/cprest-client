@@ -381,6 +381,7 @@ async function parseRuleUse(objdat) {
 		for (var x of allobjs[myrules]) {
 			//let source = {}
 			let asource = []
+			let adest = []
 			let rulechk = {}
 			if (x.source) {
 				rulechk.uid = x.uid
@@ -396,11 +397,17 @@ async function parseRuleUse(objdat) {
 				rulechk.source = source
 			} 
 			if (x.destination) {
+				rulechk.uid = x.uid
+				rulechk.layer = x.layer
 				for (var y of x.destination.remove) {
 					let theobj = await getType(y)
+					adest = adest.concat(theobj.name)
 					console.log(theobj.name)
 					console.log(x)
 				}
+				let destination = {}
+				destination.add = adest
+				rulechk.destination = destination
 			}
 			allobjs[restore] = allobjs[restore].concat(rulechk)
 		}
