@@ -116,6 +116,7 @@ async function main() {
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
+		.then(() => console.dir(cleanobj))
 		//.then(thindat => console.log(thindat))
 	.catch(endSession)
 }
