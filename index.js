@@ -554,9 +554,11 @@ async function doParse(objdat) {
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
-								if (used === 'used-indirectly') {
+								if (used === 'used-directly') {
+									let myused = objdat[ip][uid][usetype][used][arrs]
+									myused.type = arrs
 									console.log(arrs)
-									allobjs[garbage] = allobjs[garbage].concat(objdat[ip][uid][usetype][used][arrs])
+									allobjs[garbage] = allobjs[garbage].concat(myused)
 								}
 								//allobjs[uid]
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
