@@ -405,7 +405,7 @@ async function parseThreatUse(objdat) {
 		});
 		for (var x of myres) {
 			if (x) {
-				//x.type = 'threat'
+				x.type = 'threat-prevention'
 				allobjs[garbage] = allobjs[garbage].concat(x)
 				//console.log(x)
 			}
