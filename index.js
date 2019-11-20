@@ -387,7 +387,7 @@ async function parseNatUse(objdat) {
 			if (x) {
 				x.type = 'nat-rule'
 				allobjs[garbage] = allobjs[garbage].concat(x)
-				console.log(x)
+				//console.log(x)
 			}
 		}
 		return allobjs
@@ -395,6 +395,26 @@ async function parseNatUse(objdat) {
 		console.log('error in parseNatUse : ' + err)
 	}
 }
+
+async function parseThreatUse(objdat) {
+	try {
+		var myres = []
+		Object.keys(objdat).forEach(uid => {
+			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'threat-prevention-rules'], objdat))
+		});
+		for (var x of myres) {
+			if (x) {
+				//x.type = 'threat'
+				allobjs[garbage] = allobjs[garbage].concat(x)
+				//console.log(x)
+			}
+		}
+		return allobjs
+	} catch (err) {
+		console.log('error in parseNatUse : ' + err)
+	}
+}
+
  /**
   * Determine where a set of objects is used in Check Point policies
   * @function getObjectUse 
