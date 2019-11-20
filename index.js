@@ -554,8 +554,9 @@ async function doParse(objdat) {
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs )
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
-								myres[used] = myres[used].concat(myarrs)
+								//myres[used] = myres[used].concat(myarrs)
 							}
+							myres[used] = myres[used].concat(myarrs)
 						});
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
