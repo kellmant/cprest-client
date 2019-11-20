@@ -545,8 +545,8 @@ async function doParse(objdat) {
 					if (objdat[ip][uid][usetype][used]['total'] > 0) {
 						mytotal = objdat[ip][uid][usetype][used]['total']
 						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
+						var myobjarr = []
 						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
-							var myobjarr = []
 							//console.log(arrs + ' ' + Object.keys(objdat[ip][uid][usetype][used][arrs]).length)
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
 								let myarrs = {}
