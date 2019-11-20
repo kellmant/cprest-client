@@ -550,6 +550,7 @@ async function doParse(objdat) {
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
 								let myarrs = {}
 								myarrs[arrs] = []
+								allobjs[arrs] = []
 								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
