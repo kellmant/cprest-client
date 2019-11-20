@@ -293,7 +293,6 @@ async function parseObjectUse(objdat) {
 			let mychk = await getType(x)
 			if (mychk.type === 'group') {
 				let mygrp = {}
-				mygrp.type = mychk.type
 				mygrp.uid = mychk.uid
 				myret = myret.concat(mygrp)
 				let memarr = []
@@ -302,7 +301,7 @@ async function parseObjectUse(objdat) {
 				});
 				let smembers = memarr.filter(x => allobjs[myuids].includes(x))
 				let members = {}
-				members.remove = smembers.join()
+				members.remove = smembers
 				mygrp.members = members
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
