@@ -388,7 +388,7 @@ async function parseNatUse(objdat) {
 			if (x) {
 				x.type = 'nat-rule'
 				allobjs[garbage] = allobjs[garbage].concat(x)
-				//console.log(x)
+				console.log(x)
 			}
 		}
 		return allobjs
@@ -407,7 +407,7 @@ async function parseThreatUse(objdat) {
 			if (x) {
 				x.type = 'threat-prevention'
 				allobjs[garbage] = allobjs[garbage].concat(x)
-				//console.log(x)
+				console.log(x)
 			}
 		}
 		return allobjs
