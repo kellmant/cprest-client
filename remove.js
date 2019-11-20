@@ -50,9 +50,10 @@ console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
     console.log(objdata.garbage)
     console.log('Cleanup needed of object before removal')
-}
+} else {
 
-main()
+    main()
+}
 
 async function myGroups() {
     try {
