@@ -574,7 +574,7 @@ async function doParse(objdat) {
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
-						await parseObjectUse(myobjarr)
+						parseObjectUse(myobjarr)
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
