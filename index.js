@@ -309,7 +309,7 @@ async function parseObjectUse(objdat) {
 				let bmembers = memarrback.filter(x => allobjs[backup].includes(x))
 				//['members']add = bmembers
 				members2.add = bmembers
-				mygrpback.members2 = members2
+				mygrpback.members = members2
 				//delete mygrpback.members.remove
 				allobjs[restore] = allobjs[restore].concat(mygrpback)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
