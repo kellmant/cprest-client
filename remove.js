@@ -101,6 +101,7 @@ async function main() {
         .then(() => myGroups())
         .then(() => myRules())
         .then(() => myHosts())
+        .then(() => pubSession())
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
 		//.then(() => console.dir(cleanobj))
@@ -167,7 +168,7 @@ async function pubSession() {
     var nodata = {}
             var mysession = await callOut(toApi.doPost(nodata, mycmd).options, toApi.doPost(nodata, mycmd).postData)
                //toApi.showOpt()
-    await sleep(3000)
+    await sleep(4000)
             return mysession
     } catch (err) {
             console.log('error in pubSession : ' + err)
