@@ -379,7 +379,11 @@ async function parseRuleUse(objdat) {
 		//		myret = myret.concat(myres[x])
 		//}
 		for (var x of allobjs[myrules]) {
-			console.log(x.source)
+			if (x.source) {
+				console.log(x.source)
+			} else if (x.destination) {
+				console.log(x.destination)
+			}
 		}
 		return allobjs
 	} catch (err) {
