@@ -113,9 +113,9 @@ async function main() {
 		//.then(myout => writeJson(myout))
 		//.then(() => parseObjectUse(allobj[myuids]))
 		//.then(tagit => tagObjects(tagit))
-		.then(() => parseRuleUse(cleanobj))
-		.then(() => parseNatUse(cleanobj))
-		.then(() => parseThreatUse(cleanobj))
+		//.then(() => parseRuleUse(cleanobj))
+		//.then(() => parseNatUse(cleanobj))
+		//.then(() => parseThreatUse(cleanobj))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -328,16 +328,9 @@ async function parseObjectUse(objdat) {
 
 async function parseRuleUse(objdat) {
 	try {
-		var myres = []
-		Object.keys(objdat).forEach(uid => {
-			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'access-control-rules'], objdat))
-			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
-			//myres = myres.concat(objdat)
-		});
 		//let unique = [...new Set(myres)]
 		//myres = [...new Set(myres)]
-		for (var x of myres) {
+		for (var x of objdat) {
 			if (x) {
 				let rule = {}
 				rule.uid = x.rule
@@ -384,11 +377,7 @@ async function parseRuleUse(objdat) {
 
 async function parseNatUse(objdat) {
 	try {
-		var myres = []
-		Object.keys(objdat).forEach(uid => {
-			myres = myres.concat(get([uid, '0', 'used-directly', '2', 'nat-rules'], objdat))
-		});
-		for (var x of myres) {
+		for (var x of objdat) {
 			if (x) {
 				x.type = 'nat-rule'
 				allobjs[garbage] = allobjs[garbage].concat(x)
@@ -403,11 +392,7 @@ async function parseNatUse(objdat) {
 
 async function parseThreatUse(objdat) {
 	try {
-		var myres = []
-		Object.keys(objdat).forEach(uid => {
-			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'threat-prevention-rules'], objdat))
-		});
-		for (var x of myres) {
+		for (var x of objdat) {
 			if (x) {
 				x.type = 'threat-prevention'
 				allobjs[garbage] = allobjs[garbage].concat(x)
@@ -538,6 +523,10 @@ async function doParse(objdat) {
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
 		var myobjarr = []
+		var myacl = []
+		var mynat = []
+		var mythreat = []
+		var myrulearr = []
 		Object.keys(objdat[ip]).forEach(uid => {
 			Object.keys(objdat[ip][uid]).forEach(usetype => {
 				console.log(usetype)
@@ -559,13 +548,27 @@ async function doParse(objdat) {
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
 								
-								if (used === 'used-directly' && arrs === 'objects') {
-									let myused = objdat[ip][uid][usetype][used][arrs]
+								if (used === 'used-directly') {
+									if (arrs === 'objects') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
 									//myused.type = arrs
 									//myused.stamp = 'TESTING'
-									myobjarr = myobjarr.concat(myused)
-									console.log('I WOULDA PARSED THIS : ' + myused)
-								}
+										myobjarr = myobjarr.concat(myused)
+										console.log('I WOULDA PARSED THIS : ' + myused)
+									} else if (arrs === 'access-control-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										myacl = myacl.concat(myused)
+									} else if (arrs === 'nat-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										mynat = mynat.concat(myused)
+									} else if (arrs === 'threat-prevention-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										mythreat = mythreat.concat(myused)
+									} else {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										myrulearr = myrulearr.concat(myused)
+									}
+								} 
 								
 								//await parseObjectUse(allobjs[myuids])
 									//allobjs[garbage] = allobjs[garbage].concat(myused)
@@ -584,6 +587,9 @@ async function doParse(objdat) {
 			console.log('---')
 		});
 		await parseObjectUse(myobjarr)
+		await parseRuleUse(myacl)
+		await parseNatUse(mynat)
+		await parseThreatUse(mythreat)
 		console.log('returning object data')
 		return cleanobj
 	} catch (err) {
