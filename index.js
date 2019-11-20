@@ -385,6 +385,8 @@ async function parseNatUse(objdat) {
 		});
 		for (var x of myres) {
 			if (x) {
+				x.type = 'nat-rule'
+				allobjs[garbage] = allobjs[garbage].concat(x)
 				console.log(x)
 			}
 		}
