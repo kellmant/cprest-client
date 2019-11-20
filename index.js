@@ -382,7 +382,7 @@ async function parseNatUse(objdat) {
 	try {
 		var myres = []
 		Object.keys(objdat).forEach(uid => {
-			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'nat-rules'], objdat))
+			myres = myres.concat(get([uid, '0', 'used-directly', '2', 'nat-rules'], objdat))
 		});
 		for (var x of myres) {
 			if (x) {
