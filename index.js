@@ -370,7 +370,7 @@ async function parseRuleUse(objdat) {
 			}
 		}
 		// run backup of myrules changes
-		console.log(allobjs[myrules])
+		//console.log(allobjs[myrules])
 		//	let mychk = await getType(myres[x])
 		//	if (mychk.type === 'group') {
 				//let mygrp = {}
@@ -378,6 +378,9 @@ async function parseRuleUse(objdat) {
 		//		mygrp.uid = mychk.uid
 		//		myret = myret.concat(myres[x])
 		//}
+		for (var x of allobjs[myrules]) {
+			console.log(x.members)
+		}
 		return allobjs
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
