@@ -200,7 +200,7 @@ async function checkObject(objarr) {
 				mytagged = mytagged.concat(indat.object)
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
 				let restore = {}
-				restore = { indat.object.uid: indat.object.name }
+				restore[indat.object.uid] = indat.object.name
 				restore['ipv4-address'] = indat.object['ipv4-address']
 				allobjs[backup] = allobjs[backup].concat(restore)
 			} else {
