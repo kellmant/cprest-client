@@ -51,6 +51,6 @@ if (objdata.garbage.length > 0) {
     console.log(objdata.garbage)
     console.log('Cleanup needed of object before removal')
 }
-Object.keys(objdata.group).forEach(grp => {
+Object.values(objdata.group).forEach(grp => {
     console.log(grp)
 });
