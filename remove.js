@@ -61,6 +61,7 @@ async function myGroups() {
         for (var x of objdata.group) {
             console.log(mycmd)
             console.log(x)
+            await setObject(x, mycmd)
         }
         return 
     } catch (err) {
@@ -74,6 +75,7 @@ async function myRules() {
         for (var x of objdata['access-rule']) {
             console.log(mycmd)
             console.log(x)
+            await setObject(x, mycmd)
         }
         return 
     } catch (err) {
@@ -89,6 +91,7 @@ async function myHosts() {
             newdata.uid = x
             console.log(mycmd)
             console.log(newdata)
+            await setObject(newdata, mycmd)
         }
         return 
     } catch (err) {
