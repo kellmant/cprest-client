@@ -764,13 +764,17 @@ async function writeJson (content) {
                 var newfile = myfilename + '.json'
 		console.log('writing file . . . ' + newfile)
 		console.log(typeof content)
-		console.log(content.hosts)
-                const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
+		if (content.hosts.length > 0) { 
+			console.log(content.hosts.length)
+            const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
                 //file written successfully
-		console.log(content)
-                console.log('Json data written to ' + newfile)
-                console.log('  --  ')
-                return content
+			console.log(content)
+            console.log('Json data written to ' + newfile)
+			console.log('  --  ') 
+		} else {
+			console.log(' NO HOSTS FOUND ')
+		}
+		return content
         } catch (err) {
                 console.error(err)
         }
