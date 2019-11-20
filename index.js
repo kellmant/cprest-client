@@ -577,7 +577,6 @@ async function doParse(objdat) {
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
-						console.log(thisupdate)
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
