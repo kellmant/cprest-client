@@ -201,7 +201,6 @@ async function checkObject(objarr) {
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
 				let restore = {}
 				restore[indat.object.uid] = indat.object.name
-				restore['ipv4-address'] = indat.object['ipv4-address']
 				allobjs[backup] = allobjs[backup].concat(restore)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
@@ -592,7 +591,6 @@ async function doParse(objdat) {
 		await parseRuleUse(myacl)
 		await parseNatUse(mynat)
 		await parseThreatUse(mythreat)
-		allobjs[backup] = allobjs[backup].concat(backup)
 		console.log('returning object data')
 		return cleanobj
 	} catch (err) {
