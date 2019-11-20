@@ -387,8 +387,8 @@ async function parseRuleUse(objdat) {
 			} 
 			if (x.destination) {
 				for (var y of x.destination.remove) {
-					//let theobj = await getType(x.source.remove)
-					console.log(y)
+					let theobj = await getType(y)
+					console.log(theobj.name)
 				}
 				//let theobj = await getType(x.destination.remove)
 			}
