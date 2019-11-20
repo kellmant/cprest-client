@@ -114,10 +114,11 @@ async function main() {
 		.then(tagit => tagObjects(tagit))
 		.then(() => parseRuleUse(cleanobj))
 		.then(() => parseNatUse(cleanobj))
+		.then(() => parseThreatUse(cleanobj))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
-		.then(() => console.dir(cleanobj))
+		//.then(() => console.dir(cleanobj))
 		//.then(thindat => console.log(thindat))
 	.catch(endSession)
 }
