@@ -79,6 +79,8 @@ var garbage = 'garbage'
 allobjs[garbage] = []
 var backup = 'backup'
 allobjs[backup] = []
+var restore = 'restore'
+allobjs[restore] = []
 
 var mybackup = []
 //var myuids = []
@@ -199,9 +201,7 @@ async function checkObject(objarr) {
 				console.log(indat.object.uid)
 				mytagged = mytagged.concat(indat.object)
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
-				let restore = {}
-				restore[indat.object.uid] = indat.object.name
-				allobjs[backup] = allobjs[backup].concat(restore)
+				allobjs[backup] = allobjs[backup].concat(indat.object.name)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
@@ -284,31 +284,31 @@ async function whereUsed(objarr) {
 
 async function parseObjectUse(objdat) {
 	try {
-		//var myres = []
 		var myret = []
-		//Object.keys(objdat).forEach(uid => {
-			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-		//	myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], objdat))
-			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
-			//myres = myres.concat(objdat)
-		//});
-		//let unique = [...new Set(myres)]
 		objdat = [...new Set(objdat)]
 		for (var x of objdat) {
 			let mychk = await getType(x)
 			if (mychk.type === 'group') {
 				let mygrp = {}
+				let mygrpback = {}
 				mygrp.uid = mychk.uid
-				myret = myret.concat(mygrp)
+				mygrpback.name = mychk.name
+				//myret = myret.concat(mygrp)
 				let memarr = []
+				let memarrback = []
 				Object.values(mychk.members).forEach(gmem => {
 					memarr = memarr.concat(gmem.uid)
+					memarrback = memarrback.concat(gmem.name)
 				});
 				let smembers = memarr.filter(x => allobjs[myuids].includes(x))
 				let members = {}
 				members.remove = smembers
 				mygrp.members = members
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
+				let bmembers = memarrback.filter(x => allobjs[backup].includes(x))
+				members.add = bmembers
+				mygrpback.members = members
+				allobjs[restore] = allobjs[restore].concat(mygrpback)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
 					//console.log(mychk)
@@ -530,7 +530,6 @@ async function doParse(objdat) {
 		var myacl = []
 		var mynat = []
 		var mythreat = []
-		var myrulearr = []
 		Object.keys(objdat[ip]).forEach(uid => {
 			Object.keys(objdat[ip][uid]).forEach(usetype => {
 				console.log(usetype)
@@ -538,20 +537,15 @@ async function doParse(objdat) {
 				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
 					var myres = {}
 					myres[used] = []
-					//console.log(used + ' : ')
 					if (objdat[ip][uid][usetype][used]['total'] > 0) {
 						mytotal = objdat[ip][uid][usetype][used]['total']
 						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
 						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
-							//console.log(arrs + ' ' + Object.keys(objdat[ip][uid][usetype][used][arrs]).length)
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
 								let myarrs = {}
 								myarrs[arrs] = []
 								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
-								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
-								//console.log(objdat[ip][uid][usetype][used][arrs])
-								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
-								
+								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)								
 								if (used === 'used-directly') {
 									if (arrs === 'objects') {
 										let myused = objdat[ip][uid][usetype][used][arrs]
@@ -569,19 +563,9 @@ async function doParse(objdat) {
 										let myused = objdat[ip][uid][usetype][used][arrs]
 										allobjs[garbage] = allobjs[garbagge].concat(myused)
 									}
-								} 
-								
-								//await parseObjectUse(allobjs[myuids])
-									//allobjs[garbage] = allobjs[garbage].concat(myused)
-								//}
-								//allobjs[uid]
-								//myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
-								//myres[used] = myres[used].concat(myarrs)
-								
+								} 					
 							}
-							//myres[used] = myres[used].concat(myarrs)
 						});
-						//cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
 			});
