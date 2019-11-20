@@ -537,6 +537,7 @@ async function doParse(objdat) {
 		//const myres = {}
 		console.log('Doing Search of IP : ' + ip)
 		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
+		var myobjarr = []
 		Object.keys(objdat[ip]).forEach(uid => {
 			Object.keys(objdat[ip][uid]).forEach(usetype => {
 				console.log(usetype)
@@ -548,7 +549,6 @@ async function doParse(objdat) {
 					if (objdat[ip][uid][usetype][used]['total'] > 0) {
 						mytotal = objdat[ip][uid][usetype][used]['total']
 						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
-						var myobjarr = []
 						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
 							//console.log(arrs + ' ' + Object.keys(objdat[ip][uid][usetype][used][arrs]).length)
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
@@ -577,7 +577,6 @@ async function doParse(objdat) {
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
-						let thisupdate = parseObjectUse(myobjarr)
 						console.log(thisupdate)
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
@@ -585,6 +584,7 @@ async function doParse(objdat) {
 			});
 			console.log('---')
 		});
+		let thisupdate = parseObjectUse(myobjarr)
 		console.log('returning object data')
 		return cleanobj
 	} catch (err) {
