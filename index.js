@@ -13,7 +13,7 @@ const fs = require('fs');
  * @example
  * collect an array of objects that match search: 
  * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
- * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrol-rules'], usedobj))
+ * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrtol-rules'], usedobj))
  * Or get a specific value, like the total count from the API:
  * myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
  */ 
@@ -327,7 +327,7 @@ async function parseRuleUse(objdat) {
 		var myres = []
 		Object.keys(objdat).forEach(uid => {
 			//myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj[ip][uid]))
-			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'access-control-rules'], objdat))
+			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-control-rules'], objdat))
 			//myres['access'] = myres['access'].concat(get([uid, '0', 'used-directly', '1', 'access-control-rules', '0'], objdat))
 			//myres = myres.concat(objdat)
 		});
