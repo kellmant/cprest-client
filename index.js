@@ -566,7 +566,7 @@ async function doParse(objdat) {
 								*/
 								//await parseObjectUse(allobjs[myuids])
 									//allobjs[garbage] = allobjs[garbage].concat(myused)
-								}
+								//}
 								//allobjs[uid]
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
 								myres[used] = myres[used].concat(myarrs)
