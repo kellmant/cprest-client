@@ -764,6 +764,7 @@ async function writeJson (content) {
                 var newfile = myfilename + '.json'
 		console.log('writing file . . . ' + newfile)
 		console.log(typeof content)
+		console.log(content.hosts)
                 const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
                 //file written successfully
 		console.log(content)
