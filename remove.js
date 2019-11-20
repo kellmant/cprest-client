@@ -80,11 +80,27 @@ async function myRules() {
     }
 }
 
+async function myHosts() {
+    try {
+        let mycmd = 'delete-host'
+        for (var x of objdata.hosts) {
+            let newdata = {}
+            newdata.uid = x
+            console.log(mycmd)
+            console.log(newdata)
+        }
+        return 
+    } catch (err) {
+        console.log('Error in myGroups : ' + err)
+    }
+}
+
 async function main() {
 	startSession(mycred)
 		.then(sessiontoken => setSession(sessiontoken))
         .then(() => myGroups())
         .then(() => myRules())
+        .then(() => myHosts())
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
 		//.then(() => console.dir(cleanobj))
