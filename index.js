@@ -584,7 +584,7 @@ async function doParse(objdat) {
 			});
 			console.log('---')
 		});
-		let thisupdate = parseObjectUse(myobjarr)
+		await parseObjectUse(myobjarr)
 		console.log('returning object data')
 		return cleanobj
 	} catch (err) {
