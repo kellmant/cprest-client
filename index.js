@@ -380,17 +380,19 @@ async function parseRuleUse(objdat) {
 		//}
 		for (var x of allobjs[myrules]) {
 			if (x.source) {
-				//for (var y of x.source) {
+				for (var y of x.source.remove) {
 					//let theobj = await getType(x.source.remove)
-					console.log(x.source.remove)
-				} 
-			if (x.destination) {
-				//for (var y of x.destination) {
-					//let theobj = await getType(x.source.remove)
-					console.log(x.destination.remove)
-				//let theobj = await getType(x.destination.remove)
+					console.log(y)
 				}
+			} 
+			if (x.destination) {
+				for (var y of x.destination.remove) {
+					//let theobj = await getType(x.source.remove)
+					console.log(y)
+				}
+				//let theobj = await getType(x.destination.remove)
 			}
+		}
 		return allobjs
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
