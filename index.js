@@ -298,6 +298,7 @@ async function parseObjectUse(objdat) {
 				let mygrpback = {}
 				mygrp.uid = mychk.uid
 				mygrpback.name = mychk.name
+				mygrpback.cmd = 'set-group'
 				//myret = myret.concat(mygrp)
 				let memarr = []
 				let memarrback = []
