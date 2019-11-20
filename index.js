@@ -77,8 +77,10 @@ var myrules = 'access-rule'
 allobjs[myrules] = []
 var garbage = 'garbage'
 allobjs[garbage] = []
+var backup = 'backup'
+allobjs[backup] = []
 
-var cleangroups = []
+var mybackup = []
 //var myuids = []
 //var myrules = []
 //var myres = {}
@@ -197,6 +199,11 @@ async function checkObject(objarr) {
 				console.log(indat.object.uid)
 				mytagged = mytagged.concat(indat.object)
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
+				let restore = {}
+				restore.name = indat.object.name
+				restore.uid = indat.object.uid
+				restore['ipv4-address'] = indat.object['ipv4-address']
+				backup = backup.concat(restore)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
@@ -589,6 +596,7 @@ async function doParse(objdat) {
 		await parseRuleUse(myacl)
 		await parseNatUse(mynat)
 		await parseThreatUse(mythreat)
+		allobjs[backup] = allobjs[backup].concat(backup)
 		console.log('returning object data')
 		return cleanobj
 	} catch (err) {
