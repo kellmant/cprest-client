@@ -58,8 +58,12 @@ if (objdata.garbage.length > 0) {
 async function myRestore() {
     try {
         for (var x of objdata.restore) {
-            console.log(x.mycmd)
-            console.log(x)
+                let myact = {}
+                myact = x
+                mycmd = x.cmd
+                delete myact.cmd
+            console.log(mycmd)
+            console.log(myact)
             //await setObject(x, mycmd)
         }
         return 
