@@ -64,41 +64,11 @@ async function myRestore() {
                 delete myact.cmd
             console.log(mycmd)
             console.log(myact)
-            //await setObject(x, mycmd)
+            await setObject(myact, mycmd)
         }
         return 
     } catch (err) {
         console.log('Error in myRestore : ' + err)
-    }
-}
-
-async function myRules() {
-    try {
-        let mycmd = 'set-access-rule'
-        for (var x of objdata['access-rule']) {
-            console.log(mycmd)
-            console.log(x)
-            await setObject(x, mycmd)
-        }
-        return 
-    } catch (err) {
-        console.log('Error in myGroups : ' + err)
-    }
-}
-
-async function myHosts() {
-    try {
-        let mycmd = 'delete-host'
-        for (var x of objdata.hosts) {
-            let newdata = {}
-            newdata.uid = x
-            console.log(mycmd)
-            console.log(newdata)
-            await setObject(newdata, mycmd)
-        }
-        return 
-    } catch (err) {
-        console.log('Error in myGroups : ' + err)
     }
 }
 
