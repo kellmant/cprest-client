@@ -113,6 +113,7 @@ async function main() {
 		.then(inuse => parseObjectUse(inuse))
 		.then(tagit => tagObjects(tagit))
 		.then(() => parseRuleUse(cleanobj))
+		.then(() => parseNatUse(cleanobj))
 		.then(myout => writeJson(myout))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -376,6 +377,22 @@ async function parseRuleUse(objdat) {
 	}
 }
 
+async function parseNatUse(objdat) {
+	try {
+		var myres = []
+		Object.keys(objdat).forEach(uid => {
+			myres = myres.concat(get([uid, '0', 'used-directly', '1', 'nat-rules'], objdat))
+		});
+		for (var x of myres) {
+			if (x) {
+				console.log(x)
+			}
+		}
+		return allobjs
+	} catch (err) {
+		console.log('error in parseNatUse : ' + err)
+	}
+}
  /**
   * Determine where a set of objects is used in Check Point policies
   * @function getObjectUse 
