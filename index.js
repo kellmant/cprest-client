@@ -382,12 +382,12 @@ async function parseRuleUse(objdat) {
 			if (x.source) {
 				//for (var y of x.source) {
 					//let theobj = await getType(x.source.remove)
-					console.log(x.source)
+					console.log(x.source.remove)
 				} 
 			if (x.destination) {
 				//for (var y of x.destination) {
 					//let theobj = await getType(x.source.remove)
-					console.log(x.destination)
+					console.log(x.destination.remove)
 				//let theobj = await getType(x.destination.remove)
 				}
 			}
