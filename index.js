@@ -82,12 +82,6 @@ allobjs[backup] = []
 var restore = 'restore'
 allobjs[restore] = []
 
-var mybackup = []
-//var myuids = []
-//var myrules = []
-//var myres = {}
-//const objdata = {}
-
 var limit = '500'
 var runcmd = 'show-objects'
 
