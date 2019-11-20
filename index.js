@@ -116,7 +116,7 @@ async function main() {
 		//.then(() => parseRuleUse(cleanobj))
 		//.then(() => parseNatUse(cleanobj))
 		//.then(() => parseThreatUse(cleanobj))
-		.then(myout => writeJson(myout))
+		.then(() => writeJson(allobjs))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
 		//.then(() => console.dir(cleanobj))
