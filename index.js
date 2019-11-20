@@ -75,6 +75,8 @@ var myuids = 'object'
 allobjs[myuids] = []
 var myrules = 'access-rule'
 allobjs[myrules] = []
+var garbage = 'garbage'
+allobjs[garbage] = []
 
 var cleangroups = []
 //var myuids = []
@@ -303,6 +305,12 @@ async function parseObjectUse(objdat) {
 				//if (mychk.length > 0) {
 					//console.log(mychk)
 				//}
+			} else {
+				let badobj = {}
+				badobj.type = mychk.type
+				badobj.uid = mychk.uid
+				badobj.name = mychk.name
+				allobjs[garbage] = allobjs[garbage].concat(badobj)
 			}
 		}
 		return myret
