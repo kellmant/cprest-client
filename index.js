@@ -288,7 +288,7 @@ async function parseObjectUse(objdat) {
 			//myres = myres.concat(objdat)
 		//});
 		//let unique = [...new Set(myres)]
-		objdata = [...new Set(objdata)]
+		objdat = [...new Set(objdat)]
 		for (var x of objdat) {
 			let mychk = await getType(x)
 			if (mychk.type === 'group') {
