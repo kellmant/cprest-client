@@ -71,7 +71,7 @@ var cleanobj = {}
 var allobjs = {}
 var mygroups = 'group'
 allobjs[mygroups] = []
-var myuids = 'object'
+var myuids = 'hosts'
 allobjs[myuids] = []
 var myrules = 'access-rule'
 allobjs[myrules] = []
@@ -201,7 +201,7 @@ async function checkObject(objarr) {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
 		}
-		let tagdata = await tagObjects(mytagged)
+		//let tagdata = await tagObjects(mytagged)
 		return allobjs[myuids]
 	} catch (err) {
 		console.log('error in checkObject : ' + err)
@@ -554,10 +554,11 @@ async function doParse(objdat) {
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
-								if (used === 'used-directly') {
+								if (used === 'used-directly' && arrs === 'objects') {
 									let myused = objdat[ip][uid][usetype][used][arrs]
 									myused.type = arrs
-									console.log(arrs)
+									myused.stamp = 'TESTING'
+									console.log('I WOULDA PARSED THIS : ' + myused)
 									allobjs[garbage] = allobjs[garbage].concat(myused)
 								}
 								//allobjs[uid]
