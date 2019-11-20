@@ -60,7 +60,7 @@ async function myRestore() {
         for (var x of objdata.restore) {
                 let myact = {}
                 myact = x
-                mycmd = x.cmd
+                let mycmd = x.cmd
                 delete myact.cmd
             console.log(mycmd)
             console.log(myact)
