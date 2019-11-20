@@ -567,7 +567,7 @@ async function doParse(objdat) {
 										mythreat = mythreat.concat(myused)
 									} else {
 										let myused = objdat[ip][uid][usetype][used][arrs]
-										myrulearr = myrulearr.concat(myused)
+										allobjs[garbage] = allobjs[garbagge].concat(myused)
 									}
 								} 
 								
@@ -575,24 +575,28 @@ async function doParse(objdat) {
 									//allobjs[garbage] = allobjs[garbage].concat(myused)
 								//}
 								//allobjs[uid]
-								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
-								myres[used] = myres[used].concat(myarrs)
+								//myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
+								//myres[used] = myres[used].concat(myarrs)
 								
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
-						cleanobj[usetype] = cleanobj[usetype].concat(myres)
+						//cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
 			});
 			console.log('---')
 		});
+		console.log('parsing objects')
 		await parseObjectUse(myobjarr)
+		console.log('parsing rules')
 		await parseRuleUse(myacl)
+		console.log('parsing nat')
 		await parseNatUse(mynat)
+		console.log('parsing threat')
 		await parseThreatUse(mythreat)
 		console.log('returning object data')
-		return cleanobj
+		return allobjs
 	} catch (err) {
 		console.log('error in doParse : ' + err)
 	}
