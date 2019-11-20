@@ -311,6 +311,9 @@ async function parseObjectUse(objdat) {
 				//}
 			} else {
 				let badobj = {}
+				if (!mychk.type) {
+					mychk.type = 'NULL TYPE'
+				}
 				badobj.type = mychk.type
 				badobj.uid = mychk.uid
 				badobj.name = mychk.name
@@ -574,7 +577,7 @@ async function doParse(objdat) {
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
-						parseObjectUse(myobjarr)
+						let thisupdate = await parseObjectUse(myobjarr)
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
