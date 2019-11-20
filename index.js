@@ -370,7 +370,7 @@ async function parseRuleUse(objdat) {
 			}
 		}
 		// run backup of myrules changes
-		console.log(allobjs[myrules][0])
+		console.log(allobjs[myrules].source)
 		//	let mychk = await getType(myres[x])
 		//	if (mychk.type === 'group') {
 				//let mygrp = {}
