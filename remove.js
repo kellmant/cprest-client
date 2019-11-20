@@ -67,11 +67,24 @@ async function myGroups() {
     }
 }
 
+async function myRules() {
+    try {
+        let mycmd = 'set-access-rule'
+        for (var x of objdata['access-rule']) {
+            console.log(mycmd)
+            console.log(x)
+        }
+        return 
+    } catch (err) {
+        console.log('Error in myGroups : ' + err)
+    }
+}
 
 async function main() {
 	startSession(mycred)
 		.then(sessiontoken => setSession(sessiontoken))
-		.then(() => myGroups())
+        .then(() => myGroups())
+        .then(() => myRules())
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
 		//.then(() => console.dir(cleanobj))
