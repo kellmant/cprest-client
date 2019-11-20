@@ -203,7 +203,7 @@ async function checkObject(objarr) {
 				restore.name = indat.object.name
 				restore.uid = indat.object.uid
 				restore['ipv4-address'] = indat.object['ipv4-address']
-				backup = backup.concat(restore)
+				allobjs[backup] = allobjs[backup].concat(restore)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
@@ -557,10 +557,7 @@ async function doParse(objdat) {
 								if (used === 'used-directly') {
 									if (arrs === 'objects') {
 										let myused = objdat[ip][uid][usetype][used][arrs]
-									//myused.type = arrs
-									//myused.stamp = 'TESTING'
 										myobjarr = myobjarr.concat(myused)
-										console.log('I WOULDA PARSED THIS : ' + myused)
 									} else if (arrs === 'access-control-rules') {
 										let myused = objdat[ip][uid][usetype][used][arrs]
 										myacl = myacl.concat(myused)
