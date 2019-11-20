@@ -306,8 +306,8 @@ async function parseObjectUse(objdat) {
 				mygrp.members = members
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				let bmembers = memarrback.filter(x => allobjs[backup].includes(x))
-				members.add = bmembers
-				mygrpback.members = members
+				//['members']add = bmembers
+				mygrpback['members'].add = bmembers
 				allobjs[restore] = allobjs[restore].concat(mygrpback)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
