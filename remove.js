@@ -45,5 +45,12 @@ const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
 
-console.log(objdata.group)
+//console.log(objdata.group)
 console.log(objdata.garbage.length)
+if (objdata.garbage.length > 0) {
+    console.log(objdata.garbage)
+    console.log('Cleanup needed of object before removal')
+}
+Object.keys(objdata.group).forEach(grp => {
+    console.log(grp)
+});
