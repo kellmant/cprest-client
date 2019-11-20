@@ -302,7 +302,7 @@ async function parseObjectUse(objdat) {
 				});
 				let smembers = memarr.filter(x => allobjs[myuids].includes(x))
 				let members = {}
-				let members2 = 'members'
+				let members2 = {}
 				members.remove = smembers
 				mygrp.members = members
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
