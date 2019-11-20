@@ -108,10 +108,10 @@ async function main() {
 		.then(sessiontoken => setSession(sessiontoken))
 		.then(() => showObjects(nodata, runcmd))
 		.then(objid => checkObject(objid))
-		//.then(clean => whereUsed(clean))
-		//.then(myuse => doParse(myuse))
+		.then(() => whereUsed(allobjs[myuids]))
+		.then(myuse => doParse(myuse))
 		//.then(myout => writeJson(myout))
-		.then(() => parseObjectUse(allobj[myuids]))
+		//.then(() => parseObjectUse(allobj[myuids]))
 		//.then(tagit => tagObjects(tagit))
 		.then(() => parseRuleUse(cleanobj))
 		.then(() => parseNatUse(cleanobj))
@@ -546,16 +546,16 @@ async function doParse(objdat) {
 						mytotal = objdat[ip][uid][usetype][used]['total']
 						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
 						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
+							var myobjarr = []
 							//console.log(arrs + ' ' + Object.keys(objdat[ip][uid][usetype][used][arrs]).length)
 							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
 								let myarrs = {}
 								myarrs[arrs] = []
-								var myobjarr = []
 								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
-								/*
+								
 								if (used === 'used-directly' && arrs === 'objects') {
 									let myused = objdat[ip][uid][usetype][used][arrs]
 									//myused.type = arrs
@@ -563,16 +563,18 @@ async function doParse(objdat) {
 									myobjarr = myobjarr.concat(myused)
 									console.log('I WOULDA PARSED THIS : ' + myused)
 								}
-								*/
+								
 								//await parseObjectUse(allobjs[myuids])
 									//allobjs[garbage] = allobjs[garbage].concat(myused)
 								//}
 								//allobjs[uid]
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
 								myres[used] = myres[used].concat(myarrs)
+								
 							}
 							//myres[used] = myres[used].concat(myarrs)
 						});
+						await parseObjectUse(myobjarr)
 						cleanobj[usetype] = cleanobj[usetype].concat(myres)
 					}
 				});
