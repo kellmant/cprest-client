@@ -554,8 +554,8 @@ async function doParse(objdat) {
 								//console.log(Object.keys(objdat[ip][uid][usetype][used][arrs]))
 								//console.log(objdat[ip][uid][usetype][used][arrs])
 								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)
-								if (used === 'objects') {
-									console.log(used)
+								if (arrs === 'objects') {
+									console.log(arrs)
 								}
 								//allobjs[uid]
 								myarrs[arrs] = myarrs[arrs].concat(objdat[ip][uid][usetype][used][arrs])
