@@ -43,11 +43,6 @@ const mycred = require('./auth/mycpauth')
  */
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
-
-if (process.argv[2]) {
-
-    const objdata = require('./' + process.argv[2])
-
-}
+const objdata = require('./' + process.argv[2])
 
 console.log(objdata)
