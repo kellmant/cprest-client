@@ -762,8 +762,8 @@ async function callOut(options, postData) {
 async function writeJson (content) {
         try {
                 var newfile = myfilename + '.json'
-		console.log('writing file . . . ' + newfile)
-		console.log(typeof content)
+		console.log('attempting to write to file . . . ' + newfile)
+		console.log(typeof content.hosts)
 		if (content.hosts.length > 0) { 
 			console.log(content.hosts.length)
             const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
