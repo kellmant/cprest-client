@@ -45,4 +45,5 @@ const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
 
-console.log(objdata)
+console.log(objdata.group)
+console.log(objdata.garbage.length)
