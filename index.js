@@ -202,6 +202,11 @@ async function checkObject(objarr) {
 				mytagged = mytagged.concat(indat.object)
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
 				allobjs[backup] = allobjs[backup].concat(indat.object.name)
+				let myback = {}
+				myback.name = indat.object.name
+				myback['ipv4-address'] = indat.object['ipv4-address']
+				myback.cmd = 'add-host'
+				allobjs[restore] = allobjs[restore].concat(myback)
 			} else {
 				throw new Error(indat.object.uid + ' object IP ' + indat.object['ipv4-address'] + ' does not match filter : ' + ip)
 			}
@@ -386,6 +391,7 @@ async function parseRuleUse(objdat) {
 			if (x.source) {
 				rulechk.uid = x.uid
 				rulechk.layer = x.layer
+				rulechk.cmd = 'set-access-rule'
 				for (var y of x.source.remove) {
 					let theobj = await getType(y)
 					asource = asource.concat(theobj.name)
@@ -399,6 +405,7 @@ async function parseRuleUse(objdat) {
 			if (x.destination) {
 				rulechk.uid = x.uid
 				rulechk.layer = x.layer
+				rulechk.cmd = 'set-access-rule'
 				for (var y of x.destination.remove) {
 					let theobj = await getType(y)
 					adest = adest.concat(theobj.name)
