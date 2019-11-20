@@ -380,10 +380,12 @@ async function parseRuleUse(objdat) {
 		//}
 		for (var x of allobjs[myrules]) {
 			if (x.source) {
-				console.log(x.source.remove)
+				let theobj = await getType(x.source.remove)
+				console.log(theobj.name)
 			} 
 			if (x.destination) {
-				console.log(x.destination.remove)
+				let theobj = await getType(x.destination.remove)
+				console.log(theobj.name)
 			}
 		}
 		return allobjs
