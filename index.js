@@ -397,7 +397,7 @@ async function parseRuleUse(objdat) {
 					let theobj = await getType(y)
 					asource = asource.concat(theobj.name)
 					console.log(theobj.name)
-					console.log(x)
+					//console.log(x)
 				}
 				let source = {}
 				source.add = asource
@@ -411,7 +411,7 @@ async function parseRuleUse(objdat) {
 					let theobj = await getType(y)
 					adest = adest.concat(theobj.name)
 					console.log(theobj.name)
-					console.log(x)
+					//console.log(x)
 				}
 				let destination = {}
 				destination.add = adest
@@ -431,7 +431,7 @@ async function parseNatUse(objdat) {
 			if (x) {
 				x.type = 'nat-rule'
 				allobjs[garbage] = allobjs[garbage].concat(x)
-				console.log(x)
+				//console.log(x)
 			}
 		}
 		return allobjs
@@ -446,7 +446,7 @@ async function parseThreatUse(objdat) {
 			if (x) {
 				x.type = 'threat-prevention'
 				allobjs[garbage] = allobjs[garbage].concat(x)
-				console.log(x)
+				//console.log(x)
 			}
 		}
 		return allobjs
