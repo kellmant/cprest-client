@@ -391,8 +391,7 @@ async function parseRuleUse(objdat) {
 				//let theobj = await getType(x.destination.remove)
 				}
 			}
-		}
-	return allobjs
+		return allobjs
 	} catch (err) {
 		console.log('error in parseRuleUse : ' + err)
 	}
