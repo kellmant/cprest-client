@@ -302,14 +302,15 @@ async function parseObjectUse(objdat) {
 				});
 				let smembers = memarr.filter(x => allobjs[myuids].includes(x))
 				let members = {}
+				let members2 = 'members'
 				members.remove = smembers
 				mygrp.members = members
 				allobjs[mygroups] = allobjs[mygroups].concat(mygrp)
 				let bmembers = memarrback.filter(x => allobjs[backup].includes(x))
 				//['members']add = bmembers
-				members.add = bmembers
-				mygrpback.members = members
-				delete mygrpback.members.remove
+				members2.add = bmembers
+				mygrpback.members2 = members2
+				//delete mygrpback.members.remove
 				allobjs[restore] = allobjs[restore].concat(mygrpback)
 				//let smembers = mychk.members.filter(x => allobjs[myuids].includes(x))
 				//if (mychk.length > 0) {
