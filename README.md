@@ -5,17 +5,6 @@
 <dd></dd>
 </dl>
 
-## Constants
-
-<dl>
-<dt><a href="#myapisite">myapisite</a> : <code>json</code></dt>
-<dd><p>Variable required from auth/mycpapi.json file</p>
-</dd>
-<dt><a href="#mycred">mycred</a></dt>
-<dd><p>Variable required from auth/mycpauth.json</p>
-</dd>
-</dl>
-
 ## Functions
 
 <dl>
@@ -44,6 +33,12 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#myapisite">myapisite</a> : <code>json</code></dt>
+<dd><p>Variable required from auth/mycpapi.json file</p>
+</dd>
+<dt><a href="#mycred">mycred</a> : <code>json</code></dt>
+<dd><p>Variable required from auth/mycpauth.json</p>
+</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -66,51 +61,6 @@
 ### new CpApiClass()
 Class Method for API callout builder
 
-<a name="myapisite"></a>
-
-## myapisite : <code>json</code>
-Variable required from auth/mycpapi.json file
-
-**Kind**: global constant  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| myapisite | <code>Object</code> | Setup API hostname |
-
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
-<a name="mycred"></a>
-
-## mycred
-Variable required from auth/mycpauth.json
-
-**Kind**: global constant  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| credentials | <code>Object</code> | auth/mycpauth.json |
-
-**Example**  
-```js
-create auth/mycpauth.json file
-{
-		"user": "apiuser",
-		"password": "PASSWORD"
-}
-```
 <a name="showObjects"></a>
 
 ## showObjects(ip) ⇒ <code>Array.&lt;String&gt;</code>
@@ -179,7 +129,7 @@ Create an authenticated session with the Check Point API
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myauth | <code>json</code> | Credentials used for API access |
+| myauth | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
 <a name="setSession"></a>
 
@@ -192,6 +142,52 @@ Set the session handler for a Check Point API connection
 | --- | --- | --- |
 | sid | <code>mysession</code> | A Check Point API session ID handler |
 
+<a name="myapisite"></a>
+
+## myapisite : <code>json</code>
+Variable required from auth/mycpapi.json file
+
+**Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| myapisite | <code>Object</code> | Setup API hostname |
+
+**Example**  
+```js
+create auth/mycpapi.json file
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
+<a name="mycred"></a>
+
+## mycred : <code>json</code>
+Variable required from auth/mycpauth.json
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| credentials | <code>Object</code> | auth/mycpauth.json |
+
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
+}
+```
 <a name="allobjs"></a>
 
 ## allobjs : <code>Object</code>
