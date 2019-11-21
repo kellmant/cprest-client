@@ -22,7 +22,7 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dt><a href="#startSession">startSession(mycred)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#setSession">setSession(sessionid)</a></dt>
@@ -121,7 +121,7 @@ Operations Object created with filter logic
 
 <a name="startSession"></a>
 
-## startSession(myauth) ⇒ [<code>sessionid</code>](#sessionid)
+## startSession(mycred) ⇒ [<code>sessionid</code>](#sessionid)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
@@ -129,7 +129,7 @@ Create an authenticated session with the Check Point API
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myauth | [<code>mycred</code>](#mycred) | Credentials used for API access |
+| mycred | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
 <a name="setSession"></a>
 
