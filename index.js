@@ -48,11 +48,12 @@ const mycred = require('./auth/mycpauth')
  *
  */
 /**
- * @require
+ * Load our class method for HTTP to API connections
  */
 const CpApiClass = require('./cpclass')
 /**
  * @class toApi
+ * @constructs CpApiClass
  */
 const toApi = new CpApiClass(myapisite.chkp)
 

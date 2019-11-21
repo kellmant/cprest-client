@@ -1,8 +1,9 @@
 ## Classes
 
 <dl>
-<dt><a href="#toApi">toApi</a></dt>
-<dd></dd>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
+<dd><p>toApi</p>
+</dd>
 </dl>
 
 ## Constants
@@ -15,7 +16,8 @@
 <dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd></dd>
+<dd><p>Load our class method for HTTP to API connections</p>
+</dd>
 </dl>
 
 ## Functions
@@ -57,9 +59,11 @@
 </dd>
 </dl>
 
-<a name="toApi"></a>
+<a name="CpApiClass"></a>
 
-## toApi
+## CpApiClass
+toApi
+
 **Kind**: global class  
 <a name="myapisite"></a>
 
@@ -101,8 +105,9 @@ create auth/mycpauth.json file
 <a name="CpApiClass"></a>
 
 ## CpApiClass
+Load our class method for HTTP to API connections
+
 **Kind**: global constant  
-**Require**:   
 <a name="startSession"></a>
 
 ## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
