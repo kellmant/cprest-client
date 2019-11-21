@@ -48,15 +48,7 @@ const mycred = require('./auth/mycpauth')
  *
  */
 
-/**
- * Load our class method for HTTP to API connections
- * 
- */
 const CpApiClass = require('./cpclass')
-/**
- * CpApiClass => new toApi
- * 
- */
 const toApi = new CpApiClass(myapisite.chkp)
 
 var details = 'uid'
