@@ -688,7 +688,7 @@ async function startSession(myauth) {
 /**
  * Set the session handler for a Check Point API connection
  * @function setSession 
- * @param {mysession} sid A Check Point API session handler
+ * @param {json} mysession A Check Point API session handler
  */
 async function setSession(mysession) {
         try {

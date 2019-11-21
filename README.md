@@ -47,7 +47,7 @@
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#mysession">mysession</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sid)</a></dt>
+<dt><a href="#setSession">setSession(mysession)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 <dt><a href="#pubSession">pubSession()</a> ⇒ <code>Object</code></dt>
@@ -261,14 +261,14 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(sid)
+## setSession(mysession)
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | [<code>mysession</code>](#mysession) | A Check Point API session handler |
+| mysession | <code>json</code> | A Check Point API session handler |
 
 <a name="pubSession"></a>
 
