@@ -88,7 +88,7 @@ async function setObject(myobj, mycmd) {
 	try {
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
-		return indat
+	return indat
 	} catch (err) {
 		console.log('error in setObject : ' + err)
 	}
