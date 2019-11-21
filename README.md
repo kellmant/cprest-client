@@ -148,8 +148,9 @@ Set the session handler for a Check Point API connection
 Variable required from auth/mycpapi.json file
 
 **Kind**: global typedef  
+**Properties**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | --- | --- | --- |
 | myapisite | <code>Object</code> | Setup API hostname |
 

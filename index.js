@@ -13,7 +13,7 @@ const get = (p, o) =>
 /**
  * Variable required from auth/mycpapi.json file
  * @typedef {json} myapisite 
- * @param {Object} myapisite - Setup API hostname
+ * @property {Object} myapisite - Setup API hostname
  * @example
  * create auth/mycpapi.json file
  * {
