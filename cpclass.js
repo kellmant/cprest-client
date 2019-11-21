@@ -1,6 +1,5 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
- * @module
  * @class ApiCall
  */
 module.exports = class ApiCall {
