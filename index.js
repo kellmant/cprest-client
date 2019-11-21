@@ -559,14 +559,14 @@ async function tagObjects(myobj) {
 /**
  * allobjs object data format
  * @typedef {Object} allobjs - API Change management data store 
- * @property {Array} group - Group memberships 
+ * @property {Object[]} group - Group memberships 
  * @property {Object} group.uid - Group object 
  * @property {Object[]} group.members - removal data for host object 
  * @property {Array} hosts - Array of UID representing host objects
- * @property {Array} access-rule - Policy rules 
- * @property {Array} garbage - Garbage collector
- * @property {Array} backup - collection of host object names
- * @property {Array} restore - restore operations data  
+ * @property {Object[]} access-rule - Policy rules 
+ * @property {Object[]} garbage - Garbage collector
+ * @property {Object[]} backup - collection of host object names
+ * @property {Object[]} restore - restore operations data  
  */
 async function doParse(objdat) {
 	try {

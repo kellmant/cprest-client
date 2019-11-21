@@ -366,12 +366,12 @@ allobjs object data format
 
 | Name | Type | Description |
 | --- | --- | --- |
-| group | <code>Array</code> | Group memberships |
+| group | <code>Array.&lt;Object&gt;</code> | Group memberships |
 | group.uid | <code>Object</code> | Group object |
 | group.members | <code>Array.&lt;Object&gt;</code> | removal data for host object |
 | hosts | <code>Array</code> | Array of UID representing host objects |
-| access-rule | <code>Array</code> | Policy rules |
-| garbage | <code>Array</code> | Garbage collector |
-| backup | <code>Array</code> | collection of host object names |
-| restore | <code>Array</code> | restore operations data |
+| access-rule | <code>Array.&lt;Object&gt;</code> | Policy rules |
+| garbage | <code>Array.&lt;Object&gt;</code> | Garbage collector |
+| backup | <code>Array.&lt;Object&gt;</code> | collection of host object names |
+| restore | <code>Array.&lt;Object&gt;</code> | restore operations data |
 
