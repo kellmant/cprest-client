@@ -22,7 +22,7 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#login">login</a></code></dt>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#setSession">setSession(sid)</a></dt>
@@ -48,7 +48,7 @@
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
 </dd>
-<dt><a href="#login">login</a> : <code>Object</code></dt>
+<dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -121,11 +121,11 @@ Operations Object created with filter logic
 
 <a name="startSession"></a>
 
-## startSession(myauth) ⇒ [<code>login</code>](#login)
+## startSession(myauth) ⇒ [<code>sessionid</code>](#sessionid)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: [<code>login</code>](#login) - The prepared session handler  
+**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -140,7 +140,7 @@ Set the session handler for a Check Point API connection
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | <code>mysession</code> | A Check Point API session ID handler |
+| sid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
 
 <a name="myapisite"></a>
 
@@ -270,9 +270,9 @@ where-used returned data format
     ]
  }
 ```
-<a name="login"></a>
+<a name="sessionid"></a>
 
-## login : <code>Object</code>
+## sessionid : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 

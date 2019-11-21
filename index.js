@@ -589,7 +589,7 @@ async function showJson(obj) {
 }
 
 /** 
- * @typedef {Object} login
+ * @typedef {Object} sessionid
  * @property {Object} last-login-was-at
  * @property {Number} session-timeout
  * @property {String} sid
@@ -601,7 +601,7 @@ async function showJson(obj) {
  * Create an authenticated session with the Check Point API
  * @function startSession 
  * @param {mycred} myauth Credentials used for API access
- * @return {login} The prepared session handler
+ * @return {sessionid} The prepared session handler
  */
 async function startSession(myauth) {
         try {
@@ -620,7 +620,7 @@ async function startSession(myauth) {
 /**
  * Set the session handler for a Check Point API connection
  * @function setSession 
- * @param {mysession} sid A Check Point API session ID handler
+ * @param {sessionid} sid A Check Point API session ID handler
  */
 async function setSession(mysession) {
         try {
