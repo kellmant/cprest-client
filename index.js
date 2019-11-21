@@ -12,7 +12,7 @@ const get = (p, o) =>
 
 /**
  * Variable required from auth/mycpapi.json file
- * @type {Object} 
+ * @constant {Object} 
  * @example
  * create auth/mycpapi.json file
  * {
