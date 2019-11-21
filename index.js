@@ -176,8 +176,7 @@ async function checkObject(objarr) {
 	try {
 		var mydata = {}
 		var mytagged = []
-		mycmd = 'show-object'
-                //mydata['details-level'] = details
+		let mycmd = 'show-object'
 		for (var x in objarr) {
 			let myobj = objarr[x]
 			mydata.uid = myobj
@@ -257,7 +256,7 @@ async function checkObject(objarr) {
 async function whereUsed(objarr) {
 	try {
 		var mydata = {}
-		mycmd = 'where-used'
+		let mycmd = 'where-used'
                 mydata['details-level'] = details
                 mydata.indirect = true
 		for (var x in objarr) {
@@ -445,7 +444,7 @@ async function parseThreatUse(objdat) {
 async function getType(myobj) {
 	try {
 		var mydata = {}
-		mycmd = 'show-object'
+		let mycmd = 'show-object'
         mydata['details-level'] = 'full'
 		mydata.uid = myobj
         var setit = toApi.doPost(mydata, mycmd)
@@ -459,7 +458,7 @@ async function getType(myobj) {
 
 async function getRule(myobj) {
 	try {
-		mycmd = 'show-access-rule'
+		let mycmd = 'show-access-rule'
         myobj['details-level'] = details
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
@@ -485,7 +484,7 @@ async function tagObjects(myobj) {
 		for (var x in myobj) {
 			mydata.uid = myobj[x].uid
 			mydata.tags = tags
-			mycmd = 'set-' + myobj[x].type
+			let mycmd = 'set-' + myobj[x].type
                 	var setit = toApi.doPost(mydata, mycmd)
                 	let indat = await callOut(setit.options, setit.postData)
 			//console.log(mycmd)
