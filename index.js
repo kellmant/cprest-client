@@ -633,8 +633,11 @@ async function pubSession() {
         }
 }
 
-
-// end session and expire token from header
+/**
+ * end session and expire token from header
+ * @function
+ * 
+*/
 async function endSession() {
         try {
                 console.log('ending session')

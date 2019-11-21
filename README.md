@@ -27,6 +27,9 @@
 <dt><a href="#doParse">doParse(usage)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
+<dt><a href="#endSession">endSession()</a></dt>
+<dd><p>end session and expire token from header</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -142,6 +145,12 @@ Operations Object created with filter logic
 | --- | --- | --- |
 | usage | [<code>usage</code>](#usage) | return values from API where-used |
 
+<a name="endSession"></a>
+
+## endSession()
+end session and expire token from header
+
+**Kind**: global function  
 <a name="x-chkp-sid"></a>
 
 ## x-chkp-sid : <code>Header</code>
