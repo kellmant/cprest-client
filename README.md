@@ -1,9 +1,9 @@
 ## Classes
 
 <dl>
-<dt><a href="#toApi">toApi</a></dt>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd></dd>
-<dt><a href="#CpClass">CpClass</a></dt>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd></dd>
 </dl>
 
@@ -63,31 +63,28 @@
 </dd>
 </dl>
 
-<a name="toApi"></a>
+<a name="CpApiClass"></a>
 
-## toApi
+## CpApiClass
 **Kind**: global class  
-<a name="new_toApi_new"></a>
 
-### new toApi()
+* [CpApiClass](#CpApiClass)
+    * [new CpApiClass()](#new_CpApiClass_new)
+    * [new CpApiClass(base)](#new_CpApiClass_new)
+    * [.showOpt()](#CpApiClass+showOpt)
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
+    * [.setToken(mysession)](#CpApiClass+setToken) ⇒
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass()
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
-<a name="CpClass"></a>
+<a name="new_CpApiClass_new"></a>
 
-## CpClass
-**Kind**: global class  
-
-* [CpClass](#CpClass)
-    * [new CpClass(base)](#new_CpClass_new)
-    * [.showOpt()](#CpClass+showOpt)
-    * [.doPost(data, appfunc)](#CpClass+doPost) ⇒
-    * [.setToken(mysession)](#CpClass+setToken) ⇒
-    * [.doGet(appfunc)](#CpClass+doGet) ⇒
-    * [.doDelete(appfunc)](#CpClass+doDelete) ⇒
-
-<a name="new_CpClass_new"></a>
-
-### new CpClass(base)
+### new CpApiClass(base)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 
@@ -99,18 +96,18 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 ```js
 const toApi = new CpApiClass(myapisite.chkp)
 ```
-<a name="CpClass+showOpt"></a>
+<a name="CpApiClass+showOpt"></a>
 
-### cpClass.showOpt()
+### cpApiClass.showOpt()
 Log the options and data to console for debugging
 
-**Kind**: instance method of [<code>CpClass</code>](#CpClass)  
-<a name="CpClass+doPost"></a>
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+<a name="CpApiClass+doPost"></a>
 
-### cpClass.doPost(data, appfunc) ⇒
+### cpApiClass.doPost(data, appfunc) ⇒
 Given data to be delivered and application function path prepare the POST structure
 
-**Kind**: instance method of [<code>CpClass</code>](#CpClass)  
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
 **Returns**: Its own object reference  
 
 | Param | Type | Description |
@@ -118,36 +115,124 @@ Given data to be delivered and application function path prepare the POST struct
 | data | <code>json</code> | List of options to be included in the HTTP POST |
 | appfunc | <code>json</code> | API function to be called |
 
-<a name="CpClass+setToken"></a>
+<a name="CpApiClass+setToken"></a>
 
-### cpClass.setToken(mysession) ⇒
+### cpApiClass.setToken(mysession) ⇒
 Set the 'x-chkp-sid' token field to the current session token
 
-**Kind**: instance method of [<code>CpClass</code>](#CpClass)  
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
 **Returns**: Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | mysession | <code>\*</code> | Session to be set |
 
-<a name="CpClass+doGet"></a>
+<a name="CpApiClass+doGet"></a>
 
-### cpClass.doGet(appfunc) ⇒
+### cpApiClass.doGet(appfunc) ⇒
 Prepare an HTTP GET for the given API function
 
-**Kind**: instance method of [<code>CpClass</code>](#CpClass)  
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
 **Returns**: Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
-<a name="CpClass+doDelete"></a>
+<a name="CpApiClass+doDelete"></a>
 
-### cpClass.doDelete(appfunc) ⇒
+### cpApiClass.doDelete(appfunc) ⇒
 Prepare an HTTP DELETE for the given APU function
 
-**Kind**: instance method of [<code>CpClass</code>](#CpClass)  
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="CpApiClass"></a>
+
+## CpApiClass
+**Kind**: global class  
+
+* [CpApiClass](#CpApiClass)
+    * [new CpApiClass()](#new_CpApiClass_new)
+    * [new CpApiClass(base)](#new_CpApiClass_new)
+    * [.showOpt()](#CpApiClass+showOpt)
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
+    * [.setToken(mysession)](#CpApiClass+setToken) ⇒
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass()
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass(base)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
+<a name="CpApiClass+showOpt"></a>
+
+### cpApiClass.showOpt()
+Log the options and data to console for debugging
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+<a name="CpApiClass+doPost"></a>
+
+### cpApiClass.doPost(data, appfunc) ⇒
+Given data to be delivered and application function path prepare the POST structure
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>json</code> | List of options to be included in the HTTP POST |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="CpApiClass+setToken"></a>
+
+### cpApiClass.setToken(mysession) ⇒
+Set the 'x-chkp-sid' token field to the current session token
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mysession | <code>\*</code> | Session to be set |
+
+<a name="CpApiClass+doGet"></a>
+
+### cpApiClass.doGet(appfunc) ⇒
+Prepare an HTTP GET for the given API function
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="CpApiClass+doDelete"></a>
+
+### cpApiClass.doDelete(appfunc) ⇒
+Prepare an HTTP DELETE for the given APU function
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
 **Returns**: Its own object reference  
 
 | Param | Type | Description |
@@ -197,17 +282,96 @@ create auth/mycpauth.json file
 Load our class method for HTTP to API connections
 
 **Kind**: global constant  
+
+* [CpApiClass](#CpApiClass)
+    * [new CpApiClass()](#new_CpApiClass_new)
+    * [new CpApiClass(base)](#new_CpApiClass_new)
+    * [.showOpt()](#CpApiClass+showOpt)
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
+    * [.setToken(mysession)](#CpApiClass+setToken) ⇒
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass()
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass(base)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
+<a name="CpApiClass+showOpt"></a>
+
+### cpApiClass.showOpt()
+Log the options and data to console for debugging
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+<a name="CpApiClass+doPost"></a>
+
+### cpApiClass.doPost(data, appfunc) ⇒
+Given data to be delivered and application function path prepare the POST structure
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>json</code> | List of options to be included in the HTTP POST |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="CpApiClass+setToken"></a>
+
+### cpApiClass.setToken(mysession) ⇒
+Set the 'x-chkp-sid' token field to the current session token
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mysession | <code>\*</code> | Session to be set |
+
+<a name="CpApiClass+doGet"></a>
+
+### cpApiClass.doGet(appfunc) ⇒
+Prepare an HTTP GET for the given API function
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="CpApiClass+doDelete"></a>
+
+### cpApiClass.doDelete(appfunc) ⇒
+Prepare an HTTP DELETE for the given APU function
+
+**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
 <a name="toApi"></a>
 
 ## toApi
 CpApiClass => new toApi
 
 **Kind**: global constant  
-<a name="new_toApi_new"></a>
-
-### new toApi()
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
 <a name="startSession"></a>
 
 ## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
