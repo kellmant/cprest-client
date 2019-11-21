@@ -1,3 +1,18 @@
+## Modules
+
+<dl>
+<dt><a href="#module_CpClass">CpClass</a></dt>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+</dd>
+</dl>
+
+## Classes
+
+<dl>
+<dt><a href="#showOpt">showOpt</a></dt>
+<dd></dd>
+</dl>
+
 ## Constants
 
 <dl>
@@ -53,6 +68,104 @@
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
 </dl>
+
+<a name="module_CpClass"></a>
+
+## CpClass
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
+
+* [CpClass](#module_CpClass)
+    * [~myclass](#module_CpClass..myclass)
+        * [new myclass(base)](#new_module_CpClass..myclass_new)
+        * [.doPost(data, appfunc)](#module_CpClass..myclass+doPost) ⇒
+        * [.setToken(mysession)](#module_CpClass..myclass+setToken) ⇒
+        * [.doGet(appfunc)](#module_CpClass..myclass+doGet) ⇒
+        * [.doDelete(appfunc)](#module_CpClass..myclass+doDelete) ⇒
+
+<a name="module_CpClass..myclass"></a>
+
+### CpClass~myclass
+**Kind**: inner class of [<code>CpClass</code>](#module_CpClass)  
+
+* [~myclass](#module_CpClass..myclass)
+    * [new myclass(base)](#new_module_CpClass..myclass_new)
+    * [.doPost(data, appfunc)](#module_CpClass..myclass+doPost) ⇒
+    * [.setToken(mysession)](#module_CpClass..myclass+setToken) ⇒
+    * [.doGet(appfunc)](#module_CpClass..myclass+doGet) ⇒
+    * [.doDelete(appfunc)](#module_CpClass..myclass+doDelete) ⇒
+
+<a name="new_module_CpClass..myclass_new"></a>
+
+#### new myclass(base)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
+<a name="module_CpClass..myclass+doPost"></a>
+
+#### myclass.doPost(data, appfunc) ⇒
+Given data to be delivered and application function path prepare the POST structure
+
+**Kind**: instance method of [<code>myclass</code>](#module_CpClass..myclass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>json</code> | List of options to be included in the HTTP POST |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="module_CpClass..myclass+setToken"></a>
+
+#### myclass.setToken(mysession) ⇒
+Set the 'x-chkp-sid' token field to the current session token
+
+**Kind**: instance method of [<code>myclass</code>](#module_CpClass..myclass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mysession | <code>\*</code> | Session to be set |
+
+<a name="module_CpClass..myclass+doGet"></a>
+
+#### myclass.doGet(appfunc) ⇒
+Prepare an HTTP GET for the given API function
+
+**Kind**: instance method of [<code>myclass</code>](#module_CpClass..myclass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="module_CpClass..myclass+doDelete"></a>
+
+#### myclass.doDelete(appfunc) ⇒
+Prepare an HTTP DELETE for the given APU function
+
+**Kind**: instance method of [<code>myclass</code>](#module_CpClass..myclass)  
+**Returns**: Its own object reference  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| appfunc | <code>json</code> | API function to be called |
+
+<a name="showOpt"></a>
+
+## showOpt
+**Kind**: global class  
+<a name="new_showOpt_new"></a>
+
+### new myclass#showOpt()
+Log the options and data to console for debugging
 
 <a name="myapisite"></a>
 
