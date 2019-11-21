@@ -5,17 +5,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 
-/**
- * Traverse object collected in object
- * @param {String[]} properties - Get object proerties and values with arry of filters
- * @param {Object} usedobj - Used objects returned in an array of
- * @example
- * collect an array of objects that match search: 
- * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
- * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrtol-rules'], usedobj))
- * Or get a specific value, like the total count from the API:
- * myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
- */ 
+// depreciated
 const get = (p, o) =>
   p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)
 
@@ -23,7 +13,6 @@ const get = (p, o) =>
 /**
  * Variable required from auth/mycpapi.json file
  * @param {Object} myapisite - Setup API hostname
- * @param {Object} myapisite.apihost - mycpapi.json
  * @example
  * create auth/mycpapi.json file
  * {

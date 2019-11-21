@@ -19,9 +19,6 @@
 ## Functions
 
 <dl>
-<dt><a href="#get">get(properties, usedobj)</a></dt>
-<dd><p>Traverse object collected in object</p>
-</dd>
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
@@ -79,7 +76,6 @@ Variable required from auth/mycpapi.json file
 | Param | Type | Description |
 | --- | --- | --- |
 | myapisite | <code>Object</code> | Setup API hostname |
-| myapisite.apihost | <code>Object</code> | mycpapi.json |
 
 **Example**  
 ```js
@@ -114,26 +110,6 @@ create auth/mycpauth.json file
 		"user": "apiuser",
 		"password": "PASSWORD"
 }
-```
-<a name="get"></a>
-
-## get(properties, usedobj)
-Traverse object collected in object
-
-**Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| properties | <code>Array.&lt;String&gt;</code> | Get object proerties and values with arry of filters |
-| usedobj | <code>Object</code> | Used objects returned in an array of |
-
-**Example**  
-```js
-collect an array of objects that match search: 
-myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
-myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrtol-rules'], usedobj))
-Or get a specific value, like the total count from the API:
-myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
 ```
 <a name="showObjects"></a>
 
