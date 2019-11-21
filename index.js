@@ -103,17 +103,9 @@ async function main() {
 		.then(objid => checkObject(objid))
 		.then(() => whereUsed(allobjs[myuids]))
 		.then(myuse => doParse(myuse))
-		//.then(myout => writeJson(myout))
-		//.then(() => parseObjectUse(allobj[myuids]))
-		//.then(tagit => tagObjects(tagit))
-		//.then(() => parseRuleUse(cleanobj))
-		//.then(() => parseNatUse(cleanobj))
-		//.then(() => parseThreatUse(cleanobj))
 		.then(() => writeJson(allobjs))
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
-		//.then(() => console.dir(cleanobj))
-		//.then(thindat => console.log(thindat))
 	.catch(endSession)
 }
 
@@ -178,7 +170,7 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {uid[]} hosts -  array of safe UID's to verify usage against
+ * @returns {String[]} array of safe UID's to verify usage against
  */
 async function checkObject(objarr) {
 	try {
@@ -217,7 +209,7 @@ async function checkObject(objarr) {
 
 /**
  * where-used returned data format
- * @typedef {Object[]} uid - Array of Host objects by UID
+ * @typedef {Object[]} uid - Array of Host objects details by UID
  * @property {Object} used-directly - Direct use of object
  * @property {Number} used-directly.total - Total count of usage
  * @property {Object[]} used-directly.objects - Array of object dependencies
@@ -450,43 +442,6 @@ async function parseThreatUse(objdat) {
 	}
 }
 
-async function getObjectUse(isused) {
-	try {
-		var myres = []
-		const myid = {}
-		var myuse = []
-		Object.keys(isused).forEach(uid => {
-			myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], isused))
-		});
-		let unique = [...new Set(myres)]
-		myuse = myuse.concat(await getUsedObject(unique))
-		let tagdata = await tagObject(myuse)
-		return myuse
-	} catch (err) {
-		console.log('error in getObjectUse : ' + err)
-	}
-}
-
-async function getUsedObject(objarr) {
-	try {
-		var mydata = {}
-		var myreturn = []
-		mycmd = 'show-object'
-                //mydata['details-level'] = details
-		for (var x in objarr) {
-			let myobj = objarr[x]
-			mydata.uid = myobj
-                	var setit = toApi.doPost(mydata, mycmd)
-                	let indat = await callOut(setit.options, setit.postData)
-			//console.log(indat.object.type)
-			myreturn = myreturn.concat(indat.object)
-		}
-		return myreturn
-	} catch (err) {
-		console.log('error in getUsedObject : ' + err)
-	}
-}
-
 async function getType(myobj) {
 	try {
 		var mydata = {}
@@ -660,7 +615,7 @@ async function startSession(myauth) {
 /**
  * Set the session handler for a Check Point API connection
  * @function setSession 
- * @param {json} mysession A Check Point API session handler
+ * @param {mysession} sid A Check Point API session ID handler
  */
 async function setSession(mysession) {
         try {

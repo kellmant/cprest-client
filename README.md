@@ -22,7 +22,7 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
@@ -36,7 +36,7 @@
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#mysession">mysession</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(mysession)</a></dt>
+<dt><a href="#setSession">setSession(sid)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 </dl>
@@ -125,11 +125,11 @@ Object use for an IP
 
 <a name="checkObject"></a>
 
-## checkObject(uid) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
+## checkObject(uid) ⇒ <code>Array.&lt;String&gt;</code>
 Object verify IP matches filter
 
 **Kind**: global function  
-**Returns**: [<code>Array.&lt;uid&gt;</code>](#uid) - hosts -  array of safe UID's to verify usage against  
+**Returns**: <code>Array.&lt;String&gt;</code> - array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -183,14 +183,14 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(mysession)
+## setSession(sid)
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mysession | <code>json</code> | A Check Point API session handler |
+| sid | [<code>mysession</code>](#mysession) | A Check Point API session ID handler |
 
 <a name="allobjs"></a>
 
