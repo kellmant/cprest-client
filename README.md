@@ -27,8 +27,6 @@
 <dt><a href="#doParse">doParse(usage)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
-<dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
-<dd></dd>
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
@@ -136,21 +134,11 @@ Determine where a set of objects is used in Check Point policies
 Operations Object created with filter logic
 
 **Kind**: global function  
-**Returns**: [<code>allobjs</code>](#allobjs) - -  array of safe UID's to verify usage against  
+**Returns**: [<code>allobjs</code>](#allobjs) - -  array of operational changes  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | usage | [<code>usage</code>](#usage) | return values from API where-used |
-
-<a name="tagObjects"></a>
-
-## tagObjects(myobj) ⇒ <code>Object</code>
-**Kind**: global function  
-**Returns**: <code>Object</code> - Returns the session handler after tagging operations are concluded  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
 
 <a name="startSession"></a>
 

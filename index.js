@@ -269,7 +269,7 @@ async function whereUsed(objarr) {
 /** 
  * Operations Object created with filter logic
  * @param {usage} usage - return values from API where-used
- * @returns {allobjs} -  array of safe UID's to verify usage against
+ * @returns {allobjs} -  array of operational changes
  */
 async function doParse(objdat) {
 	try {
@@ -535,11 +535,6 @@ async function getRule(myobj) {
 	}
 }
 
-/** 
- * @function tagObjects 
- * @param {Object[]} myobj An array of tags to be added to a Check Point host object
- * @return {Object} Returns the session handler after tagging operations are concluded
- */
 async function tagObjects(myobj) {
 	try {
 		var tags = {}
