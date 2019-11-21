@@ -88,7 +88,7 @@ var cleanobj = {}
  * 
  * @typedef {Object[]} restore - restore operations data  
  * 
- * @typedef {Object} AllObj
+ * @typedef {Object} allobjs
  * @param {String[]} hosts - Host Objects
  * @param {Array} group - Group Membership
  * @param {Array} access-rule - Access Control
@@ -205,7 +205,7 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {allobjs} hosts -  array of safe UID's to verify usage against
+ * @returns {hosts} hosts -  array of safe UID's to verify usage against
  */
 async function checkObject(objarr) {
 	try {

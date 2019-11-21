@@ -25,7 +25,7 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>allobjs</code></dt>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>hosts</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
@@ -39,7 +39,7 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#doParse">doParse(uid)</a> ⇒ <code>allobjs</code></dt>
+<dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
@@ -71,7 +71,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#AllObj">AllObj</a> : <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#allobjs">allobjs</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
@@ -164,11 +164,11 @@ Object use for an IP
 
 <a name="checkObject"></a>
 
-## checkObject(uid) ⇒ <code>allobjs</code>
+## checkObject(uid) ⇒ <code>hosts</code>
 Object verify IP matches filter
 
 **Kind**: global function  
-**Returns**: <code>allobjs</code> - hosts -  array of safe UID's to verify usage against  
+**Returns**: <code>hosts</code> - hosts -  array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -222,11 +222,11 @@ Recursively discover the use of a host object against Check Point policy
 
 <a name="doParse"></a>
 
-## doParse(uid) ⇒ <code>allobjs</code>
+## doParse(uid) ⇒ [<code>allobjs</code>](#allobjs)
 Operations Object created with filter logic
 
 **Kind**: global function  
-**Returns**: <code>allobjs</code> - -  array of safe UID's to verify usage against  
+**Returns**: [<code>allobjs</code>](#allobjs) - -  array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -322,9 +322,9 @@ the number of keys in use for a given object
 | --- | --- | --- |
 | obj | <code>Object</code> | The object to be checked |
 
-<a name="AllObj"></a>
+<a name="allobjs"></a>
 
-## AllObj : <code>Array.&lt;Object&gt;</code>
+## allobjs : <code>Array.&lt;Object&gt;</code>
 allobjs object data format
 
 **Kind**: global typedef  
