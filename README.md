@@ -1,8 +1,14 @@
+## Modules
+
+<dl>
+<dt><a href="#module_CpClass">CpClass</a></dt>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+</dd>
+</dl>
+
 ## Classes
 
 <dl>
-<dt><a href="#CpClass">CpClass</a></dt>
-<dd></dd>
 <dt><a href="#showOpt">showOpt</a></dt>
 <dd></dd>
 </dl>
@@ -57,15 +63,34 @@
 </dd>
 </dl>
 
-<a name="CpClass"></a>
+<a name="module_CpClass"></a>
 
 ## CpClass
-**Kind**: global class  
-<a name="new_CpClass_new"></a>
-
-### new CpClass()
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
+
+* [CpClass](#module_CpClass)
+    * [module.exports](#exp_module_CpClass--module.exports) ⏏
+        * [new module.exports(base)](#new_module_CpClass--module.exports_new)
+
+<a name="exp_module_CpClass--module.exports"></a>
+
+### module.exports ⏏
+**Kind**: Exported class  
+<a name="new_module_CpClass--module.exports_new"></a>
+
+#### new module.exports(base)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
 <a name="showOpt"></a>
 
 ## showOpt
