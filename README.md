@@ -1,10 +1,3 @@
-## Classes
-
-<dl>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd></dd>
-</dl>
-
 ## Constants
 
 <dl>
@@ -14,18 +7,21 @@
 <dt><a href="#mycred">mycred</a></dt>
 <dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
+<dd><p>Class Method for API callout builder</p>
+</dd>
 </dl>
 
 ## Functions
 
 <dl>
-<dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
+<dt><a href="#showObjects">showObjects(mydata, mycmd)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
-<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
+<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">Array.&lt;where-used&gt;</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
 <dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
@@ -51,20 +47,11 @@
 <dd><p>where-used API result format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>where-used returned data format</p>
+<dd><p>where-used returned data format by UID of each host</p>
 </dd>
 <dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
-
-<a name="CpApiClass"></a>
-
-## CpApiClass
-**Kind**: global class  
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass()
-Class Method for API callout builder
 
 <a name="myapisite"></a>
 
@@ -103,9 +90,15 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
+<a name="CpApiClass"></a>
+
+## CpApiClass
+Class Method for API callout builder
+
+**Kind**: global constant  
 <a name="showObjects"></a>
 
-## showObjects(ip) ⇒ <code>Array.&lt;String&gt;</code>
+## showObjects(mydata, mycmd) ⇒ <code>Array.&lt;String&gt;</code>
 Object use for an IP
 
 **Kind**: global function  
@@ -113,7 +106,8 @@ Object use for an IP
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ip | <code>String</code> | IP address to search for |
+| mydata | <code>Array.&lt;Object&gt;</code> | Search filter for IP |
+| mycmd | <code>String</code> | show-objects API command to run |
 
 <a name="checkObject"></a>
 
@@ -129,15 +123,15 @@ Object verify IP matches filter
 
 <a name="whereUsed"></a>
 
-## whereUsed(objarr) ⇒ [<code>where-used</code>](#where-used)
+## whereUsed(objarr) ⇒ [<code>Array.&lt;where-used&gt;</code>](#where-used)
 Determine where a set of objects is used in Check Point policies
 
 **Kind**: global function  
-**Returns**: [<code>where-used</code>](#where-used) - An array of objects where the parameter values were found in policy  
+**Returns**: [<code>Array.&lt;where-used&gt;</code>](#where-used) - An array of objects where the parameter values were found in policy  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| objarr | <code>Array.&lt;Object&gt;</code> | Any array of objects containing filter values by UID |
+| objarr | <code>Array.&lt;String&gt;</code> | Any array of objects containing filter values by UID |
 
 <a name="doParse"></a>
 
@@ -220,7 +214,7 @@ where-used API result format
 <a name="uid"></a>
 
 ## uid : <code>Array.&lt;Object&gt;</code>
-where-used returned data format
+where-used returned data format by UID of each host
 
 **Kind**: global typedef  
 **Properties**

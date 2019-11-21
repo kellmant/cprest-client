@@ -43,7 +43,7 @@ const mycred = require('./auth/mycpauth')
 
 /**
  * Class Method for API callout builder
- * @class
+ * 
  *
  */
 const CpApiClass = require('./cpclass')
@@ -140,8 +140,8 @@ async function admins() {
 
 /** 
  * Object use for an IP
- * @function showObjects
- * @param {String} ip - IP address to search for
+ * @param {Object[]} mydata - Search filter for IP
+ * @param {String} mycmd - show-objects API command to run
  * @returns {String[]} Direct and indirect object use UID array
  */
 
@@ -174,7 +174,6 @@ async function showObjects(mydata, mycmd) {
 
 /** 
  * Object verify IP matches filter
- * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
  * @returns {String[]} array of safe UID's to verify usage against
  */
@@ -211,7 +210,7 @@ async function checkObject(objarr) {
 }
 
 /**
- * where-used returned data format
+ * where-used returned data format by UID of each host
  * @typedef {Object[]} uid - Array of Host objects details by UID
  * @property {Object} used-directly - Direct use of object
  * @property {Number} used-directly.total - Total count of usage
@@ -253,9 +252,8 @@ async function checkObject(objarr) {
 
  /**
   * Determine where a set of objects is used in Check Point policies
-  * @function whereUsed
-  * @param {Object[]} objarr Any array of objects containing filter values by UID
-  * @return {where-used} An array of objects where the parameter values were found in policy
+  * @param {String[]} objarr Any array of objects containing filter values by UID
+  * @return {where-used[]} An array of objects where the parameter values were found in policy
   */ 
 async function whereUsed(objarr) {
 	try {
