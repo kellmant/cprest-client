@@ -72,7 +72,7 @@ Class Method for API callout builder
 API Site configuration required from auth/mycpapi.json file
 
 **Kind**: global constant  
-**Require**:   
+**Require**: auth/mycpapi.json  
 **Example**  
 ```js
 create auth/mycpapi.json file
