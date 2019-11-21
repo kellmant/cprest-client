@@ -276,7 +276,7 @@ async function whereUsed(objarr) {
 
 /** 
  * Operations Object created with filter logic
- * @param {usage} used - return values from API where-used
+ * @param {usage} usage - return values from API where-used
  * @returns {allobjs} -  array of safe UID's to verify usage against
  */
 async function doParse(objdat) {
