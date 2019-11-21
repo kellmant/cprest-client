@@ -43,9 +43,11 @@ const mycred = require('./auth/mycpauth')
 
 /**
  * Class Method for API callout builder
- * 
+ * @typedef {Header} x-chkp-sid
+ * @property {String} sid Session ID token applied to header
  *
  */
+
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 

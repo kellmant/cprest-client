@@ -7,9 +7,6 @@
 <dt><a href="#mycred">mycred</a></dt>
 <dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder</p>
-</dd>
 </dl>
 
 ## Functions
@@ -30,7 +27,7 @@
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code>x-chkp-sid</code></dt>
+<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 </dl>
@@ -38,6 +35,9 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
+<dd><p>Class Method for API callout builder</p>
+</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -85,12 +85,6 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
-<a name="CpApiClass"></a>
-
-## CpApiClass
-Class Method for API callout builder
-
-**Kind**: global constant  
 <a name="showObjects"></a>
 
 ## showObjects(mydata, mycmd) ⇒ <code>Array.&lt;String&gt;</code>
@@ -154,15 +148,27 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(sessionid) ⇒ <code>x-chkp-sid</code>
+## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
-**Returns**: <code>x-chkp-sid</code> - Header token set for session  
+**Returns**: [<code>x-chkp-sid</code>](#x-chkp-sid) - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
+
+<a name="x-chkp-sid"></a>
+
+## x-chkp-sid : <code>Header</code>
+Class Method for API callout builder
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| sid | <code>String</code> | Session ID token applied to header |
 
 <a name="allobjs"></a>
 
