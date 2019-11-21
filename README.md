@@ -43,10 +43,10 @@
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
-<dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used API result format</p>
 </dd>
-<dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
 <dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
@@ -195,9 +195,9 @@ allobjs object data format
 | hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array.&lt;Object&gt;</code> | 
 
-<a name="usage"></a>
+<a name="uid"></a>
 
-## usage : <code>Array.&lt;Object&gt;</code>
+## uid : <code>Array.&lt;Object&gt;</code>
 where-used API result format
 
 **Kind**: global typedef  
@@ -211,9 +211,9 @@ where-used API result format
 | threat-prevention-rules | <code>Array</code> | 
 | total | <code>Number</code> | 
 
-<a name="uid"></a>
+<a name="usage"></a>
 
-## uid : <code>Array.&lt;Object&gt;</code>
+## usage : <code>Array.&lt;Object&gt;</code>
 where-used returned data format by UID of each host
 
 **Kind**: global typedef  

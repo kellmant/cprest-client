@@ -124,7 +124,7 @@ async function admins() {
 	.catch(endSession)
 }
 /** 
- * @typedef {Object[]} usage - where-used API result format
+ * @typedef {Object[]} uid - where-used API result format
  * @property {Array} access-control-rules
  * @property {Array} nat-rules
  * @property {Array} objects
@@ -211,7 +211,7 @@ async function checkObject(objarr) {
 
 /**
  * where-used returned data format by UID of each host
- * @typedef {Object[]} uid - Array of Host objects details by UID
+ * @typedef {Object[]} usage - Array of Host objects details by UID
  * @property {Object} used-directly - Direct use of object
  * @property {Number} used-directly.total - Total count of usage
  * @property {Object[]} used-directly.objects - Array of object dependencies
