@@ -1,8 +1,9 @@
 ## Modules
 
 <dl>
-<dt><a href="#module_ApiCall">ApiCall</a></dt>
-<dd></dd>
+<dt><a href="#module_cpclass">cpclass</a></dt>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+</dd>
 </dl>
 
 ## Constants
@@ -55,9 +56,39 @@
 </dd>
 </dl>
 
-<a name="module_ApiCall"></a>
+<a name="module_cpclass"></a>
 
-## ApiCall
+## cpclass
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
+
+* [cpclass](#module_cpclass)
+    * [module.exports](#exp_module_cpclass--module.exports) ⏏
+        * [new module.exports(base)](#new_module_cpclass--module.exports_new)
+        * [~ApiCall](#module_cpclass--module.exports..ApiCall)
+
+<a name="exp_module_cpclass--module.exports"></a>
+
+### module.exports ⏏
+**Kind**: Exported class  
+<a name="new_module_cpclass--module.exports_new"></a>
+
+#### new module.exports(base)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
+<a name="module_cpclass--module.exports..ApiCall"></a>
+
+#### module.exports~ApiCall
+**Kind**: inner class of [<code>module.exports</code>](#exp_module_cpclass--module.exports)  
 <a name="myapisite"></a>
 
 ## myapisite
