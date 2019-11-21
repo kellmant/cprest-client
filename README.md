@@ -8,8 +8,8 @@
 ## Constants
 
 <dl>
-<dt><a href="#startSession">startSession</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
-<dd><p>Create an authenticated session with the Check Point API</p>
+<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
+<dd><p>Variable required from auth/mycpapi.json file</p>
 </dd>
 </dl>
 
@@ -30,6 +30,9 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dd><p>Create an authenticated session with the Check Point API</p>
+</dd>
 <dt><a href="#setSession">setSession(sid)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
@@ -38,9 +41,6 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
-<dd><p>Variable required from auth/mycpapi.json file</p>
-</dd>
 <dt><a href="#mycred">mycred</a> : <code>Object</code></dt>
 <dd><p>Variable required from auth/mycpauth.json</p>
 </dd>
@@ -66,18 +66,27 @@
 ### new CpApiClass()
 Class Method for API callout builder
 
-<a name="startSession"></a>
+<a name="myapisite"></a>
 
-## startSession ⇒ [<code>sessionid</code>](#sessionid)
-Create an authenticated session with the Check Point API
+## myapisite : <code>Object</code>
+Variable required from auth/mycpapi.json file
 
 **Kind**: global constant  
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
-
+**Example**  
+```js
+create auth/mycpapi.json file
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
 <a name="showObjects"></a>
 
 ## showObjects(ip) ⇒ <code>Array.&lt;String&gt;</code>
@@ -136,6 +145,18 @@ Operations Object created with filter logic
 | --- | --- | --- |
 | myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
 
+<a name="startSession"></a>
+
+## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
+Create an authenticated session with the Check Point API
+
+**Kind**: global function  
+**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
+
 <a name="setSession"></a>
 
 ## setSession(sid)
@@ -147,33 +168,6 @@ Set the session handler for a Check Point API connection
 | --- | --- | --- |
 | sid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
 
-<a name="myapisite"></a>
-
-## myapisite : <code>Object</code>
-Variable required from auth/mycpapi.json file
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| myapisite | <code>Object</code> | Setup API hostname |
-
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
 <a name="mycred"></a>
 
 ## mycred : <code>Object</code>

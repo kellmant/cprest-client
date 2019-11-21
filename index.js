@@ -12,8 +12,7 @@ const get = (p, o) =>
 
 /**
  * Variable required from auth/mycpapi.json file
- * @typedef {Object} myapisite 
- * @property {Object} myapisite - Setup API hostname
+ * @type {Object} 
  * @example
  * create auth/mycpapi.json file
  * {
@@ -599,7 +598,6 @@ async function showJson(obj) {
 
 /**
  * Create an authenticated session with the Check Point API
- * @constant
  * @param {mycred} credentials Credentials used for API access
  * @return {sessionid} The prepared session handler
  */
