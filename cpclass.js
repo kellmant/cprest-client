@@ -1,8 +1,8 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
- * @module
+ * @class
  */
-module.exports = /** @class */ class ApiCall {
+module.exports = /** @module ApiCall */ class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @constructor
