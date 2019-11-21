@@ -331,9 +331,12 @@ allobjs object data format
 
 | Param | Type | Description |
 | --- | --- | --- |
-| hosts | <code>Array.&lt;String&gt;</code> | my hosts |
-| group | <code>Array</code> | my group |
-| access-rule | <code>Array</code> | my acl |
+| hosts | <code>Array.&lt;String&gt;</code> | Host Objects |
+| group | <code>Array</code> | Group Membership |
+| access-rule | <code>Array</code> | Access Control |
+| garbage | <code>Array</code> | Garbage collector |
+| backup | <code>Array.&lt;String&gt;</code> | Host object names |
+| restore | <code>Array</code> | Backout Operations |
 
 **Properties**
 
