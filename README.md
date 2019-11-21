@@ -69,12 +69,13 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 <a name="exp_module_cpclass--module.exports"></a>
 
 ### module.exports ⏏
+ApiCall
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
 **Kind**: Exported class  
 <a name="new_module_cpclass--module.exports_new"></a>
 
 #### new module.exports(base)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
 
 | Param | Type | Description |
 | --- | --- | --- |
