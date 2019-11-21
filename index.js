@@ -11,7 +11,7 @@ const get = (p, o) =>
 
 
 /**
- * Variable required from auth/mycpapi.json file
+ * API Site configuration required from auth/mycpapi.json file
  * @constant
  * @example
  * create auth/mycpapi.json file
@@ -30,9 +30,9 @@ const get = (p, o) =>
 const myapisite = require('./auth/mycpapi')
 
 /**
- * Variable required from auth/mycpauth.json
- * @typedef {Constant} mycred 
- * @property {Object} credentials - auth/mycpauth.json
+ * API credentials required from auth/mycpauth.json
+ * @constant
+ * @param {Object} credentials - auth/mycpauth.json
  * @example 
  * create auth/mycpauth.json file
  * {

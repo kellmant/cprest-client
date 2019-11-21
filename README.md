@@ -9,7 +9,10 @@
 
 <dl>
 <dt><a href="#myapisite">myapisite</a></dt>
-<dd><p>Variable required from auth/mycpapi.json file</p>
+<dd><p>API Site configuration required from auth/mycpapi.json file</p>
+</dd>
+<dt><a href="#mycred">mycred</a></dt>
+<dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
 </dl>
 
@@ -41,9 +44,6 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#mycred">mycred</a> : <code>Constant</code></dt>
-<dd><p>Variable required from auth/mycpauth.json</p>
-</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -69,7 +69,7 @@ Class Method for API callout builder
 <a name="myapisite"></a>
 
 ## myapisite
-Variable required from auth/mycpapi.json file
+API Site configuration required from auth/mycpapi.json file
 
 **Kind**: global constant  
 **Example**  
@@ -85,6 +85,25 @@ create auth/mycpapi.json file
 			"Content-Type": "application/json"
 		}
 	  }
+}
+```
+<a name="mycred"></a>
+
+## mycred
+API credentials required from auth/mycpauth.json
+
+**Kind**: global constant  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| credentials | <code>Object</code> | auth/mycpauth.json |
+
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
 }
 ```
 <a name="showObjects"></a>
@@ -168,26 +187,6 @@ Set the session handler for a Check Point API connection
 | --- | --- | --- |
 | sid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
 
-<a name="mycred"></a>
-
-## mycred : <code>Constant</code>
-Variable required from auth/mycpauth.json
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| credentials | <code>Object</code> | auth/mycpauth.json |
-
-**Example**  
-```js
-create auth/mycpauth.json file
-{
-		"user": "apiuser",
-		"password": "PASSWORD"
-}
-```
 <a name="allobjs"></a>
 
 ## allobjs : <code>Object</code>
