@@ -44,10 +44,10 @@
 </dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
 <dd></dd>
-<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code>Object</code></dt>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#mysession">mysession</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(mysession)</a></dt>
+<dt><a href="#setSession">setSession(token)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 <dt><a href="#pubSession">pubSession()</a> ⇒ <code>Object</code></dt>
@@ -80,6 +80,8 @@
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
 </dd>
+<dt><a href="#mysession">mysession</a> : <code>Object</code></dt>
+<dd></dd>
 </dl>
 
 <a name="CpApiClass"></a>
@@ -247,11 +249,11 @@ Operations Object created with filter logic
 
 <a name="startSession"></a>
 
-## startSession(myauth) ⇒ <code>Object</code>
+## startSession(myauth) ⇒ [<code>mysession</code>](#mysession)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: <code>Object</code> - The prepared session handler  
+**Returns**: [<code>mysession</code>](#mysession) - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -259,14 +261,14 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(mysession)
+## setSession(token)
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mysession | <code>Object</code> | A Check Point API session handler |
+| token | [<code>mysession</code>](#mysession) | A Check Point API session handler |
 
 <a name="pubSession"></a>
 
@@ -407,3 +409,17 @@ where-used returned data format
     ]
  }
 ```
+<a name="mysession"></a>
+
+## mysession : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| last-login-was-at | <code>Object</code> | 
+| session-timeout | <code>Number</code> | 
+| sid | <code>String</code> | 
+| uid | <code>String</code> | 
+| url | <code>String</code> | 
+
