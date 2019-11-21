@@ -53,7 +53,7 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#api">api</a> : <code>Object</code></dt>
+<dt><a href="#apicall">apicall</a> : <code>Object</code></dt>
 <dd><p>CpApiCLass object data format</p>
 </dd>
 </dl>
@@ -65,18 +65,18 @@
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>api</code>](#api)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ [<code>api</code>](#api)
-    * [.setToken(mysession)](#CpApiClass+setToken) ⇒ [<code>api</code>](#api)
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ [<code>api</code>](#api)
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ [<code>api</code>](#api)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>apicall</code>](#apicall)
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ [<code>apicall</code>](#apicall)
+    * [.setToken(mysession)](#CpApiClass+setToken) ⇒ [<code>apicall</code>](#apicall)
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ [<code>apicall</code>](#apicall)
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ [<code>apicall</code>](#apicall)
 
 <a name="new_CpApiClass_new"></a>
 
 ### new CpApiClass(myapisite)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
-**Returns**: [<code>api</code>](#api) - HTTP API data and options object  
+**Returns**: [<code>apicall</code>](#apicall) - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -88,18 +88,18 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ [<code>api</code>](#api)
+### cpApiClass.showOpt() ⇒ [<code>apicall</code>](#apicall)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>api</code>](#api) - Show options and data  
+**Returns**: [<code>apicall</code>](#apicall) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
-### cpApiClass.doPost(data, appfunc) ⇒ [<code>api</code>](#api)
+### cpApiClass.doPost(data, appfunc) ⇒ [<code>apicall</code>](#apicall)
 Given data to be delivered and application function path prepare the POST structure
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>api</code>](#api) - Its own object reference  
+**Returns**: [<code>apicall</code>](#apicall) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -108,11 +108,11 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(mysession) ⇒ [<code>api</code>](#api)
+### cpApiClass.setToken(mysession) ⇒ [<code>apicall</code>](#apicall)
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>api</code>](#api) - Its own object reference  
+**Returns**: [<code>apicall</code>](#apicall) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -120,11 +120,11 @@ Set the 'x-chkp-sid' token field to the current session token
 
 <a name="CpApiClass+doGet"></a>
 
-### cpApiClass.doGet(appfunc) ⇒ [<code>api</code>](#api)
+### cpApiClass.doGet(appfunc) ⇒ [<code>apicall</code>](#apicall)
 Prepare an HTTP GET for the given API function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>api</code>](#api) - Its own object reference  
+**Returns**: [<code>apicall</code>](#apicall) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -132,11 +132,11 @@ Prepare an HTTP GET for the given API function
 
 <a name="CpApiClass+doDelete"></a>
 
-### cpApiClass.doDelete(appfunc) ⇒ [<code>api</code>](#api)
+### cpApiClass.doDelete(appfunc) ⇒ [<code>apicall</code>](#apicall)
 Prepare an HTTP DELETE for the given APU function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>api</code>](#api) - Its own object reference  
+**Returns**: [<code>apicall</code>](#apicall) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -337,9 +337,9 @@ where-used returned data format by UID of each host
     ]
  }
 ```
-<a name="api"></a>
+<a name="apicall"></a>
 
-## api : <code>Object</code>
+## apicall : <code>Object</code>
 CpApiCLass object data format
 
 **Kind**: global typedef  

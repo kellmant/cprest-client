@@ -1,6 +1,6 @@
 /**
  * CpApiCLass object data format
- * @typedef {Object} api
+ * @typedef {Object} apicall
  * @property {Object[]} options
  * @property {Object[]} postData
  */
@@ -14,7 +14,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @param {Object} myapisite Options and path of the function to the Check Point Manageemnt API
-	 * @returns {api} HTTP API data and options object
+	 * @returns {apicall} HTTP API data and options object
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {
@@ -23,7 +23,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {api} Show options and data
+	 * @returns {apicall} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {
@@ -37,7 +37,7 @@ const CpApiClass = class ApiCall {
 	 * Given data to be delivered and application function path prepare the POST structure
 	 * @param {json} data List of options to be included in the HTTP POST
 	 * @param {json} appfunc API function to be called 
-	 * @return {api} Its own object reference
+	 * @return {apicall} Its own object reference
 	 */
 	doPost (data, appfunc) {
 		this.postData = JSON.stringify(data)
@@ -53,7 +53,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
 	 * @param {*} mysession Session to be set
-	 * @return {api} Its own object reference
+	 * @return {apicall} Its own object reference
 	 */
 	setToken (mysession) {
 		this.options.headers['x-chkp-sid'] = mysession.sid
@@ -62,7 +62,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Prepare an HTTP GET for the given API function
 	 * @param {json} appfunc API function to be called 
-	 * @return {api} Its own object reference
+	 * @return {apicall} Its own object reference
 	 */
 	doGet (appfunc) {
 		this.options.method = 'GET'
@@ -82,7 +82,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Prepare an HTTP DELETE for the given APU function
 	 * @param {json} appfunc API function to be called 
-	 * @return {api} Its own object reference
+	 * @return {apicall} Its own object reference
 	 */
 	doDelete (appfunc) {
 		this.options.method = 'DELETE'
