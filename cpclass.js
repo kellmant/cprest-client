@@ -1,4 +1,11 @@
 /**
+ * CpApiCLass object data format
+ * @typedef {Object} api
+ * @property {Object[]} options
+ * @property {Object[]} postData
+ */
+
+/**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
  */
@@ -7,6 +14,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @param {Object} myapisite Options and path of the function to the Check Point Manageemnt API
+	 * @returns {api} HTTP API data and options object
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {
@@ -15,7 +23,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * 
+	 * @returns {api} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {

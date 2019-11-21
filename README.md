@@ -53,6 +53,9 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
+<dt><a href="#api">api</a> : <code>Object</code></dt>
+<dd><p>CpApiCLass object data format</p>
+</dd>
 </dl>
 
 <a name="CpApiClass"></a>
@@ -62,7 +65,7 @@
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>api</code>](#api)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
     * [.setToken(mysession)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
@@ -73,6 +76,7 @@
 ### new CpApiClass(myapisite)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
+**Returns**: [<code>api</code>](#api) - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -84,10 +88,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt()
+### cpApiClass.showOpt() ⇒ [<code>api</code>](#api)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
+**Returns**: [<code>api</code>](#api) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒
@@ -332,3 +337,16 @@ where-used returned data format by UID of each host
     ]
  }
 ```
+<a name="api"></a>
+
+## api : <code>Object</code>
+CpApiCLass object data format
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| options | <code>Array.&lt;Object&gt;</code> | 
+| postData | <code>Array.&lt;Object&gt;</code> | 
+
