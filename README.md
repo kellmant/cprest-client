@@ -333,10 +333,10 @@ allobjs object data format
 | Name | Type |
 | --- | --- |
 | access-rule | <code>Array</code> | 
-| backup | <code>Array</code> | 
+| backup | <code>Array.&lt;String&gt;</code> | 
 | garbage | <code>Array</code> | 
 | group | <code>Array</code> | 
-| hosts | <code>Array</code> | 
+| hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array</code> | 
 
 <a name="uid"></a>

@@ -69,10 +69,10 @@ var cleanobj = {}
  * allobjs object data format
  * @typedef {Object} allobjs
  * @property {Array} access-rule
- * @property {Array} backup
+ * @property {String[]} backup
  * @property {Array} garbage
  * @property {Array} group
- * @property {Array} hosts
+ * @property {String[]} hosts
  * @property {Array} restore
  */
 var allobjs = {}
