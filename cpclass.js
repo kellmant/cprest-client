@@ -5,7 +5,7 @@
 module.exports = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @constructs 
+	 * @constructs
 	 * @param {*} base Options and path of the function to the Check Point Manageemnt API
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
