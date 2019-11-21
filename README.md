@@ -230,7 +230,7 @@ Operations Object created with filter logic
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | <code>Object</code> | checkObject return values from API where-used |
+| uid | [<code>Array.&lt;uid&gt;</code>](#uid) | checkObject return values from API where-used |
 
 <a name="showJson"></a>
 

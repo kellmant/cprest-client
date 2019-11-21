@@ -586,7 +586,7 @@ async function tagObjects(myobj) {
 /** 
  * Operations Object created with filter logic
  * @function doParse
- * @param {Object} uid - checkObject return values from API where-used
+ * @param {uid[]} uid - checkObject return values from API where-used
  * @returns {allobjs} -  array of safe UID's to verify usage against
  */
 async function doParse(objdat) {
