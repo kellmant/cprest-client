@@ -43,9 +43,6 @@
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
-<dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>where-used API result format</p>
-</dd>
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
@@ -194,22 +191,6 @@ allobjs object data format
 | group | <code>Array.&lt;Object&gt;</code> | 
 | hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array.&lt;Object&gt;</code> | 
-
-<a name="uid"></a>
-
-## uid : <code>Array.&lt;Object&gt;</code>
-where-used API result format
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| access-control-rules | <code>Array</code> | 
-| nat-rules | <code>Array</code> | 
-| objects | <code>Array</code> | 
-| threat-prevention-rules | <code>Array</code> | 
-| total | <code>Number</code> | 
 
 <a name="usage"></a>
 

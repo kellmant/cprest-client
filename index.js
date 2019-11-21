@@ -123,14 +123,6 @@ async function admins() {
 	.then(() => endSession())
 	.catch(endSession)
 }
-/** 
- * @typedef {Object[]} uid - where-used API result format
- * @property {Array} access-control-rules
- * @property {Array} nat-rules
- * @property {Array} objects
- * @property {Array} threat-prevention-rules
- * @property {Number} total
- */
 
  /**
   * @param 
