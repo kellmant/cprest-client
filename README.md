@@ -33,10 +33,10 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#myapisite">myapisite</a> : <code>json</code></dt>
+<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
 <dd><p>Variable required from auth/mycpapi.json file</p>
 </dd>
-<dt><a href="#mycred">mycred</a> : <code>json</code></dt>
+<dt><a href="#mycred">mycred</a> : <code>Object</code></dt>
 <dd><p>Variable required from auth/mycpauth.json</p>
 </dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
@@ -144,7 +144,7 @@ Set the session handler for a Check Point API connection
 
 <a name="myapisite"></a>
 
-## myapisite : <code>json</code>
+## myapisite : <code>Object</code>
 Variable required from auth/mycpapi.json file
 
 **Kind**: global typedef  
@@ -171,7 +171,7 @@ create auth/mycpapi.json file
 ```
 <a name="mycred"></a>
 
-## mycred : <code>json</code>
+## mycred : <code>Object</code>
 Variable required from auth/mycpauth.json
 
 **Kind**: global typedef  
