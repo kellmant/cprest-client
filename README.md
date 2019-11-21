@@ -1,11 +1,3 @@
-## Classes
-
-<dl>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>CpApiClass</p>
-</dd>
-</dl>
-
 ## Constants
 
 <dl>
@@ -17,6 +9,9 @@
 </dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd><p>Load our class method for HTTP to API connections</p>
+</dd>
+<dt><a href="#toApi">toApi</a></dt>
+<dd><p>CpApiClass =&gt; new toApi</p>
 </dd>
 </dl>
 
@@ -59,12 +54,6 @@
 </dd>
 </dl>
 
-<a name="CpApiClass"></a>
-
-## CpApiClass
-CpApiClass
-
-**Kind**: global class  
 <a name="myapisite"></a>
 
 ## myapisite
@@ -106,6 +95,12 @@ create auth/mycpauth.json file
 
 ## CpApiClass
 Load our class method for HTTP to API connections
+
+**Kind**: global constant  
+<a name="toApi"></a>
+
+## toApi
+CpApiClass => new toApi
 
 **Kind**: global constant  
 <a name="startSession"></a>
