@@ -37,11 +37,8 @@
 <dt><a href="#getUsedObject">getUsedObject(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Recursively discover the use of a host object against Check Point policy</p>
 </dd>
-<dt><a href="#tagObject">tagObject(myobj)</a> ⇒ <code>Object</code></dt>
+<dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#doParse">doParse(objdat)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>Given a set of objects returns by the Check Point API,</p>
-</dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
 <dd></dd>
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code>Object</code></dt>
@@ -73,6 +70,9 @@
 <dl>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
+</dd>
+<dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
+<dd><p>allobjs object data format</p>
 </dd>
 </dl>
 
@@ -143,7 +143,7 @@ Traverse object collected in object
 ```js
 collect an array of objects that match search: 
 myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
-myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrol-rules'], usedobj))
+myres = myres.concat(get([uid, '0', 'used-directly', '0', 'access-conrtol-rules'], usedobj))
 Or get a specific value, like the total count from the API:
 myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
 ```
@@ -207,27 +207,15 @@ Recursively discover the use of a host object against Check Point policy
 | --- | --- | --- |
 | objarr | <code>Array.&lt;Object&gt;</code> | An Check Point object |
 
-<a name="tagObject"></a>
+<a name="tagObjects"></a>
 
-## tagObject(myobj) ⇒ <code>Object</code>
+## tagObjects(myobj) ⇒ <code>Object</code>
 **Kind**: global function  
 **Returns**: <code>Object</code> - Returns the session handler after tagging operations are concluded  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
-
-<a name="doParse"></a>
-
-## doParse(objdat) ⇒ <code>Array.&lt;Object&gt;</code>
-Given a set of objects returns by the Check Point API,
-
-**Kind**: global function  
-**Returns**: <code>Array.&lt;Object&gt;</code> - The parsed and prepared Check Point host object array  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| objdat | <code>\*</code> | An array of objects where the parameter values were already found in policy |
 
 <a name="showJson"></a>
 
@@ -368,3 +356,22 @@ where-used returned data format
     ]
  }
 ```
+<a name="allobjs"></a>
+
+## allobjs : <code>Object</code>
+allobjs object data format
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| group | <code>Array</code> | Group memberships |
+| group.uid | <code>Object</code> | Group object |
+| group.members | <code>Array.&lt;Object&gt;</code> | removal data for host object |
+| hosts | <code>Array</code> | Array of UID representing host objects |
+| access-rule | <code>Array</code> | Policy rules |
+| garbage | <code>Array</code> | Garbage collector |
+| backup | <code>Array</code> | collection of host object names |
+| restore | <code>Array</code> | restore operations data |
+

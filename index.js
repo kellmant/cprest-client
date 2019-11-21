@@ -557,10 +557,16 @@ async function tagObjects(myobj) {
 }
 
 /**
- * Given a set of objects returns by the Check Point API, 
- * @function doParse 
- * @param {*} objdat An array of objects where the parameter values were already found in policy
- * @return {Object[]} The parsed and prepared Check Point host object array
+ * allobjs object data format
+ * @typedef {Object} allobjs - API Change management data store 
+ * @property {Array} group - Group memberships 
+ * @property {Object} group.uid - Group object 
+ * @property {Object[]} group.members - removal data for host object 
+ * @property {Array} hosts - Array of UID representing host objects
+ * @property {Array} access-rule - Policy rules 
+ * @property {Array} garbage - Garbage collector
+ * @property {Array} backup - collection of host object names
+ * @property {Array} restore - restore operations data  
  */
 async function doParse(objdat) {
 	try {
