@@ -31,7 +31,7 @@ const myapisite = require('./auth/mycpapi')
 
 /**
  * API credentials required from auth/mycpauth.json
- * @constant
+ * @require auth/mycpauth.json
  * @example 
  * create auth/mycpauth.json file
  * {

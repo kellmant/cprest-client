@@ -94,6 +94,7 @@ create auth/mycpapi.json file
 API credentials required from auth/mycpauth.json
 
 **Kind**: global constant  
+**Require**: auth/mycpauth.json  
 **Example**  
 ```js
 create auth/mycpauth.json file
