@@ -575,6 +575,12 @@ async function tagObjects(myobj) {
  * @property {String[]} backup - collection of host object names
  * @property {Object[]} restore - restore operations data  
  */
+/** 
+ * Operations Object created with filter logic
+ * @function doParse
+ * @param {Object} uid - checkObject return values from API where-used
+ * @returns {allobjs} -  array of safe UID's to verify usage against
+ */
 async function doParse(objdat) {
 	try {
 		//const myres = {}

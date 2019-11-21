@@ -39,6 +39,9 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
+<dd><p>Operations Object created with filter logic</p>
+</dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
 <dd></dd>
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code>Object</code></dt>
@@ -216,6 +219,18 @@ Recursively discover the use of a host object against Check Point policy
 | Param | Type | Description |
 | --- | --- | --- |
 | myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
+
+<a name="doParse"></a>
+
+## doParse(uid) ⇒ [<code>allobjs</code>](#allobjs)
+Operations Object created with filter logic
+
+**Kind**: global function  
+**Returns**: [<code>allobjs</code>](#allobjs) - -  array of safe UID's to verify usage against  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>Object</code> | checkObject return values from API where-used |
 
 <a name="showJson"></a>
 
