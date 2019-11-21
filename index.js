@@ -42,7 +42,7 @@ const myapisite = require('./auth/mycpapi')
 const mycred = require('./auth/mycpauth')
 
 /**
- * Class Method for API callout builder
+ * Class Method for API token authentication
  * @typedef {Header} x-chkp-sid
  * @property {String} sid Session ID token applied to header
  *
@@ -138,6 +138,51 @@ async function admins() {
  * @param {String} mycmd - show-objects API command to run
  * @returns {String[]} Direct and indirect object use UID array
  */
+
+ /** 
+ * @typedef {Object} sessionid
+ * @property {Object} last-login-was-at
+ * @property {Number} session-timeout
+ * @property {String} sid
+ * @property {String} uid
+ * @property {String} url
+ */
+
+/**
+ * Create an authenticated session with the Check Point API
+ * @param {mycred} credentials Credentials used for API access
+ * @return {sessionid} The prepared session handler
+ */
+async function startSession(myauth) {
+	try {
+			console.log('starting session')
+			var setit = toApi.doPost(myauth, 'login')
+	//toApi.showOpt()
+			sessionid = await callOut(setit.options, setit.postData)
+			return sessionid
+	} catch (err) {
+			console.log('error in startSession')
+			console.log(err)
+	}
+}
+
+// set session token to header
+/**
+* Set the session handler for a Check Point API connection
+* @param {sessionid} sessionid A Check Point API session ID handler
+* @returns {x-chkp-sid} Header token set for session 
+*/
+async function setSession(mysession) {
+	try {
+			console.log('setting session')
+			toApi.setToken(mysession)
+			//toApi.showOpt()
+			return
+	} catch (err) {
+			console.log('error in setSession')
+			console.log(err)
+	}
+}
 
 async function showObjects(mydata, mycmd) {
         try {
@@ -572,50 +617,7 @@ async function showJson(obj) {
     }));
 }
 
-/** 
- * @typedef {Object} sessionid
- * @property {Object} last-login-was-at
- * @property {Number} session-timeout
- * @property {String} sid
- * @property {String} uid
- * @property {String} url
- */
 
-/**
- * Create an authenticated session with the Check Point API
- * @param {mycred} credentials Credentials used for API access
- * @return {sessionid} The prepared session handler
- */
-async function startSession(myauth) {
-        try {
-                console.log('starting session')
-                var setit = toApi.doPost(myauth, 'login')
-		//toApi.showOpt()
-                sessionid = await callOut(setit.options, setit.postData)
-                return sessionid
-        } catch (err) {
-                console.log('error in startSession')
-                console.log(err)
-        }
-}
-
-// set session token to header
-/**
- * Set the session handler for a Check Point API connection
- * @param {sessionid} sessionid A Check Point API session ID handler
- * @returns {x-chkp-sid} Header token set for session 
- */
-async function setSession(mysession) {
-        try {
-                console.log('setting session')
-                toApi.setToken(mysession)
-                //toApi.showOpt()
-                return
-        } catch (err) {
-                console.log('error in setSession')
-                console.log(err)
-        }
-}
 
 async function pubSession() {
         try {

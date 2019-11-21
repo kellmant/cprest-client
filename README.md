@@ -12,8 +12,11 @@
 ## Functions
 
 <dl>
-<dt><a href="#showObjects">showObjects(mydata, mycmd)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
-<dd><p>Object use for an IP</p>
+<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dd><p>Create an authenticated session with the Check Point API</p>
+</dd>
+<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
+<dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
@@ -24,28 +27,22 @@
 <dt><a href="#doParse">doParse(usage)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
-<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
-<dd><p>Create an authenticated session with the Check Point API</p>
-</dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
-<dd><p>Set the session handler for a Check Point API connection</p>
-</dd>
 </dl>
 
 ## Typedefs
 
 <dl>
 <dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
-<dd><p>Class Method for API callout builder</p>
+<dd><p>Class Method for API token authentication</p>
 </dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
+<dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
-<dd></dd>
 </dl>
 
 <a name="myapisite"></a>
@@ -85,18 +82,29 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
-<a name="showObjects"></a>
+<a name="startSession"></a>
 
-## showObjects(mydata, mycmd) ⇒ <code>Array.&lt;String&gt;</code>
-Object use for an IP
+## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
+Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;String&gt;</code> - Direct and indirect object use UID array  
+**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mydata | <code>Array.&lt;Object&gt;</code> | Search filter for IP |
-| mycmd | <code>String</code> | show-objects API command to run |
+| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
+
+<a name="setSession"></a>
+
+## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
+Set the session handler for a Check Point API connection
+
+**Kind**: global function  
+**Returns**: [<code>x-chkp-sid</code>](#x-chkp-sid) - Header token set for session  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
 
 <a name="checkObject"></a>
 
@@ -134,34 +142,10 @@ Operations Object created with filter logic
 | --- | --- | --- |
 | usage | [<code>usage</code>](#usage) | return values from API where-used |
 
-<a name="startSession"></a>
-
-## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
-Create an authenticated session with the Check Point API
-
-**Kind**: global function  
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
-
-<a name="setSession"></a>
-
-## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
-Set the session handler for a Check Point API connection
-
-**Kind**: global function  
-**Returns**: [<code>x-chkp-sid</code>](#x-chkp-sid) - Header token set for session  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
-
 <a name="x-chkp-sid"></a>
 
 ## x-chkp-sid : <code>Header</code>
-Class Method for API callout builder
+Class Method for API token authentication
 
 **Kind**: global typedef  
 **Properties**
@@ -186,6 +170,20 @@ allobjs object data format
 | group | <code>Array.&lt;Object&gt;</code> | 
 | hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array.&lt;Object&gt;</code> | 
+
+<a name="sessionid"></a>
+
+## sessionid : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| last-login-was-at | <code>Object</code> | 
+| session-timeout | <code>Number</code> | 
+| sid | <code>String</code> | 
+| uid | <code>String</code> | 
+| url | <code>String</code> | 
 
 <a name="usage"></a>
 
@@ -236,17 +234,3 @@ where-used returned data format by UID of each host
     ]
  }
 ```
-<a name="sessionid"></a>
-
-## sessionid : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| last-login-was-at | <code>Object</code> | 
-| session-timeout | <code>Number</code> | 
-| sid | <code>String</code> | 
-| uid | <code>String</code> | 
-| url | <code>String</code> | 
-
