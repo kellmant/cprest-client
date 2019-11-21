@@ -345,7 +345,6 @@ allobjs object data format
 | group.uid | <code>String</code> | Group object |
 | group.members | <code>Object</code> | member information |
 | group.members.remove | <code>Array.&lt;String&gt;</code> | host object UID to remove |
-|  | <code>Array.&lt;String&gt;</code> |  |
 | access-rule.uid | <code>String</code> | Rule unique ID |
 | access-rule.layer | <code>String</code> | Rulebase layer unique ID |
 | access-rule.destination | <code>Object</code> | policy rule position |

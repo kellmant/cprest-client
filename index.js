@@ -73,7 +73,6 @@ var cleanobj = {}
  * @property {String[]} group.members.remove - host object UID to remove 
  * 
  * @typedef {String[]} hosts - Array of UID representing host objects
- * @property {String[]} 
  *
  * @typedef {Object[]} access-rule - Policy rules 
  * @property {String} access-rule.uid - Rule unique ID 
