@@ -12,6 +12,7 @@ const get = (p, o) =>
 
 /**
  * Variable required from auth/mycpapi.json file
+ * @type {json} 
  * @param {Object} myapisite - Setup API hostname
  * @example
  * create auth/mycpapi.json file
@@ -132,6 +133,12 @@ async function admins() {
  * @property {Number} total
  */
 
+ /**
+  * @param 
+  * @param {*} mydata 
+  * @param {*} mycmd 
+  */
+
 /** 
  * Object use for an IP
  * @function showObjects
@@ -204,8 +211,6 @@ async function checkObject(objarr) {
 	}
 }
 
-
-
 /**
  * where-used returned data format
  * @typedef {Object[]} uid - Array of Host objects details by UID
@@ -266,10 +271,83 @@ async function whereUsed(objarr) {
                 	myreturn[objarr[x]] = await callOut(setit.options, setit.postData)
                 	usedobj[ip] = usedobj[ip].concat(myreturn)
 		}
-                //usedobj[ip] = usedobj[ip].concat(myreturn)
 		return usedobj
 	} catch (err) {
 		console.log('error in whereUsed : ' + err)
+	}
+}
+
+/** 
+ * Operations Object created with filter logic
+ * @function doParse
+ * @param {uid[]} uid - checkObject return values from API where-used
+ * @returns {allobjs} -  array of safe UID's to verify usage against
+ */
+async function doParse(objdat) {
+	try {
+		//const myres = {}
+		console.log('Doing Search of IP : ' + ip)
+		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
+		if (Object.values(objdat[ip]).length < 0) {
+			throw new Error('No HOST OBJECTS FOUND')
+		}
+		var myobjarr = []
+		var myacl = []
+		var mynat = []
+		var mythreat = []
+		Object.keys(objdat[ip]).forEach(uid => {
+			Object.keys(objdat[ip][uid]).forEach(usetype => {
+				console.log(usetype)
+				cleanobj[usetype] = []
+				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
+					var myres = {}
+					myres[used] = []
+					if (objdat[ip][uid][usetype][used]['total'] > 0) {
+						mytotal = objdat[ip][uid][usetype][used]['total']
+						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
+						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
+							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
+								let myarrs = {}
+								myarrs[arrs] = []
+								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
+								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)								
+								if (used === 'used-directly') {
+									if (arrs === 'objects') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										myobjarr = myobjarr.concat(myused)
+									} else if (arrs === 'access-control-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										myacl = myacl.concat(myused)
+									} else if (arrs === 'nat-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										mynat = mynat.concat(myused)
+									} else if (arrs === 'threat-prevention-rules') {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										mythreat = mythreat.concat(myused)
+									} else {
+										let myused = objdat[ip][uid][usetype][used][arrs]
+										allobjs[garbage] = allobjs[garbagge].concat(myused)
+									}
+								} 					
+							}
+						});
+					}
+				});
+			});
+			console.log('---')
+		});
+		console.log('parsing objects')
+		await parseObjectUse(myobjarr)
+		console.log('parsing rules')
+		await parseRuleUse(myacl)
+		console.log('parsing nat')
+		await parseNatUse(mynat)
+		console.log('parsing threat')
+		await parseThreatUse(mythreat)
+		console.log('returning object data')
+		return allobjs
+	} catch (err) {
+		console.log('error in doParse : ' + err)
 	}
 }
 
@@ -499,79 +577,6 @@ async function tagObjects(myobj) {
 }
 
 
-/** 
- * Operations Object created with filter logic
- * @function doParse
- * @param {uid[]} uid - checkObject return values from API where-used
- * @returns {allobjs} -  array of safe UID's to verify usage against
- */
-async function doParse(objdat) {
-	try {
-		//const myres = {}
-		console.log('Doing Search of IP : ' + ip)
-		console.log('Number of host objects: ' + Object.values(objdat[ip]).length)
-		if (Object.values(objdat[ip]).length < 0) {
-			throw new Error('No HOST OBJECTS FOUND')
-		}
-		var myobjarr = []
-		var myacl = []
-		var mynat = []
-		var mythreat = []
-		Object.keys(objdat[ip]).forEach(uid => {
-			Object.keys(objdat[ip][uid]).forEach(usetype => {
-				console.log(usetype)
-				cleanobj[usetype] = []
-				Object.keys(objdat[ip][uid][usetype]).forEach(used => {
-					var myres = {}
-					myres[used] = []
-					if (objdat[ip][uid][usetype][used]['total'] > 0) {
-						mytotal = objdat[ip][uid][usetype][used]['total']
-						console.log(used + ' : ' + objdat[ip][uid][usetype][used]['total'])
-						Object.keys(objdat[ip][uid][usetype][used]).forEach(arrs => {
-							if (Object.keys(objdat[ip][uid][usetype][used][arrs]).length > 0) {
-								let myarrs = {}
-								myarrs[arrs] = []
-								let mycnt = Object.keys(objdat[ip][uid][usetype][used][arrs]).length
-								console.log(mycnt + ' ' + arrs + ' ' + usetype + ' used: ' + used)								
-								if (used === 'used-directly') {
-									if (arrs === 'objects') {
-										let myused = objdat[ip][uid][usetype][used][arrs]
-										myobjarr = myobjarr.concat(myused)
-									} else if (arrs === 'access-control-rules') {
-										let myused = objdat[ip][uid][usetype][used][arrs]
-										myacl = myacl.concat(myused)
-									} else if (arrs === 'nat-rules') {
-										let myused = objdat[ip][uid][usetype][used][arrs]
-										mynat = mynat.concat(myused)
-									} else if (arrs === 'threat-prevention-rules') {
-										let myused = objdat[ip][uid][usetype][used][arrs]
-										mythreat = mythreat.concat(myused)
-									} else {
-										let myused = objdat[ip][uid][usetype][used][arrs]
-										allobjs[garbage] = allobjs[garbagge].concat(myused)
-									}
-								} 					
-							}
-						});
-					}
-				});
-			});
-			console.log('---')
-		});
-		console.log('parsing objects')
-		await parseObjectUse(myobjarr)
-		console.log('parsing rules')
-		await parseRuleUse(myacl)
-		console.log('parsing nat')
-		await parseNatUse(mynat)
-		console.log('parsing threat')
-		await parseThreatUse(mythreat)
-		console.log('returning object data')
-		return allobjs
-	} catch (err) {
-		console.log('error in doParse : ' + err)
-	}
-}
 
 // pretty show json data to console
 async function showJson(obj) {
@@ -583,7 +588,7 @@ async function showJson(obj) {
 }
 
 /** 
- * @typedef {Object} mysession
+ * @typedef {Object} login
  * @property {Object} last-login-was-at
  * @property {Number} session-timeout
  * @property {String} sid
@@ -595,7 +600,7 @@ async function showJson(obj) {
  * Create an authenticated session with the Check Point API
  * @function startSession 
  * @param {json} myauth Credentials used for API access
- * @return {mysession} The prepared session handler
+ * @return {login} The prepared session handler
  */
 async function startSession(myauth) {
         try {

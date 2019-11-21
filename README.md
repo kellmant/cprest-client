@@ -8,7 +8,7 @@
 ## Constants
 
 <dl>
-<dt><a href="#myapisite">myapisite</a></dt>
+<dt><a href="#myapisite">myapisite</a> : <code>json</code></dt>
 <dd><p>Variable required from auth/mycpapi.json file</p>
 </dd>
 <dt><a href="#mycred">mycred</a></dt>
@@ -28,12 +28,12 @@
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
-<dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
-<dd></dd>
 <dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
-<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#mysession">mysession</a></code></dt>
+<dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#login">login</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#setSession">setSession(sid)</a></dt>
@@ -53,7 +53,7 @@
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
 </dd>
-<dt><a href="#mysession">mysession</a> : <code>Object</code></dt>
+<dt><a href="#login">login</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -68,7 +68,7 @@ Class Method for API callout builder
 
 <a name="myapisite"></a>
 
-## myapisite
+## myapisite : <code>json</code>
 Variable required from auth/mycpapi.json file
 
 **Kind**: global constant  
@@ -147,16 +147,6 @@ Determine where a set of objects is used in Check Point policies
 | --- | --- | --- |
 | objarr | <code>Array.&lt;Object&gt;</code> | Any array of objects containing filter values by UID |
 
-<a name="tagObjects"></a>
-
-## tagObjects(myobj) ⇒ <code>Object</code>
-**Kind**: global function  
-**Returns**: <code>Object</code> - Returns the session handler after tagging operations are concluded  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
-
 <a name="doParse"></a>
 
 ## doParse(uid) ⇒ [<code>allobjs</code>](#allobjs)
@@ -169,13 +159,23 @@ Operations Object created with filter logic
 | --- | --- | --- |
 | uid | [<code>Array.&lt;uid&gt;</code>](#uid) | checkObject return values from API where-used |
 
+<a name="tagObjects"></a>
+
+## tagObjects(myobj) ⇒ <code>Object</code>
+**Kind**: global function  
+**Returns**: <code>Object</code> - Returns the session handler after tagging operations are concluded  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
+
 <a name="startSession"></a>
 
-## startSession(myauth) ⇒ [<code>mysession</code>](#mysession)
+## startSession(myauth) ⇒ [<code>login</code>](#login)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: [<code>mysession</code>](#mysession) - The prepared session handler  
+**Returns**: [<code>login</code>](#login) - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -190,7 +190,7 @@ Set the session handler for a Check Point API connection
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | [<code>mysession</code>](#mysession) | A Check Point API session ID handler |
+| sid | <code>mysession</code> | A Check Point API session ID handler |
 
 <a name="allobjs"></a>
 
@@ -274,9 +274,9 @@ where-used returned data format
     ]
  }
 ```
-<a name="mysession"></a>
+<a name="login"></a>
 
-## mysession : <code>Object</code>
+## login : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 
