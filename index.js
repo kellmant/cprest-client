@@ -12,7 +12,7 @@ const get = (p, o) =>
 
 /**
  * API Site configuration required from auth/mycpapi.json file
- * @constant
+ * @require
  * @example
  * create auth/mycpapi.json file
  * {
