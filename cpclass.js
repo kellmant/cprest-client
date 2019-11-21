@@ -1,6 +1,6 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
- * @constructor CpApiClass
+ * @class
  */
 //module.exports = class ApiCall {
 const CpApiClass = class ApiCall {

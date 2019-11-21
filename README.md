@@ -3,8 +3,6 @@
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd></dd>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd></dd>
 </dl>
 
 ## Constants
@@ -69,106 +67,12 @@
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass()](#new_CpApiClass_new)
     * [new CpApiClass(base)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
     * [.setToken(mysession)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
-
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass()
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass(base)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
-
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
-<a name="CpApiClass+showOpt"></a>
-
-### cpApiClass.showOpt()
-Log the options and data to console for debugging
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-<a name="CpApiClass+doPost"></a>
-
-### cpApiClass.doPost(data, appfunc) ⇒
-Given data to be delivered and application function path prepare the POST structure
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>json</code> | List of options to be included in the HTTP POST |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="CpApiClass+setToken"></a>
-
-### cpApiClass.setToken(mysession) ⇒
-Set the 'x-chkp-sid' token field to the current session token
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mysession | <code>\*</code> | Session to be set |
-
-<a name="CpApiClass+doGet"></a>
-
-### cpApiClass.doGet(appfunc) ⇒
-Prepare an HTTP GET for the given API function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="CpApiClass+doDelete"></a>
-
-### cpApiClass.doDelete(appfunc) ⇒
-Prepare an HTTP DELETE for the given APU function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="CpApiClass"></a>
-
-## CpApiClass
-**Kind**: global class  
-
-* [CpApiClass](#CpApiClass)
-    * [new CpApiClass()](#new_CpApiClass_new)
-    * [new CpApiClass(base)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
-    * [.setToken(mysession)](#CpApiClass+setToken) ⇒
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
-
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass()
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 <a name="new_CpApiClass_new"></a>
 
@@ -284,18 +188,12 @@ Load our class method for HTTP to API connections
 **Kind**: global constant  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass()](#new_CpApiClass_new)
     * [new CpApiClass(base)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
     * [.setToken(mysession)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
-
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass()
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 <a name="new_CpApiClass_new"></a>
 
