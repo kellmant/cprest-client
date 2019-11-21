@@ -1,15 +1,7 @@
 ## Modules
 
 <dl>
-<dt><a href="#module_CpClass">CpClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
-</dd>
-</dl>
-
-## Classes
-
-<dl>
-<dt><a href="#showOpt">showOpt</a></dt>
+<dt><a href="#module_CpApiClass">CpApiClass</a></dt>
 <dd></dd>
 </dl>
 
@@ -24,203 +16,106 @@
 </dd>
 </dl>
 
-## Functions
-
-<dl>
-<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
-<dd><p>Create an authenticated session with the Check Point API</p>
-</dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
-<dd><p>Set the session handler for a Check Point API connection</p>
-</dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
-<dd><p>Object verify IP matches filter</p>
-</dd>
-<dt><a href="#whereUsed">whereUsed(uid)</a> ⇒ <code><a href="#usage">usage</a></code></dt>
-<dd><p>Determine where a set of objects is used in Check Point policies</p>
-</dd>
-<dt><a href="#doParse">doParse(usage)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
-<dd><p>Operations Object created with filter logic</p>
-</dd>
-<dt><a href="#endSession">endSession()</a></dt>
-<dd><p>end session and expire token from header</p>
-</dd>
-</dl>
-
 ## Typedefs
 
 <dl>
 <dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
 <dd><p>Class Method for API token authentication</p>
 </dd>
-<dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
-<dd><p>allobjs object data format</p>
-</dd>
-<dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
-<dd></dd>
-<dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>where-used returned data format by UID of each host</p>
-</dd>
 </dl>
 
-<a name="module_CpClass"></a>
+<a name="module_CpApiClass"></a>
 
-## CpClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+## CpApiClass
 
+* [CpApiClass](#module_CpApiClass)
+    * [~toApi](#module_CpApiClass..toApi)
+    * [~startSession(credentials)](#module_CpApiClass..startSession) ⇒ <code>sessionid</code>
+    * [~setSession(sessionid)](#module_CpApiClass..setSession) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
+    * [~checkObject(uid)](#module_CpApiClass..checkObject) ⇒ <code>Array.&lt;String&gt;</code>
+    * [~whereUsed(uid)](#module_CpApiClass..whereUsed) ⇒ <code>usage</code>
+    * [~doParse(usage)](#module_CpApiClass..doParse) ⇒ <code>allobjs</code>
+    * [~endSession()](#module_CpApiClass..endSession)
+    * [~allobjs](#module_CpApiClass..allobjs) : <code>Object</code>
+    * [~sessionid](#module_CpApiClass..sessionid) : <code>Object</code>
+    * [~usage](#module_CpApiClass..usage) : <code>Array.&lt;Object&gt;</code>
 
-* [CpClass](#module_CpClass)
-    * [module.exports](#exp_module_CpClass--module.exports) ⏏
-        * [new module.exports(base)](#new_module_CpClass--module.exports_new)
+<a name="module_CpApiClass..toApi"></a>
 
-<a name="exp_module_CpClass--module.exports"></a>
+### CpApiClass~toApi
+**Kind**: inner class of [<code>CpApiClass</code>](#module_CpApiClass)  
+<a name="module_CpApiClass..startSession"></a>
 
-### module.exports ⏏
-**Kind**: Exported class  
-<a name="new_module_CpClass--module.exports_new"></a>
-
-#### new module.exports(base)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
-
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
-<a name="showOpt"></a>
-
-## showOpt
-**Kind**: global class  
-<a name="new_showOpt_new"></a>
-
-### new module.exports#showOpt()
-Log the options and data to console for debugging
-
-<a name="myapisite"></a>
-
-## myapisite
-API Site configuration required from auth/mycpapi.json file
-
-**Kind**: global constant  
-**Require**: auth/mycpapi.json  
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
-<a name="mycred"></a>
-
-## mycred
-API credentials required from auth/mycpauth.json
-
-**Kind**: global constant  
-**Require**: auth/mycpauth.json  
-**Example**  
-```js
-create auth/mycpauth.json file
-{
-		"user": "apiuser",
-		"password": "PASSWORD"
-}
-```
-<a name="startSession"></a>
-
-## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
+### CpApiClass~startSession(credentials) ⇒ <code>sessionid</code>
 Create an authenticated session with the Check Point API
 
-**Kind**: global function  
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
+**Returns**: <code>sessionid</code> - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
-<a name="setSession"></a>
+<a name="module_CpApiClass..setSession"></a>
 
-## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
+### CpApiClass~setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
 Set the session handler for a Check Point API connection
 
-**Kind**: global function  
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
 **Returns**: [<code>x-chkp-sid</code>](#x-chkp-sid) - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
+| sessionid | <code>sessionid</code> | A Check Point API session ID handler |
 
-<a name="checkObject"></a>
+<a name="module_CpApiClass..checkObject"></a>
 
-## checkObject(uid) ⇒ <code>Array.&lt;String&gt;</code>
+### CpApiClass~checkObject(uid) ⇒ <code>Array.&lt;String&gt;</code>
 Object verify IP matches filter
 
-**Kind**: global function  
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
 **Returns**: <code>Array.&lt;String&gt;</code> - array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | uid | <code>Array.&lt;String&gt;</code> | UID to verify IP address filter |
 
-<a name="whereUsed"></a>
+<a name="module_CpApiClass..whereUsed"></a>
 
-## whereUsed(uid) ⇒ [<code>usage</code>](#usage)
+### CpApiClass~whereUsed(uid) ⇒ <code>usage</code>
 Determine where a set of objects is used in Check Point policies
 
-**Kind**: global function  
-**Returns**: [<code>usage</code>](#usage) - An array of objects where the parameter values were found in policy  
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
+**Returns**: <code>usage</code> - An array of objects where the parameter values were found in policy  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | uid | <code>Array.&lt;String&gt;</code> | Any array of objects containing filter values by UID |
 
-<a name="doParse"></a>
+<a name="module_CpApiClass..doParse"></a>
 
-## doParse(usage) ⇒ [<code>allobjs</code>](#allobjs)
+### CpApiClass~doParse(usage) ⇒ <code>allobjs</code>
 Operations Object created with filter logic
 
-**Kind**: global function  
-**Returns**: [<code>allobjs</code>](#allobjs) - -  array of operational changes  
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
+**Returns**: <code>allobjs</code> - -  array of operational changes  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| usage | [<code>usage</code>](#usage) | return values from API where-used |
+| usage | <code>usage</code> | return values from API where-used |
 
-<a name="endSession"></a>
+<a name="module_CpApiClass..endSession"></a>
 
-## endSession()
+### CpApiClass~endSession()
 end session and expire token from header
 
-**Kind**: global function  
-<a name="x-chkp-sid"></a>
+**Kind**: inner method of [<code>CpApiClass</code>](#module_CpApiClass)  
+<a name="module_CpApiClass..allobjs"></a>
 
-## x-chkp-sid : <code>Header</code>
-Class Method for API token authentication
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| sid | <code>String</code> | Session ID token applied to header |
-
-<a name="allobjs"></a>
-
-## allobjs : <code>Object</code>
+### CpApiClass~allobjs : <code>Object</code>
 allobjs object data format
 
-**Kind**: global typedef  
+**Kind**: inner typedef of [<code>CpApiClass</code>](#module_CpApiClass)  
 **Properties**
 
 | Name | Type |
@@ -232,10 +127,10 @@ allobjs object data format
 | hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array.&lt;Object&gt;</code> | 
 
-<a name="sessionid"></a>
+<a name="module_CpApiClass..sessionid"></a>
 
-## sessionid : <code>Object</code>
-**Kind**: global typedef  
+### CpApiClass~sessionid : <code>Object</code>
+**Kind**: inner typedef of [<code>CpApiClass</code>](#module_CpApiClass)  
 **Properties**
 
 | Name | Type |
@@ -246,12 +141,12 @@ allobjs object data format
 | uid | <code>String</code> | 
 | url | <code>String</code> | 
 
-<a name="usage"></a>
+<a name="module_CpApiClass..usage"></a>
 
-## usage : <code>Array.&lt;Object&gt;</code>
+### CpApiClass~usage : <code>Array.&lt;Object&gt;</code>
 where-used returned data format by UID of each host
 
-**Kind**: global typedef  
+**Kind**: inner typedef of [<code>CpApiClass</code>](#module_CpApiClass)  
 **Properties**
 
 | Name | Type | Description |
@@ -295,3 +190,52 @@ where-used returned data format by UID of each host
     ]
  }
 ```
+<a name="myapisite"></a>
+
+## myapisite
+API Site configuration required from auth/mycpapi.json file
+
+**Kind**: global constant  
+**Require**: auth/mycpapi.json  
+**Example**  
+```js
+create auth/mycpapi.json file
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
+<a name="mycred"></a>
+
+## mycred
+API credentials required from auth/mycpauth.json
+
+**Kind**: global constant  
+**Require**: auth/mycpauth.json  
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
+}
+```
+<a name="x-chkp-sid"></a>
+
+## x-chkp-sid : <code>Header</code>
+Class Method for API token authentication
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| sid | <code>String</code> | Session ID token applied to header |
+

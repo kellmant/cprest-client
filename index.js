@@ -47,8 +47,13 @@ const mycred = require('./auth/mycpauth')
  * @property {String} sid Session ID token applied to header
  *
  */
-
+/**
+ * @module CpApiClass
+ */
 const CpApiClass = require('./cpclass')
+/**
+ * @class toApi
+ */
 const toApi = new CpApiClass(myapisite.chkp)
 
 var details = 'uid'
