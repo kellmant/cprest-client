@@ -68,12 +68,12 @@ var cleanobj = {}
 /**
  * allobjs object data format
  * @typedef {Object} allobjs
- * @property {Array} access-rule
+ * @property {Object[]} access-rule
  * @property {String[]} backup
- * @property {Array} garbage
- * @property {Array} group
+ * @property {Object[]} garbage
+ * @property {Object[]} group
  * @property {String[]} hosts
- * @property {Array} restore
+ * @property {Object[]} restore
  */
 var allobjs = {}
 var mygroups = 'group'

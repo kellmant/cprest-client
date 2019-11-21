@@ -332,12 +332,12 @@ allobjs object data format
 
 | Name | Type |
 | --- | --- |
-| access-rule | <code>Array</code> | 
+| access-rule | <code>Array.&lt;Object&gt;</code> | 
 | backup | <code>Array.&lt;String&gt;</code> | 
-| garbage | <code>Array</code> | 
-| group | <code>Array</code> | 
+| garbage | <code>Array.&lt;Object&gt;</code> | 
+| group | <code>Array.&lt;Object&gt;</code> | 
 | hosts | <code>Array.&lt;String&gt;</code> | 
-| restore | <code>Array</code> | 
+| restore | <code>Array.&lt;Object&gt;</code> | 
 
 <a name="uid"></a>
 
