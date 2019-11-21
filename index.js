@@ -62,12 +62,28 @@ const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 
 var details = 'uid'
-
-//var objarr = []
-//var objdata = {}
-
 var usedobj = {}
 var cleanobj = {}
+
+/**
+ * allobjs object data format
+ * @typedef {Object} allobjs - API Change management data store 
+ * @property {Object[]} group - Group memberships 
+ * @property {String} group.uid - Group object 
+ * @property {Object} group.members - member information  
+ * @property {String[]} group.members.remove - host object UID to remove 
+ * @property {String[]} hosts - Array of UID representing host objects
+ * @property {Object[]} access-rule - Policy rules 
+ * @property {String} access-rule.uid - Rule unique ID 
+ * @property {String} access-rule.layer - Rulebase layer unique ID 
+ * @property {Object} access-rule.destination - policy rule position 
+ * @property {String[]} access-rule.destination.remove - UID to remove 
+ * @property {Object} access-rule.source - policy rule position 
+ * @property {String[]} access-rule.source.remove - UID to remove 
+ * @property {Object[]} garbage - Garbage collector
+ * @property {String[]} backup - collection of host object names
+ * @property {Object[]} restore - restore operations data  
+ */
 var allobjs = {}
 var mygroups = 'group'
 allobjs[mygroups] = []
@@ -176,10 +192,8 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {uid[]} -  array of safe UID's to verify usage against
+ * @returns {allobjs.hosts[]} -  array of safe UID's to verify usage against
  */
-
-
 async function checkObject(objarr) {
 	try {
 		var mydata = {}
@@ -556,25 +570,7 @@ async function tagObjects(myobj) {
 	}
 }
 
-/**
- * allobjs object data format
- * @typedef {Object} allobjs - API Change management data store 
- * @property {Object[]} group - Group memberships 
- * @property {String} group.uid - Group object 
- * @property {Object} group.members - member information  
- * @property {String[]} group.members.remove - host object UID to remove 
- * @property {String[]} hosts - Array of UID representing host objects
- * @property {Object[]} access-rule - Policy rules 
- * @property {String} access-rule.uid - Rule unique ID 
- * @property {String} access-rule.layer - Rulebase layer unique ID 
- * @property {Object} access-rule.destination - policy rule position 
- * @property {String[]} access-rule.destination.remove - UID to remove 
- * @property {Object} access-rule.source - policy rule position 
- * @property {String[]} access-rule.source.remove - UID to remove 
- * @property {Object[]} garbage - Garbage collector
- * @property {String[]} backup - collection of host object names
- * @property {Object[]} restore - restore operations data  
- */
+
 /** 
  * Operations Object created with filter logic
  * @function doParse
