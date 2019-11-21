@@ -461,12 +461,6 @@ async function parseThreatUse(objdat) {
 	}
 }
 
- /**
-  * Determine where a set of objects is used in Check Point policies
-  * @function getObjectUse 
-  * @param {Object[]} isused An Check Point host object array prepared by doParse
-  * @return {Object[]} An array of objects where the parameter values were found in policy
-  */
 async function getObjectUse(isused) {
 	try {
 		var myres = []
@@ -484,12 +478,6 @@ async function getObjectUse(isused) {
 	}
 }
 
- /**
-  * Recursively discover the use of a host object against Check Point policy
-  * @function getUsedObject 
-  * @param {Object[]} objarr An Check Point object 
-  * @return {Object[]} An array of objects where the parameter values were found in policy
-  */
 async function getUsedObject(objarr) {
 	try {
 		var mydata = {}
@@ -643,11 +631,6 @@ async function doParse(objdat) {
 }
 
 // pretty show json data to console
-/**
- * @function showJson
- * @param {json} obj 
- * @return {json} A prettifed version of the json object using prettyjson library
- */
 async function showJson(obj) {
     return (showpretty.render(obj, {
               keysColor: 'blue',
@@ -702,11 +685,6 @@ async function setSession(mysession) {
         }
 }
 
-/**
- * Publish data to the Check Point API via a callout to HTTP POST
- * @function pubSession 
- * @return {Object} mysession A Check Point API session handler
- */
 async function pubSession() {
         try {
                 console.log('publishing session')
@@ -723,11 +701,6 @@ async function pubSession() {
 
 
 // end session and expire token from header
-/**
- * Safely logout from the Check Point API
- * @function endSession 
- * @return {Object} The completed Check Point API session handler
- */
 async function endSession() {
         try {
                 console.log('ending session')
@@ -741,11 +714,6 @@ async function endSession() {
 }
 
 // go get the rest api data
-/**
- * 
- * @param {json} options 
- * @param {*} postData 
- */
 async function callOut(options, postData) {
     return new Promise((resolve, reject) => {
             var req = https.request(options, (res) => {
@@ -771,10 +739,6 @@ async function callOut(options, postData) {
 }
 
 // save api output as json data to file
-/**
- * @function writeJson
- * @param {json} content 
- */
 async function writeJson (content) {
         try {
                 var newfile = myfilename + '.json'
@@ -797,22 +761,10 @@ async function writeJson (content) {
 }
 
 // easy way to wait
-/**
- * Promise'd sleep function to account for API round trip delays
- * @function sleep 
- * @param {int} ms Number of milliseconds to sleep  by
- * @return {Object} The completed promise after x time has passed
- */
 function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/**
- * the number of keys in use for a given object
- * @function Count 
- * @param {Object} obj The object to be checked
- * @return {int} The number of keys in use
- */
 function countOf(obj) {
 	return Object.keys(obj).length
 }

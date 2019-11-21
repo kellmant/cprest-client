@@ -31,40 +31,16 @@
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
-<dt><a href="#getObjectUse">getObjectUse(isused)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>Determine where a set of objects is used in Check Point policies</p>
-</dd>
-<dt><a href="#getUsedObject">getUsedObject(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>Recursively discover the use of a host object against Check Point policy</p>
-</dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
-<dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
-<dd></dd>
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#mysession">mysession</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#setSession">setSession(mysession)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
-</dd>
-<dt><a href="#pubSession">pubSession()</a> ⇒ <code>Object</code></dt>
-<dd><p>Publish data to the Check Point API via a callout to HTTP POST</p>
-</dd>
-<dt><a href="#endSession">endSession()</a> ⇒ <code>Object</code></dt>
-<dd><p>Safely logout from the Check Point API</p>
-</dd>
-<dt><a href="#callOut">callOut(options, postData)</a></dt>
-<dd></dd>
-<dt><a href="#writeJson">writeJson(content)</a></dt>
-<dd></dd>
-<dt><a href="#sleep">sleep(ms)</a> ⇒ <code>Object</code></dt>
-<dd><p>Promise&#39;d sleep function to account for API round trip delays</p>
-</dd>
-<dt><a href="#Count">Count(obj)</a> ⇒ <code>int</code></dt>
-<dd><p>the number of keys in use for a given object</p>
 </dd>
 </dl>
 
@@ -191,30 +167,6 @@ Determine where a set of objects is used in Check Point policies
 | --- | --- | --- |
 | objarr | <code>Array.&lt;Object&gt;</code> | Any array of objects containing filter values by UID |
 
-<a name="getObjectUse"></a>
-
-## getObjectUse(isused) ⇒ <code>Array.&lt;Object&gt;</code>
-Determine where a set of objects is used in Check Point policies
-
-**Kind**: global function  
-**Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| isused | <code>Array.&lt;Object&gt;</code> | An Check Point host object array prepared by doParse |
-
-<a name="getUsedObject"></a>
-
-## getUsedObject(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
-Recursively discover the use of a host object against Check Point policy
-
-**Kind**: global function  
-**Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| objarr | <code>Array.&lt;Object&gt;</code> | An Check Point object |
-
 <a name="tagObjects"></a>
 
 ## tagObjects(myobj) ⇒ <code>Object</code>
@@ -236,16 +188,6 @@ Operations Object created with filter logic
 | Param | Type | Description |
 | --- | --- | --- |
 | uid | [<code>Array.&lt;uid&gt;</code>](#uid) | checkObject return values from API where-used |
-
-<a name="showJson"></a>
-
-## showJson(obj) ⇒ <code>json</code>
-**Kind**: global function  
-**Returns**: <code>json</code> - A prettifed version of the json object using prettyjson library  
-
-| Param | Type |
-| --- | --- |
-| obj | <code>json</code> | 
 
 <a name="startSession"></a>
 
@@ -269,63 +211,6 @@ Set the session handler for a Check Point API connection
 | Param | Type | Description |
 | --- | --- | --- |
 | mysession | <code>json</code> | A Check Point API session handler |
-
-<a name="pubSession"></a>
-
-## pubSession() ⇒ <code>Object</code>
-Publish data to the Check Point API via a callout to HTTP POST
-
-**Kind**: global function  
-**Returns**: <code>Object</code> - mysession A Check Point API session handler  
-<a name="endSession"></a>
-
-## endSession() ⇒ <code>Object</code>
-Safely logout from the Check Point API
-
-**Kind**: global function  
-**Returns**: <code>Object</code> - The completed Check Point API session handler  
-<a name="callOut"></a>
-
-## callOut(options, postData)
-**Kind**: global function  
-
-| Param | Type |
-| --- | --- |
-| options | <code>json</code> | 
-| postData | <code>\*</code> | 
-
-<a name="writeJson"></a>
-
-## writeJson(content)
-**Kind**: global function  
-
-| Param | Type |
-| --- | --- |
-| content | <code>json</code> | 
-
-<a name="sleep"></a>
-
-## sleep(ms) ⇒ <code>Object</code>
-Promise'd sleep function to account for API round trip delays
-
-**Kind**: global function  
-**Returns**: <code>Object</code> - The completed promise after x time has passed  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| ms | <code>int</code> | Number of milliseconds to sleep  by |
-
-<a name="Count"></a>
-
-## Count(obj) ⇒ <code>int</code>
-the number of keys in use for a given object
-
-**Kind**: global function  
-**Returns**: <code>int</code> - The number of keys in use  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| obj | <code>Object</code> | The object to be checked |
 
 <a name="allobjs"></a>
 
