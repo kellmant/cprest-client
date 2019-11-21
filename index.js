@@ -599,7 +599,7 @@ async function showJson(obj) {
 
 /**
  * Create an authenticated session with the Check Point API
- * @param {mycred} mycred Credentials used for API access
+ * @param {mycred} credentials Credentials used for API access
  * @return {sessionid} The prepared session handler
  */
 async function startSession(myauth) {
