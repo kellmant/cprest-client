@@ -66,10 +66,10 @@
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>api</code>](#api)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
-    * [.setToken(mysession)](#CpApiClass+setToken) ⇒
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ [<code>api</code>](#api)
+    * [.setToken(mysession)](#CpApiClass+setToken) ⇒ [<code>api</code>](#api)
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ [<code>api</code>](#api)
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ [<code>api</code>](#api)
 
 <a name="new_CpApiClass_new"></a>
 
@@ -95,11 +95,11 @@ Log the options and data to console for debugging
 **Returns**: [<code>api</code>](#api) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
-### cpApiClass.doPost(data, appfunc) ⇒
+### cpApiClass.doPost(data, appfunc) ⇒ [<code>api</code>](#api)
 Given data to be delivered and application function path prepare the POST structure
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
+**Returns**: [<code>api</code>](#api) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -108,11 +108,11 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(mysession) ⇒
+### cpApiClass.setToken(mysession) ⇒ [<code>api</code>](#api)
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
+**Returns**: [<code>api</code>](#api) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -120,11 +120,11 @@ Set the 'x-chkp-sid' token field to the current session token
 
 <a name="CpApiClass+doGet"></a>
 
-### cpApiClass.doGet(appfunc) ⇒
+### cpApiClass.doGet(appfunc) ⇒ [<code>api</code>](#api)
 Prepare an HTTP GET for the given API function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
+**Returns**: [<code>api</code>](#api) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -132,11 +132,11 @@ Prepare an HTTP GET for the given API function
 
 <a name="CpApiClass+doDelete"></a>
 
-### cpApiClass.doDelete(appfunc) ⇒
+### cpApiClass.doDelete(appfunc) ⇒ [<code>api</code>](#api)
 Prepare an HTTP DELETE for the given APU function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: Its own object reference  
+**Returns**: [<code>api</code>](#api) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |

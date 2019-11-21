@@ -37,7 +37,7 @@ const CpApiClass = class ApiCall {
 	 * Given data to be delivered and application function path prepare the POST structure
 	 * @param {json} data List of options to be included in the HTTP POST
 	 * @param {json} appfunc API function to be called 
-	 * @return Its own object reference
+	 * @return {api} Its own object reference
 	 */
 	doPost (data, appfunc) {
 		this.postData = JSON.stringify(data)
@@ -53,7 +53,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
 	 * @param {*} mysession Session to be set
-	 * @return Its own object reference
+	 * @return {api} Its own object reference
 	 */
 	setToken (mysession) {
 		this.options.headers['x-chkp-sid'] = mysession.sid
@@ -62,7 +62,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Prepare an HTTP GET for the given API function
 	 * @param {json} appfunc API function to be called 
-	 * @return Its own object reference
+	 * @return {api} Its own object reference
 	 */
 	doGet (appfunc) {
 		this.options.method = 'GET'
@@ -82,7 +82,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Prepare an HTTP DELETE for the given APU function
 	 * @param {json} appfunc API function to be called 
-	 * @return Its own object reference
+	 * @return {api} Its own object reference
 	 */
 	doDelete (appfunc) {
 		this.options.method = 'DELETE'
