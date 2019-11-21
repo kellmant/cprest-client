@@ -24,7 +24,7 @@
 <dt><a href="#whereUsed">whereUsed(uid)</a> ⇒ <code><a href="#usage">usage</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
-<dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
+<dt><a href="#doParse">doParse(used)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
@@ -135,7 +135,7 @@ Determine where a set of objects is used in Check Point policies
 
 <a name="doParse"></a>
 
-## doParse(uid) ⇒ [<code>allobjs</code>](#allobjs)
+## doParse(used) ⇒ [<code>allobjs</code>](#allobjs)
 Operations Object created with filter logic
 
 **Kind**: global function  
@@ -143,7 +143,7 @@ Operations Object created with filter logic
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | [<code>Array.&lt;uid&gt;</code>](#uid) | checkObject return values from API where-used |
+| used | [<code>usage</code>](#usage) | return values from API where-used |
 
 <a name="tagObjects"></a>
 
