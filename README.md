@@ -19,7 +19,7 @@
 ## Functions
 
 <dl>
-<dt><a href="#get">get(getProps, usedobj)</a></dt>
+<dt><a href="#get">get(properties, usedobj)</a></dt>
 <dd><p>Traverse object collected in object</p>
 </dd>
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
@@ -78,7 +78,7 @@ Variable required from auth/mycpapi.json file
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myapisite | <code>Array.&lt;Object&gt;</code> | Setup API hostname |
+| myapisite | <code>Object</code> | Setup API hostname |
 | myapisite.apihost | <code>Object</code> | mycpapi.json |
 
 **Example**  
@@ -93,7 +93,7 @@ create auth/mycpapi.json file
 		"headers": {
 			"Content-Type": "application/json"
 		}
-	}
+	  }
 }
 ```
 <a name="mycred"></a>
@@ -102,7 +102,11 @@ create auth/mycpapi.json file
 Variable required from auth/mycpauth.json
 
 **Kind**: global constant  
-**Params**: <code>Object</code> credentials - auth/mycpauth.json  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| credentials | <code>Object</code> | auth/mycpauth.json |
+
 **Example**  
 ```js
 create auth/mycpauth.json file
@@ -113,15 +117,15 @@ create auth/mycpauth.json file
 ```
 <a name="get"></a>
 
-## get(getProps, usedobj)
+## get(properties, usedobj)
 Traverse object collected in object
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| getProps | <code>Array.&lt;String&gt;</code> | Get object proerties and values with arry of filters |
-| usedobj | <code>Array.&lt;Object&gt;</code> | Used objects returned in an array of |
+| properties | <code>Array.&lt;String&gt;</code> | Get object proerties and values with arry of filters |
+| usedobj | <code>Object</code> | Used objects returned in an array of |
 
 **Example**  
 ```js

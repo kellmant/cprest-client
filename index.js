@@ -7,8 +7,8 @@ const fs = require('fs');
 
 /**
  * Traverse object collected in object
- * @param {String[]} getProps - Get object proerties and values with arry of filters
- * @param {Object[]} usedobj - Used objects returned in an array of
+ * @param {String[]} properties - Get object proerties and values with arry of filters
+ * @param {Object} usedobj - Used objects returned in an array of
  * @example
  * collect an array of objects that match search: 
  * myres = myres.concat(get([uid, '0', 'used-directly', '0', 'objects'], usedobj))
@@ -22,7 +22,7 @@ const get = (p, o) =>
 
 /**
  * Variable required from auth/mycpapi.json file
- * @param {Object[]} myapisite - Setup API hostname
+ * @param {Object} myapisite - Setup API hostname
  * @param {Object} myapisite.apihost - mycpapi.json
  * @example
  * create auth/mycpapi.json file
@@ -35,14 +35,14 @@ const get = (p, o) =>
  *		"headers": {
  *			"Content-Type": "application/json"
  *		}
- *	}
+ *	  }
  * }
  */
 const myapisite = require('./auth/mycpapi')
 
 /**
  * Variable required from auth/mycpauth.json
- * @params {Object} credentials - auth/mycpauth.json
+ * @param {Object} credentials - auth/mycpauth.json
  * @example 
  * create auth/mycpauth.json file
  * {
