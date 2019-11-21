@@ -14,7 +14,7 @@ module.exports = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * 
+	 * @constructs showOpt
 	 */
 	showOpt () {
 		if (this.options) {
