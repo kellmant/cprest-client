@@ -5,14 +5,6 @@
 <dd></dd>
 </dl>
 
-## Constants
-
-<dl>
-<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
-<dd><p>Variable required from auth/mycpapi.json file</p>
-</dd>
-</dl>
-
 ## Functions
 
 <dl>
@@ -41,7 +33,10 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#mycred">mycred</a> : <code>Object</code></dt>
+<dt><a href="#myapisite">myapisite</a> : <code>Constant</code></dt>
+<dd><p>Variable required from auth/mycpapi.json file</p>
+</dd>
+<dt><a href="#mycred">mycred</a> : <code>Constant</code></dt>
 <dd><p>Variable required from auth/mycpauth.json</p>
 </dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
@@ -66,27 +61,6 @@
 ### new CpApiClass()
 Class Method for API callout builder
 
-<a name="myapisite"></a>
-
-## myapisite : <code>Object</code>
-Variable required from auth/mycpapi.json file
-
-**Kind**: global constant  
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
 <a name="showObjects"></a>
 
 ## showObjects(ip) ⇒ <code>Array.&lt;String&gt;</code>
@@ -168,9 +142,30 @@ Set the session handler for a Check Point API connection
 | --- | --- | --- |
 | sid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
 
+<a name="myapisite"></a>
+
+## myapisite : <code>Constant</code>
+Variable required from auth/mycpapi.json file
+
+**Kind**: global typedef  
+**Example**  
+```js
+create auth/mycpapi.json file
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
 <a name="mycred"></a>
 
-## mycred : <code>Object</code>
+## mycred : <code>Constant</code>
 Variable required from auth/mycpauth.json
 
 **Kind**: global typedef  
