@@ -1,3 +1,10 @@
+## Modules
+
+<dl>
+<dt><a href="#module_cpclass">cpclass</a></dt>
+<dd></dd>
+</dl>
+
 ## Constants
 
 <dl>
@@ -48,6 +55,9 @@
 </dd>
 </dl>
 
+<a name="module_cpclass"></a>
+
+## cpclass
 <a name="myapisite"></a>
 
 ## myapisite
