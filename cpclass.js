@@ -2,7 +2,8 @@
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @module CpClass
  */
-module.exports = class ApiCall {
+//module.exports = class ApiCall {
+const myclass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @alias module:CpClass
@@ -92,3 +93,5 @@ module.exports = class ApiCall {
 		return this
 	}
 }
+
+module.exports = myclass
