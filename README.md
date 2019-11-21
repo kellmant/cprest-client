@@ -61,7 +61,7 @@
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(base)](#new_CpApiClass_new)
+    * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒
     * [.setToken(mysession)](#CpApiClass+setToken) ⇒
@@ -70,13 +70,13 @@
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass(base)
+### new CpApiClass(myapisite)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| base | <code>\*</code> | Options and path of the function to the Check Point Manageemnt API |
+| myapisite | <code>Object</code> | Options and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js
