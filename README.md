@@ -347,6 +347,6 @@ CpApiCLass object data format
 
 | Name | Type |
 | --- | --- |
-| options | <code>Array.&lt;Object&gt;</code> | 
-| postData | <code>Array.&lt;Object&gt;</code> | 
+| options | <code>Object</code> | 
+| postData | <code>Object</code> | 
 

@@ -1,8 +1,8 @@
 /**
  * CpApiCLass object data format
  * @typedef {Object} apicall
- * @property {Object[]} options
- * @property {Object[]} postData
+ * @property {Object} options
+ * @property {Object} postData
  */
 
 /**
