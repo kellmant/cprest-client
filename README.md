@@ -5,6 +5,14 @@
 <dd></dd>
 </dl>
 
+## Constants
+
+<dl>
+<dt><a href="#startSession">startSession</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dd><p>Create an authenticated session with the Check Point API</p>
+</dd>
+</dl>
+
 ## Functions
 
 <dl>
@@ -22,9 +30,6 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
-<dd><p>Create an authenticated session with the Check Point API</p>
-</dd>
 <dt><a href="#setSession">setSession(sid)</a></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
@@ -60,6 +65,18 @@
 
 ### new CpApiClass()
 Class Method for API callout builder
+
+<a name="startSession"></a>
+
+## startSession ⇒ [<code>sessionid</code>](#sessionid)
+Create an authenticated session with the Check Point API
+
+**Kind**: global constant  
+**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
 <a name="showObjects"></a>
 
@@ -118,18 +135,6 @@ Operations Object created with filter logic
 | Param | Type | Description |
 | --- | --- | --- |
 | myobj | <code>Array.&lt;Object&gt;</code> | An array of tags to be added to a Check Point host object |
-
-<a name="startSession"></a>
-
-## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
-Create an authenticated session with the Check Point API
-
-**Kind**: global function  
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
 <a name="setSession"></a>
 
