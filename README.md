@@ -367,11 +367,18 @@ allobjs object data format
 | Name | Type | Description |
 | --- | --- | --- |
 | group | <code>Array.&lt;Object&gt;</code> | Group memberships |
-| group.uid | <code>Object</code> | Group object |
-| group.members | <code>Array.&lt;Object&gt;</code> | removal data for host object |
-| hosts | <code>Array</code> | Array of UID representing host objects |
+| group.uid | <code>String</code> | Group object |
+| group.members | <code>Object</code> | member information |
+| group.members.remove | <code>Array.&lt;String&gt;</code> | host object UID to remove |
+| hosts | <code>Array.&lt;String&gt;</code> | Array of UID representing host objects |
 | access-rule | <code>Array.&lt;Object&gt;</code> | Policy rules |
+| access-rule.uid | <code>String</code> | Rule unique ID |
+| access-rule.layer | <code>String</code> | Rulebase layer unique ID |
+| access-rule.destination | <code>Object</code> | policy rule position |
+| access-rule.destination.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
+| access-rule.source | <code>Object</code> | policy rule position |
+| access-rule.source.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
 | garbage | <code>Array.&lt;Object&gt;</code> | Garbage collector |
-| backup | <code>Array.&lt;Object&gt;</code> | collection of host object names |
+| backup | <code>Array.&lt;String&gt;</code> | collection of host object names |
 | restore | <code>Array.&lt;Object&gt;</code> | restore operations data |
 

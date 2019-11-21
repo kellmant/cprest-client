@@ -560,12 +560,19 @@ async function tagObjects(myobj) {
  * allobjs object data format
  * @typedef {Object} allobjs - API Change management data store 
  * @property {Object[]} group - Group memberships 
- * @property {Object} group.uid - Group object 
- * @property {Object[]} group.members - removal data for host object 
- * @property {Array} hosts - Array of UID representing host objects
+ * @property {String} group.uid - Group object 
+ * @property {Object} group.members - member information  
+ * @property {String[]} group.members.remove - host object UID to remove 
+ * @property {String[]} hosts - Array of UID representing host objects
  * @property {Object[]} access-rule - Policy rules 
+ * @property {String} access-rule.uid - Rule unique ID 
+ * @property {String} access-rule.layer - Rulebase layer unique ID 
+ * @property {Object} access-rule.destination - policy rule position 
+ * @property {String[]} access-rule.destination.remove - UID to remove 
+ * @property {Object} access-rule.source - policy rule position 
+ * @property {String[]} access-rule.source.remove - UID to remove 
  * @property {Object[]} garbage - Garbage collector
- * @property {Object[]} backup - collection of host object names
+ * @property {String[]} backup - collection of host object names
  * @property {Object[]} restore - restore operations data  
  */
 async function doParse(objdat) {
