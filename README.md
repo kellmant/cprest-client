@@ -30,7 +30,7 @@
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code>String</code></dt>
+<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code>x-chkp-sid</code></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 </dl>
@@ -154,11 +154,11 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(sessionid) ⇒ <code>String</code>
+## setSession(sessionid) ⇒ <code>x-chkp-sid</code>
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
-**Returns**: <code>String</code> - x-chkp-sid Header token set  
+**Returns**: <code>x-chkp-sid</code> - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
