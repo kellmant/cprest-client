@@ -16,7 +16,7 @@ module.exports = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @function showOpt
+	 * 
 	 */
 	showOpt () {
 		if (this.options) {
@@ -28,7 +28,6 @@ module.exports = class ApiCall {
 	}
 	/**
 	 * Given data to be delivered and application function path prepare the POST structure
-	 * @function doPost
 	 * @param {json} data List of options to be included in the HTTP POST
 	 * @param {json} appfunc API function to be called 
 	 * @return Its own object reference
@@ -46,7 +45,6 @@ module.exports = class ApiCall {
 	}
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @function setToken
 	 * @param {*} mysession Session to be set
 	 * @return Its own object reference
 	 */

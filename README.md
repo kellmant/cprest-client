@@ -37,15 +37,6 @@
 <dt><a href="#endSession">endSession()</a></dt>
 <dd><p>end session and expire token from header</p>
 </dd>
-<dt><a href="#showOpt">showOpt()</a></dt>
-<dd><p>Log the options and data to console for debugging</p>
-</dd>
-<dt><a href="#doPost">doPost(data, appfunc)</a> ⇒</dt>
-<dd><p>Given data to be delivered and application function path prepare the POST structure</p>
-</dd>
-<dt><a href="#setToken">setToken(mysession)</a> ⇒</dt>
-<dd><p>Set the &#39;x-chkp-sid&#39; token field to the current session token</p>
-</dd>
 </dl>
 
 ## Typedefs
@@ -176,37 +167,6 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
-<a name="showOpt"></a>
-
-## showOpt()
-Log the options and data to console for debugging
-
-**Kind**: global function  
-<a name="doPost"></a>
-
-## doPost(data, appfunc) ⇒
-Given data to be delivered and application function path prepare the POST structure
-
-**Kind**: global function  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>json</code> | List of options to be included in the HTTP POST |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="setToken"></a>
-
-## setToken(mysession) ⇒
-Set the 'x-chkp-sid' token field to the current session token
-
-**Kind**: global function  
-**Returns**: Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mysession | <code>\*</code> | Session to be set |
-
 <a name="x-chkp-sid"></a>
 
 ## x-chkp-sid : <code>Header</code>
