@@ -71,7 +71,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#allobjs">allobjs</a> : <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
@@ -324,33 +324,20 @@ the number of keys in use for a given object
 
 <a name="allobjs"></a>
 
-## allobjs : <code>Array.&lt;Object&gt;</code>
+## allobjs : <code>Object</code>
 allobjs object data format
 
 **Kind**: global typedef  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| hosts | <code>Array.&lt;String&gt;</code> | Host Objects |
-| group | <code>Array</code> | Group Membership |
-| access-rule | <code>Array</code> | Access Control |
-| garbage | <code>Array</code> | Garbage collector |
-| backup | <code>Array.&lt;String&gt;</code> | Host object names |
-| restore | <code>Array</code> | Backout Operations |
-
 **Properties**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| group.uid | <code>String</code> | Group object |
-| group.members | <code>Object</code> | member information |
-| group.members.remove | <code>Array.&lt;String&gt;</code> | host object UID to remove |
-| access-rule.uid | <code>String</code> | Rule unique ID |
-| access-rule.layer | <code>String</code> | Rulebase layer unique ID |
-| access-rule.destination | <code>Object</code> | policy rule position |
-| access-rule.destination.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
-| access-rule.source | <code>Object</code> | policy rule position |
-| access-rule.source.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
+| Name | Type |
+| --- | --- |
+| access-rule | <code>Array</code> | 
+| backup | <code>Array</code> | 
+| garbage | <code>Array</code> | 
+| group | <code>Array</code> | 
+| hosts | <code>Array</code> | 
+| restore | <code>Array</code> | 
 
 <a name="uid"></a>
 

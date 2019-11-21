@@ -67,35 +67,13 @@ var cleanobj = {}
 
 /**
  * allobjs object data format
- * @typedef {Object[]} group - Group Memberships
- * @property {String} group.uid - Group object 
- * @property {Object} group.members - member information  
- * @property {String[]} group.members.remove - host object UID to remove 
- * 
- * @typedef {String[]} hosts - Array of UID representing host objects
- *
- * @typedef {Object[]} access-rule - Policy rules 
- * @property {String} access-rule.uid - Rule unique ID 
- * @property {String} access-rule.layer - Rulebase layer unique ID 
- * @property {Object} access-rule.destination - policy rule position 
- * @property {String[]} access-rule.destination.remove - UID to remove 
- * @property {Object} access-rule.source - policy rule position 
- * @property {String[]} access-rule.source.remove - UID to remove 
- * 
- * @typedef {Object[]} garbage - Garbage collector
- * 
- * @typedef {String[]} backup - collection of host object names
- * 
- * @typedef {Object[]} restore - restore operations data  
- * 
  * @typedef {Object} allobjs
- * @param {String[]} hosts - Host Objects
- * @param {Array} group - Group Membership
- * @param {Array} access-rule - Access Control
- * @param {Array} garbage - Garbage collector
- * @param {String[]} backup - Host object names
- * @param {Array} restore - Backout Operations 
- * 
+ * @property {Array} access-rule
+ * @property {Array} backup
+ * @property {Array} garbage
+ * @property {Array} group
+ * @property {Array} hosts
+ * @property {Array} restore
  */
 var allobjs = {}
 var mygroups = 'group'
