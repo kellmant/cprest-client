@@ -177,7 +177,6 @@ async function showObjects(mydata, mycmd) {
         try {
 		var objdata = {}
 		var objarr = []
-		var cleanarr = []
                 mydata.offset = 0
                 mydata['details-level'] = details
                 mydata.limit = limit
@@ -205,7 +204,7 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {hosts} hosts -  array of safe UID's to verify usage against
+ * @returns {hosts[]} hosts -  array of safe UID's to verify usage against
  */
 async function checkObject(objarr) {
 	try {

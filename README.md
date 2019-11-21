@@ -25,7 +25,7 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>hosts</code></dt>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;hosts&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
@@ -164,11 +164,11 @@ Object use for an IP
 
 <a name="checkObject"></a>
 
-## checkObject(uid) ⇒ <code>hosts</code>
+## checkObject(uid) ⇒ <code>Array.&lt;hosts&gt;</code>
 Object verify IP matches filter
 
 **Kind**: global function  
-**Returns**: <code>hosts</code> - hosts -  array of safe UID's to verify usage against  
+**Returns**: <code>Array.&lt;hosts&gt;</code> - hosts -  array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
