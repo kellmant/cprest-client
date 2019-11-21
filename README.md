@@ -158,6 +158,7 @@ Create an authenticated session with the Check Point API
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
+**Returns**: <code>String</code> - x-chkp-sid Header token set  
 
 | Param | Type | Description |
 | --- | --- | --- |
