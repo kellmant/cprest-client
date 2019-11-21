@@ -2,7 +2,7 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>toApi</p>
+<dd><p>CpApiClass</p>
 </dd>
 </dl>
 
@@ -62,7 +62,7 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-toApi
+CpApiClass
 
 **Kind**: global class  
 <a name="myapisite"></a>

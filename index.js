@@ -52,7 +52,7 @@ const mycred = require('./auth/mycpauth')
  */
 const CpApiClass = require('./cpclass')
 /**
- * @class toApi
+ * @class CpApiClass
  * @constructs CpApiClass
  */
 const toApi = new CpApiClass(myapisite.chkp)
