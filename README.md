@@ -331,9 +331,9 @@ allobjs object data format
 
 | Param | Type | Description |
 | --- | --- | --- |
-| hosts | <code>hosts</code> | my hosts |
-| group | <code>group</code> | my group |
-| access-rule | <code>access-rule</code> | my acl |
+| hosts | <code>Array.&lt;String&gt;</code> | my hosts |
+| group | <code>Array</code> | my group |
+| access-rule | <code>Array</code> | my acl |
 
 **Properties**
 

@@ -89,9 +89,9 @@ var cleanobj = {}
  * @typedef {Object[]} restore - restore operations data  
  * 
  * @typedef {Object} AllObj
- * @param {hosts} hosts - my hosts
- * @param {group} group - my group
- * @param {access-rule} access-rule - my acl
+ * @param {String[]} hosts - my hosts
+ * @param {Array} group - my group
+ * @param {Array} access-rule - my acl
  * 
  */
 var allobjs = {}
