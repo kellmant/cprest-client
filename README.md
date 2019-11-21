@@ -25,7 +25,7 @@
 <dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;allobjs.hosts&gt;</code></dt>
+<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>allobjs</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
 <dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
@@ -39,7 +39,7 @@
 </dd>
 <dt><a href="#tagObjects">tagObjects(myobj)</a> ⇒ <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
+<dt><a href="#doParse">doParse(uid)</a> ⇒ <code>allobjs</code></dt>
 <dd><p>Operations Object created with filter logic</p>
 </dd>
 <dt><a href="#showJson">showJson(obj)</a> ⇒ <code>json</code></dt>
@@ -71,7 +71,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
+<dt><a href="#AllObj">AllObj</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
@@ -164,11 +164,11 @@ Object use for an IP
 
 <a name="checkObject"></a>
 
-## checkObject(uid) ⇒ <code>Array.&lt;allobjs.hosts&gt;</code>
+## checkObject(uid) ⇒ <code>allobjs</code>
 Object verify IP matches filter
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;allobjs.hosts&gt;</code> - -  array of safe UID's to verify usage against  
+**Returns**: <code>allobjs</code> - hosts -  array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -222,11 +222,11 @@ Recursively discover the use of a host object against Check Point policy
 
 <a name="doParse"></a>
 
-## doParse(uid) ⇒ [<code>allobjs</code>](#allobjs)
+## doParse(uid) ⇒ <code>allobjs</code>
 Operations Object created with filter logic
 
 **Kind**: global function  
-**Returns**: [<code>allobjs</code>](#allobjs) - -  array of safe UID's to verify usage against  
+**Returns**: <code>allobjs</code> - -  array of safe UID's to verify usage against  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -322,31 +322,32 @@ the number of keys in use for a given object
 | --- | --- | --- |
 | obj | <code>Object</code> | The object to be checked |
 
-<a name="allobjs"></a>
+<a name="AllObj"></a>
 
-## allobjs : <code>Object</code>
+## AllObj : <code>Array.&lt;Object&gt;</code>
 allobjs object data format
 
 **Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| hosts | <code>hosts</code> | my hosts |
+| group | <code>group</code> | my group |
+| access-rule | <code>access-rule</code> | my acl |
+
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| group | <code>Array.&lt;Object&gt;</code> | Group memberships |
 | group.uid | <code>String</code> | Group object |
 | group.members | <code>Object</code> | member information |
 | group.members.remove | <code>Array.&lt;String&gt;</code> | host object UID to remove |
-| hosts | <code>Array.&lt;String&gt;</code> | Array of UID representing host objects |
-| access-rule | <code>Array.&lt;Object&gt;</code> | Policy rules |
 | access-rule.uid | <code>String</code> | Rule unique ID |
 | access-rule.layer | <code>String</code> | Rulebase layer unique ID |
 | access-rule.destination | <code>Object</code> | policy rule position |
 | access-rule.destination.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
 | access-rule.source | <code>Object</code> | policy rule position |
 | access-rule.source.remove | <code>Array.&lt;String&gt;</code> | UID to remove |
-| garbage | <code>Array.&lt;Object&gt;</code> | Garbage collector |
-| backup | <code>Array.&lt;String&gt;</code> | collection of host object names |
-| restore | <code>Array.&lt;Object&gt;</code> | restore operations data |
 
 <a name="uid"></a>
 

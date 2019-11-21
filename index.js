@@ -67,22 +67,32 @@ var cleanobj = {}
 
 /**
  * allobjs object data format
- * @typedef {Object} allobjs - API Change management data store 
- * @property {Object[]} group - Group memberships 
+ * @typedef {Object[]} group - Group Memberships
  * @property {String} group.uid - Group object 
  * @property {Object} group.members - member information  
  * @property {String[]} group.members.remove - host object UID to remove 
- * @property {String[]} hosts - Array of UID representing host objects
- * @property {Object[]} access-rule - Policy rules 
+ * 
+ * @typedef {String[]} hosts - Array of UID representing host objects
+ *
+ * @typedef {Object[]} access-rule - Policy rules 
  * @property {String} access-rule.uid - Rule unique ID 
  * @property {String} access-rule.layer - Rulebase layer unique ID 
  * @property {Object} access-rule.destination - policy rule position 
  * @property {String[]} access-rule.destination.remove - UID to remove 
  * @property {Object} access-rule.source - policy rule position 
  * @property {String[]} access-rule.source.remove - UID to remove 
- * @property {Object[]} garbage - Garbage collector
- * @property {String[]} backup - collection of host object names
- * @property {Object[]} restore - restore operations data  
+ * 
+ * @typedef {Object[]} garbage - Garbage collector
+ * 
+ * @typedef {String[]} backup - collection of host object names
+ * 
+ * @typedef {Object[]} restore - restore operations data  
+ * 
+ * @typedef {Object} AllObj
+ * @param {hosts} hosts - my hosts
+ * @param {group} group - my group
+ * @param {access-rule} access-rule - my acl
+ * 
  */
 var allobjs = {}
 var mygroups = 'group'
@@ -192,7 +202,7 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {allobjs.hosts[]} -  array of safe UID's to verify usage against
+ * @returns {allobjs} hosts -  array of safe UID's to verify usage against
  */
 async function checkObject(objarr) {
 	try {
