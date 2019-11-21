@@ -22,13 +22,13 @@
 <dt><a href="#get">get(getProps, usedobj)</a></dt>
 <dd><p>Traverse object collected in object</p>
 </dd>
-<dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
+<dt><a href="#showObjects">showObjects(ip)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object use for an IP</p>
 </dd>
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code><a href="#uid">Array.&lt;uid&gt;</a></code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
-<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
 <dt><a href="#getObjectUse">getObjectUse(isused)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
@@ -73,6 +73,9 @@
 <dl>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
+</dd>
+<dt><a href="#where-used">where-used</a> : <code>Object</code></dt>
+<dd><p>where-used API result format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format</p>
@@ -152,11 +155,11 @@ myval = get([uid, '0', 'used-directly', '0', 'total'], usedobj)
 ```
 <a name="showObjects"></a>
 
-## showObjects(ip) ⇒ [<code>Array.&lt;uid&gt;</code>](#uid)
+## showObjects(ip) ⇒ <code>Array.&lt;String&gt;</code>
 Object use for an IP
 
 **Kind**: global function  
-**Returns**: [<code>Array.&lt;uid&gt;</code>](#uid) - Direct and indirect object usage  
+**Returns**: <code>Array.&lt;String&gt;</code> - Direct and indirect object use UID array  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -176,11 +179,11 @@ Object verify IP matches filter
 
 <a name="whereUsed"></a>
 
-## whereUsed(objarr) ⇒ <code>Array.&lt;Object&gt;</code>
+## whereUsed(objarr) ⇒ [<code>where-used</code>](#where-used)
 Determine where a set of objects is used in Check Point policies
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;Object&gt;</code> - An array of objects where the parameter values were found in policy  
+**Returns**: [<code>where-used</code>](#where-used) - An array of objects where the parameter values were found in policy  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -338,6 +341,22 @@ allobjs object data format
 | group | <code>Array.&lt;Object&gt;</code> | 
 | hosts | <code>Array.&lt;String&gt;</code> | 
 | restore | <code>Array.&lt;Object&gt;</code> | 
+
+<a name="where-used"></a>
+
+## where-used : <code>Object</code>
+where-used API result format
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| access-control-rules | <code>Array</code> | 
+| nat-rules | <code>Array</code> | 
+| objects | <code>Array</code> | 
+| threat-prevention-rules | <code>Array</code> | 
+| total | <code>Number</code> | 
 
 <a name="uid"></a>
 

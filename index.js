@@ -5,7 +5,6 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 
-
 /**
  * Traverse object collected in object
  * @param {String[]} getProps - Get object proerties and values with arry of filters
@@ -143,12 +142,20 @@ async function admins() {
 	.then(() => endSession())
 	.catch(endSession)
 }
+/** 
+ * @typedef {Object} where-used - where-used API result format
+ * @property {Array} access-control-rules
+ * @property {Array} nat-rules
+ * @property {Array} objects
+ * @property {Array} threat-prevention-rules
+ * @property {Number} total
+ */
 
 /** 
  * Object use for an IP
  * @function showObjects
  * @param {String} ip - IP address to search for
- * @returns {uid[]} Direct and indirect object usage
+ * @returns {String[]} Direct and indirect object use UID array
  */
 
 async function showObjects(mydata, mycmd) {
@@ -264,7 +271,7 @@ async function checkObject(objarr) {
   * Determine where a set of objects is used in Check Point policies
   * @function whereUsed
   * @param {Object[]} objarr Any array of objects containing filter values by UID
-  * @return {Object[]} An array of objects where the parameter values were found in policy
+  * @return {where-used} An array of objects where the parameter values were found in policy
   */ 
 async function whereUsed(objarr) {
 	try {
