@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#cpclass">cpclass</a></dt>
+<dt><a href="#ApiCall">ApiCall</a></dt>
 <dd></dd>
 </dl>
 
@@ -55,13 +55,13 @@
 </dd>
 </dl>
 
-<a name="cpclass"></a>
+<a name="ApiCall"></a>
 
-## cpclass
+## ApiCall
 **Kind**: global class  
-<a name="new_cpclass_new"></a>
+<a name="new_ApiCall_new"></a>
 
-### new cpclass()
+### new ApiCall()
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 <a name="myapisite"></a>
