@@ -631,7 +631,7 @@ async function setSession(mysession) {
 async function pubSession() {
         try {
                 console.log('publishing session')
-		var mycmd = 'publish'
+		let mycmd = 'publish'
 		var nodata = {}
                 var mysession = await callOut(toApi.doPost(nodata, mycmd).options, toApi.doPost(nodata, mycmd).postData)
                	//toApi.showOpt()
