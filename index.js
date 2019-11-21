@@ -252,7 +252,7 @@ async function checkObject(objarr) {
 
  /**
   * Determine where a set of objects is used in Check Point policies
-  * @param {String[]} objarr Any array of objects containing filter values by UID
+  * @param {String[]} uid Any array of objects containing filter values by UID
   * @returns {usage} An array of objects where the parameter values were found in policy
   */ 
 async function whereUsed(objarr) {
@@ -276,7 +276,6 @@ async function whereUsed(objarr) {
 
 /** 
  * Operations Object created with filter logic
- * @function doParse
  * @param {uid[]} uid - checkObject return values from API where-used
  * @returns {allobjs} -  array of safe UID's to verify usage against
  */

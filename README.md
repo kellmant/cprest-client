@@ -21,7 +21,7 @@
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
-<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#usage">usage</a></code></dt>
+<dt><a href="#whereUsed">whereUsed(uid)</a> ⇒ <code><a href="#usage">usage</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
 <dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
@@ -123,7 +123,7 @@ Object verify IP matches filter
 
 <a name="whereUsed"></a>
 
-## whereUsed(objarr) ⇒ [<code>usage</code>](#usage)
+## whereUsed(uid) ⇒ [<code>usage</code>](#usage)
 Determine where a set of objects is used in Check Point policies
 
 **Kind**: global function  
@@ -131,7 +131,7 @@ Determine where a set of objects is used in Check Point policies
 
 | Param | Type | Description |
 | --- | --- | --- |
-| objarr | <code>Array.&lt;String&gt;</code> | Any array of objects containing filter values by UID |
+| uid | <code>Array.&lt;String&gt;</code> | Any array of objects containing filter values by UID |
 
 <a name="doParse"></a>
 
