@@ -48,7 +48,7 @@ const mycred = require('./auth/mycpauth')
  *
  */
 /**
- * @module CpApiClass
+ * @require
  */
 const CpApiClass = require('./cpclass')
 /**
