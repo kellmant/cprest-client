@@ -21,7 +21,7 @@
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
 <dd><p>Object verify IP matches filter</p>
 </dd>
-<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">Array.&lt;where-used&gt;</a></code></dt>
+<dt><a href="#whereUsed">whereUsed(objarr)</a> ⇒ <code><a href="#where-used">where-used</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
 <dt><a href="#doParse">doParse(uid)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
@@ -43,7 +43,7 @@
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
-<dt><a href="#where-used">where-used</a> : <code>Object</code></dt>
+<dt><a href="#where-used">where-used</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used API result format</p>
 </dd>
 <dt><a href="#uid">uid</a> : <code>Array.&lt;Object&gt;</code></dt>
@@ -123,11 +123,11 @@ Object verify IP matches filter
 
 <a name="whereUsed"></a>
 
-## whereUsed(objarr) ⇒ [<code>Array.&lt;where-used&gt;</code>](#where-used)
+## whereUsed(objarr) ⇒ [<code>where-used</code>](#where-used)
 Determine where a set of objects is used in Check Point policies
 
 **Kind**: global function  
-**Returns**: [<code>Array.&lt;where-used&gt;</code>](#where-used) - An array of objects where the parameter values were found in policy  
+**Returns**: [<code>where-used</code>](#where-used) - An array of objects where the parameter values were found in policy  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -197,7 +197,7 @@ allobjs object data format
 
 <a name="where-used"></a>
 
-## where-used : <code>Object</code>
+## where-used : <code>Array.&lt;Object&gt;</code>
 where-used API result format
 
 **Kind**: global typedef  

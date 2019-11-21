@@ -124,7 +124,7 @@ async function admins() {
 	.catch(endSession)
 }
 /** 
- * @typedef {Object} where-used - where-used API result format
+ * @typedef {Object[]} where-used - where-used API result format
  * @property {Array} access-control-rules
  * @property {Array} nat-rules
  * @property {Array} objects
@@ -253,7 +253,7 @@ async function checkObject(objarr) {
  /**
   * Determine where a set of objects is used in Check Point policies
   * @param {String[]} objarr Any array of objects containing filter values by UID
-  * @return {where-used[]} An array of objects where the parameter values were found in policy
+  * @returns {where-used} An array of objects where the parameter values were found in policy
   */ 
 async function whereUsed(objarr) {
 	try {
