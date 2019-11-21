@@ -204,7 +204,7 @@ async function showObjects(mydata, mycmd) {
  * Object verify IP matches filter
  * @function checkObject
  * @param {String[]} uid - UID to verify IP address filter
- * @returns {hosts[]} hosts -  array of safe UID's to verify usage against
+ * @returns {uid[]} hosts -  array of safe UID's to verify usage against
  */
 async function checkObject(objarr) {
 	try {
