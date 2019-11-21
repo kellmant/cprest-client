@@ -1,12 +1,3 @@
-## Classes
-
-<dl>
-<dt><a href="#ApiCall">ApiCall</a></dt>
-<dd></dd>
-<dt><a href="#showOpt">showOpt</a></dt>
-<dd></dd>
-</dl>
-
 ## Constants
 
 <dl>
@@ -56,24 +47,6 @@
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
 </dl>
-
-<a name="ApiCall"></a>
-
-## ApiCall
-**Kind**: global class  
-<a name="new_ApiCall_new"></a>
-
-### new ApiCall()
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
-<a name="showOpt"></a>
-
-## showOpt
-**Kind**: global class  
-<a name="new_showOpt_new"></a>
-
-### new module.exports#showOpt()
-Log the options and data to console for debugging
 
 <a name="myapisite"></a>
 
