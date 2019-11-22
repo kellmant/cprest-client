@@ -45,7 +45,7 @@ const CpApiClass = class ApiCall {
 	 */
 	showOpt () {
 		if (this.options) {
-			console.log(JSON.stringify(this.options, undefined, 2))
+			console.log(JSON.stringify(this, undefined, 2))
 			//console.log(JSON.stringify(this.options))
 		} 
 		if (this.postData) {
