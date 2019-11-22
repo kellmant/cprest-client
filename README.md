@@ -69,7 +69,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
+    * [.setToken(sid)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
@@ -109,11 +109,11 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(sid) ⇒ [<code>options</code>](#options)
+### cpApiClass.setToken(sid) ⇒
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>options</code>](#options) - Its own object reference  
+**Returns**: Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
