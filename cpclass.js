@@ -16,7 +16,7 @@
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
  * CpApiCLass object data 
- * @param {String} options.headers.ChkpSid 
+ * @ {String} options.headers.ChkpSid 
  */
 const CpApiClass = class ApiCall {
 	/**
@@ -61,7 +61,7 @@ const CpApiClass = class ApiCall {
 
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @param {Api} options.headers.ChkpSid 
+	 * @param {options.headers} 'x-chkp-sid' 
 	 * @return {apicall} Its own object reference
 	 */
 	setToken (mysession) {

@@ -2,7 +2,8 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>CpApiCLass object data</p>
+<dd><p>CpApiCLass object data 
+@ {String} options.headers.ChkpSid</p>
 </dd>
 </dl>
 
@@ -62,7 +63,8 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-CpApiCLass object data
+CpApiCLass object data 
+@ {String} options.headers.ChkpSid
 
 **Kind**: global class  
 
@@ -70,7 +72,7 @@ CpApiCLass object data
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>apicall</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
-    * [.setToken()](#CpApiClass+setToken) ⇒ <code>apicall</code>
+    * [.setToken(&#x27;x-chkp-sid&#x27;)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
@@ -111,7 +113,7 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken() ⇒ <code>apicall</code>
+### cpApiClass.setToken(&#x27;x-chkp-sid&#x27;) ⇒ <code>apicall</code>
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
@@ -119,7 +121,7 @@ Set the 'x-chkp-sid' token field to the current session token
 
 | Param | Type |
 | --- | --- |
-| options.headers.ChkpSid | [<code>Api</code>](#Api) | 
+| 'x-chkp-sid' | <code>options.headers</code> | 
 
 <a name="CpApiClass+doGet"></a>
 
