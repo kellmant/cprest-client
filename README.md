@@ -6,6 +6,14 @@
 </dd>
 </dl>
 
+## Members
+
+<dl>
+<dt><a href="#fillitin">fillitin</a> : <code>options.headers</code></dt>
+<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
+</dd>
+</dl>
+
 ## Constants
 
 <dl>
@@ -69,27 +77,12 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(api)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass(api)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| api | [<code>ClassObj</code>](#ClassObj) | options to the Check Point Manageemnt API |
-
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
@@ -146,6 +139,21 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
+<a name="fillitin"></a>
+
+## fillitin : <code>options.headers</code>
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+**Kind**: global variable  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| api | [<code>ClassObj</code>](#ClassObj) | options to the Check Point Manageemnt API |
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
 <a name="myapisite"></a>
 
 ## myapisite
@@ -345,11 +353,6 @@ where-used returned data format by UID of each host
 Define API call object options and data
 
 **Kind**: global typedef  
-
-| Param | Type |
-| --- | --- |
-| fillitin | <code>options.headers</code> | 
-
 **Properties**
 
 | Name | Type | Description |

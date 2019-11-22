@@ -9,7 +9,6 @@
  * @property {Object} headers - header fields for http calls
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
- * @param {options.headers} fillitin
  * @example
  * {
  *	"chkp": {
@@ -36,6 +35,7 @@
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
+	 * @var {options.headers} fillitin
 	 * @param {ClassObj} api options to the Check Point Manageemnt API
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
