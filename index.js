@@ -177,7 +177,7 @@ async function setSession(mysession) {
 	try {
 			console.log('setting session')
 			toApi.setToken(mysession)
-			toApi.showOpt()
+			console.log(toApi.showOpt())
 			return
 	} catch (err) {
 			console.log('error in setSession')

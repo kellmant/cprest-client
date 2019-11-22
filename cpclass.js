@@ -26,12 +26,15 @@ const CpApiClass = class ApiCall {
 	 * @returns {apicall} Show options and data
 	 */
 	showOpt () {
+		return this
+		/*
 		if (this.options) {
 			console.log(this)
 		} 
 		if (this.data) {
 			console.log(this.data)
 		}
+		*/
 	}
 	/**
 	 * Given data to be delivered and application function path prepare the POST structure
