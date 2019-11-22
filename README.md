@@ -2,8 +2,7 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>CpApiCLass object data 
-@ {String} options.headers.ChkpSid</p>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
 
@@ -65,8 +64,7 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-CpApiCLass object data 
-@ {String} options.headers.ChkpSid
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 **Kind**: global class  
 
