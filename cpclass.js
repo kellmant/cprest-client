@@ -1,15 +1,23 @@
-/**
- * CpApiCLass object data format
- * @typedef {Object} apicall
+/** 
+ * Define API call object options
+ * @typedef {Object} Api 
  * @property {Object} options
- * @property {Object} postData
+ * @property {Object} options.headers
+ * @property {String} options.host
+ * @property {String} options.method
+ * @property {String} options.path
+ * @property {Number} options.port
+ * @property {Object} data
  */
+/**
+ 
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
- */
-//module.exports = class ApiCall {
+ * CpApiCLass object data 
+ * @param {Api} options.headers.ChkpSid 
+ *
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
@@ -50,9 +58,10 @@ const CpApiClass = class ApiCall {
 		}
 		return this
 	}
+
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @param {*} mysession Session to be set
+	 * @param {Api} options.headers.ChkpSid 
 	 * @return {apicall} Its own object reference
 	 */
 	setToken (mysession) {
