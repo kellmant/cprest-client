@@ -335,10 +335,9 @@ Define API call object options and data
 **Kind**: global typedef  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| headers | [<code>options</code>](#options) | 
-| method | [<code>options</code>](#options) | 
-| path | <code>String</code> | 
-| data | <code>Object</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| headers | <code>Object</code> | header fields for http calls |
+| method | <code>String</code> | GET, POST, DELETE http methods |
+| path | <code>String</code> | path in api to command you call |
 

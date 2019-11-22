@@ -1,11 +1,10 @@
 /** 
  * Define API call object options and data
  * @typedef {Object} ClassObj 
- * @typedef {ClassObj} options
- * @property {options} headers
- * @property {options} method
- * @property {String} path
- * @property {Object} data
+ * @typedef {Object} options
+ * @property {Object} headers - header fields for http calls
+ * @property {String} method - GET, POST, DELETE http methods
+ * @property {String} path - path in api to command you call
  */
 /**
  
