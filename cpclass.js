@@ -32,7 +32,6 @@ const CpApiClass = class ApiCall {
 		if (this.postData) {
 			console.dir(this.postData)
 		}
-		*/
 	}
 	/**
 	 * Given data to be delivered and application function path prepare the POST structure
