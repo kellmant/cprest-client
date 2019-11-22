@@ -51,13 +51,14 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#data">data</a> : <code>Object</code></dt>
+<dt><a href="#ClassData">ClassData</a> : <code>Object</code></dt>
+<dd><p>Top level type assignment</p>
+</dd>
+<dt><a href="#data">data</a> : <code><a href="#ClassData">ClassData</a></code></dt>
 <dd></dd>
-<dt><a href="#options">options</a> : <code>Object</code></dt>
+<dt><a href="#options">options</a> : <code><a href="#ClassData">ClassData</a></code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
-<dt><a href="#ClassData">ClassData</a> : <code>Object</code></dt>
-<dd></dd>
 </dl>
 
 <a name="CpApiClass"></a>
@@ -328,9 +329,15 @@ where-used returned data format by UID of each host
     ]
  }
 ```
+<a name="ClassData"></a>
+
+## ClassData : <code>Object</code>
+Top level type assignment
+
+**Kind**: global typedef  
 <a name="data"></a>
 
-## data : <code>Object</code>
+## data : [<code>ClassData</code>](#ClassData)
 **Kind**: global typedef  
 **Properties**
 
@@ -340,7 +347,7 @@ where-used returned data format by UID of each host
 
 <a name="options"></a>
 
-## options : <code>Object</code>
+## options : [<code>ClassData</code>](#ClassData)
 Define API call object options and data
 
 **Kind**: global typedef  
@@ -368,13 +375,3 @@ Define API call object options and data
 	  }
 }
 ```
-<a name="ClassData"></a>
-
-## ClassData : <code>Object</code>
-**Kind**: global typedef  
-
-| Param | Type |
-| --- | --- |
-| options | [<code>options</code>](#options) | 
-| postData | [<code>data</code>](#data) | 
-

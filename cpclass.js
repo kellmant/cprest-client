@@ -1,11 +1,16 @@
 /**
+ * Top level type assignment
+ * @typedef {Object} ClassData
+ *  
+ */
+/**
  * 
- * @typedef {Object} data
+ * @typedef {ClassData} data
  * @property {String} postData This function will stringify the post data before sending 
  */
 /** 
  * Define API call object options and data
- * @typedef {Object} options 
+ * @typedef {ClassData} options 
  * @property {Object} headers - header fields for http calls
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
@@ -24,12 +29,7 @@
  *	  }
  * }
  */
-/**
- * 
- * @typedef {Object} ClassData
- * @param {options} options
- * @param {data} postData 
- */
+
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
