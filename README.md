@@ -6,6 +6,14 @@
 </dd>
 </dl>
 
+## Members
+
+<dl>
+<dt><a href="#fillitin">fillitin</a> : <code>Object</code></dt>
+<dd><p>Define API call object options and data</p>
+</dd>
+</dl>
+
 ## Constants
 
 <dl>
@@ -53,9 +61,6 @@
 </dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#options">options</a> : <code>Object</code></dt>
-<dd><p>Define API call object options and data</p>
-</dd>
 <dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
 <dd><p>Define Global object holder</p>
 </dd>
@@ -70,7 +75,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(api)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>options</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
@@ -92,11 +97,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
+### cpApiClass.showOpt() ⇒ <code>options</code>
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>options</code>](#options) - Show options and data  
+**Returns**: <code>options</code> - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -146,6 +151,34 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
+<a name="fillitin"></a>
+
+## fillitin : <code>Object</code>
+Define API call object options and data
+
+**Kind**: global variable  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| headers | <code>Object</code> | header fields for http calls |
+| method | <code>String</code> | GET, POST, DELETE http methods |
+| path | <code>String</code> | path in api to command you call |
+
+**Example**  
+```js
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
 <a name="myapisite"></a>
 
 ## myapisite
@@ -339,20 +372,6 @@ where-used returned data format by UID of each host
 | --- | --- | --- |
 | postData | <code>Object</code> | This function will stringify the post data before sending |
 
-<a name="options"></a>
-
-## options : <code>Object</code>
-Define API call object options and data
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| headers | <code>Object</code> | header fields for http calls |
-| method | <code>String</code> | GET, POST, DELETE http methods |
-| path | <code>String</code> | path in api to command you call |
-
 <a name="ClassObj"></a>
 
 ## ClassObj : <code>Object</code>
@@ -363,5 +382,5 @@ Define Global object holder
 
 | Type |
 | --- |
-| [<code>options</code>](#options) | 
+| <code>options</code> | 
 

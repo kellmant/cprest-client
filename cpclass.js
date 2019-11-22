@@ -9,6 +9,19 @@
  * @property {Object} headers - header fields for http calls
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
+ * @var {options.headers} fillitin
+ * @example
+ * {
+ *	"chkp": {
+ *		"host": "SET.YOUR.HOSTNAME",
+ *		"port": "443",
+ *		"path": "/web_api",
+ *		"method": "POST",
+ *		"headers": {
+ *			"Content-Type": "application/json"
+ *		}
+ *	  }
+ * }
  */
  /**
   * Define Global object holder
