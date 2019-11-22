@@ -2,13 +2,6 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd></dd>
-</dl>
-
-## Members
-
-<dl>
-<dt><a href="#fillitin">fillitin</a> : <code>options.headers</code></dt>
 <dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
@@ -68,6 +61,8 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
@@ -82,6 +77,11 @@
 
 ### new CpApiClass()
 Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type |
+| --- | --- |
+| options.headers | <code>Object</code> | 
 
 **Example**  
 ```js
@@ -143,12 +143,6 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
-<a name="fillitin"></a>
-
-## fillitin : <code>options.headers</code>
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
-**Kind**: global variable  
 <a name="myapisite"></a>
 
 ## myapisite
