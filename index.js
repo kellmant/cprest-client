@@ -150,6 +150,7 @@ async function admins() {
 
 /**
  * Create an authenticated session with the Check Point API
+ * @constructor
  * @param {mycred} credentials Credentials used for API access
  * @return {sessionid} The prepared session handler
  */
