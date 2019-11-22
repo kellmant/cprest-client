@@ -159,7 +159,7 @@ async function startSession(myauth) {
 			var setit = toApi.doPost(myauth, 'login')
 	//toApi.showOpt()
 			sessionid = await callOut(setit.options, setit.postData)
-			console.log(sessionid)
+			//console.log(sessionid)
 			return sessionid
 	} catch (err) {
 			console.log('error in startSession')
@@ -177,7 +177,7 @@ async function setSession(mysession) {
 	try {
 			console.log('setting session')
 			toApi.setToken(mysession)
-			//toApi.showOpt()
+			toApi.showOpt()
 			return
 	} catch (err) {
 			console.log('error in setSession')
