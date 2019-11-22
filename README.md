@@ -64,27 +64,20 @@
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 **Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| myapisite | [<code>options</code>](#options) | Load settings for the api access to the system here |
+
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass(myapisite)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| myapisite | [<code>options</code>](#options) | Load settings for the api access to the system here |
-
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
