@@ -82,7 +82,7 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 
 | Param | Type | Description |
 | --- | --- | --- |
-| CLASSTART | <code>Api</code> | and path of the function to the Check Point Manageemnt API |
+| CLASSTART | <code>options</code> | and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js

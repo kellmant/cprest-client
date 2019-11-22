@@ -21,7 +21,7 @@
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @param {Api} CLASSTART and path of the function to the Check Point Manageemnt API
+	 * @param {options} CLASSTART and path of the function to the Check Point Manageemnt API
 	 * @returns {ClassObj} HTTP API data and options object
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
