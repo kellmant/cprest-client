@@ -2,7 +2,7 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
 </dd>
 </dl>
 
@@ -51,12 +51,9 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#ClassData">ClassData</a> : <code>Object</code></dt>
-<dd><p>Top level type assignment</p>
-</dd>
-<dt><a href="#data">data</a> : <code><a href="#ClassData">ClassData</a></code></dt>
+<dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#options">options</a> : <code><a href="#ClassData">ClassData</a></code></dt>
+<dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
 </dl>
@@ -64,23 +61,21 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>ClassData</code>](#ClassData)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
+    * [.setToken(sid)](#CpApiClass+setToken) ⇒
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
 <a name="new_CpApiClass_new"></a>
 
 ### new CpApiClass(myapisite)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -92,11 +87,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ [<code>ClassData</code>](#ClassData)
+### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>ClassData</code>](#ClassData) - Show options and data  
+**Returns**: [<code>options</code>](#options) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -107,20 +102,20 @@ Given data to be delivered and application function path prepare the POST struct
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | <code>json</code> | List of options to be included in the HTTP POST |
-| appfunc | <code>json</code> | API function to be called |
+| data | [<code>data</code>](#data) | List of options to be included in the HTTP POST |
+| appfunc | [<code>options</code>](#options) | API function to be called |
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(sid) ⇒ <code>apicall</code>
+### cpApiClass.setToken(sid) ⇒
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
+**Returns**: Its own object reference  
 
 | Param | Type |
 | --- | --- |
-| sid | <code>Api.options.headers</code> | 
+| sid | <code>options.headers</code> | 
 
 <a name="CpApiClass+doGet"></a>
 
@@ -329,15 +324,9 @@ where-used returned data format by UID of each host
     ]
  }
 ```
-<a name="ClassData"></a>
-
-## ClassData : <code>Object</code>
-Top level type assignment
-
-**Kind**: global typedef  
 <a name="data"></a>
 
-## data : [<code>ClassData</code>](#ClassData)
+## data : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 
@@ -347,7 +336,7 @@ Top level type assignment
 
 <a name="options"></a>
 
-## options : [<code>ClassData</code>](#ClassData)
+## options : <code>Object</code>
 Define API call object options and data
 
 **Kind**: global typedef  
@@ -356,7 +345,6 @@ Define API call object options and data
 | Name | Type | Description |
 | --- | --- | --- |
 | headers | <code>Object</code> | header fields for http calls |
-| headers[contenttype | <code>Object</code> |  |
 | method | <code>String</code> | GET, POST, DELETE http methods |
 | path | <code>String</code> | path in api to command you call |
 | port | <code>Number</code> | port your api server is listening on |

@@ -1,18 +1,17 @@
-/**
+/*
  * Top level type assignment
- * @typedef {Object} ClassData
+ * @typedef {Object} 
  *  
  */
 /**
  * 
- * @typedef {ClassData} data
+ * @typedef {Object} data
  * @property {String} postData This function will stringify the post data before sending 
  */
 /** 
  * Define API call object options and data
- * @typedef {ClassData} options 
+ * @typedef {Object} options 
  * @property {Object} headers - header fields for http calls
- * @property {Object} headers[contenttype]
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
  * @property {Number} port - port your api server is listening on 
@@ -32,12 +31,13 @@
  */
 
 
-/**
+/*
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
  */
 const CpApiClass = class ApiCall {
 	/**
+	 * @class
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API 
 	 * @param {options} myapisite Load settings for the api access to the system here 
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
@@ -48,7 +48,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {ClassData} Show options and data
+	 * @returns {options} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {
@@ -61,8 +61,8 @@ const CpApiClass = class ApiCall {
 	}
 	/**
 	 * Given data to be delivered and application function path prepare the POST structure
-	 * @param {json} data List of options to be included in the HTTP POST
-	 * @param {json} appfunc API function to be called 
+	 * @param {data} data List of options to be included in the HTTP POST
+	 * @param {options} appfunc API function to be called 
 	 * @return {apicall} Its own object reference
 	 */
 	doPost (data, appfunc) {
@@ -79,8 +79,8 @@ const CpApiClass = class ApiCall {
 
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @param {Api.options.headers} sid  
-	 * @return {apicall} Its own object reference
+	 * @param {options.headers} sid  
+	 * @return {} Its own object reference
 	 */
 	setToken (mysession) {
 		this.options.headers['x-chkp-sid'] = mysession.sid
