@@ -1,8 +1,6 @@
 ## Classes
 
 <dl>
-<dt><a href="#Creates an instance of the ApiCall object to interact with the Check Point Management API">Creates an instance of the ApiCall object to interact with the Check Point Management API</a></dt>
-<dd></dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
@@ -60,13 +58,26 @@
 </dd>
 </dl>
 
-<a name="Creates an instance of the ApiCall object to interact with the Check Point Management API"></a>
+<a name="CpApiClass"></a>
 
-## Creates an instance of the ApiCall object to interact with the Check Point Management API
+## CpApiClass
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
 **Kind**: global class  
-<a name="new_Creates an instance of the ApiCall object to interact with the Check Point Management API_new"></a>
 
-### new Creates an instance of the ApiCall object to interact with the Check Point Management API(myapisite)
+* [CpApiClass](#CpApiClass)
+    * [new CpApiClass(myapisite)](#new_CpApiClass_new)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
+    * [.setToken(sid)](#CpApiClass+setToken) ⇒
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
+
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass(myapisite)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -76,20 +87,6 @@
 ```js
 const toApi = new CpApiClass(myapisite.chkp)
 ```
-<a name="CpApiClass"></a>
-
-## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
-**Kind**: global class  
-
-* [CpApiClass](#CpApiClass)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
-
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
