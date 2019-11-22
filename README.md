@@ -1,19 +1,3 @@
-## Classes
-
-<dl>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
-</dd>
-</dl>
-
-## Members
-
-<dl>
-<dt><a href="#myoptions">myoptions</a> : <code><a href="#options">options</a></code></dt>
-<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
-</dd>
-</dl>
-
 ## Constants
 
 <dl>
@@ -66,86 +50,6 @@
 </dd>
 </dl>
 
-<a name="CpApiClass"></a>
-
-## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
-**Kind**: global class  
-
-* [CpApiClass](#CpApiClass)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
-
-<a name="CpApiClass+showOpt"></a>
-
-### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
-Log the options and data to console for debugging
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>options</code>](#options) - Show options and data  
-<a name="CpApiClass+doPost"></a>
-
-### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
-Given data to be delivered and application function path prepare the POST structure
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>json</code> | List of options to be included in the HTTP POST |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="CpApiClass+setToken"></a>
-
-### cpApiClass.setToken(sid) ⇒ <code>apicall</code>
-Set the 'x-chkp-sid' token field to the current session token
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
-
-| Param | Type |
-| --- | --- |
-| sid | <code>Api.options.headers</code> | 
-
-<a name="CpApiClass+doGet"></a>
-
-### cpApiClass.doGet(appfunc) ⇒ <code>apicall</code>
-Prepare an HTTP GET for the given API function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="CpApiClass+doDelete"></a>
-
-### cpApiClass.doDelete(appfunc) ⇒ <code>apicall</code>
-Prepare an HTTP DELETE for the given APU function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
-
-<a name="myoptions"></a>
-
-## myoptions : [<code>options</code>](#options)
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-**Kind**: global variable  
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
 <a name="myapisite"></a>
 
 ## myapisite
