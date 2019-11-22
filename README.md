@@ -69,7 +69,7 @@ CpApiCLass object data
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(myapisite)](#new_CpApiClass_new)
+    * [new CpApiClass(Api)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>apicall</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
@@ -78,14 +78,14 @@ CpApiCLass object data
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass(myapisite)
+### new CpApiClass(Api)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 **Returns**: <code>apicall</code> - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myapisite | <code>Object</code> | Options and path of the function to the Check Point Manageemnt API |
+| Api | <code>Object</code> | Options and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js
