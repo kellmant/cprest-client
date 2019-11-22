@@ -178,15 +178,14 @@ async function startSession(myauth) {
 
 /**
  * Class method set of API token authentication
- * @typedef {String} x-chkp-sid
- * @property {options.headers} options.headers.x-chkp-sid Session ID token applied to header
+ * @param {Api} options.headers x-chkp-sid Session ID token applied to header
  *
  */
 // set session token to header
 /**
 * Set the session handler for a Check Point API connection
 * @param {sessionid} sessionid A Check Point API session ID handler
-* @returns {x-chkp-sid} Header token set for session 
+* @returns {myapicall} Header token set for session 
 */
 async function setSession(mysession) {
 	try {

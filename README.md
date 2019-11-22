@@ -22,7 +22,7 @@
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
+<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#myapicall">myapicall</a></code></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
@@ -50,9 +50,6 @@
 </dd>
 <dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>String</code></dt>
-<dd><p>Class method set of API token authentication</p>
-</dd>
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
@@ -196,11 +193,11 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
+## setSession(sessionid) ⇒ [<code>myapicall</code>](#myapicall)
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
-**Returns**: [<code>x-chkp-sid</code>](#x-chkp-sid) - Header token set for session  
+**Returns**: [<code>myapicall</code>](#myapicall) - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -296,18 +293,6 @@ allobjs object data format
 | sid | <code>String</code> | 
 | uid | <code>String</code> | 
 | url | <code>String</code> | 
-
-<a name="x-chkp-sid"></a>
-
-## x-chkp-sid : <code>String</code>
-Class method set of API token authentication
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| options.headers.x-chkp-sid | <code>options.headers</code> | Session ID token applied to header |
 
 <a name="usage"></a>
 
