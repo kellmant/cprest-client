@@ -26,9 +26,9 @@
  */
 /**
  * 
- * @typedef {Object} ApiDoc
- * @property {options} options
- * @property {data} data 
+ * @typedef {Object} ClassData
+ * @property {...options} options
+ * @property {...data} data 
  */
 
 /**
@@ -47,7 +47,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {ApiDoc} Show options and data
+	 * @returns {ClassData} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {

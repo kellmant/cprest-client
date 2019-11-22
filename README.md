@@ -56,7 +56,7 @@
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
-<dt><a href="#ApiDoc">ApiDoc</a> : <code>Object</code></dt>
+<dt><a href="#ClassData">ClassData</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
@@ -69,7 +69,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>ApiDoc</code>](#ApiDoc)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>ClassData</code>](#ClassData)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
@@ -91,11 +91,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ [<code>ApiDoc</code>](#ApiDoc)
+### cpApiClass.showOpt() ⇒ [<code>ClassData</code>](#ClassData)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>ApiDoc</code>](#ApiDoc) - Show options and data  
+**Returns**: [<code>ClassData</code>](#ClassData) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -368,14 +368,14 @@ Define API call object options and data
 	  }
 }
 ```
-<a name="ApiDoc"></a>
+<a name="ClassData"></a>
 
-## ApiDoc : <code>Object</code>
+## ClassData : <code>Object</code>
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type |
 | --- | --- |
-| options | [<code>options</code>](#options) | 
-| data | [<code>data</code>](#data) | 
+| ...options | [<code>options</code>](#options) | 
+| ...data | [<code>data</code>](#data) | 
 
