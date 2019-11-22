@@ -12,7 +12,6 @@
  * Define API call object options and data
  * @typedef {Object} options 
  * @property {Object} headers - header fields for http calls
- * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
  * @property {Number} port - port your api server is listening on 
  * @property {String} host - hostname or IP of the api server

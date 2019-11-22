@@ -43,6 +43,11 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#data">data</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#options">options</a> : <code>Object</code></dt>
+<dd><p>Define API call object options and data</p>
+</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -50,11 +55,6 @@
 <dd></dd>
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
-</dd>
-<dt><a href="#data">data</a> : <code>Object</code></dt>
-<dd></dd>
-<dt><a href="#options">options</a> : <code>Object</code></dt>
-<dd><p>Define API call object options and data</p>
 </dd>
 </dl>
 
@@ -246,6 +246,45 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
+<a name="data"></a>
+
+## data : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| postData | <code>String</code> | This function will stringify the post data before sending |
+
+<a name="options"></a>
+
+## options : <code>Object</code>
+Define API call object options and data
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| headers | <code>Object</code> | header fields for http calls |
+| path | <code>String</code> | path in api to command you call |
+| port | <code>Number</code> | port your api server is listening on |
+| host | <code>String</code> | hostname or IP of the api server |
+
+**Example**  
+```js
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
 <a name="allobjs"></a>
 
 ## allobjs : <code>Object</code>
@@ -325,44 +364,4 @@ where-used returned data format by UID of each host
        }
     ]
  }
-```
-<a name="data"></a>
-
-## data : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| postData | <code>String</code> | This function will stringify the post data before sending |
-
-<a name="options"></a>
-
-## options : <code>Object</code>
-Define API call object options and data
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| headers | <code>Object</code> | header fields for http calls |
-| method | <code>String</code> | GET, POST, DELETE http methods |
-| path | <code>String</code> | path in api to command you call |
-| port | <code>Number</code> | port your api server is listening on |
-| host | <code>String</code> | hostname or IP of the api server |
-
-**Example**  
-```js
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
 ```
