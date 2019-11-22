@@ -27,10 +27,10 @@ const CpApiClass = class ApiCall {
 	 */
 	showOpt () {
 		if (this.options) {
-			console.dir(this.options)
+			console.log(this.options)
 		} 
 		if (this.postData) {
-			console.dir(this.postData)
+			console.log(this.postData)
 		}
 	}
 	/**
