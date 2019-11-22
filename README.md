@@ -69,7 +69,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>headers</code>
+    * [.setToken(sid)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>\*</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>\*</code>
 
@@ -109,15 +109,15 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(sid) ⇒ <code>headers</code>
+### cpApiClass.setToken(sid) ⇒ [<code>options</code>](#options)
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>headers</code> - Its own object reference  
+**Returns**: [<code>options</code>](#options) - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | <code>options:headers</code> | Session ID Token returned from authenticated login request |
+| sid | <code>headers</code> | Session ID Token returned from authenticated login request |
 
 <a name="CpApiClass+doGet"></a>
 
