@@ -26,13 +26,11 @@ const CpApiClass = class ApiCall {
 	 * @returns {apicall} Show options and data
 	 */
 	showOpt () {
-		return this
-		/*
 		if (this.options) {
-			console.log(this)
+			console.dir(this.options)
 		} 
-		if (this.data) {
-			console.log(this.data)
+		if (this.postData) {
+			console.dir(this.postData)
 		}
 		*/
 	}
