@@ -356,6 +356,7 @@ Define API call object options and data
 | Name | Type | Description |
 | --- | --- | --- |
 | headers | <code>Object</code> | header fields for http calls |
+| headers[contenttype | <code>Object</code> |  |
 | method | <code>String</code> | GET, POST, DELETE http methods |
 | path | <code>String</code> | path in api to command you call |
 | port | <code>Number</code> | port your api server is listening on |
