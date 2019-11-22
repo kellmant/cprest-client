@@ -121,7 +121,7 @@ Set the 'x-chkp-sid' token field to the current session token
 
 | Param | Type |
 | --- | --- |
-| sid | <code>APi.options.headers</code> | 
+| sid | <code>Api.options.headers</code> | 
 
 <a name="CpApiClass+doGet"></a>
 
