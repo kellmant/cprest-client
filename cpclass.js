@@ -40,14 +40,13 @@ const CpApiClass = class ApiCall {
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API 
 	 * @argument {options} myapisite Load settings for the api access to the system here 
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
-	 * @constructor
 	 */
 	constructor (base) {
 		this.options = base
 		this.rootpath = base.path
 		} 
 	/**
-	 * Log the options and data to console for debugging
+	 * Log the options to console for debugging
 	 * @returns {options} Show options and data
 	 */
 	showOpt () {
@@ -63,7 +62,7 @@ const CpApiClass = class ApiCall {
 	 * Given data to be delivered and application function path prepare the POST structure
 	 * @param {data} data List of options to be included in the HTTP POST
 	 * @param {options} appfunc API function to be called 
-	 * @return {apicall} Its own object reference
+	 * @return {*} Its own object reference
 	 */
 	doPost (data, appfunc) {
 		this.postData = JSON.stringify(data)
@@ -79,8 +78,7 @@ const CpApiClass = class ApiCall {
 
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @type {options}
-	 * @param {{options: headers}} sid Session ID Token returned from authenticated login request 
+	 * @param {{options:headers}} sid Session ID Token returned from authenticated login request 
 	 * @return {headers} Its own object reference
 	 */
 	setToken (mysession) {

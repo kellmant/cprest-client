@@ -68,7 +68,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
-    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
+    * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>headers</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
@@ -90,17 +90,17 @@ const toApi = new CpApiClass(myapisite.chkp)
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
-Log the options and data to console for debugging
+Log the options to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
 **Returns**: [<code>options</code>](#options) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
-### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
+### cpApiClass.doPost(data, appfunc) ⇒ <code>\*</code>
 Given data to be delivered and application function path prepare the POST structure
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
+**Returns**: <code>\*</code> - Its own object reference  
 
 | Param | Type | Description |
 | --- | --- | --- |
