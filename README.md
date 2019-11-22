@@ -57,6 +57,10 @@
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
+<dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
+<dd><p>/**
+Define Global object holder</p>
+</dd>
 </dl>
 
 <a name="CpApiClass"></a>
@@ -69,7 +73,7 @@ CpApiCLass object data
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(mysite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>apicall</code>
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
@@ -83,7 +87,7 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mysite | [<code>options</code>](#options) | api options to the Check Point Manageemnt API |
+| mysite | <code>headers</code> | api options to the Check Point Manageemnt API |
 
 **Example**  
 ```js
@@ -91,11 +95,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ <code>apicall</code>
+### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Show options and data  
+**Returns**: [<code>options</code>](#options) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -351,4 +355,17 @@ Define API call object options and data
 | headers | <code>Object</code> | header fields for http calls |
 | method | <code>String</code> | GET, POST, DELETE http methods |
 | path | <code>String</code> | path in api to command you call |
+
+<a name="ClassObj"></a>
+
+## ClassObj : <code>Object</code>
+/**
+Define Global object holder
+
+**Kind**: global typedef  
+**Properties**
+
+| Type |
+| --- |
+| [<code>options</code>](#options) | 
 

@@ -11,7 +11,11 @@
  * @property {String} path - path in api to command you call
  */
 /**
- 
+ /**
+  * Define Global object holder
+  * @typedef {Object} ClassObj
+  * @property {options}
+  */
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
@@ -22,7 +26,7 @@
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @param {options} mysite api options to the Check Point Manageemnt API
+	 * @param {headers} mysite api options to the Check Point Manageemnt API
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {
@@ -31,7 +35,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {apicall} Show options and data
+	 * @returns {options} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {
