@@ -1,8 +1,6 @@
 ## Classes
 
 <dl>
-<dt><a href="#startSession">startSession</a></dt>
-<dd></dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd></dd>
 </dl>
@@ -21,6 +19,9 @@
 ## Functions
 
 <dl>
+<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dd><p>Create an authenticated session with the Check Point API</p>
+</dd>
 <dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#x-chkp-sid">x-chkp-sid</a></code></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
@@ -56,21 +57,6 @@
 <dd><p>CpApiCLass object data format</p>
 </dd>
 </dl>
-
-<a name="startSession"></a>
-
-## startSession
-**Kind**: global class  
-<a name="new_startSession_new"></a>
-
-### new startSession(credentials)
-Create an authenticated session with the Check Point API
-
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
 
 <a name="CpApiClass"></a>
 
@@ -193,6 +179,18 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
+<a name="startSession"></a>
+
+## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
+Create an authenticated session with the Check Point API
+
+**Kind**: global function  
+**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
+
 <a name="setSession"></a>
 
 ## setSession(sessionid) ⇒ [<code>x-chkp-sid</code>](#x-chkp-sid)
