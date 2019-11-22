@@ -336,7 +336,7 @@ where-used returned data format by UID of each host
 
 | Name | Type | Description |
 | --- | --- | --- |
-| postData | <code>Object</code> | This function will stringify the post data before sending |
+| postData | <code>String</code> | This function will stringify the post data before sending |
 
 <a name="options"></a>
 
@@ -372,10 +372,9 @@ Define API call object options and data
 
 ## ClassData : <code>Object</code>
 **Kind**: global typedef  
-**Properties**
 
-| Name | Type |
+| Param | Type |
 | --- | --- |
-| ...options | [<code>options</code>](#options) | 
-| ...data | [<code>data</code>](#data) | 
+| options | [<code>options</code>](#options) | 
+| postData | [<code>data</code>](#data) | 
 

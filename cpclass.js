@@ -1,7 +1,7 @@
 /**
  * 
  * @typedef {Object} data
- * @property {Object} postData This function will stringify the post data before sending 
+ * @property {String} postData This function will stringify the post data before sending 
  */
 /** 
  * Define API call object options and data
@@ -27,8 +27,8 @@
 /**
  * 
  * @typedef {Object} ClassData
- * @property {...options} options
- * @property {...data} data 
+ * @param {options} options
+ * @param {data} postData 
  */
 
 /**
