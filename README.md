@@ -70,8 +70,8 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>headers</code>
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
+    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>\*</code>
+    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>\*</code>
 
 <a name="new_CpApiClass_new"></a>
 
@@ -100,7 +100,7 @@ Log the options to console for debugging
 Given data to be delivered and application function path prepare the POST structure
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>\*</code> - Its own object reference  
+**Returns**: <code>\*</code> - return result of post action  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -121,27 +121,27 @@ Set the 'x-chkp-sid' token field to the current session token
 
 <a name="CpApiClass+doGet"></a>
 
-### cpApiClass.doGet(appfunc) ⇒ <code>apicall</code>
+### cpApiClass.doGet(appfunc) ⇒ <code>\*</code>
 Prepare an HTTP GET for the given API function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
+**Returns**: <code>\*</code> - results of GET request to API  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
+| appfunc | [<code>options</code>](#options) | API function to be called |
 
 <a name="CpApiClass+doDelete"></a>
 
-### cpApiClass.doDelete(appfunc) ⇒ <code>apicall</code>
+### cpApiClass.doDelete(appfunc) ⇒ <code>\*</code>
 Prepare an HTTP DELETE for the given APU function
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>apicall</code> - Its own object reference  
+**Returns**: <code>\*</code> - Results of delete request to API  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | <code>json</code> | API function to be called |
+| appfunc | [<code>options</code>](#options) | API function to be called |
 
 <a name="myapisite"></a>
 

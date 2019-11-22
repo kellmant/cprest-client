@@ -61,7 +61,7 @@ const CpApiClass = class ApiCall {
 	 * Given data to be delivered and application function path prepare the POST structure
 	 * @param {data} data List of options to be included in the HTTP POST
 	 * @param {options} appfunc API function to be called 
-	 * @return {*} Its own object reference
+	 * @return {*} return result of post action
 	 */
 	doPost (data, appfunc) {
 		this.postData = JSON.stringify(data)
@@ -86,8 +86,8 @@ const CpApiClass = class ApiCall {
 	}
 	/**
 	 * Prepare an HTTP GET for the given API function
-	 * @param {json} appfunc API function to be called 
-	 * @return {apicall} Its own object reference
+	 * @param {options} appfunc API function to be called 
+	 * @return {*} results of GET request to API
 	 */
 	doGet (appfunc) {
 		this.options.method = 'GET'
@@ -106,8 +106,8 @@ const CpApiClass = class ApiCall {
 	}
 	/**
 	 * Prepare an HTTP DELETE for the given APU function
-	 * @param {json} appfunc API function to be called 
-	 * @return {apicall} Its own object reference
+	 * @param {options} appfunc API function to be called 
+	 * @return {*} Results of delete request to API
 	 */
 	doDelete (appfunc) {
 		this.options.method = 'DELETE'
@@ -127,25 +127,3 @@ const CpApiClass = class ApiCall {
 }
 
 module.exports = CpApiClass
-
-// save api output as json data to file
-async function writeJson (content) {
-	try {
-			var newfile = myfilename + '.json'
-	console.log('attempting to write to file . . . ' + newfile)
-	console.log(typeof content.hosts)
-	if (content.hosts.length > 0) { 
-		console.log(content.hosts.length)
-		const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
-			//file written successfully
-		console.log(content)
-		console.log('Json data written to ' + newfile)
-		console.log('  --  ') 
-	} else {
-		console.log(' NO HOSTS FOUND ')
-	}
-	return content
-	} catch (err) {
-			console.error(err)
-	}
-}
