@@ -337,10 +337,8 @@ Define API call object options and data
 
 | Name | Type |
 | --- | --- |
-| headers | <code>Object</code> | 
-| host | <code>String</code> | 
-| method | <code>String</code> | 
+| headers | [<code>options</code>](#options) | 
+| method | [<code>options</code>](#options) | 
 | path | <code>String</code> | 
-| port | <code>Number</code> | 
 | data | <code>Object</code> | 
 
