@@ -24,6 +24,12 @@
  *	  }
  * }
  */
+/**
+ * 
+ * @typedef {Object} ApiDoc
+ * @property {options} options
+ * @property {data} data 
+ */
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
@@ -41,7 +47,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {options & data} Show options and data
+	 * @returns {ApiDoc} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {
