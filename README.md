@@ -58,8 +58,7 @@
 <dd><p>Define API call object options and data</p>
 </dd>
 <dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
-<dd><p>/**
-Define Global object holder</p>
+<dd><p>Define Global object holder</p>
 </dd>
 </dl>
 
@@ -359,7 +358,6 @@ Define API call object options and data
 <a name="ClassObj"></a>
 
 ## ClassObj : <code>Object</code>
-/**
 Define Global object holder
 
 **Kind**: global typedef  

@@ -10,7 +10,6 @@
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
  */
-/**
  /**
   * Define Global object holder
   * @typedef {Object} ClassObj
