@@ -55,7 +55,7 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#Api">Api</a> : <code>Object</code></dt>
+<dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
 <dd><p>Define API call object options</p>
 </dd>
 </dl>
@@ -69,7 +69,7 @@ CpApiCLass object data
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(options)](#new_CpApiClass_new)
+    * [new CpApiClass(CLASSTART)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>apicall</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
@@ -78,14 +78,14 @@ CpApiCLass object data
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass(options)
+### new CpApiClass(CLASSTART)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
-**Returns**: <code>apicall</code> - HTTP API data and options object  
+**Returns**: [<code>ClassObj</code>](#ClassObj) - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | [<code>Api</code>](#Api) | and path of the function to the Check Point Manageemnt API |
+| CLASSTART | <code>Object</code> | and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js
@@ -348,9 +348,9 @@ where-used returned data format by UID of each host
     ]
  }
 ```
-<a name="Api"></a>
+<a name="ClassObj"></a>
 
-## Api : <code>Object</code>
+## ClassObj : <code>Object</code>
 Define API call object options
 
 **Kind**: global typedef  

@@ -1,6 +1,6 @@
 /** 
  * Define API call object options
- * @typedef {Object} Api 
+ * @typedef {Object} ClassObj 
  * @property {Object} options
  * @property {Object} options.headers
  * @property {String} options.host
@@ -21,8 +21,8 @@
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @param {Api} options and path of the function to the Check Point Manageemnt API
-	 * @returns {apicall} HTTP API data and options object
+	 * @param {Object} CLASSTART and path of the function to the Check Point Manageemnt API
+	 * @returns {ClassObj} HTTP API data and options object
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {
