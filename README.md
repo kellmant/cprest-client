@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#CpApiClass">CpApiClass</a> : <code><a href="#myapisite">myapisite</a></code></dt>
+<dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
@@ -60,13 +60,13 @@
 
 <a name="CpApiClass"></a>
 
-## CpApiClass : [<code>myapisite</code>](#myapisite)
+## CpApiClass
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 **Kind**: global class  
 
-* [CpApiClass](#CpApiClass) : [<code>myapisite</code>](#myapisite)
-    * [new CpApiClass()](#new_CpApiClass_new)
+* [CpApiClass](#CpApiClass)
+    * [new CpApiClass(myclassname)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>options</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
@@ -75,8 +75,13 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass()
+### new CpApiClass(myclassname)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| myclassname | <code>myapiste</code> | here is the description |
 
 **Example**  
 ```js
