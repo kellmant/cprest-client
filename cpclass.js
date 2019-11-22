@@ -45,7 +45,8 @@ const CpApiClass = class ApiCall {
 	 */
 	showOpt () {
 		if (this.options) {
-			console.log(JSON.stringify(this.options))
+			console.log(JSON.stringify(this.options, undefined, 2))
+			//console.log(JSON.stringify(this.options))
 		} 
 		if (this.postData) {
 			console.log(this.postData)
@@ -121,3 +122,25 @@ const CpApiClass = class ApiCall {
 }
 
 module.exports = CpApiClass
+
+// save api output as json data to file
+async function writeJson (content) {
+	try {
+			var newfile = myfilename + '.json'
+	console.log('attempting to write to file . . . ' + newfile)
+	console.log(typeof content.hosts)
+	if (content.hosts.length > 0) { 
+		console.log(content.hosts.length)
+		const data = await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
+			//file written successfully
+		console.log(content)
+		console.log('Json data written to ' + newfile)
+		console.log('  --  ') 
+	} else {
+		console.log(' NO HOSTS FOUND ')
+	}
+	return content
+	} catch (err) {
+			console.error(err)
+	}
+}
