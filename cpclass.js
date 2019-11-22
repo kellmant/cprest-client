@@ -29,7 +29,6 @@
  */
 const CpApiClass = class ApiCall {
 	/**
-	 * @lends CpApiClass
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
