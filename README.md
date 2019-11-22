@@ -69,7 +69,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass(mysite)](#new_CpApiClass_new)
+    * [new CpApiClass(api)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
@@ -78,13 +78,13 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass(mysite)
+### new CpApiClass(api)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| mysite | <code>headers</code> | api options to the Check Point Manageemnt API |
+| api | [<code>ClassObj</code>](#ClassObj) | options to the Check Point Manageemnt API |
 
 **Example**  
 ```js
