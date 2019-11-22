@@ -41,7 +41,7 @@ const myapisite = require('./auth/mycpapi')
  */
 const mycred = require('./auth/mycpauth')
 
-/** 
+/* 
  * Define API call object options
  * @typedef {Object} Api 
  * @property {Object} options

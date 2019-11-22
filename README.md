@@ -44,9 +44,6 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#Api">Api</a> : <code>Object</code></dt>
-<dd><p>Define API call object options</p>
-</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -85,7 +82,7 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 
 | Param | Type | Description |
 | --- | --- | --- |
-| CLASSTART | <code>Object</code> | and path of the function to the Check Point Manageemnt API |
+| CLASSTART | <code>Api</code> | and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js
@@ -250,24 +247,6 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
-<a name="Api"></a>
-
-## Api : <code>Object</code>
-Define API call object options
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| options | <code>Object</code> | 
-| options.headers | <code>Object</code> | 
-| options.host | <code>String</code> | 
-| options.method | <code>String</code> | 
-| options.path | <code>String</code> | 
-| options.port | <code>Number</code> | 
-| data | <code>Object</code> | 
-
 <a name="allobjs"></a>
 
 ## allobjs : <code>Object</code>
