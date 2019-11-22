@@ -1,8 +1,10 @@
 ## Classes
 
 <dl>
+<dt><a href="#Creates an instance of the ApiCall object to interact with the Check Point Management API">Creates an instance of the ApiCall object to interact with the Check Point Management API</a></dt>
+<dd></dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
 
@@ -58,18 +60,28 @@
 </dd>
 </dl>
 
-<a name="CpApiClass"></a>
+<a name="Creates an instance of the ApiCall object to interact with the Check Point Management API"></a>
 
-## CpApiClass
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
+## Creates an instance of the ApiCall object to interact with the Check Point Management API
 **Kind**: global class  
-**Properties**
+<a name="new_Creates an instance of the ApiCall object to interact with the Check Point Management API_new"></a>
 
-| Name | Type | Description |
+### new Creates an instance of the ApiCall object to interact with the Check Point Management API(myapisite)
+
+| Param | Type | Description |
 | --- | --- | --- |
 | myapisite | [<code>options</code>](#options) | Load settings for the api access to the system here |
 
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
+<a name="CpApiClass"></a>
+
+## CpApiClass
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+
+**Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
