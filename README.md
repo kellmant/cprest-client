@@ -117,7 +117,7 @@ Set the 'x-chkp-sid' token field to the current session token
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | <code>Object</code> | Session ID Token returned from authenticated login request |
+| sid | <code>options:headers</code> | Session ID Token returned from authenticated login request |
 
 <a name="CpApiClass+doGet"></a>
 
