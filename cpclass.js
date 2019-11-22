@@ -30,7 +30,7 @@
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @param {Object} options.headers
+	 * @var {options} myoptions
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {

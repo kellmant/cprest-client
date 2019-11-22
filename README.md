@@ -6,6 +6,14 @@
 </dd>
 </dl>
 
+## Members
+
+<dl>
+<dt><a href="#myoptions">myoptions</a> : <code><a href="#options">options</a></code></dt>
+<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
+</dd>
+</dl>
+
 ## Constants
 
 <dl>
@@ -66,27 +74,12 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
-    * [new CpApiClass()](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
-<a name="new_CpApiClass_new"></a>
-
-### new CpApiClass()
-Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-
-| Param | Type |
-| --- | --- |
-| options.headers | <code>Object</code> | 
-
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
@@ -143,6 +136,16 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
+<a name="myoptions"></a>
+
+## myoptions : [<code>options</code>](#options)
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+**Kind**: global variable  
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
 <a name="myapisite"></a>
 
 ## myapisite
