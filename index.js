@@ -43,7 +43,7 @@ const mycred = require('./auth/mycpauth')
 
 /** 
  * Define API call object options
- * @typedef {Api} myapicall
+ * @typedef {Object} Api 
  * @property {Object} options
  * @property {Object} options.headers
  * @property {String} options.host

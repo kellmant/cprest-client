@@ -22,7 +22,7 @@
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code><a href="#myapicall">myapicall</a></code></dt>
+<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code>myapicall</code></dt>
 <dd><p>Set the session handler for a Check Point API connection</p>
 </dd>
 <dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
@@ -42,7 +42,7 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#myapicall">myapicall</a> : <code>Api</code></dt>
+<dt><a href="#Api">Api</a> : <code>Object</code></dt>
 <dd><p>Define API call object options</p>
 </dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
@@ -193,11 +193,11 @@ Create an authenticated session with the Check Point API
 
 <a name="setSession"></a>
 
-## setSession(sessionid) ⇒ [<code>myapicall</code>](#myapicall)
+## setSession(sessionid) ⇒ <code>myapicall</code>
 Set the session handler for a Check Point API connection
 
 **Kind**: global function  
-**Returns**: [<code>myapicall</code>](#myapicall) - Header token set for session  
+**Returns**: <code>myapicall</code> - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -245,9 +245,9 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
-<a name="myapicall"></a>
+<a name="Api"></a>
 
-## myapicall : <code>Api</code>
+## Api : <code>Object</code>
 Define API call object options
 
 **Kind**: global typedef  
