@@ -41,6 +41,22 @@ const myapisite = require('./auth/mycpapi')
  */
 const mycred = require('./auth/mycpauth')
 
+/** 
+ * Define API call object options
+ * @typedef {Object} ApiOptions
+ * @property {Object} options
+ * @property {Object} options.headers
+ * @property {String} options.host
+ * @property {String} options.method
+ * @property {String} options.path
+ * @property {Number} options.port
+ */
+/**
+ * Define API call object data
+ * @typedef {Object} ApiData
+ * @property {Object} data
+ */
+
 /**
  * Class Method for API token authentication
  * @typedef {Header} x-chkp-sid
@@ -94,6 +110,8 @@ if (process.argv[2]) {
 	nodata.type = 'host'
 	usedobj[ip] = []
 }
+
+
 
 main()
 //.then(admins)

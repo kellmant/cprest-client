@@ -42,6 +42,12 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#ApiOptions">ApiOptions</a> : <code>Object</code></dt>
+<dd><p>Define API call object options</p>
+</dd>
+<dt><a href="#ApiData">ApiData</a> : <code>Object</code></dt>
+<dd><p>Define API call object data</p>
+</dd>
 <dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
 <dd><p>Class Method for API token authentication</p>
 </dd>
@@ -245,6 +251,35 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
+<a name="ApiOptions"></a>
+
+## ApiOptions : <code>Object</code>
+Define API call object options
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| options | <code>Object</code> | 
+| options.headers | <code>Object</code> | 
+| options.host | <code>String</code> | 
+| options.method | <code>String</code> | 
+| options.path | <code>String</code> | 
+| options.port | <code>Number</code> | 
+
+<a name="ApiData"></a>
+
+## ApiData : <code>Object</code>
+Define API call object data
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| data | <code>Object</code> | 
+
 <a name="x-chkp-sid"></a>
 
 ## x-chkp-sid : <code>Header</code>
