@@ -43,24 +43,20 @@ const mycred = require('./auth/mycpauth')
 
 /** 
  * Define API call object options
- * @typedef {Object} ApiOptions
+ * @typedef {Object} Api
  * @property {Object} options
  * @property {Object} options.headers
  * @property {String} options.host
  * @property {String} options.method
  * @property {String} options.path
  * @property {Number} options.port
- */
-/**
- * Define API call object data
- * @typedef {Object} ApiData
  * @property {Object} data
  */
 
 /**
  * Class Method for API token authentication
  * @typedef {Header} x-chkp-sid
- * @property {String} sid Session ID token applied to header
+ * @property {Api} options.headers.x-chkp-sid Session ID token applied to header
  *
  */
 

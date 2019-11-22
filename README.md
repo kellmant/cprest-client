@@ -42,11 +42,8 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#ApiOptions">ApiOptions</a> : <code>Object</code></dt>
+<dt><a href="#Api">Api</a> : <code>Object</code></dt>
 <dd><p>Define API call object options</p>
-</dd>
-<dt><a href="#ApiData">ApiData</a> : <code>Object</code></dt>
-<dd><p>Define API call object data</p>
 </dd>
 <dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
 <dd><p>Class Method for API token authentication</p>
@@ -251,9 +248,9 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
-<a name="ApiOptions"></a>
+<a name="Api"></a>
 
-## ApiOptions : <code>Object</code>
+## Api : <code>Object</code>
 Define API call object options
 
 **Kind**: global typedef  
@@ -267,17 +264,6 @@ Define API call object options
 | options.method | <code>String</code> | 
 | options.path | <code>String</code> | 
 | options.port | <code>Number</code> | 
-
-<a name="ApiData"></a>
-
-## ApiData : <code>Object</code>
-Define API call object data
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
 | data | <code>Object</code> | 
 
 <a name="x-chkp-sid"></a>
@@ -290,7 +276,7 @@ Class Method for API token authentication
 
 | Name | Type | Description |
 | --- | --- | --- |
-| sid | <code>String</code> | Session ID token applied to header |
+| options.headers.x-chkp-sid | [<code>Api</code>](#Api) | Session ID token applied to header |
 
 <a name="allobjs"></a>
 
