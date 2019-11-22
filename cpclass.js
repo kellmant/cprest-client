@@ -1,7 +1,11 @@
+/**
+ * 
+ * @typedef {Object} data
+ * @property {Object} postData This function will stringify the post data before sending 
+ */
 /** 
  * Define API call object options and data
- * @typedef {Object} ClassObj 
- * @typedef {ClassObj} options
+ * @typedef {Object} options
  * @property {Object} headers - header fields for http calls
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
@@ -19,7 +23,6 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @param {options} mysite api options to the Check Point Manageemnt API
-	 * @returns {ClassObj} HTTP API data and options object
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {

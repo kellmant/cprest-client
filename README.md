@@ -52,6 +52,8 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
+<dt><a href="#data">data</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
@@ -78,7 +80,6 @@ CpApiCLass object data
 ### new CpApiClass(mysite)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
-**Returns**: <code>ClassObj</code> - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -327,6 +328,16 @@ where-used returned data format by UID of each host
     ]
  }
 ```
+<a name="data"></a>
+
+## data : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| postData | <code>Object</code> | This function will stringify the post data before sending |
+
 <a name="options"></a>
 
 ## options : <code>Object</code>
