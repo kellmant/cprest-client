@@ -9,6 +9,9 @@
 ## Constants
 
 <dl>
+<dt><a href="#myapisite">myapisite</a></dt>
+<dd><p>API Site configuration required from auth/mycpapi.json file</p>
+</dd>
 <dt><a href="#mycred">mycred</a></dt>
 <dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
@@ -50,7 +53,7 @@
 </dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
+<dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
 </dl>
@@ -64,7 +67,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 * [CpApiClass](#CpApiClass)
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>options</code>
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
@@ -78,7 +81,7 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myapisite | [<code>myapisite</code>](#myapisite) | Load settings for the api access to the system here |
+| myapisite | [<code>options</code>](#options) | Load settings for the api access to the system here |
 
 **Example**  
 ```js
@@ -86,11 +89,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ <code>options</code>
+### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>options</code> - Show options and data  
+**Returns**: [<code>options</code>](#options) - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -140,6 +143,28 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
+<a name="myapisite"></a>
+
+## myapisite
+API Site configuration required from auth/mycpapi.json file
+
+**Kind**: global constant  
+**Require**: auth/mycpapi.json  
+**Example**  
+```js
+create auth/mycpapi.json file
+{
+	"chkp": {
+		"host": "SET.YOUR.HOSTNAME",
+		"port": "443",
+		"path": "/web_api",
+		"method": "POST",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	  }
+}
+```
 <a name="mycred"></a>
 
 ## mycred
@@ -311,9 +336,9 @@ where-used returned data format by UID of each host
 | --- | --- | --- |
 | postData | <code>Object</code> | This function will stringify the post data before sending |
 
-<a name="myapisite"></a>
+<a name="options"></a>
 
-## myapisite : <code>Object</code>
+## options : <code>Object</code>
 Define API call object options and data
 
 **Kind**: global typedef  
@@ -324,6 +349,8 @@ Define API call object options and data
 | headers | <code>Object</code> | header fields for http calls |
 | method | <code>String</code> | GET, POST, DELETE http methods |
 | path | <code>String</code> | path in api to command you call |
+| port | <code>Number</code> | port your api server is listening on |
+| host | <code>String</code> | hostname or IP of the api server |
 
 **Example**  
 ```js

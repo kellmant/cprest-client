@@ -10,7 +10,7 @@ const get = (p, o) =>
   p.reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, o)
 
 
-/*
+/**
  * API Site configuration required from auth/mycpapi.json file
  * @require auth/mycpapi.json 
  * @example
