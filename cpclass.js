@@ -16,7 +16,7 @@
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
  * CpApiCLass object data 
- * @param {Api} options.headers.ChkpSid 
+ * @param {String} options.headers.ChkpSid 
  *
 const CpApiClass = class ApiCall {
 	/**
