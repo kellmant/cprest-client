@@ -42,17 +42,17 @@
 ## Typedefs
 
 <dl>
-<dt><a href="#Api">Api</a> : <code>Object</code></dt>
+<dt><a href="#myapicall">myapicall</a> : <code>Api</code></dt>
 <dd><p>Define API call object options</p>
-</dd>
-<dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>Header</code></dt>
-<dd><p>Class Method for API token authentication</p>
 </dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
 <dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#x-chkp-sid">x-chkp-sid</a> : <code>String</code></dt>
+<dd><p>Class method set of API token authentication</p>
+</dd>
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
@@ -248,9 +248,9 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
-<a name="Api"></a>
+<a name="myapicall"></a>
 
-## Api : <code>Object</code>
+## myapicall : <code>Api</code>
 Define API call object options
 
 **Kind**: global typedef  
@@ -265,18 +265,6 @@ Define API call object options
 | options.path | <code>String</code> | 
 | options.port | <code>Number</code> | 
 | data | <code>Object</code> | 
-
-<a name="x-chkp-sid"></a>
-
-## x-chkp-sid : <code>Header</code>
-Class Method for API token authentication
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| options.headers.x-chkp-sid | [<code>Api</code>](#Api) | Session ID token applied to header |
 
 <a name="allobjs"></a>
 
@@ -308,6 +296,18 @@ allobjs object data format
 | sid | <code>String</code> | 
 | uid | <code>String</code> | 
 | url | <code>String</code> | 
+
+<a name="x-chkp-sid"></a>
+
+## x-chkp-sid : <code>String</code>
+Class method set of API token authentication
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| options.headers.x-chkp-sid | <code>options.headers</code> | Session ID token applied to header |
 
 <a name="usage"></a>
 

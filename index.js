@@ -43,7 +43,7 @@ const mycred = require('./auth/mycpauth')
 
 /** 
  * Define API call object options
- * @typedef {Object} Api
+ * @typedef {Api} myapicall
  * @property {Object} options
  * @property {Object} options.headers
  * @property {String} options.host
@@ -53,12 +53,7 @@ const mycred = require('./auth/mycpauth')
  * @property {Object} data
  */
 
-/**
- * Class Method for API token authentication
- * @typedef {Header} x-chkp-sid
- * @property {Api} options.headers.x-chkp-sid Session ID token applied to header
- *
- */
+
 
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
@@ -181,6 +176,12 @@ async function startSession(myauth) {
 	}
 }
 
+/**
+ * Class method set of API token authentication
+ * @typedef {String} x-chkp-sid
+ * @property {options.headers} options.headers.x-chkp-sid Session ID token applied to header
+ *
+ */
 // set session token to header
 /**
 * Set the session handler for a Check Point API connection
