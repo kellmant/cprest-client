@@ -5,7 +5,7 @@
  */
 /** 
  * Define API call object options and data
- * @typedef {Object} options
+ * @typedef {Object} myapisite 
  * @property {Object} headers - header fields for http calls
  * @property {String} method - GET, POST, DELETE http methods
  * @property {String} path - path in api to command you call
@@ -26,7 +26,7 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
- * @param {options} mysite
+ * @var {myapisite} 
  */
 const CpApiClass = class ApiCall {
 	/**

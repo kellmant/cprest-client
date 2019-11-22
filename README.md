@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#CpApiClass">CpApiClass</a></dt>
+<dt><a href="#CpApiClass">CpApiClass</a> : <code><a href="#myapisite">myapisite</a></code></dt>
 <dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
@@ -53,21 +53,21 @@
 </dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#options">options</a> : <code>Object</code></dt>
+<dt><a href="#myapisite">myapisite</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
 </dl>
 
 <a name="CpApiClass"></a>
 
-## CpApiClass
+## CpApiClass : [<code>myapisite</code>](#myapisite)
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 **Kind**: global class  
 
-* [CpApiClass](#CpApiClass)
-    * [new CpApiClass(mysite)](#new_CpApiClass_new)
-    * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
+* [CpApiClass](#CpApiClass) : [<code>myapisite</code>](#myapisite)
+    * [new CpApiClass()](#new_CpApiClass_new)
+    * [.showOpt()](#CpApiClass+showOpt) ⇒ <code>options</code>
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
@@ -75,13 +75,8 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
 
 <a name="new_CpApiClass_new"></a>
 
-### new CpApiClass(mysite)
+### new CpApiClass()
 Creates an instance of the ApiCall object to interact with the Check Point Management API
-
-
-| Param | Type |
-| --- | --- |
-| mysite | [<code>options</code>](#options) | 
 
 **Example**  
 ```js
@@ -89,11 +84,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 ```
 <a name="CpApiClass+showOpt"></a>
 
-### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
+### cpApiClass.showOpt() ⇒ <code>options</code>
 Log the options and data to console for debugging
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: [<code>options</code>](#options) - Show options and data  
+**Returns**: <code>options</code> - Show options and data  
 <a name="CpApiClass+doPost"></a>
 
 ### cpApiClass.doPost(data, appfunc) ⇒ <code>apicall</code>
@@ -336,9 +331,9 @@ where-used returned data format by UID of each host
 | --- | --- | --- |
 | postData | <code>Object</code> | This function will stringify the post data before sending |
 
-<a name="options"></a>
+<a name="myapisite"></a>
 
-## options : <code>Object</code>
+## myapisite : <code>Object</code>
 Define API call object options and data
 
 **Kind**: global typedef  
