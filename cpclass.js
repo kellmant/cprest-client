@@ -31,8 +31,8 @@
  */
 const CpApiClass = class ApiCall {
 	/**
-	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @param {options.headers} myapisite Load settings for the api access to the system here 
+	 * Creates an instance of the ApiCall object to interact with the Check Point Management API 
+	 * @param {options} myapisite Load settings for the api access to the system here 
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {
@@ -41,7 +41,7 @@ const CpApiClass = class ApiCall {
 		} 
 	/**
 	 * Log the options and data to console for debugging
-	 * @returns {options} Show options and data
+	 * @returns {options & data} Show options and data
 	 */
 	showOpt () {
 		if (this.options) {
