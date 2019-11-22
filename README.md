@@ -9,9 +9,6 @@
 ## Constants
 
 <dl>
-<dt><a href="#myapisite">myapisite</a></dt>
-<dd><p>API Site configuration required from auth/mycpapi.json file</p>
-</dd>
 <dt><a href="#mycred">mycred</a></dt>
 <dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
@@ -143,28 +140,6 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | <code>json</code> | API function to be called |
 
-<a name="myapisite"></a>
-
-## myapisite
-API Site configuration required from auth/mycpapi.json file
-
-**Kind**: global constant  
-**Require**: auth/mycpapi.json  
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
 <a name="mycred"></a>
 
 ## mycred
