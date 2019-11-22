@@ -26,11 +26,11 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @constructor 
+ * @var {options.headers} fillitin
  */
 const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
-	 * @var {options.headers} fillitin
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {

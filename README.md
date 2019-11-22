@@ -2,15 +2,14 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
-</dd>
+<dd></dd>
 </dl>
 
 ## Members
 
 <dl>
 <dt><a href="#fillitin">fillitin</a> : <code>options.headers</code></dt>
-<dd><p>Creates an instance of the ApiCall object to interact with the Check Point Management API</p>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
 </dl>
 
@@ -69,17 +68,25 @@
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-
 **Kind**: global class  
 
 * [CpApiClass](#CpApiClass)
+    * [new CpApiClass()](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>apicall</code>
     * [.setToken(sid)](#CpApiClass+setToken) ⇒ <code>apicall</code>
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>apicall</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>apicall</code>
 
+<a name="new_CpApiClass_new"></a>
+
+### new CpApiClass()
+Creates an instance of the ApiCall object to interact with the Check Point Management API
+
+**Example**  
+```js
+const toApi = new CpApiClass(myapisite.chkp)
+```
 <a name="CpApiClass+showOpt"></a>
 
 ### cpApiClass.showOpt() ⇒ [<code>options</code>](#options)
@@ -139,13 +146,9 @@ Prepare an HTTP DELETE for the given APU function
 <a name="fillitin"></a>
 
 ## fillitin : <code>options.headers</code>
-Creates an instance of the ApiCall object to interact with the Check Point Management API
+Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
 
 **Kind**: global variable  
-**Example**  
-```js
-const toApi = new CpApiClass(myapisite.chkp)
-```
 <a name="myapisite"></a>
 
 ## myapisite
