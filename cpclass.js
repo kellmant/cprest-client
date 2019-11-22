@@ -1,12 +1,12 @@
 /** 
  * Define API call object options
  * @typedef {Object} ClassObj 
- * @property {Object} options
- * @property {Object} options.headers
- * @property {String} options.host
- * @property {String} options.method
- * @property {String} options.path
- * @property {Number} options.port
+ * @typedef {ClassObj} options
+ * @property {Object} headers
+ * @property {String} host
+ * @property {String} method
+ * @property {String} path
+ * @property {Number} port
  * @property {Object} data
  */
 /**

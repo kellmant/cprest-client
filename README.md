@@ -52,7 +52,7 @@
 <dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>where-used returned data format by UID of each host</p>
 </dd>
-<dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
+<dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options</p>
 </dd>
 </dl>
@@ -78,11 +78,11 @@ CpApiCLass object data
 ### new CpApiClass(CLASSTART)
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
-**Returns**: [<code>ClassObj</code>](#ClassObj) - HTTP API data and options object  
+**Returns**: <code>ClassObj</code> - HTTP API data and options object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| CLASSTART | <code>options</code> | and path of the function to the Check Point Manageemnt API |
+| CLASSTART | [<code>options</code>](#options) | and path of the function to the Check Point Manageemnt API |
 
 **Example**  
 ```js
@@ -327,9 +327,9 @@ where-used returned data format by UID of each host
     ]
  }
 ```
-<a name="ClassObj"></a>
+<a name="options"></a>
 
-## ClassObj : <code>Object</code>
+## options : <code>Object</code>
 Define API call object options
 
 **Kind**: global typedef  
@@ -337,11 +337,10 @@ Define API call object options
 
 | Name | Type |
 | --- | --- |
-| options | <code>Object</code> | 
-| options.headers | <code>Object</code> | 
-| options.host | <code>String</code> | 
-| options.method | <code>String</code> | 
-| options.path | <code>String</code> | 
-| options.port | <code>Number</code> | 
+| headers | <code>Object</code> | 
+| host | <code>String</code> | 
+| method | <code>String</code> | 
+| path | <code>String</code> | 
+| port | <code>Number</code> | 
 | data | <code>Object</code> | 
 
