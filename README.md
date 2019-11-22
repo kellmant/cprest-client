@@ -81,7 +81,7 @@ Creates an instance of the ApiCall object to interact with the Check Point Manag
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myapisite | [<code>myapisite</code>](#myapisite) | Load credentials for api access to the system here |
+| myapisite | [<code>myapisite</code>](#myapisite) | Load settings for the api access to the system here |
 
 **Example**  
 ```js
