@@ -22,11 +22,6 @@
  *	  }
  * }
  */
- /**
-  * Define Global object holder
-  * @typedef {Object} ClassObj
-  * @property {options}
-  */
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
@@ -36,7 +31,6 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Creates an instance of the ApiCall object to interact with the Check Point Management API
 	 * @var {options.headers} fillitin
-	 * @param {ClassObj} api options to the Check Point Manageemnt API
 	 * @example const toApi = new CpApiClass(myapisite.chkp)
 	 */
 	constructor (base) {

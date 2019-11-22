@@ -64,9 +64,6 @@
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
-<dt><a href="#ClassObj">ClassObj</a> : <code>Object</code></dt>
-<dd><p>Define Global object holder</p>
-</dd>
 </dl>
 
 <a name="CpApiClass"></a>
@@ -145,11 +142,6 @@ Prepare an HTTP DELETE for the given APU function
 Creates an instance of the ApiCall object to interact with the Check Point Management API
 
 **Kind**: global variable  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| api | [<code>ClassObj</code>](#ClassObj) | options to the Check Point Manageemnt API |
-
 **Example**  
 ```js
 const toApi = new CpApiClass(myapisite.chkp)
@@ -375,15 +367,3 @@ Define API call object options and data
 	  }
 }
 ```
-<a name="ClassObj"></a>
-
-## ClassObj : <code>Object</code>
-Define Global object holder
-
-**Kind**: global typedef  
-**Properties**
-
-| Type |
-| --- |
-| [<code>options</code>](#options) | 
-
