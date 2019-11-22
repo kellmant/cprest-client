@@ -26,7 +26,7 @@
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
  * @class
- * @param {myapisite} mycpapi Load credentials for api access to the system here 
+ * @param {myapisite} myapisite Load credentials for api access to the system here 
  */
 const CpApiClass = class ApiCall {
 	/**
