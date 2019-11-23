@@ -71,13 +71,15 @@ async function showObjects() {
                 mydata['details-level'] = 'full'
                 mydata.limit = limit
                 console.log('showing objects')
-                objdata = await callOut(toApi.doPost(mydata, mycmd).options, doPost(mydata, mycmd).postData)
+                let setit = doPost(mydata, mycmd)
+                objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
                 if (objdata.total > objdata.to) {
                         while (objdata.total >= mydata.offset) {
                                 console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
                                 mydata.offset = Number(objdata.to)
-                                objdata = await callOut(toApi.doPost(mydata, mycmd).options, doPost(mydata, mycmd).postData)
+                                setit = doPost(mydata, mycmd)
+                                objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata.objects)
                         }
                 }
