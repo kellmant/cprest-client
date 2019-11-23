@@ -53,8 +53,6 @@ const mycred = require('./auth/mycpauth')
  * @property {Object} data
  */
 
-
-
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 
@@ -631,8 +629,6 @@ async function showJson(obj) {
               stringColor: 'green'
     }));
 }
-
-
 
 async function pubSession() {
         try {
