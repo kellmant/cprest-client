@@ -50,7 +50,7 @@ const toApi = new CpApiClass(myapisite.chkp)
 
 const CPobj = require('./cpobj')
 
-var allobjs = []
+let allobjs = []
 
 main()
 
@@ -58,7 +58,7 @@ async function main() {
 	startSession(mycred)
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
-        .then(allobjs => writeJson(allobjs))
+        .then(() => writeJson(allobjs))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
