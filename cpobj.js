@@ -69,14 +69,14 @@ const CPobj = class CheckPointObject {
     }
  /** 
  * Ignore warnings when posting changes to the object 
- * @param {Boolean} ignore-warnings set to true to continue with warnings about the object 
+ * @param {Boolean} - ignore-warnings set to true to continue with warnings about the object 
  */
 	nowarn () {
         this['ignore-warnings'] = true
 	}
 /** 
  * overwrite object if exists 
- * @param {Boolean} set-if-exists set to true to overwrite object properties 
+ * @param {Boolean} - set-if-exists set to true to overwrite object properties 
  */
 	overwrite () {
         this['set-if-exists'] = true

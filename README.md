@@ -77,8 +77,8 @@
     * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])](#new_CPobj_new)
     * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.nowarn(ignore-warnings)](#CPobj+nowarn)
-    * [.overwrite(set-if-exists)](#CPobj+overwrite)
+    * [.nowarn()](#CPobj+nowarn)
+    * [.overwrite()](#CPobj+overwrite)
 
 <a name="new_CPobj_new"></a>
 
@@ -121,25 +121,25 @@ Ignore errors and prepare the object for POST operations in Check Point
 **Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
 <a name="CPobj+nowarn"></a>
 
-### cPobj.nowarn(ignore-warnings)
+### cPobj.nowarn()
 Ignore warnings when posting changes to the object
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| ignore-warnings | <code>Boolean</code> | set to true to continue with warnings about the object |
+|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
 
 <a name="CPobj+overwrite"></a>
 
-### cPobj.overwrite(set-if-exists)
+### cPobj.overwrite()
 overwrite object if exists
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| set-if-exists | <code>Boolean</code> | set to true to overwrite object properties |
+|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
 
 <a name="CpApiClass"></a>
 
