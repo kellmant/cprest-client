@@ -75,7 +75,7 @@
 
 * [CPobj](#CPobj) : <code>Object</code>
     * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])](#new_CPobj_new)
-    * [.dump()](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
     * [.nowarn()](#CPobj+nowarn)
     * [.overwrite()](#CPobj+overwrite)
@@ -102,7 +102,7 @@ Process Check Point objects
 
 <a name="CPobj+dump"></a>
 
-### cPobj.dump() ⇒ [<code>CPobj</code>](#CPobj)
+### cPobj.dump(dump) ⇒ [<code>CPobj</code>](#CPobj)
 dump object properties
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
@@ -110,7 +110,7 @@ dump object properties
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Cpobj.dump | <code>function</code> | show object properties |
+| dump | <code>function</code> | show object properties |
 
 <a name="CPobj+prep"></a>
 
@@ -119,11 +119,6 @@ Ignore errors and prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
 **Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| Cpobj.ignore-warnings | <code>Boolean</code> | set to true to continue with warnings about the object |
-
 <a name="CPobj+nowarn"></a>
 
 ### cPobj.nowarn()

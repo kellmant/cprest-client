@@ -52,7 +52,7 @@ const CPobj = class CheckPointObject {
 	}
 	/** 
 	 * dump object properties
-	 * @param {Function} Cpobj.dump show object properties
+	 * @param {Function} dump show object properties
 	 * @return {CPobj} The value of the new object
 	 */
 	dump () {	
@@ -60,7 +60,6 @@ const CPobj = class CheckPointObject {
     }
  /** 
  * Ignore errors and prepare the object for POST operations in Check Point 
- * @param {Boolean} Cpobj.ignore-warnings set to true to continue with warnings about the object 
  * @return {CPobj} The Check Point Object without warnings
  */
 	prep () {

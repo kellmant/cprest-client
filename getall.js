@@ -243,5 +243,5 @@ function sleep(ms) {
 * @return {int} The number of keys in use
 */
 function countOf(obj) {
-return Object.keys(obj).length
+        return Object.keys(obj).length
 }
