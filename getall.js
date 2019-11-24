@@ -77,7 +77,6 @@ async function showObjects() {
                 let setit = toApi.doPost(mydata, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
-                indexObjects(objarr)
                 if (objdata.total > objdata.to) {
                         while (objdata.total >= mydata.offset) {
                                 console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
@@ -85,9 +84,9 @@ async function showObjects() {
                                 setit = toApi.doPost(mydata, mycmd)
                                 objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata.objects)
-                                indexObjects(objarr)
                         }
                 }
+                indexObjects(objarr)
                 console.log(countOf(objarr))
                 return objarr
         } catch (err) {
@@ -97,10 +96,10 @@ async function showObjects() {
 
 function indexObjects(arr) {
         Object.keys(arr).forEach(obj => {
-                let myobj = new CPobj(arr[obj])
-                allobjs = allobjs.concat(myobj)
+                allobjs = allobjs.concat(new CPobj(arr[obj]))
         });
 }
+
 /**
  * Create an authenticated session with the Check Point API
  * @function startSession 
