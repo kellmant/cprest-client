@@ -45,8 +45,8 @@ const CPobj = class CheckPointObject {
             this['ipv4-address-last'] = x['ipv4-address-last']
         if (x.description) 
             this.description = x.description
-        if (x.groups) 
-            this.groups = x.groups
+        //if (x.groups) 
+        //    this.groups = x.groups
         if (x.tags)
             this.tags = x.tags
 	}
