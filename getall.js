@@ -5,7 +5,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 
-var limit = '50'
+var limit = '500'
 var details = 'standard'
 
 /**
