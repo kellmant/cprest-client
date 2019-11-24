@@ -55,7 +55,7 @@ async function main() {
 	startSession(mycred)
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
-        .then(() => writeJson())
+        .then(allobjects => writeJson(allobjects))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
