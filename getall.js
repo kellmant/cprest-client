@@ -57,7 +57,7 @@ async function main() {
 	startSession(mycred)
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
-        .then(allobjects => writeJson(allobjects))
+        .then(allobjs => writeJson(allobjs))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
@@ -84,6 +84,7 @@ async function showObjects() {
                                 setit = toApi.doPost(mydata, mycmd)
                                 objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata.objects)
+                                indexObjects(objarr)
                         }
                 }
                 console.log(countOf(objarr))
@@ -96,7 +97,7 @@ async function showObjects() {
 function indexObjects(arr) {
         Object.keys(arr).forEach(obj => {
                 let myobj = new CPobj(arr[obj])
-                console.log(myobj)
+                allobjs = allobjs.concat(myobj)
         });
 }
 /**
