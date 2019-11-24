@@ -6,6 +6,7 @@ const https = require('https')
 const fs = require('fs');
 
 var limit = '50'
+var details = 'standard'
 
 /**
  * Variable required from auth/mycpapi.json file
@@ -70,7 +71,7 @@ async function showObjects() {
 		var objdata = {}
 		var objarr = []
                 mydata.offset = 0
-                mydata['details-level'] = 'full'
+                mydata['details-level'] = details
                 mydata.limit = limit
                 console.log('showing objects')
                 let setit = toApi.doPost(mydata, mycmd)
