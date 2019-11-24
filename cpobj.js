@@ -2,20 +2,20 @@
 /**
  * Process Check Point objects 
  * @typedef {Object} CPobj Check Point JSON representation
- * @property {String} CPobj.name name of object unique
- * @property {String} CPobj.type type of object we can classify on
- * @property {String} CPobj.uid unique ID of object
- * @param {String} [CPobj.comments] comments
- * @param {String} [CPobj.color] color of object
- * @param {String} CPobj.ipv4-address IPv4 of object
- * @param {String} CPobj.ipv6-address IPv6 of object
- * @param {String} CPobj.subnet4 IPv4 network of object
- * @param {String} CPobj.subnet6 IPv6 network of object
- * @param {String} CPobj.mask-length4 IPv4 netmask of object 
- * @param {String} CPobj.mask-length6 IPv6 netmask of object 
- * @param {Array} CPobj.members add object members to group array
- * @param {Array} Cpobj.tags tagged data in objet
- * @param {Array} Cpobj.description Description of users in objects
+ * @property {String} name name of object unique
+ * @property {String} type type of object we can classify on
+ * @property {String} uid unique ID of object
+ * @param {String} [comments] comments
+ * @param {String} [color] color of object
+ * @param {String} [ipv4-address] IPv4 of object
+ * @param {String} [ipv6-address] IPv6 of object
+ * @param {String} [subnet4] IPv4 network of object
+ * @param {String} [subnet6] IPv6 network of object
+ * @param {String} [mask-length4] IPv4 netmask of object 
+ * @param {String} [mask-length6] IPv6 netmask of object 
+ * @param {Array} [members] add object members to group array
+ * @param {Array} [tags] tagged data in objet
+ * @param {Array} [description] Description of users in objects
  * @class
  */
 const CPobj = class CheckPointObject {
@@ -77,7 +77,7 @@ const CPobj = class CheckPointObject {
 	}
 /** 
  * overwrite object if exists 
- * @param {Boolean} Cpobj.set-if-exists set to true to overwrite object properties 
+ * @param {Boolean} CPobj.set-if-exists set to true to overwrite object properties 
  */
 	overwrite () {
         this['set-if-exists'] = true

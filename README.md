@@ -68,13 +68,13 @@
 
 | Name | Type | Description |
 | --- | --- | --- |
-| CPobj.name | <code>String</code> | name of object unique |
-| CPobj.type | <code>String</code> | type of object we can classify on |
-| CPobj.uid | <code>String</code> | unique ID of object |
+| name | <code>String</code> | name of object unique |
+| type | <code>String</code> | type of object we can classify on |
+| uid | <code>String</code> | unique ID of object |
 
 
 * [CPobj](#CPobj) : <code>Object</code>
-    * [new CPobj()](#new_CPobj_new)
+    * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])](#new_CPobj_new)
     * [.dump()](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
     * [.nowarn()](#CPobj+nowarn)
@@ -82,23 +82,23 @@
 
 <a name="new_CPobj_new"></a>
 
-### new CPobj()
+### new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])
 Process Check Point objects
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [CPobj.comments] | <code>String</code> | comments |
-| [CPobj.color] | <code>String</code> | color of object |
-| CPobj.ipv4-address | <code>String</code> | IPv4 of object |
-| CPobj.ipv6-address | <code>String</code> | IPv6 of object |
-| CPobj.subnet4 | <code>String</code> | IPv4 network of object |
-| CPobj.subnet6 | <code>String</code> | IPv6 network of object |
-| CPobj.mask-length4 | <code>String</code> | IPv4 netmask of object |
-| CPobj.mask-length6 | <code>String</code> | IPv6 netmask of object |
-| CPobj.members | <code>Array</code> | add object members to group array |
-| Cpobj.tags | <code>Array</code> | tagged data in objet |
-| Cpobj.description | <code>Array</code> | Description of users in objects |
+| [comments] | <code>String</code> | comments |
+| [color] | <code>String</code> | color of object |
+| [ipv4-address] | <code>String</code> | IPv4 of object |
+| [ipv6-address] | <code>String</code> | IPv6 of object |
+| [subnet4] | <code>String</code> | IPv4 network of object |
+| [subnet6] | <code>String</code> | IPv6 network of object |
+| [mask-length4] | <code>String</code> | IPv4 netmask of object |
+| [mask-length6] | <code>String</code> | IPv6 netmask of object |
+| [members] | <code>Array</code> | add object members to group array |
+| [tags] | <code>Array</code> | tagged data in objet |
+| [description] | <code>Array</code> | Description of users in objects |
 
 <a name="CPobj+dump"></a>
 
@@ -144,7 +144,7 @@ overwrite object if exists
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Cpobj.set-if-exists | <code>Boolean</code> | set to true to overwrite object properties |
+| CPobj.set-if-exists | <code>Boolean</code> | set to true to overwrite object properties |
 
 <a name="CpApiClass"></a>
 
