@@ -13,7 +13,7 @@
  * @param {String} [subnet6] IPv6 network of object
  * @param {String} [mask-length4] IPv4 netmask of object 
  * @param {String} [mask-length6] IPv6 netmask of object 
- * @param {Array} [members] add object members to group array
+ * @param {Array} [groups] add object members to group array
  * @param {Array} [tags] tagged data in objet
  * @param {String} [description] Description of users in objects
  * @class
@@ -45,8 +45,8 @@ const CPobj = class CheckPointObject {
             this['ipv4-address-last'] = x['ipv4-address-last']
         if (x.description) 
             this.description = x.description
-        if (x.members) 
-            this.members = x.members
+        if (x.groups) 
+            this.groups = x.groups
         if (x.tags)
             this.tags = x.tags
 	}

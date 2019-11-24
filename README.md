@@ -74,7 +74,7 @@
 
 
 * [CPobj](#CPobj) : <code>Object</code>
-    * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])](#new_CPobj_new)
+    * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])](#new_CPobj_new)
     * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
     * [.nowarn()](#CPobj+nowarn)
@@ -82,7 +82,7 @@
 
 <a name="new_CPobj_new"></a>
 
-### new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [members], [tags], [description])
+### new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])
 Process Check Point objects
 
 
@@ -96,7 +96,7 @@ Process Check Point objects
 | [subnet6] | <code>String</code> | IPv6 network of object |
 | [mask-length4] | <code>String</code> | IPv4 netmask of object |
 | [mask-length6] | <code>String</code> | IPv6 netmask of object |
-| [members] | <code>Array</code> | add object members to group array |
+| [groups] | <code>Array</code> | add object members to group array |
 | [tags] | <code>Array</code> | tagged data in objet |
 | [description] | <code>String</code> | Description of users in objects |
 

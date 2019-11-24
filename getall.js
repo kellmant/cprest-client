@@ -78,15 +78,14 @@ async function showObjects() {
                 let setit = toApi.doPost(mydata, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
-                console.log('counted ' + countOf(objarr) + ' objects into build array')
                 if (objdata.total > objdata.to) {
                         while (objdata.total >= mydata.offset) {
+                                console.log(countOf(objarr) + ' objects in build array')
                                 console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
                                 mydata.offset = Number(objdata.to)
                                 setit = toApi.doPost(mydata, mycmd)
                                 objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata.objects)
-                                console.log(countOf(objarr) + ' objects in build array')
                         }
                 }
                 indexObjects(objarr)
