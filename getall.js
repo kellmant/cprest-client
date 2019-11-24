@@ -49,6 +49,8 @@ const toApi = new CpApiClass(myapisite.chkp)
 
 const CPobj = require('./cpobj')
 
+let allobjs = []
+
 main()
 
 async function main() {
@@ -74,6 +76,7 @@ async function showObjects() {
                 let setit = toApi.doPost(mydata, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
+                indexObjects(objarr)
                 if (objdata.total > objdata.to) {
                         while (objdata.total >= mydata.offset) {
                                 console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
@@ -90,6 +93,12 @@ async function showObjects() {
         }
 }
 
+function indexObjects(x) {
+        Object.keys(mykey).forEach(val => {
+                let myobj = new CPobj(val)
+                console.log(myobj.name)
+        });
+}
 /**
  * Create an authenticated session with the Check Point API
  * @function startSession 
@@ -202,12 +211,12 @@ return new Promise((resolve, reject) => {
 */
 async function writeJson (content) {
     try {
-            var newfile = 'allobjects'
+            var newfile = 'allobjects.json'
     console.log('writing file . . . ' + newfile)
     console.log(typeof content)
             await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))
             //file written successfully
-    console.log(content)
+    //console.log(content)
             console.log('Json data written to ' + newfile)
             console.log('  --  ')
             return content
