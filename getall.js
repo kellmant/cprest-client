@@ -58,6 +58,7 @@ async function main() {
 	startSession(mycred)
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
+        .then(mygroups => console.log(mygroups.get('host')))
         .then(() => writeJson(allobjs))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
@@ -88,7 +89,8 @@ async function showObjects() {
                 }
                 indexObjects(objarr)
                 console.log(countOf(objarr))
-                return objarr
+                const grouped = groupBy(objarr, obj => obj.type)
+                return grouped
         } catch (err) {
                 console.log('error in showObjects : ' + err)
         }
@@ -99,6 +101,21 @@ function indexObjects(arr) {
                 allobjs = allobjs.concat(new CPobj(arr[obj]))
         });
 }
+
+function groupBy(list, keyGetter) {
+        const map = new Map();
+        list.forEach((item) => {
+             const key = keyGetter(item);
+             const collection = map.get(key);
+             if (!collection) {
+                 map.set(key, [item]);
+             } else {
+                 collection.push(item);
+             }
+        });
+        return map;
+}
+    
 
 /**
  * Create an authenticated session with the Check Point API
