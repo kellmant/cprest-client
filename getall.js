@@ -6,7 +6,7 @@ const https = require('https')
 const fs = require('fs');
 
 var limit = '500'
-var details = 'standard'
+var details = 'full'
 
 /**
  * Variable required from auth/mycpapi.json file
@@ -59,7 +59,7 @@ async function main() {
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
         //.then(mygroups => console.log(mygroups.get('host')))
-        .then(mygroups => writeJson(mygroups))
+        .then(() => writeJson(mygroups))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
@@ -88,9 +88,9 @@ async function showObjects() {
                         }
                 }
                 indexObjects(objarr)
-                console.log(countOf(objarr))
-                const grouped = groupBy(objarr, obj => obj.type)
-                return grouped
+                console.log(countOf(allobjs))
+                //const grouped = groupBy(objarr, obj => obj.type)
+                return allobjs
         } catch (err) {
                 console.log('error in showObjects : ' + err)
         }
