@@ -59,7 +59,7 @@ async function main() {
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showObjects())
         //.then(mygroups => console.log(mygroups.get('host')))
-        .then(() => writeJson(mygroups))
+        .then(() => writeJson(allobjs))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
