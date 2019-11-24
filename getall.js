@@ -50,7 +50,7 @@ const toApi = new CpApiClass(myapisite.chkp)
 
 const CPobj = require('./cpobj')
 
-let allobjs = []
+var allobjs = []
 
 main()
 
