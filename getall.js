@@ -96,7 +96,7 @@ async function showObjects() {
 function indexObjects(x) {
         Object.keys(x).forEach(val => {
                 let myobj = new CPobj(val)
-                console.log(myobj.name)
+                console.log(myobj)
         });
 }
 /**
