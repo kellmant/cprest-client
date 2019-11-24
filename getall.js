@@ -74,7 +74,7 @@ async function showObjects() {
                 mydata.offset = 0
                 mydata['details-level'] = details
                 mydata.limit = limit
-                console.log('showing objects')
+                console.log('getting all objects')
                 let setit = toApi.doPost(mydata, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata.objects)
@@ -86,7 +86,7 @@ async function showObjects() {
                                 setit = toApi.doPost(mydata, mycmd)
                                 objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata.objects)
-                                console.log('adding ' + countOf(objarr) + ' more objects to build array')
+                                console.log(countOf(objarr) + ' objects in build array')
                         }
                 }
                 indexObjects(objarr)
