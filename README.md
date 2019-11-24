@@ -98,7 +98,7 @@ Process Check Point objects
 | [mask-length6] | <code>String</code> | IPv6 netmask of object |
 | [members] | <code>Array</code> | add object members to group array |
 | [tags] | <code>Array</code> | tagged data in objet |
-| [description] | <code>Array</code> | Description of users in objects |
+| [description] | <code>String</code> | Description of users in objects |
 
 <a name="CPobj+dump"></a>
 

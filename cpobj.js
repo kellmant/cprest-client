@@ -15,7 +15,7 @@
  * @param {String} [mask-length6] IPv6 netmask of object 
  * @param {Array} [members] add object members to group array
  * @param {Array} [tags] tagged data in objet
- * @param {Array} [description] Description of users in objects
+ * @param {String} [description] Description of users in objects
  * @class
  */
 const CPobj = class CheckPointObject {
