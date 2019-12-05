@@ -160,3 +160,92 @@ module.exports = CPobj
  * @property {String} updated_at
  * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets}
  */
+
+/**
+ * @typedef {Object} floating_ip_address
+ * @property {String} created_at
+ * @property {String} description
+ * @property {String} dns_domain
+ * @property {String} dns_name
+ * @property {String} fixed_ip_address
+ * @property {String} floating_ip_address
+ * @property {String} floating_network_id
+ * @property {String} id
+ * @property {Object} port_details
+ * @property {Array} port_forwardings
+ * @property {String} port_id
+ * @property {String} project_id
+ * @property {Number} revision_number
+ * @property {String} router_id
+ * @property {String} status
+ * @property {Array} tags
+ * @property {String} tenant_id
+ * @property {String} updated_at
+ * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips}
+ */
+
+/**
+ * @typedef {Object} serversdetail
+ * @property {String} OS-DCF:diskConfig
+ * @property {String} OS-EXT-AZ:availability_zone
+ * @property {String} OS-EXT-SRV-ATTR:host
+ * @property {String} OS-EXT-SRV-ATTR:hostname
+ * @property {String} OS-EXT-SRV-ATTR:hypervisor_hostname
+ * @property {String} OS-EXT-SRV-ATTR:instance_name
+ * @property {String} OS-EXT-SRV-ATTR:kernel_id
+ * @property {Number} OS-EXT-SRV-ATTR:launch_index
+ * @property {String} OS-EXT-SRV-ATTR:ramdisk_id
+ * @property {String} OS-EXT-SRV-ATTR:reservation_id
+ * @property {String} OS-EXT-SRV-ATTR:root_device_name
+ * @property {String} OS-EXT-SRV-ATTR:user_data
+ * @property {Number} OS-EXT-STS:power_state
+ * @property {Null} OS-EXT-STS:task_state
+ * @property {String} OS-EXT-STS:vm_state
+ * @property {String} OS-SRV-USG:launched_at
+ * @property {Null} OS-SRV-USG:terminated_at
+ * @property {String} accessIPv4
+ * @property {String} accessIPv6
+ * @property {Object} addresses
+ * @property {String} config_drive
+ * @property {String} created
+ * @property {Null} description
+ * @property {Object} flavor
+ * @property {String} hostId
+ * @property {String} host_status
+ * @property {String} id
+ * @property {Object} image
+ * @property {Null} key_name
+ * @property {Array} links
+ * @property {Boolean} locked
+ * @property {String} locked_reason
+ * @property {Object} metadata
+ * @property {String} name
+ * @property {Array} os-extended-volumes:volumes_attached
+ * @property {Number} progress
+ * @property {Array} security_groups
+ * @property {String} status
+ * @property {Array} tags
+ * @property {String} tenant_id
+ * @property {Null} trusted_image_certificates
+ * @property {String} updated
+ * @property {String} user_id
+ * @see {@link https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed}
+ */
+
+ /**
+ * @typedef {Object} tenants
+ * @property {String} description
+ * @property {Boolean} enabled
+ * @property {String} id
+ * @property {String} name
+ * @see {@link https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName}
+*/
+
+/** 
+ * @typedef {Object} access
+ * @property {Object} metadata
+ * @property {Array} serviceCatalog
+ * @property {Object} token
+ * @property {Object} user
+ * @see {@link https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0}
+ */

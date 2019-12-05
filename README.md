@@ -51,6 +51,14 @@
 <dd></dd>
 <dt><a href="#subnets">subnets</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#floating_ip_address">floating_ip_address</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#serversdetail">serversdetail</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#tenants">tenants</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#access">access</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#options">options</a> : <code>Object</code></dt>
@@ -425,6 +433,115 @@ end session and expire token from header
 | tags | <code>Array</code> | 
 | tenant_id | <code>String</code> | 
 | updated_at | <code>String</code> | 
+
+<a name="floating_ip_address"></a>
+
+## floating\_ip\_address : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| created_at | <code>String</code> | 
+| description | <code>String</code> | 
+| dns_domain | <code>String</code> | 
+| dns_name | <code>String</code> | 
+| fixed_ip_address | <code>String</code> | 
+| floating_ip_address | <code>String</code> | 
+| floating_network_id | <code>String</code> | 
+| id | <code>String</code> | 
+| port_details | <code>Object</code> | 
+| port_forwardings | <code>Array</code> | 
+| port_id | <code>String</code> | 
+| project_id | <code>String</code> | 
+| revision_number | <code>Number</code> | 
+| router_id | <code>String</code> | 
+| status | <code>String</code> | 
+| tags | <code>Array</code> | 
+| tenant_id | <code>String</code> | 
+| updated_at | <code>String</code> | 
+
+<a name="serversdetail"></a>
+
+## serversdetail : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed](https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| OS-DCF:diskConfig | <code>String</code> | 
+| OS-EXT-AZ:availability_zone | <code>String</code> | 
+| OS-EXT-SRV-ATTR:host | <code>String</code> | 
+| OS-EXT-SRV-ATTR:hostname | <code>String</code> | 
+| OS-EXT-SRV-ATTR:hypervisor_hostname | <code>String</code> | 
+| OS-EXT-SRV-ATTR:instance_name | <code>String</code> | 
+| OS-EXT-SRV-ATTR:kernel_id | <code>String</code> | 
+| OS-EXT-SRV-ATTR:launch_index | <code>Number</code> | 
+| OS-EXT-SRV-ATTR:ramdisk_id | <code>String</code> | 
+| OS-EXT-SRV-ATTR:reservation_id | <code>String</code> | 
+| OS-EXT-SRV-ATTR:root_device_name | <code>String</code> | 
+| OS-EXT-SRV-ATTR:user_data | <code>String</code> | 
+| OS-EXT-STS:power_state | <code>Number</code> | 
+| OS-EXT-STS:task_state | <code>Null</code> | 
+| OS-EXT-STS:vm_state | <code>String</code> | 
+| OS-SRV-USG:launched_at | <code>String</code> | 
+| OS-SRV-USG:terminated_at | <code>Null</code> | 
+| accessIPv4 | <code>String</code> | 
+| accessIPv6 | <code>String</code> | 
+| addresses | <code>Object</code> | 
+| config_drive | <code>String</code> | 
+| created | <code>String</code> | 
+| description | <code>Null</code> | 
+| flavor | <code>Object</code> | 
+| hostId | <code>String</code> | 
+| host_status | <code>String</code> | 
+| id | <code>String</code> | 
+| image | <code>Object</code> | 
+| key_name | <code>Null</code> | 
+| links | <code>Array</code> | 
+| locked | <code>Boolean</code> | 
+| locked_reason | <code>String</code> | 
+| metadata | <code>Object</code> | 
+| name | <code>String</code> | 
+| os-extended-volumes:volumes_attached | <code>Array</code> | 
+| progress | <code>Number</code> | 
+| security_groups | <code>Array</code> | 
+| status | <code>String</code> | 
+| tags | <code>Array</code> | 
+| tenant_id | <code>String</code> | 
+| trusted_image_certificates | <code>Null</code> | 
+| updated | <code>String</code> | 
+| user_id | <code>String</code> | 
+
+<a name="tenants"></a>
+
+## tenants : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName](https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| description | <code>String</code> | 
+| enabled | <code>Boolean</code> | 
+| id | <code>String</code> | 
+| name | <code>String</code> | 
+
+<a name="access"></a>
+
+## access : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0](https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| metadata | <code>Object</code> | 
+| serviceCatalog | <code>Array</code> | 
+| token | <code>Object</code> | 
+| user | <code>Object</code> | 
 
 <a name="data"></a>
 
