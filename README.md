@@ -352,24 +352,13 @@ end session and expire token from header
 
 | Name | Type |
 | --- | --- |
-| admin_state_up | <code>Boolean</code> | 
-| allowed_address_pairs | <code>Array</code> | 
 | created_at | <code>String</code> | 
-| data_plane_status | <code>Null</code> | 
 | description | <code>String</code> | 
-| device_id | <code>String</code> | 
-| device_owner | <code>String</code> | 
-| dns_assignment | <code>Object</code> | 
-| dns_domain | <code>String</code> | 
-| dns_name | <code>String</code> | 
-| extra_dhcp_opts | <code>Array</code> | 
 | fixed_ips | <code>Array</code> | 
 | id | <code>String</code> | 
 | ip_allocation | <code>String</code> | 
-| mac_address | <code>String</code> | 
 | name | <code>String</code> | 
 | network_id | <code>String</code> | 
-| port_security_enabled | <code>Boolean</code> | 
 | project_id | <code>String</code> | 
 | qos_policy_id | <code>String</code> | 
 | revision_number | <code>Number</code> | 
@@ -378,7 +367,6 @@ end session and expire token from header
 | tags | <code>Array</code> | 
 | tenant_id | <code>String</code> | 
 | updated_at | <code>String</code> | 
-| uplink_status_propagation | <code>Boolean</code> | 
 
 <a name="security_groups"></a>
 
@@ -395,7 +383,6 @@ end session and expire token from header
 | name | <code>String</code> | 
 | project_id | <code>String</code> | 
 | revision_number | <code>Number</code> | 
-| security_group_rules | <code>Array</code> | 
 | stateful | <code>Boolean</code> | 
 | tags | <code>Array</code> | 
 | tenant_id | <code>String</code> | 
@@ -410,26 +397,12 @@ end session and expire token from header
 
 | Name | Type |
 | --- | --- |
-| allocation_pools | <code>Array</code> | 
-| cidr | <code>String</code> | 
-| created_at | <code>String</code> | 
-| description | <code>String</code> | 
-| dns_nameservers | <code>Array</code> | 
-| dns_publish_fixed_ip | <code>Boolean</code> | 
-| enable_dhcp | <code>Boolean</code> | 
-| gateway_ip | <code>String</code> | 
-| host_routes | <code>Array</code> | 
 | id | <code>String</code> | 
 | ip_version | <code>Number</code> | 
-| ipv6_address_mode | <code>Null</code> | 
-| ipv6_ra_mode | <code>Null</code> | 
 | name | <code>String</code> | 
 | network_id | <code>String</code> | 
 | project_id | <code>String</code> | 
 | revision_number | <code>Number</code> | 
-| segment_id | <code>Null</code> | 
-| service_types | <code>Array</code> | 
-| subnetpool_id | <code>Null</code> | 
 | tags | <code>Array</code> | 
 | tenant_id | <code>String</code> | 
 | updated_at | <code>String</code> | 
@@ -445,15 +418,8 @@ end session and expire token from header
 | --- | --- |
 | created_at | <code>String</code> | 
 | description | <code>String</code> | 
-| dns_domain | <code>String</code> | 
-| dns_name | <code>String</code> | 
-| fixed_ip_address | <code>String</code> | 
-| floating_ip_address | <code>String</code> | 
-| floating_network_id | <code>String</code> | 
 | id | <code>String</code> | 
 | port_details | <code>Object</code> | 
-| port_forwardings | <code>Array</code> | 
-| port_id | <code>String</code> | 
 | project_id | <code>String</code> | 
 | revision_number | <code>Number</code> | 
 | router_id | <code>String</code> | 
@@ -471,47 +437,20 @@ end session and expire token from header
 
 | Name | Type |
 | --- | --- |
-| OS-DCF:diskConfig | <code>String</code> | 
-| OS-EXT-AZ:availability_zone | <code>String</code> | 
-| OS-EXT-SRV-ATTR:host | <code>String</code> | 
-| OS-EXT-SRV-ATTR:hostname | <code>String</code> | 
-| OS-EXT-SRV-ATTR:hypervisor_hostname | <code>String</code> | 
-| OS-EXT-SRV-ATTR:instance_name | <code>String</code> | 
-| OS-EXT-SRV-ATTR:kernel_id | <code>String</code> | 
-| OS-EXT-SRV-ATTR:launch_index | <code>Number</code> | 
-| OS-EXT-SRV-ATTR:ramdisk_id | <code>String</code> | 
-| OS-EXT-SRV-ATTR:reservation_id | <code>String</code> | 
-| OS-EXT-SRV-ATTR:root_device_name | <code>String</code> | 
-| OS-EXT-SRV-ATTR:user_data | <code>String</code> | 
-| OS-EXT-STS:power_state | <code>Number</code> | 
-| OS-EXT-STS:task_state | <code>Null</code> | 
-| OS-EXT-STS:vm_state | <code>String</code> | 
-| OS-SRV-USG:launched_at | <code>String</code> | 
-| OS-SRV-USG:terminated_at | <code>Null</code> | 
 | accessIPv4 | <code>String</code> | 
-| accessIPv6 | <code>String</code> | 
 | addresses | <code>Object</code> | 
-| config_drive | <code>String</code> | 
-| created | <code>String</code> | 
 | description | <code>Null</code> | 
-| flavor | <code>Object</code> | 
 | hostId | <code>String</code> | 
 | host_status | <code>String</code> | 
 | id | <code>String</code> | 
 | image | <code>Object</code> | 
-| key_name | <code>Null</code> | 
 | links | <code>Array</code> | 
-| locked | <code>Boolean</code> | 
-| locked_reason | <code>String</code> | 
 | metadata | <code>Object</code> | 
 | name | <code>String</code> | 
-| os-extended-volumes:volumes_attached | <code>Array</code> | 
-| progress | <code>Number</code> | 
 | security_groups | <code>Array</code> | 
 | status | <code>String</code> | 
 | tags | <code>Array</code> | 
 | tenant_id | <code>String</code> | 
-| trusted_image_certificates | <code>Null</code> | 
 | updated | <code>String</code> | 
 | user_id | <code>String</code> | 
 
