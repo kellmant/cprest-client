@@ -84,3 +84,79 @@ const CPobj = class CheckPointObject {
 }
 
 module.exports = CPobj
+
+/** 
+ * @typedef {Object} ports
+ * @property {Boolean} admin_state_up
+ * @property {Array} allowed_address_pairs
+ * @property {String} created_at
+ * @property {Null} data_plane_status
+ * @property {String} description
+ * @property {String} device_id
+ * @property {String} device_owner
+ * @property {Object} dns_assignment
+ * @property {String} dns_domain
+ * @property {String} dns_name
+ * @property {Array} extra_dhcp_opts
+ * @property {Array} fixed_ips
+ * @property {String} id
+ * @property {String} ip_allocation
+ * @property {String} mac_address
+ * @property {String} name
+ * @property {String} network_id
+ * @property {Boolean} port_security_enabled
+ * @property {String} project_id
+ * @property {String} qos_policy_id
+ * @property {Number} revision_number
+ * @property {Array} security_groups
+ * @property {String} status
+ * @property {Array} tags
+ * @property {String} tenant_id
+ * @property {String} updated_at
+ * @property {Boolean} uplink_status_propagation
+ * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports}
+ */
+
+/**
+ * @typedef {Object} security_groups
+ * @property {String} created_at
+ * @property {String} description
+ * @property {String} id
+ * @property {String} name
+ * @property {String} project_id
+ * @property {Number} revision_number
+ * @property {Array} security_group_rules
+ * @property {Boolean} stateful
+ * @property {Array} tags
+ * @property {String} tenant_id
+ * @property {String} updated_at
+ * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups}
+ */
+
+/**
+ * @typedef {Object} subnets
+ * @property {Array} allocation_pools
+ * @property {String} cidr
+ * @property {String} created_at
+ * @property {String} description
+ * @property {Array} dns_nameservers
+ * @property {Boolean} dns_publish_fixed_ip
+ * @property {Boolean} enable_dhcp
+ * @property {String} gateway_ip
+ * @property {Array} host_routes
+ * @property {String} id
+ * @property {Number} ip_version
+ * @property {Null} ipv6_address_mode
+ * @property {Null} ipv6_ra_mode
+ * @property {String} name
+ * @property {String} network_id
+ * @property {String} project_id
+ * @property {Number} revision_number
+ * @property {Null} segment_id
+ * @property {Array} service_types
+ * @property {Null} subnetpool_id
+ * @property {Array} tags
+ * @property {String} tenant_id
+ * @property {String} updated_at
+ * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets}
+ */

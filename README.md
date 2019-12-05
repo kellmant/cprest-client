@@ -45,6 +45,12 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#ports">ports</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#security_groups">security_groups</a> : <code>Object</code></dt>
+<dd></dd>
+<dt><a href="#subnets">subnets</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#options">options</a> : <code>Object</code></dt>
@@ -329,6 +335,97 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
+<a name="ports"></a>
+
+## ports : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| admin_state_up | <code>Boolean</code> | 
+| allowed_address_pairs | <code>Array</code> | 
+| created_at | <code>String</code> | 
+| data_plane_status | <code>Null</code> | 
+| description | <code>String</code> | 
+| device_id | <code>String</code> | 
+| device_owner | <code>String</code> | 
+| dns_assignment | <code>Object</code> | 
+| dns_domain | <code>String</code> | 
+| dns_name | <code>String</code> | 
+| extra_dhcp_opts | <code>Array</code> | 
+| fixed_ips | <code>Array</code> | 
+| id | <code>String</code> | 
+| ip_allocation | <code>String</code> | 
+| mac_address | <code>String</code> | 
+| name | <code>String</code> | 
+| network_id | <code>String</code> | 
+| port_security_enabled | <code>Boolean</code> | 
+| project_id | <code>String</code> | 
+| qos_policy_id | <code>String</code> | 
+| revision_number | <code>Number</code> | 
+| security_groups | <code>Array</code> | 
+| status | <code>String</code> | 
+| tags | <code>Array</code> | 
+| tenant_id | <code>String</code> | 
+| updated_at | <code>String</code> | 
+| uplink_status_propagation | <code>Boolean</code> | 
+
+<a name="security_groups"></a>
+
+## security\_groups : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| created_at | <code>String</code> | 
+| description | <code>String</code> | 
+| id | <code>String</code> | 
+| name | <code>String</code> | 
+| project_id | <code>String</code> | 
+| revision_number | <code>Number</code> | 
+| security_group_rules | <code>Array</code> | 
+| stateful | <code>Boolean</code> | 
+| tags | <code>Array</code> | 
+| tenant_id | <code>String</code> | 
+| updated_at | <code>String</code> | 
+
+<a name="subnets"></a>
+
+## subnets : <code>Object</code>
+**Kind**: global typedef  
+**See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets)  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| allocation_pools | <code>Array</code> | 
+| cidr | <code>String</code> | 
+| created_at | <code>String</code> | 
+| description | <code>String</code> | 
+| dns_nameservers | <code>Array</code> | 
+| dns_publish_fixed_ip | <code>Boolean</code> | 
+| enable_dhcp | <code>Boolean</code> | 
+| gateway_ip | <code>String</code> | 
+| host_routes | <code>Array</code> | 
+| id | <code>String</code> | 
+| ip_version | <code>Number</code> | 
+| ipv6_address_mode | <code>Null</code> | 
+| ipv6_ra_mode | <code>Null</code> | 
+| name | <code>String</code> | 
+| network_id | <code>String</code> | 
+| project_id | <code>String</code> | 
+| revision_number | <code>Number</code> | 
+| segment_id | <code>Null</code> | 
+| service_types | <code>Array</code> | 
+| subnetpool_id | <code>Null</code> | 
+| tags | <code>Array</code> | 
+| tenant_id | <code>String</code> | 
+| updated_at | <code>String</code> | 
+
 <a name="data"></a>
 
 ## data : <code>Object</code>
