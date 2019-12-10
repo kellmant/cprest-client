@@ -350,23 +350,23 @@ end session and expire token from header
 **See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| created_at | <code>String</code> | 
-| description | <code>String</code> | 
-| fixed_ips | <code>Array</code> | 
-| id | <code>String</code> | 
-| ip_allocation | <code>String</code> | 
-| name | <code>String</code> | 
-| network_id | <code>String</code> | 
-| project_id | <code>String</code> | 
-| qos_policy_id | <code>String</code> | 
-| revision_number | <code>Number</code> | 
-| security_groups | <code>Array</code> | 
-| status | <code>String</code> | 
-| tags | <code>Array</code> | 
-| tenant_id | <code>String</code> | 
-| updated_at | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| created_at | <code>String</code> | Time at which the resource has been created (in UTC ISO8601 format). |
+| description | <code>String</code> | A human-readable description for the resource. |
+| fixed_ips | <code>Array</code> | The IP addresses for the port. If the port has multiple IP addresses, this field has multiple entries. Each entry consists of IP address (ip_address) and the subnet ID from which the IP address is assigned (subnet_id). |
+| id | <code>String</code> | The ID of the resource. |
+| ip_allocation | <code>String</code> | ndicates when ports use either deferred, immediate or no IP allocation (none). |
+| name | <code>String</code> | Human-readable name of the resource. |
+| network_id | <code>String</code> | The ID of the attached network. |
+| project_id | <code>String</code> | The ID of the project. |
+| qos_policy_id | <code>String</code> | The ID of the QoS policy associated with the port. |
+| revision_number | <code>Number</code> | The revision number of the resource. |
+| security_groups | <code>Array</code> | The IDs of security groups applied to the port. |
+| status | <code>String</code> | The port status. Values are ACTIVE, DOWN, BUILD and ERROR. |
+| tags | <code>Array</code> | The list of tags on the resource. |
+| tenant_id | <code>String</code> | The ID of the project. |
+| updated_at | <code>String</code> | Time at which the resource has been updated (in UTC ISO8601 format). |
 
 <a name="security_groups"></a>
 
@@ -375,18 +375,18 @@ end session and expire token from header
 **See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| created_at | <code>String</code> | 
-| description | <code>String</code> | 
-| id | <code>String</code> | 
-| name | <code>String</code> | 
-| project_id | <code>String</code> | 
-| revision_number | <code>Number</code> | 
-| stateful | <code>Boolean</code> | 
-| tags | <code>Array</code> | 
-| tenant_id | <code>String</code> | 
-| updated_at | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| created_at | <code>String</code> | Time at which the resource has been created (in UTC ISO8601 format). |
+| description | <code>String</code> | A human-readable description for the resource. |
+| id | <code>String</code> | The ID of the security group. |
+| name | <code>String</code> | Human-readable name of the resource. |
+| project_id | <code>String</code> | The ID of the project. |
+| revision_number | <code>Number</code> | The revision number of the resource. |
+| stateful | <code>Boolean</code> | Indicates if the security group is stateful or stateless. |
+| tags | <code>Array</code> | The list of tags on the resource. |
+| tenant_id | <code>String</code> | The ID of the project. |
+| updated_at | <code>String</code> | Time at which the resource has been updated (in UTC ISO8601 format). |
 
 <a name="subnets"></a>
 
@@ -395,17 +395,17 @@ end session and expire token from header
 **See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| id | <code>String</code> | 
-| ip_version | <code>Number</code> | 
-| name | <code>String</code> | 
-| network_id | <code>String</code> | 
-| project_id | <code>String</code> | 
-| revision_number | <code>Number</code> | 
-| tags | <code>Array</code> | 
-| tenant_id | <code>String</code> | 
-| updated_at | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| id | <code>String</code> | The ID of the subnet. |
+| ip_version | <code>Number</code> | The IP protocol version. Value is 4 or 6. |
+| name | <code>String</code> | Human-readable name of the resource. |
+| network_id | <code>String</code> | The ID of the network to which the subnet belongs. |
+| project_id | <code>String</code> | The ID of the project. |
+| revision_number | <code>Number</code> | The revision number of the resource. |
+| tags | <code>Array</code> | The list of tags on the resource. |
+| tenant_id | <code>String</code> | The ID of the project. |
+| updated_at | <code>String</code> | Time at which the resource has been updated (in UTC ISO8601 format). |
 
 <a name="floating_ip_address"></a>
 
@@ -414,19 +414,19 @@ end session and expire token from header
 **See**: [https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips](https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| created_at | <code>String</code> | 
-| description | <code>String</code> | 
-| id | <code>String</code> | 
-| port_details | <code>Object</code> | 
-| project_id | <code>String</code> | 
-| revision_number | <code>Number</code> | 
-| router_id | <code>String</code> | 
-| status | <code>String</code> | 
-| tags | <code>Array</code> | 
-| tenant_id | <code>String</code> | 
-| updated_at | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| created_at | <code>String</code> | Time at which the resource has been created (in UTC ISO8601 format). |
+| description | <code>String</code> | A human-readable description for the resource. |
+| id | <code>String</code> | The ID of the floating IP address. |
+| port_details | <code>Object</code> | The information of the port that this floating IP associates with. In particular, if the floating IP is associated with a port, this field contains some attributes of the associated port, including name, network_id, mac_address, admin_state_up, status, device_id and device_owner. If the floating IP is not associated with a port, this field is null. |
+| project_id | <code>String</code> | The ID of the project. |
+| revision_number | <code>Number</code> | The revision number of the resource. |
+| router_id | <code>String</code> | The ID of the router for the floating IP. |
+| status | <code>String</code> | The status of the floating IP. Values are ACTIVE, DOWN and ERROR. |
+| tags | <code>Array</code> | The list of tags on the resource. |
+| tenant_id | <code>String</code> | The ID of the project. |
+| updated_at | <code>String</code> | Time at which the resource has been updated (in UTC ISO8601 format). |
 
 <a name="serversdetail"></a>
 
@@ -435,24 +435,24 @@ end session and expire token from header
 **See**: [https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed](https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| accessIPv4 | <code>String</code> | 
-| addresses | <code>Object</code> | 
-| description | <code>Null</code> | 
-| hostId | <code>String</code> | 
-| host_status | <code>String</code> | 
-| id | <code>String</code> | 
-| image | <code>Object</code> | 
-| links | <code>Array</code> | 
-| metadata | <code>Object</code> | 
-| name | <code>String</code> | 
-| security_groups | <code>Array</code> | 
-| status | <code>String</code> | 
-| tags | <code>Array</code> | 
-| tenant_id | <code>String</code> | 
-| updated | <code>String</code> | 
-| user_id | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| accessIPv4 | <code>String</code> | IPv4 address that should be used to access this server. May be automatically set by the provider. |
+| addresses | <code>Object</code> | The addresses for the server. Servers with status BUILD hide their addresses information. |
+| description | <code>Null</code> | A human-readable description for the resource. |
+| hostId | <code>String</code> | An ID string representing the host. This is a hashed value so will not actually look like a hostname, and is hashed with data from the project_id, so the same physical host as seen by two different project_ids, will be different. It is useful when within the same project you need to determine if two instances are on the same or different physical hosts for the purposes of availability or performance. |
+| host_status | <code>String</code> |  |
+| id | <code>String</code> | The UUID of the server. |
+| image | <code>Object</code> | The UUID and links for the image for your server instance. The image object might be an empty string when you boot the server from a volume. |
+| links | <code>Array</code> | Links to the resources in question |
+| metadata | <code>Object</code> | A dictionary of metadata key-and-value pairs, which is maintained for backward compatibility. |
+| name | <code>String</code> | The server name. |
+| security_groups | <code>Array</code> | One or more security groups objects. |
+| status | <code>String</code> | The server status. |
+| tags | <code>Array</code> | The list of tags on the resource. |
+| tenant_id | <code>String</code> | The ID of the project. |
+| updated | <code>String</code> | The date and time when the resource was updated. The date and time stamp format is ISO 8601 |
+| user_id | <code>String</code> | The user ID of the user who owns the server. |
 
 <a name="tenants"></a>
 
@@ -461,12 +461,12 @@ end session and expire token from header
 **See**: [https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName](https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| description | <code>String</code> | 
-| enabled | <code>Boolean</code> | 
-| id | <code>String</code> | 
-| name | <code>String</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| description | <code>String</code> | The description of the tenant. If not set, this value is null. |
+| enabled | <code>Boolean</code> | Indicates whether the tenant is enabled or disabled. |
+| id | <code>String</code> | The authentication token. |
+| name | <code>String</code> | The tenant name. |
 
 <a name="access"></a>
 
@@ -475,12 +475,12 @@ end session and expire token from header
 **See**: [https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0](https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0)  
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| metadata | <code>Object</code> | 
-| serviceCatalog | <code>Array</code> | 
-| token | <code>Object</code> | 
-| user | <code>Object</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| metadata | <code>Object</code> | A metadata object |
+| serviceCatalog | <code>Array</code> | A serviceCatalog array of objects. |
+| token | <code>Object</code> | The authentication token. |
+| user | <code>Object</code> | A user object, which shows the username, roles_links, id, roles, and name. |
 
 <a name="data"></a>
 
