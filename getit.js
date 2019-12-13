@@ -8,6 +8,19 @@ const fs = require('fs');
 var limit = '500'
 var details = 'full'
 
+/** 
+ * Properties for accessing specific check point rules
+ * @typedef {Object} rule
+ * @property {String} layer Layer that the rule belongs to identified by the name or UID.
+ * @property {String} uid Object unique identifier.
+ * @property {String} name Object unique name.
+ * @property {Number} rule-number Rule number in policy layer. 
+ * @property {Boolean} show-hits
+ */
+var rule = {}
+rule['show-hits'] = true
+rule['details-level'] = details
+
 /**
  * Variable required from auth/mycpapi.json file
  * @param {Object[]} myapisite - Setup API hostname
@@ -48,7 +61,9 @@ const mycred = require('./auth/mycpauth')
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 
-const CPobj = require('./cpobj')
+
+
+const CPrule = require('./cprule')
 
 let allobjs = []
 
@@ -58,7 +73,6 @@ async function main() {
 	startSession(mycred)
 	.then(sessiontoken => setSession(sessiontoken))
         .then(() => showRule())
-        //.then(mygroups => console.log(mygroups.get('host')))
         .then(myout => writeJson(myout))
 	.then(() => endSession())
 	.then(exitstat => console.log(exitstat))
@@ -68,15 +82,11 @@ async function main() {
 async function showRule() {
         try {
                 let mycmd = 'show-access-rule'                
-                let mydata = {}
 		var objdata = {}
 		var objarr = []
-                //mydata.offset = 0
-                mydata['show-hits'] = true
-                mydata['details-level'] = details
                 //mydata.limit = limit
-                console.log('getting all objects')
-                let setit = toApi.doPost(mydata, mycmd)
+                console.log('getting rule properties')
+                let setit = toApi.doPost(rule, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 objarr = objarr.concat(objdata)
                 if (objdata.total > objdata.to) {
@@ -84,17 +94,14 @@ async function showRule() {
                                 console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
                                 console.log(countOf(objarr) + ' objects in build array')
                                 mydata.offset = Number(objdata.to)
-                                setit = toApi.doPost(mydata, mycmd)
+                                setit = toApi.doPost(rule, mycmd)
                                 objdata = await callOut(setit.options, setit.postData)
                                 objarr = objarr.concat(objdata)
                         }
                 }
-                //indexObjects(objarr)
-                console.log(countOf(allobjs))
-                //const grouped = groupBy(objarr, obj => obj.type)
                 return objarr
         } catch (err) {
-                console.log('error in showObjects : ' + err)
+                console.log('error in showRule : ' + err)
         }
 }
 
@@ -231,7 +238,7 @@ return new Promise((resolve, reject) => {
 */
 async function writeJson (content) {
     try {
-            var newfile = 'allobjects.json'
+            var newfile = 'myrule.json'
     console.log('writing file . . . ' + newfile)
     console.log(typeof content)
             await fs.writeFileSync(newfile, JSON.stringify(content, undefined, 2))

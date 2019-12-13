@@ -18,7 +18,7 @@
  * @param {String} [description] Description of users in objects
  * @class
  */
-const CPobj = class CheckPointObject {
+const CPrule = class CheckPointRule {
 	constructor(x) {
 		this.name = x.name || 'no name'
 		this.type = x.type || 'no type'
@@ -83,108 +83,5 @@ const CPobj = class CheckPointObject {
 	}
 }
 
-module.exports = CPobj
+module.exports = CPrule
 
-/** 
- * @typedef {Object} ports
- * @property {String} created_at Time at which the resource has been created (in UTC ISO8601 format).
- * @property {String} description A human-readable description for the resource.
- * @property {Array} fixed_ips The IP addresses for the port. If the port has multiple IP addresses, this field has multiple entries. Each entry consists of IP address (ip_address) and the subnet ID from which the IP address is assigned (subnet_id).
- * @property {String} id The ID of the resource.
- * @property {String} ip_allocation ndicates when ports use either deferred, immediate or no IP allocation (none).
- * @property {String} name Human-readable name of the resource.
- * @property {String} network_id The ID of the attached network.
- * @property {String} project_id The ID of the project.
- * @property {String} qos_policy_id The ID of the QoS policy associated with the port.
- * @property {Number} revision_number The revision number of the resource.
- * @property {Array} security_groups The IDs of security groups applied to the port.
- * @property {String} status The port status. Values are ACTIVE, DOWN, BUILD and ERROR.
- * @property {Array} tags The list of tags on the resource.
- * @property {String} tenant_id The ID of the project.
- * @property {String} updated_at Time at which the resource has been updated (in UTC ISO8601 format).
- * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail#list-ports}
- */
-
-/**
- * @typedef {Object} security_groups
- * @property {String} created_at Time at which the resource has been created (in UTC ISO8601 format).
- * @property {String} description A human-readable description for the resource.
- * @property {String} id The ID of the security group.
- * @property {String} name Human-readable name of the resource.
- * @property {String} project_id The ID of the project.
- * @property {Number} revision_number The revision number of the resource.
- * @property {Boolean} stateful Indicates if the security group is stateful or stateless.
- * @property {Array} tags The list of tags on the resource.
- * @property {String} tenant_id The ID of the project.
- * @property {String} updated_at Time at which the resource has been updated (in UTC ISO8601 format).
- * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-security-groups}
- */
-
-/**
- * @typedef {Object} subnets
- * @property {String} id The ID of the subnet.
- * @property {Number} ip_version The IP protocol version. Value is 4 or 6.
- * @property {String} name Human-readable name of the resource.
- * @property {String} network_id The ID of the network to which the subnet belongs.
- * @property {String} project_id The ID of the project.
- * @property {Number} revision_number The revision number of the resource.
- * @property {Array} tags The list of tags on the resource.
- * @property {String} tenant_id The ID of the project.
- * @property {String} updated_at Time at which the resource has been updated (in UTC ISO8601 format).
- * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail#list-subnets}
- */
-
-/**
- * @typedef {Object} floating_ip_address
- * @property {String} created_at Time at which the resource has been created (in UTC ISO8601 format).
- * @property {String} description A human-readable description for the resource.
- * @property {String} id The ID of the floating IP address.
- * @property {Object} port_details The information of the port that this floating IP associates with. In particular, if the floating IP is associated with a port, this field contains some attributes of the associated port, including name, network_id, mac_address, admin_state_up, status, device_id and device_owner. If the floating IP is not associated with a port, this field is null.
- * @property {String} project_id The ID of the project.
- * @property {Number} revision_number The revision number of the resource.
- * @property {String} router_id The ID of the router for the floating IP.
- * @property {String} status The status of the floating IP. Values are ACTIVE, DOWN and ERROR.
- * @property {Array} tags The list of tags on the resource.
- * @property {String} tenant_id The ID of the project.
- * @property {String} updated_at Time at which the resource has been updated (in UTC ISO8601 format).
- * @see {@link https://docs.openstack.org/api-ref/network/v2/?expanded=list-security-groups-detail,list-subnets-detail,list-ports-detail,list-floating-ips-detail#list-floating-ips}
- */
-
-/**
- * @typedef {Object} serversdetail
- * @property {String} accessIPv4 IPv4 address that should be used to access this server. May be automatically set by the provider.
- * @property {Object} addresses The addresses for the server. Servers with status BUILD hide their addresses information.
- * @property {Null} description A human-readable description for the resource.
- * @property {String} hostId An ID string representing the host. This is a hashed value so will not actually look like a hostname, and is hashed with data from the project_id, so the same physical host as seen by two different project_ids, will be different. It is useful when within the same project you need to determine if two instances are on the same or different physical hosts for the purposes of availability or performance.
- * @property {String} host_status 
- * @property {String} id The UUID of the server.
- * @property {Object} image The UUID and links for the image for your server instance. The image object might be an empty string when you boot the server from a volume.
- * @property {Array} links Links to the resources in question
- * @property {Object} metadata A dictionary of metadata key-and-value pairs, which is maintained for backward compatibility.
- * @property {String} name The server name.
- * @property {Array} security_groups One or more security groups objects.
- * @property {String} status The server status.
- * @property {Array} tags The list of tags on the resource.
- * @property {String} tenant_id The ID of the project.
- * @property {String} updated The date and time when the resource was updated. The date and time stamp format is ISO 8601
- * @property {String} user_id The user ID of the user who owns the server.
- * @see {@link https://docs.openstack.org/api-ref/compute/?expanded=list-servers-detailed-detail#list-servers-detailed}
- */
-
- /**
- * @typedef {Object} tenants
- * @property {String} description The description of the tenant. If not set, this value is null.
- * @property {Boolean} enabled Indicates whether the tenant is enabled or disabled.
- * @property {String} id The authentication token.
- * @property {String} name The tenant name.
- * @see {@link https://sergslipushenko.github.io/html/api-ref-identity-admin-v2.html#admin-getTenantByName}
-*/
-
-/** 
- * @typedef {Object} access
- * @property {Object} metadata A metadata object
- * @property {Array} serviceCatalog A serviceCatalog array of objects.
- * @property {Object} token The authentication token.
- * @property {Object} user A user object, which shows the username, roles_links, id, roles, and name.
- * @see {@link https://sergslipushenko.github.io/html/api-ref-identity-v2.html#authenticate-v2.0}
- */
