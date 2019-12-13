@@ -100,12 +100,30 @@ async function checkRule(myrule) {
                 if (myrule.source) {
                         if (objdata.source.length == 1) {
                                 console.log('Disable rule ' + rulechk.uid)
+                                await disableRule(myrule)
                         }
                 }
                 if (myrule.destination) {
                         console.log('Destination Count: ' + objdata.destination.length)
                 }
                 return new CPrule(objdata)
+        } catch (err) {
+                console.log('error in showRule : ' + err)
+        }
+}
+
+async function disableRule(myrule) {
+        try {
+                let mycmd = 'set-access-rule'
+                var rulechk = {}
+                rulechk.layer = myrule.layer
+                rulechk.uid = myrule.uid
+                rulechk.enabled = false                
+		let objdata = {}
+                console.log('disable rule ' + rulechk.uid)
+                let setit = toApi.doPost(rulechk, mycmd)
+                objdata = await callOut(setit.options, setit.postData)
+                return objdata
         } catch (err) {
                 console.log('error in showRule : ' + err)
         }
