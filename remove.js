@@ -123,7 +123,7 @@ async function disableRule(myrule) {
                 rulechk.uid = myrule.uid
                 rulechk.enabled = false 
                 mydate = new Date
-                rulechk.comments = 'Enabled on ' + mydate + ' by script'               
+                rulechk.comments = 'Disabled on ' + mydate + ' by script'               
 		let objdata = {}
                 console.log('disable rule ' + rulechk.uid)
                 let setit = toApi.doPost(rulechk, mycmd)
