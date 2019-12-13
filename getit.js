@@ -19,7 +19,7 @@ var details = 'full'
  */
 var rulechk = {}
 rulechk['show-hits'] = true
-//rule['details-level'] = details
+rule['details-level'] = details
 rulechk.layer = 'f3822578-cb2f-4f4a-98ba-a048a04b41da'
 rulechk['rule-number'] = 1
 
