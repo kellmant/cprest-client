@@ -176,6 +176,8 @@ async function main() {
 }
 
 async function garbagecollection(trash) {
+        const groupTypes = groupBy(trash, 'type')
+        /**
         for (var item of trash) {
                 if (item.name) {
                         sessionstat.description += ', ' + item.type + ' ' + item.name
@@ -185,7 +187,8 @@ async function garbagecollection(trash) {
                         sessionstat.description += ', ' + mylog
                 }
         }
-        console.log(sessionstat)
+        */
+        console.log(groupTypes)
         return
         /**
 	startSession(mycred)
@@ -366,3 +369,16 @@ function sleep(ms) {
 function countOf(obj) {
 return Object.keys(obj).length
 }
+
+// Accepts the array and key
+const groupBy = (array, key) => {
+  // Return the end result
+  return array.reduce((result, currentValue) => {
+    // If an array already present for key, push it to the array. Else create an array and push the object
+    (result[currentValue[key]] = result[currentValue[key]] || []).push(
+      currentValue
+    );
+    // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
+    return result;
+  }, {}); // empty object is the initial value for result object
+};
