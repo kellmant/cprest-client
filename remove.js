@@ -76,6 +76,7 @@ async function myRules() {
         for (var x of objdata['access-rule']) {
             console.log(mycmd)
             console.log(x)
+            await checkRule(x)
             await setObject(x, mycmd)
         }
         return 
