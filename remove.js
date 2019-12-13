@@ -104,7 +104,10 @@ async function checkRule(myrule) {
                         }
                 }
                 if (myrule.destination) {
-                        console.log('Destination Count: ' + objdata.destination.length)
+                        if (objdata.destination.length == 1) {
+                                console.log('Disable rule ' + rulechk.uid)
+                                await disableRule(myrule)
+                        }
                 }
                 return new CPrule(objdata)
         } catch (err) {

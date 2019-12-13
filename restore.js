@@ -84,6 +84,45 @@ async function main() {
 	.catch(endSession)
 }
 
+async function checkRule(myrule) {
+        try {
+                let mycmd = 'show-access-rule'
+                var rulechk = {}
+                rulechk['show-hits'] = true
+                rulechk['details-level'] = 'uid'
+                rulechk.layer = myrule.layer
+                rulechk.uid = myrule.uid              
+		let objdata = {}
+                console.log('getting rule status')
+                let setit = toApi.doPost(rulechk, mycmd)
+                objdata = await callOut(setit.options, setit.postData)
+                if (objdata.enabled == false) {
+                        console.log('rule ' + rulechk.uid + ' is DISABLED')
+                        await enableRule(myrule)
+                }
+                return objdata
+        } catch (err) {
+                console.log('error in checkRule : ' + err)
+        }
+}
+
+async function enableRule(myrule) {
+        try {
+                let mycmd = 'set-access-rule'
+                var rulechk = {}
+                rulechk.layer = myrule.layer
+                rulechk.uid = myrule.uid
+                rulechk.enabled = true                
+		let objdata = {}
+                console.log('enabling rule ' + rulechk.uid)
+                let setit = toApi.doPost(rulechk, mycmd)
+                objdata = await callOut(setit.options, setit.postData)
+                return objdata
+        } catch (err) {
+                console.log('error in showRule : ' + err)
+        }
+}
+
 async function setObject(myobj, mycmd) {
 	try {
         var setit = toApi.doPost(myobj, mycmd)
