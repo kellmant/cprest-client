@@ -85,23 +85,11 @@ async function showRule() {
         try {
                 let mycmd = 'show-access-rule'                
 		var objdata = {}
-		var objarr = []
                 //mydata.limit = limit
                 console.log('getting rule properties')
                 let setit = toApi.doPost(rule, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
-                objarr = objarr.concat(objdata)
-                if (objdata.total > objdata.to) {
-                        while (objdata.total >= mydata.offset) {
-                                console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
-                                console.log(countOf(objarr) + ' objects in build array')
-                                mydata.offset = Number(objdata.to)
-                                setit = toApi.doPost(rule, mycmd)
-                                objdata = await callOut(setit.options, setit.postData)
-                                objarr = objarr.concat(objdata)
-                        }
-                }
-                return objarr
+                return objdata
         } catch (err) {
                 console.log('error in showRule : ' + err)
         }
