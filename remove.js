@@ -177,8 +177,14 @@ async function main() {
 
 async function garbagecollection(trash) {
         for (var item of trash) {
-                console.log(item.type, item.uid)
+                if (item.name) {
+                        sessionstat.description += ' ' + item.type + ' ' + item.name
+                }
+                if (item.rule) {
+                        sessionstat.description += ' ' + item.type + ' ' + item.position
+                }
         }
+        console.log(sessionstat)
         return
         /**
 	startSession(mycred)
