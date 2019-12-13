@@ -56,6 +56,8 @@ console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
     console.log(objdata.garbage)
     console.log('Cleanup needed of object before removal')
+    garbagecollection()
+
 } else {
 
     main()
@@ -175,6 +177,11 @@ async function main() {
 }
 
 async function garbagecollection() {
+        Object.keys(objdata.garbage).forEach(item => {
+                console.log(item)
+        });
+        return
+        /**
 	startSession(mycred)
 		.then(sessiontoken => setSession(sessiontoken))
         .then(() => setDescription())
@@ -183,7 +190,8 @@ async function garbagecollection() {
 		.then(exitstat => console.log(exitstat))
 		//.then(() => console.dir(cleanobj))
 		//.then(thindat => console.log(thindat))
-	.catch(endSession)
+        .catch(endSession)
+        */
 }
 
 async function setObject(myobj, mycmd) {
