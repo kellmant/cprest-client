@@ -181,7 +181,8 @@ async function garbagecollection(trash) {
                         sessionstat.description += ', ' + item.type + ' ' + item.name
                 }
                 if (item.rule) {
-                        sessionstat.description += ', ' + item.type + ' ' + item.position
+                        let mylog = item.type + ' pkg: ' + item.package + ' rule num: ' + item.position + ' col: ' + item['rule-columns'] 
+                        sessionstat.description += ', ' + mylog
                 }
         }
         console.log(sessionstat)
