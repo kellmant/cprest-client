@@ -44,6 +44,7 @@ const mycred = require('./auth/mycpauth')
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
+const CPrule = require('./cprule')
 
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
@@ -81,6 +82,30 @@ async function myRules() {
     } catch (err) {
         console.log('Error in myGroups : ' + err)
     }
+}
+
+async function checkRule(myrule) {
+        try {
+                let mycmd = 'show-access-rule'
+                var rulechk = {}
+                rulechk['show-hits'] = true
+                rulechk['details-level'] = 'uid'
+                rulechk.layer = myrule.layer
+                rulechk.uid = myrule.uid              
+		let objdata = {}
+                console.log('getting rule properties')
+                let setit = toApi.doPost(rulechk, mycmd)
+                objdata = await callOut(setit.options, setit.postData)
+                if (myrule.source) {
+                        console.log('Source Count: ' + objdata.source.length)
+                }
+                if (myrule.destination) {
+                        console.log('Destination Count: ' + objdata.destination.length)
+                }
+                return new CPrule(objdata)
+        } catch (err) {
+                console.log('error in showRule : ' + err)
+        }
 }
 
 async function myHosts() {
