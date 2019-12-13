@@ -177,7 +177,7 @@ async function main() {
 }
 
 async function garbagecollection() {
-        Object.keys(objdata.garbage).forEach(item => {
+        Object.values(objdata.garbage).forEach(item => {
                 console.log(item)
         });
         return
