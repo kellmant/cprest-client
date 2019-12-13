@@ -6,7 +6,7 @@ const https = require('https')
 const fs = require('fs');
 
 var limit = '500'
-var details = 'full'
+var details = 'uid'
 
 /** 
  * Properties for accessing specific check point rules
