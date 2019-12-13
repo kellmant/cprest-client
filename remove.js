@@ -177,7 +177,7 @@ async function main() {
 
 async function garbagecollection(trash) {
         for (var item of trash) {
-                console.log(item.type)
+                console.log(item.type, item.name)
         }
         return
         /**
