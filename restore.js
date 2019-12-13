@@ -64,6 +64,9 @@ async function myRestore() {
                 delete myact.cmd
             console.log(mycmd)
             console.log(myact)
+            if (mycmd === 'set-access-rule') {
+                    await checkRule(myact)
+            }
             await setObject(myact, mycmd)
         }
         return 
