@@ -54,9 +54,8 @@ sessionstat.description = new Date
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
-    console.log(objdata.garbage)
     console.log('Cleanup needed of object before removal')
-    garbagecollection()
+    garbagecollection(objdata.garbage)
 
 } else {
 
@@ -176,9 +175,9 @@ async function main() {
 	.catch(endSession)
 }
 
-async function garbagecollection() {
-        for (var item of objdata.garbage) {
-                console.log(item)
+async function garbagecollection(trash) {
+        for (var item of trash) {
+                console.log(item.type)
         }
         return
         /**
