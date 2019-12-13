@@ -19,8 +19,8 @@ var details = 'full'
  */
 var rule = {}
 rule['show-hits'] = true
-rule['details-level'] = details
-rule.layer = ''
+//rule['details-level'] = details
+rule.layer = 'f3822578-cb2f-4f4a-98ba-a048a04b41da'
 rule['rule-number'] = 1
 
 /**
