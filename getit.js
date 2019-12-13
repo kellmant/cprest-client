@@ -10,18 +10,18 @@ var details = 'full'
 
 /** 
  * Properties for accessing specific check point rules
- * @typedef {Object} rule
+ * @typedef {Object} rulechk
  * @property {String} layer Layer that the rule belongs to identified by the name or UID.
  * @property {String} uid Object unique identifier.
  * @property {String} name Object unique name.
  * @property {Number} rule-number Rule number in policy layer. 
  * @property {Boolean} show-hits
  */
-var rule = {}
-rule['show-hits'] = true
+var rulechk = {}
+rulechk['show-hits'] = true
 //rule['details-level'] = details
-rule.layer = 'f3822578-cb2f-4f4a-98ba-a048a04b41da'
-rule['rule-number'] = 1
+rulechk.layer = 'f3822578-cb2f-4f4a-98ba-a048a04b41da'
+rulechk['rule-number'] = 1
 
 /**
  * Variable required from auth/mycpapi.json file
@@ -80,14 +80,41 @@ async function main() {
 	.then(exitstat => console.log(exitstat))
 	.catch(endSession)
 }
+/** 
+ * @typedef {Object} rule
+ * @property {Object} action
+ * @property {Object} action-settings
+ * @property {String} comments
+ * @property {Array} content
+ * @property {String} content-direction
+ * @property {Boolean} content-negate
+ * @property {Object} custom-fields
+ * @property {Array} destination
+ * @property {Boolean} destination-negate
+ * @property {Object} domain
+ * @property {Boolean} enabled
+ * @property {Object} hits
+ * @property {Array} install-on
+ * @property {String} layer
+ * @property {Object} meta-info
+ * @property {String} name
+ * @property {Array} service
+ * @property {Boolean} service-negate
+ * @property {Array} source
+ * @property {Boolean} source-negate
+ * @property {Array} time
+ * @property {Object} track
+ * @property {String} type
+ * @property {String} uid
+ * @property {Array} vpn
+ */
 
 async function showRule() {
         try {
                 let mycmd = 'show-access-rule'                
-		var objdata = {}
-                //mydata.limit = limit
+		let objdata = {}
                 console.log('getting rule properties')
-                let setit = toApi.doPost(rule, mycmd)
+                let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
         } catch (err) {
