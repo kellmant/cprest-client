@@ -118,7 +118,7 @@ async function showRule() {
                 objdata = await callOut(setit.options, setit.postData)
                 console.log('Source Count: ' + objdata.source.length)
                 console.log('Destination Count: ' + objdata.destination.length)
-                return objdata
+                return new CPrule(objdata)
         } catch (err) {
                 console.log('error in showRule : ' + err)
         }
