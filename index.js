@@ -651,7 +651,7 @@ async function pubSession() {
 */
 async function endSession() {
         try {
-                console.log('ending session')
+                console.log('run function ' + myFunction.name)
 		var nodata = {}
                 var nosession = await callOut(toApi.doPost(nodata, 'logout').options, toApi.doPost(nodata, 'logout').postData)
                	//toApi.showOpt()

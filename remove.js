@@ -139,7 +139,7 @@ async function disableRule(myrule) {
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
         } catch (err) {
-                console.log('error in showRule : ' + err)
+                console.log('error in disableRule : ' + err)
         }
 }
 
@@ -165,6 +165,18 @@ async function main() {
         .then(() => myGroups())
         .then(() => myRules())
         .then(() => myHosts())
+        .then(() => setDescription())
+        .then(() => pubSession())
+		.then(() => endSession())
+		.then(exitstat => console.log(exitstat))
+		//.then(() => console.dir(cleanobj))
+		//.then(thindat => console.log(thindat))
+	.catch(endSession)
+}
+
+async function garbagecollection() {
+	startSession(mycred)
+		.then(sessiontoken => setSession(sessiontoken))
         .then(() => setDescription())
         .then(() => pubSession())
 		.then(() => endSession())
