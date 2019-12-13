@@ -116,6 +116,8 @@ async function showRule() {
                 console.log('getting rule properties')
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
+                console.log('Source Count: ' + objdata.source.length)
+                console.log('Destination Count: ' + objdata.destination.length)
                 return objdata
         } catch (err) {
                 console.log('error in showRule : ' + err)
