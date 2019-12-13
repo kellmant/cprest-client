@@ -98,7 +98,9 @@ async function checkRule(myrule) {
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 if (myrule.source) {
-                        console.log('Source Count: ' + objdata.source.length)
+                        if (objdata.source.length == 1) {
+                                console.log('Disable rule ' + rulechk.uid)
+                        }
                 }
                 if (myrule.destination) {
                         console.log('Destination Count: ' + objdata.destination.length)
