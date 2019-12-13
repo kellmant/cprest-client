@@ -46,6 +46,11 @@ const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
 const CPrule = require('./cprule')
 
+const setlog = 'set-session'
+const sessionstat = {}
+sessionstat['new-name'] = process.argv[1] + ' ' + process.argv[2]
+sessionstat.description = new Date
+
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
@@ -100,12 +105,16 @@ async function checkRule(myrule) {
                 if (myrule.source) {
                         if (objdata.source.length == 1) {
                                 console.log('Disable rule ' + rulechk.uid)
+                                let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
+                                sessionstat.description += statmsg
                                 await disableRule(myrule)
                         }
                 }
                 if (myrule.destination) {
                         if (objdata.destination.length == 1) {
                                 console.log('Disable rule ' + rulechk.uid)
+                                let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
+                                sessionstat.description += statmsg
                                 await disableRule(myrule)
                         }
                 }
@@ -156,6 +165,7 @@ async function main() {
         .then(() => myGroups())
         .then(() => myRules())
         .then(() => myHosts())
+        .then(() => setDescription())
         .then(() => pubSession())
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -209,6 +219,16 @@ async function setSession(mysession) {
             console.log('error in setSession')
             console.log(err)
     }
+}
+
+async function setDescription() {
+        try {
+                let setit = toApi.doPost(sessionstat, setlog)
+                let objreturn = await callOut(setit.options, setit.postData)
+                return objreturn
+        } catch (err) {
+                console.log('error in setDescription : ' + err)
+        }
 }
 
 /**

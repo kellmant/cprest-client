@@ -45,6 +45,11 @@ const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
 
+const setlog = 'set-session'
+const sessionstat = {}
+sessionstat['new-name'] = process.argv[1] + ' ' + process.argv[2]
+sessionstat.description = new Date
+
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
@@ -64,6 +69,7 @@ async function myRestore() {
                 delete myact.cmd
             console.log(mycmd)
             console.log(myact)
+            sessionstat.description += ' ' + x.name 
             if (mycmd === 'set-access-rule') {
                     await checkRule(myact)
             }
@@ -79,6 +85,7 @@ async function main() {
 	startSession(mycred)
 		.then(sessiontoken => setSession(sessiontoken))
         .then(() => myRestore())
+        .then(() => setDescription())
         .then(() => pubSession())
 		.then(() => endSession())
 		.then(exitstat => console.log(exitstat))
@@ -100,7 +107,9 @@ async function checkRule(myrule) {
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 if (objdata.enabled == false) {
-                        console.log('rule ' + rulechk.uid + ' is DISABLED')
+                        console.log('rule ' + rulechk.uid + ' is ENABLED')
+                        let statmsg = ' rule ' + rulechk.uid + ' is ENABLED '
+                        sessionstat.description += statmsg
                         await enableRule(myrule)
                 }
                 return objdata
@@ -173,6 +182,16 @@ async function setSession(mysession) {
             console.log('error in setSession')
             console.log(err)
     }
+}
+
+async function setDescription() {
+        try {
+                let setit = toApi.doPost(sessionstat, setlog)
+                let objreturn = await callOut(setit.options, setit.postData)
+                return objreturn
+        } catch (err) {
+                console.log('error in setDescription : ' + err)
+        }
 }
 
 /**
