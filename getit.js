@@ -20,6 +20,8 @@ var details = 'full'
 var rule = {}
 rule['show-hits'] = true
 rule['details-level'] = details
+rule.layer = ''
+rule['rule-number'] = 1
 
 /**
  * Variable required from auth/mycpapi.json file
