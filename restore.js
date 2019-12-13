@@ -115,7 +115,8 @@ async function enableRule(myrule) {
                 var rulechk = {}
                 rulechk.layer = myrule.layer
                 rulechk.uid = myrule.uid
-                rulechk.enabled = true                
+                rulechk.enabled = true
+                rulechk.comments = 'Enabled on 20191213 by script'                 
 		let objdata = {}
                 console.log('enabling rule ' + rulechk.uid)
                 let setit = toApi.doPost(rulechk, mycmd)

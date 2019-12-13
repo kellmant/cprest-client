@@ -121,7 +121,8 @@ async function disableRule(myrule) {
                 var rulechk = {}
                 rulechk.layer = myrule.layer
                 rulechk.uid = myrule.uid
-                rulechk.enabled = false                
+                rulechk.enabled = false 
+                rulechk.comments = 'Disabled 20191213 by script'               
 		let objdata = {}
                 console.log('disable rule ' + rulechk.uid)
                 let setit = toApi.doPost(rulechk, mycmd)
