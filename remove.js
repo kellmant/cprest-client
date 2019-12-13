@@ -178,10 +178,10 @@ async function main() {
 async function garbagecollection(trash) {
         for (var item of trash) {
                 if (item.name) {
-                        sessionstat.description += ' ' + item.type + ' ' + item.name
+                        sessionstat.description += ', ' + item.type + ' ' + item.name
                 }
                 if (item.rule) {
-                        sessionstat.description += ' ' + item.type + ' ' + item.position
+                        sessionstat.description += ', ' + item.type + ' ' + item.position
                 }
         }
         console.log(sessionstat)
