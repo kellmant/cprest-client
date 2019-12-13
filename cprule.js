@@ -30,7 +30,7 @@ const CPrule = class CheckPointRule {
         if (x.description) 
             this.description = x.description
         if (x['install-on'])
-            this.['install-on'] = x['install-on']
+            this['install-on'] = x['install-on']
         //if (x.groups) 
         //    this.groups = x.groups
         if (x.tags)
