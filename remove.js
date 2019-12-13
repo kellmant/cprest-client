@@ -177,9 +177,9 @@ async function main() {
 }
 
 async function garbagecollection() {
-        Object.values(objdata.garbage).forEach(item => {
+        for (var item of objdata.garbage) {
                 console.log(item)
-        });
+        }
         return
         /**
 	startSession(mycred)
