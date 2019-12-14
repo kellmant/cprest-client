@@ -55,7 +55,9 @@ const CPobj = class CheckPointObject {
             });
             this.tags = myarr
         if (x['nat-settings'])
-            this['nat-settings'] = x['nat-settings']    
+            this['nat-settings'] = x['nat-settings']  
+        if (x['host-servers'])
+            this['host-servers'] = x['host-servers']    
 	}
 	/** 
 	 * dump object properties
