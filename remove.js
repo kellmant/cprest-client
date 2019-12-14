@@ -204,7 +204,9 @@ async function garbagecollection(trash) {
         Object.keys(groupNat).forEach(pkg => {
                 console.log(pkg)
                 Object.keys(groupNat[pkg]).forEach(rule => {
-                        console.log(groupNat[pkg][rule].position)
+                        let netrule = groupNat[pkg][rule]
+                        console.log(JSON.stringify(netrule))
+                        console.log(netrule.position)
                 });
         });
         /**
