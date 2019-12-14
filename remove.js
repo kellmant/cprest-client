@@ -279,8 +279,8 @@ async function tagHosts(myhosts) {
 			//console.log(mydata)
 			myreturn = myreturn.concat(indat)
 		}
-		let mypub = await pubSession()
-		return mypub
+		//let mypub = await pubSession()
+		return myreturn
 	} catch (err) {
 		console.log('error in tagObject : ' + err)
 	}
