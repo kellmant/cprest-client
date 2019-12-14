@@ -54,6 +54,8 @@ const CPobj = class CheckPointObject {
                 myarr = myarr.concat(x.tags[key].name)
             });
             this.tags = myarr
+        if (x['nat-settings'])
+            this['nat-settings'] = x['nat-settings']    
 	}
 	/** 
 	 * dump object properties
