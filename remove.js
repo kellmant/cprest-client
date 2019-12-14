@@ -197,14 +197,14 @@ async function garbagecollection(trash) {
                 console.log(mytype)
                 if (mytype == 'nat-rule') {
                         groupNat = groupBy(groupTypes[mytype], 'package')
-                        sessionstat.description += ' natpolicy: ' 
+                        sessionstat.description += ' NAT - ' 
                         //console.log(mytype, groupTypes[mytype])
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         });
         Object.keys(groupNat).forEach(pkg => {
-                sessionstat.description += pkg +':'
+                sessionstat.description += ' pkg ' + pkg +''
                 console.log(pkg)
                 Object.keys(groupNat[pkg]).forEach(rule => {
                         let netrule = groupNat[pkg][rule]
