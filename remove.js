@@ -194,7 +194,7 @@ async function garbagecollection(trash) {
         for (var type in groupTypes) {
                 console.log(type)
         }
-        for (var pkg in groupRules) {
+        for (var pkg of groupRules) {
                 console.log(groupRules[pkg])
         }
         /**
