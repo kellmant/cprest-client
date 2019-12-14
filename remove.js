@@ -195,8 +195,7 @@ async function garbagecollection(trash) {
                 console.log(mytype)
         });
         Object.keys(groupRules).forEach(pkg => {
-                console.log(pkg)
-                console.log(groupRules.pkg)
+                console.log(Object.keys(pkg))
         });
         /**
                 if (item.name) {
