@@ -202,13 +202,13 @@ async function garbagecollection(trash) {
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         });
         Object.keys(groupNat).forEach(pkg => {
+                sessionstat.description += pkg +':'
                 console.log(pkg)
                 Object.keys(groupNat[pkg]).forEach(rule => {
                         let netrule = groupNat[pkg][rule]
                         delete netrule.type 
                         delete netrule.package
-                        console.log(JSON.stringify(netrule))
-                        console.log(netrule.position)
+                        sessionstat.description += JSON.stringify(netrule))
                 });
         });
         /**
@@ -221,7 +221,7 @@ async function garbagecollection(trash) {
                 }
                 */
         //console.log(groupTypes)
-        //console.log(groupRules)
+        console.log(sessionstat)
         return
         /**
 	startSession(mycred)
