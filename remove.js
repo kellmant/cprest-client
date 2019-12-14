@@ -191,8 +191,13 @@ async function main() {
 async function garbagecollection(trash) {
         const groupTypes = groupBy(trash, 'type')
         const groupRules = groupBy(groupTypes['nat-rule'], 'package')
+        for (var type of groupTypes) {
+                console.log(type)
+        }
+        for (var pkg in groupRules) {
+                console.log(pkg)
+        }
         /**
-        for (var item of trash) {
                 if (item.name) {
                         sessionstat.description += ', ' + item.type + ' ' + item.name
                 }
@@ -200,10 +205,10 @@ async function garbagecollection(trash) {
                         let mylog = item.type + ' pkg: ' + item.package + ' rule num: ' + item.position + ' col: ' + item['rule-columns'] 
                         sessionstat.description += ', ' + mylog
                 }
+                */
         }
-        */
-        console.log(groupTypes)
-        console.log(groupRules)
+        //console.log(groupTypes)
+        //console.log(groupRules)
         return
         /**
 	startSession(mycred)
