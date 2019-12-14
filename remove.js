@@ -203,7 +203,7 @@ async function garbagecollection(trash) {
         });
         Object.keys(groupNat).forEach(pkg => {
                 console.log(pkg)
-                Object.values(groupNat[pkg]).forEach(rule => {
+                Object.keys(groupNat[pkg]).forEach(rule => {
                         console.log(groupNat.pkg[rule])
                 });
         });
