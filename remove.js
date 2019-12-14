@@ -82,6 +82,7 @@ async function myGroups() {
         for (var x of objdata.group) {
             //console.log(mycmd)
             //console.log(x)
+            sessionstat.description += ' Group ' + x.uid
             await setObject(x, mycmd)
         }
         return 
@@ -168,6 +169,7 @@ async function myHosts() {
         for (var x of objdata.hosts) {
             let newdata = {}
             newdata.uid = x
+            sessionstat.description += x
             //console.log(mycmd)
             //console.log(newdata)
             await setObject(newdata, mycmd)
@@ -387,7 +389,7 @@ return new Promise((resolve, reject) => {
         var myret = ''
                 if (res.statusCode) {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
-                sessionstat.description += ' ' + res.statusCode + ' : ' + res.statusMessage + ' ' + options.path
+                sessionstat.description += ' ' + options.path + '->' + res.statusCode + ':' + res.statusMessage + ' ' 
                 }
                 res.on('data', (d) => {
                         myret += d
