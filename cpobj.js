@@ -57,6 +57,7 @@ const CPobj = class CheckPointObject {
         if (x['nat-settings'])
             this['nat-settings'] = x['nat-settings']  
         if (x['host-servers'])
+            delete x['host-servers']['web-server-config']['standard-port-number']
             this['host-servers'] = x['host-servers']    
 	}
 	/** 
