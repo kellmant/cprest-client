@@ -196,7 +196,7 @@ async function garbagecollection(trash) {
                 console.log(mytype)
                 if (mytype == 'nat-rule') {
                         //groupNat = groupBy(trash.mytype, 'package')
-                        console.log(mytype, groupTypes.mytype)
+                        console.log(mytype, trash.mytype)
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
