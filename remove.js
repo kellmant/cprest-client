@@ -69,7 +69,7 @@ console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
     console.log('Cleanup needed of object before removal')
     sessionstat.description += 'REMOVAL BLOCKED - '
-    garbagecollection(objdata.garbage)
+    stoppedAlert(objdata.garbage)
 
 } else {
 
@@ -189,6 +189,16 @@ async function main() {
 	.catch(endSession)
 }
 
+async function stoppedAlert(trash) {
+        startSession(mycred)
+                .then(sessiontoken => setSession(sessiontoken))
+        .then(() => garbagecollection(trash))
+        .then(() => setDescription())
+                .then(() => endSession())
+                .then(exitstat => console.log(exitstat))
+        .catch(endSession)
+}
+
 async function garbagecollection(trash) {
         const groupTypes = groupBy(trash, 'type')
         var groupNat = []
@@ -225,7 +235,7 @@ async function garbagecollection(trash) {
                 }
                 */
         //console.log(groupTypes)
-        console.log(sessionstat)
+        //console.log(sessionstat)
         return
         /**
 	startSession(mycred)
