@@ -51,7 +51,7 @@ const CPobj = class CheckPointObject {
             var myarr = []
             Object.keys(x.tags).forEach(key => {
                 console.log('MY KEY IS : ' + x.tags[key].name)
-                myarr = myarr.concat(x.tags[key])
+                myarr = myarr.concat(x.tags[key].name)
             });
             this.tags = myarr
 	}
