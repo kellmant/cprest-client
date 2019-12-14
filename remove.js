@@ -194,6 +194,7 @@ async function stoppedAlert(trash) {
                 .then(sessiontoken => setSession(sessiontoken))
         .then(() => garbagecollection(trash))
         .then(() => setDescription())
+        .then(() => pubSession())
                 .then(() => endSession())
                 .then(exitstat => console.log(exitstat))
         .catch(endSession)
