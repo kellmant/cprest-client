@@ -190,7 +190,7 @@ async function main() {
 
 async function garbagecollection(trash) {
         const groupTypes = groupBy(trash, 'type')
-        const groupNat = []
+        var groupNat = []
         //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         Object.keys(groupTypes).forEach(mytype => {
                 console.log(mytype)
