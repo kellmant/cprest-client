@@ -208,7 +208,7 @@ async function garbagecollection(trash) {
                         let netrule = groupNat[pkg][rule]
                         delete netrule.type 
                         delete netrule.package
-                        sessionstat.description += JSON.stringify(netrule))
+                        sessionstat.description += JSON.stringify(netrule)
                 });
         });
         /**
