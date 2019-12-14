@@ -154,7 +154,8 @@ async function disableRule(myrule) {
                 //sessionstat.description += 'disable rule ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
-                sessionstat.description += objdata.Payload.message
+                console.log(objdata)
+                //sessionstat.description += objdata.Payload.message
                 return objdata
         } catch (err) {
                 console.log('error in disableRule : ' + err)
