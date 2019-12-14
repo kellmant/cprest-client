@@ -334,6 +334,7 @@ async function setDescription() {
         try {
                 let setit = toApi.doPost(sessionstat, setlog)
                 let objreturn = await callOut(setit.options, setit.postData)
+                console.log(sessionstat.description)
                 return objreturn
         } catch (err) {
                 console.log('error in setDescription : ' + err)
