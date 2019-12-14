@@ -197,7 +197,7 @@ async function garbagecollection(trash) {
                 console.log(mytype)
                 if (mytype == 'nat-rule') {
                         groupNat = groupBy(groupTypes[mytype], 'package')
-                        sessionstat.description += ' natpolicy: ' +  
+                        sessionstat.description += ' natpolicy: ' 
                         //console.log(mytype, groupTypes[mytype])
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
