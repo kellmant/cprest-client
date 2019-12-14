@@ -202,8 +202,9 @@ async function garbagecollection(trash) {
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         });
         Object.keys(groupNat).forEach(pkg => {
-                Object.keys(groupNat[pkg]).forEach(rule)
-                console.log(pkg, rule)
+                Object.keys(groupNat[pkg]).forEach(rule => {
+                        console.log(pkg, rule)
+                });
         });
         /**
                 if (item.name) {
