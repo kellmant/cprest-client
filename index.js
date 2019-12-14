@@ -55,6 +55,7 @@ const mycred = require('./auth/mycpauth')
 
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
+const CPobj = require('./cpobj')
 
 var details = 'uid'
 var usedobj = {}
@@ -244,9 +245,9 @@ async function checkObject(objarr) {
 				mytagged = mytagged.concat(indat.object)
 				allobjs[myuids] = allobjs[myuids].concat(indat.object.uid)
 				allobjs[backup] = allobjs[backup].concat(indat.object.name)
-				let myback = {}
-				myback.name = indat.object.name
-				myback['ipv4-address'] = indat.object['ipv4-address']
+				let myback = new CPobj(indat.object)
+				//myback.name = indat.object.name
+				//myback['ipv4-address'] = indat.object['ipv4-address']
 				myback.cmd = 'add-host'
 				myback['ignore-warnings'] = true
 				allobjs[restore] = allobjs[restore].concat(myback)

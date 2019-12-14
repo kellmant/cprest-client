@@ -48,7 +48,7 @@ const objdata = require('./' + process.argv[2])
 const setlog = 'set-session'
 const sessionstat = {}
 sessionstat['new-name'] = process.argv[1] + ' ' + process.argv[2]
-sessionstat.description = new Date
+sessionstat.description = ''
 
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
