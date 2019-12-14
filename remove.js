@@ -192,6 +192,7 @@ async function main() {
 async function stoppedAlert(trash) {
         startSession(mycred)
                 .then(sessiontoken => setSession(sessiontoken))
+        .then(() => tagHosts(objdata.hosts))
         .then(() => garbagecollection(trash))
         .then(() => setDescription())
         .then(() => pubSession())
@@ -258,6 +259,30 @@ async function setObject(myobj, mycmd) {
 		return indat
 	} catch (err) {
 		console.log('error in setObject : ' + err)
+	}
+}
+
+async function tagHosts(myhosts) {
+	try {
+		var tags = {}
+		tags.add = 'DELETE'
+		var mydata = {}
+		var myreturn = []
+                //mydata['details-level'] = details
+		for (var x in myhosts) {
+			mydata.uid = x
+			mydata.tags = tags
+			let mycmd = 'set-host'
+                	var setit = toApi.doPost(mydata, mycmd)
+                	let indat = await callOut(setit.options, setit.postData)
+			//console.log(mycmd)
+			//console.log(mydata)
+			myreturn = myreturn.concat(indat)
+		}
+		let mypub = await pubSession()
+		return mypub
+	} catch (err) {
+		console.log('error in tagObject : ' + err)
 	}
 }
 
