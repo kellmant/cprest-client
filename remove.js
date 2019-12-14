@@ -260,7 +260,6 @@ async function setObject(myobj, mycmd) {
 	try {
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
-        sessionstat.description += indat['Response-Code']
 		return indat
 	} catch (err) {
 		console.log('error in setObject : ' + err)
@@ -388,7 +387,7 @@ return new Promise((resolve, reject) => {
         var myret = ''
                 if (res.statusCode) {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
-                sessionstat.description += res.statusCode + ' : ' + res.statusMessage + ' ' + options.path
+                sessionstat.description += ' ' + res.statusCode + ' : ' + res.statusMessage + ' ' + options.path
                 }
                 res.on('data', (d) => {
                         myret += d
