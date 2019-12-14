@@ -68,6 +68,7 @@ const groupBy = (array, key) => {
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
     console.log('Cleanup needed of object before removal')
+    sessionstat.description += 'REMOVAL BLOCKED - '
     garbagecollection(objdata.garbage)
 
 } else {
@@ -196,6 +197,7 @@ async function garbagecollection(trash) {
                 console.log(mytype)
                 if (mytype == 'nat-rule') {
                         groupNat = groupBy(groupTypes[mytype], 'package')
+                        sessionstat.description += ' natpolicy: ' +  
                         //console.log(mytype, groupTypes[mytype])
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
