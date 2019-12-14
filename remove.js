@@ -68,7 +68,7 @@ const groupBy = (array, key) => {
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
     console.log('Cleanup needed of object before removal')
-    sessionstat.description += 'REMOVAL BLOCKED - '
+    sessionstat.description += 'REMOVAL BLOCKED '
     stoppedAlert(objdata.garbage)
 
 } else {
@@ -209,10 +209,10 @@ async function garbagecollection(trash) {
                 console.log(mytype)
                 if (mytype == 'nat-rule') {
                         groupNat = groupBy(groupTypes[mytype], 'package')
-                        sessionstat.description += ' NAT - ' 
+                        sessionstat.description += ' NAT USE' 
                         //console.log(mytype, groupTypes[mytype])
                 } else {
-                        sessionstat.description += ' ' + mytype + ' - ' + JSON.stringify(groupTypes[mytype])
+                        sessionstat.description += ' ' + mytype)
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
@@ -224,7 +224,7 @@ async function garbagecollection(trash) {
                         let netrule = groupNat[pkg][rule]
                         delete netrule.type 
                         delete netrule.package
-                        sessionstat.description += JSON.stringify(netrule)
+                        sessionstat.description += netrule
                 });
         });
         /**
