@@ -269,7 +269,7 @@ async function tagHosts(myhosts) {
 		var mydata = {}
 		var myreturn = []
                 //mydata['details-level'] = details
-		for (var x in myhosts) {
+		for (var x of myhosts) {
 			mydata.uid = x
 			mydata.tags = tags
 			let mycmd = 'set-host'
