@@ -82,7 +82,7 @@ async function myGroups() {
         for (var x of objdata.group) {
             //console.log(mycmd)
             //console.log(x)
-            sessionstat.description += ' Group ' + x.uid
+            sessionstat.description += x.uid
             await setObject(x, mycmd)
         }
         return 
@@ -98,6 +98,7 @@ async function myRules() {
             //console.log(mycmd)
             //console.log(x)
             await checkRule(x)
+            sessionstat.description += x.uid
             await setObject(x, mycmd)
         }
         return 
@@ -121,15 +122,15 @@ async function checkRule(myrule) {
                 if (myrule.source) {
                         if (objdata.source.length == 1) {
                                 console.log('Empty source in rule ' + rulechk.uid)
-                                let statmsg = ' rule ' + rulechk.uid + ' disabled with empty source '
-                                sessionstat.description += statmsg
+                                //let statmsg = ' rule ' + rulechk.uid + ' disabled with empty source '
+                                sessionstat.description += rulechk.uid
                                 await disableRule(myrule)
                         }
                 }
                 if (myrule.destination) {
                         if (objdata.destination.length == 1) {
                                 console.log('Empty destination in rule ' + rulechk.uid)
-                                let statmsg = ' rule ' + rulechk.uid + ' disabled with empty destination '
+                                let statmsg = rulechk.uid
                                 sessionstat.description += statmsg
                                 //let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
                                 //sessionstat.description += statmsg
@@ -389,7 +390,7 @@ return new Promise((resolve, reject) => {
         var myret = ''
                 if (res.statusCode) {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
-                sessionstat.description += ' ' + options.path + '->' + res.statusCode + ':' + res.statusMessage + ' ' 
+                sessionstat.description += '/' + options.path + '->' + res.statusCode + ':' + res.statusMessage + ' ' 
                 }
                 res.on('data', (d) => {
                         myret += d
