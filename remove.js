@@ -390,7 +390,7 @@ return new Promise((resolve, reject) => {
         var req = https.request(options, (res) => {
         var myret = ''
                 if (res.statusCode > 200) {
-                        sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.errorMessage + ' * ' 
+                        sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.statusMessage + ' * ' 
                         //sessionstat.description += myret
                 } else {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
