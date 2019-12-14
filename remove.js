@@ -206,7 +206,6 @@ async function garbagecollection(trash) {
                         sessionstat.description += ', ' + mylog
                 }
                 */
-        }
         //console.log(groupTypes)
         //console.log(groupRules)
         return
