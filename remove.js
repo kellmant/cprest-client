@@ -80,8 +80,8 @@ async function myGroups() {
     try {
         let mycmd = 'set-group'
         for (var x of objdata.group) {
-            console.log(mycmd)
-            console.log(x)
+            //console.log(mycmd)
+            //console.log(x)
             await setObject(x, mycmd)
         }
         return 
@@ -94,14 +94,14 @@ async function myRules() {
     try {
         let mycmd = 'set-access-rule'
         for (var x of objdata['access-rule']) {
-            console.log(mycmd)
-            console.log(x)
+            //console.log(mycmd)
+            //console.log(x)
             await checkRule(x)
             await setObject(x, mycmd)
         }
         return 
     } catch (err) {
-        console.log('Error in myGroups : ' + err)
+        console.log('Error in myRules : ' + err)
     }
 }
 
@@ -128,14 +128,14 @@ async function checkRule(myrule) {
                 if (myrule.destination) {
                         if (objdata.destination.length == 1) {
                                 console.log('Disable rule ' + rulechk.uid)
-                                let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
-                                sessionstat.description += statmsg
+                                //let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
+                                //sessionstat.description += statmsg
                                 await disableRule(myrule)
                         }
                 }
                 return new CPrule(objdata)
         } catch (err) {
-                console.log('error in showRule : ' + err)
+                console.log('error in checkRule : ' + err)
         }
 }
 
@@ -149,7 +149,7 @@ async function disableRule(myrule) {
                 mydate = new Date
                 rulechk.comments = 'Disabled on ' + mydate + ' by script'               
 		let objdata = {}
-                console.log('disable rule ' + rulechk.uid)
+                sessionstat.description += 'disable rule ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
@@ -164,13 +164,13 @@ async function myHosts() {
         for (var x of objdata.hosts) {
             let newdata = {}
             newdata.uid = x
-            console.log(mycmd)
-            console.log(newdata)
+            //console.log(mycmd)
+            //console.log(newdata)
             await setObject(newdata, mycmd)
         }
         return 
     } catch (err) {
-        console.log('Error in myGroups : ' + err)
+        console.log('Error in myHosts : ' + err)
     }
 }
 
