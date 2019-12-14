@@ -72,6 +72,11 @@ async function myRestore() {
             if (mycmd === 'set-access-rule') {
                     await checkRule(myact)
             }
+            if (myact.name) {
+                sessionstat.description += myact.name
+            } else {
+                sessionstat.description += myact.uid
+            }
             await setObject(myact, mycmd)
         }
         return 
@@ -124,7 +129,7 @@ async function enableRule(myrule) {
                 mydate = new Date
                 rulechk.comments = 'Enabled on ' + mydate + ' by script'                 
 		let objdata = {}
-                sessionstat.description += 'enabling rule ' + rulechk.uid
+                sessionstat.description += 'enabling ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
