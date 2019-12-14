@@ -238,6 +238,7 @@ async function checkObject(objarr) {
 		for (var x in objarr) {
 			let myobj = objarr[x]
 			mydata.uid = myobj
+			mydata['details-level'] = 'full'
                 	var setit = toApi.doPost(mydata, mycmd)
                 	let indat = await callOut(setit.options, setit.postData)
 			if (indat.object['ipv4-address'] === ip) {
