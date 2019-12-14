@@ -390,7 +390,7 @@ return new Promise((resolve, reject) => {
         var myret = ''
                 if (res.statusCode) {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
-                sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.statusMessage + ' - ' 
+                sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.statusMessage + ' * ' 
                 }
                 res.on('data', (d) => {
                         myret += d
