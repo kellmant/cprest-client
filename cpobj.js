@@ -49,7 +49,7 @@ const CPobj = class CheckPointObject {
         //    this.groups = x.groups
         if (x.tags.length > 0)
             var myarr = []
-            Object.keys(x.tags).forEach(key => {
+            Object.values(x.tags).forEach(key => {
                 myarr = myarr.concat(x.tags[key][name])
             });
             this.tags = myarr
