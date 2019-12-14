@@ -194,9 +194,9 @@ async function garbagecollection(trash) {
         Object.keys(groupTypes).forEach(mytype => {
                 console.log(mytype)
         });
-        for (var pkg of groupRules) {
-                console.log(groupRules[pkg])
-        }
+        Object.keys(groupRules).forEach(pkg => {
+                console.log(pkg)
+        })
         /**
                 if (item.name) {
                         sessionstat.description += ', ' + item.type + ' ' + item.name
