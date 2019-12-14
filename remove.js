@@ -196,7 +196,8 @@ async function garbagecollection(trash) {
         });
         Object.keys(groupRules).forEach(pkg => {
                 console.log(pkg)
-        })
+                console.log(groupRules.pkg)
+        });
         /**
                 if (item.name) {
                         sessionstat.description += ', ' + item.type + ' ' + item.name
