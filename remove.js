@@ -154,6 +154,7 @@ async function disableRule(myrule) {
                 //sessionstat.description += 'disable rule ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
+                sessionstat.description += objdata.Payload.message
                 return objdata
         } catch (err) {
                 console.log('error in disableRule : ' + err)
@@ -258,6 +259,7 @@ async function setObject(myobj, mycmd) {
 	try {
         var setit = toApi.doPost(myobj, mycmd)
         let indat = await callOut(setit.options, setit.postData)
+        sessionstat.description += indat['Response-Code']
 		return indat
 	} catch (err) {
 		console.log('error in setObject : ' + err)
