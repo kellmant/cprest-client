@@ -391,7 +391,7 @@ return new Promise((resolve, reject) => {
         var myret = ''
                 if (res.statusCode > 200) {
                         //sessionstat.description += options.path + '=>' + res.statusCode + ':' + res + ' * ' 
-                        process.stdout.write(res.message)
+                        sessionstat.description += JSON.stringify(res)
                 } else {
                 //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
                 sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.statusMessage + ' * ' 
