@@ -205,6 +205,8 @@ async function garbagecollection(trash) {
                 console.log(pkg)
                 Object.keys(groupNat[pkg]).forEach(rule => {
                         let netrule = groupNat[pkg][rule]
+                        delete netrule.type 
+                        delete netrule.package
                         console.log(JSON.stringify(netrule))
                         console.log(netrule.position)
                 });
