@@ -200,7 +200,7 @@ async function garbagecollection(trash) {
                         sessionstat.description += ' NAT - ' 
                         //console.log(mytype, groupTypes[mytype])
                 } else {
-                        sessionstat.description += ' ' + mytype + ' - ' + groupTypes[mytype]
+                        sessionstat.description += ' ' + mytype + ' - ' + groupTypes[mytype].name
                 }
                 //groupTypes.mytype = groupBy(groupTypes.mytype, )
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
