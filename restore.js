@@ -239,7 +239,7 @@ return new Promise((resolve, reject) => {
         var req = https.request(options, (res) => {
         var myret = ''
                 if (res.statusCode) {
-                        sessionstat.description += '/' + options.path + '->' + res.statusCode + ':' + res.statusMessage + ' ' 
+                        sessionstat.description += options.path + '=>' + res.statusCode + ':' + res.statusMessage + ' - ' 
                 }
                 res.on('data', (d) => {
                         myret += d
