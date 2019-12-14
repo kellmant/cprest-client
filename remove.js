@@ -119,15 +119,17 @@ async function checkRule(myrule) {
                 objdata = await callOut(setit.options, setit.postData)
                 if (myrule.source) {
                         if (objdata.source.length == 1) {
-                                console.log('Disable rule ' + rulechk.uid)
-                                let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
+                                console.log('Empty source in rule ' + rulechk.uid)
+                                let statmsg = ' rule ' + rulechk.uid + ' disabled with empty source '
                                 sessionstat.description += statmsg
                                 await disableRule(myrule)
                         }
                 }
                 if (myrule.destination) {
                         if (objdata.destination.length == 1) {
-                                console.log('Disable rule ' + rulechk.uid)
+                                console.log('Empty destination in rule ' + rulechk.uid)
+                                let statmsg = ' rule ' + rulechk.uid + ' disabled with empty destination '
+                                sessionstat.description += statmsg
                                 //let statmsg = ' rule ' + rulechk.uid + ' is DISABLED '
                                 //sessionstat.description += statmsg
                                 await disableRule(myrule)
@@ -149,7 +151,7 @@ async function disableRule(myrule) {
                 mydate = new Date
                 rulechk.comments = 'Disabled on ' + mydate + ' by script'               
 		let objdata = {}
-                sessionstat.description += 'disable rule ' + rulechk.uid
+                //sessionstat.description += 'disable rule ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
