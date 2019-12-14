@@ -69,7 +69,6 @@ async function myRestore() {
                 delete myact.cmd
             console.log(mycmd)
             console.log(myact)
-            sessionstat.description += ' ' + x.name 
             if (mycmd === 'set-access-rule') {
                     await checkRule(myact)
             }
@@ -107,9 +106,6 @@ async function checkRule(myrule) {
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 if (objdata.enabled == false) {
-                        console.log('rule ' + rulechk.uid + ' is ENABLED')
-                        let statmsg = ' rule ' + rulechk.uid + ' is ENABLED '
-                        sessionstat.description += statmsg
                         await enableRule(myrule)
                 }
                 return objdata
@@ -128,7 +124,7 @@ async function enableRule(myrule) {
                 mydate = new Date
                 rulechk.comments = 'Enabled on ' + mydate + ' by script'                 
 		let objdata = {}
-                console.log('enabling rule ' + rulechk.uid)
+                sessionstat.description += 'enabling rule ' + rulechk.uid
                 let setit = toApi.doPost(rulechk, mycmd)
                 objdata = await callOut(setit.options, setit.postData)
                 return objdata
@@ -242,8 +238,8 @@ async function callOut(options, postData) {
 return new Promise((resolve, reject) => {
         var req = https.request(options, (res) => {
         var myret = ''
-                if (res.statusCode > 200) {
-                process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
+                if (res.statusCode) {
+                        sessionstat.description += '/' + options.path + '->' + res.statusCode + ':' + res.statusMessage + ' ' 
                 }
                 res.on('data', (d) => {
                         myret += d
