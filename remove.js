@@ -222,13 +222,13 @@ async function garbagecollection(trash) {
                 //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         });
         Object.keys(groupNat).forEach(pkg => {
-                sessionstat.description += ' pkg ' + pkg +''
-                console.log(pkg)
+                //sessionstat.description += ' pkg ' + pkg +''
+                //console.log(pkg)
                 Object.keys(groupNat[pkg]).forEach(rule => {
                         let netrule = groupNat[pkg][rule]
                         delete netrule.type 
                         delete netrule.package
-                        sessionstat.description += netrule
+                        //sessionstat.description += netrule
                 });
         });
         /**
@@ -386,8 +386,9 @@ async function callOut(options, postData) {
 return new Promise((resolve, reject) => {
         var req = https.request(options, (res) => {
         var myret = ''
-                if (res.statusCode > 200) {
-                process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
+                if (res.statusCode) {
+                //process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
+                sessionstat.description += res.statusCode + ' : ' + res.statusMessage + ' ' + options.path
                 }
                 res.on('data', (d) => {
                         myret += d
