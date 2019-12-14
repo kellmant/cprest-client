@@ -21,7 +21,7 @@
 const CPobj = class CheckPointObject {
 	constructor(x) {
 		this.name = x.name || 'no name'
-		this.type = x.type || 'no type'
+		//this.type = x.type || 'no type'
 		//this.uid = x.uid || 'no uid'
 		if (x.comments) 
 		    this.comments = x.comments
@@ -47,7 +47,7 @@ const CPobj = class CheckPointObject {
             this.description = x.description
         //if (x.groups) 
         //    this.groups = x.groups
-        if (x.tags)
+        if (x.tags.length > 0)
             this.tags = x.tags
 	}
 	/** 
