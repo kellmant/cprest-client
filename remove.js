@@ -190,12 +190,18 @@ async function main() {
 
 async function garbagecollection(trash) {
         const groupTypes = groupBy(trash, 'type')
-        const groupRules = groupBy(groupTypes['nat-rule'], 'package')
+        const groupNat = []
+        //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         Object.keys(groupTypes).forEach(mytype => {
                 console.log(mytype)
+                if (mytype == 'nat-rule') {
+                        groupNat = groupBy(groupTypes.mytype, 'package')
+                }
+                //groupTypes.mytype = groupBy(groupTypes.mytype, )
+                //const groupRules = groupBy(groupTypes['nat-rule'], 'package')
         });
-        Object.keys(groupRules).forEach(pkg => {
-                console.log(pkg, groupRules[pkg])
+        Object.keys(groupNat).forEach(pkg => {
+                console.log(pkg, groupNat[pkg])
         });
         /**
                 if (item.name) {
