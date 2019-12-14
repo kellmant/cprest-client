@@ -63,7 +63,7 @@ const groupBy = (array, key) => {
           return result;
         }, {}); // empty object is the initial value for result object
       };
-      
+
 //console.log(objdata.group)
 console.log(objdata.garbage.length)
 if (objdata.garbage.length > 0) {
@@ -190,6 +190,7 @@ async function main() {
 
 async function garbagecollection(trash) {
         const groupTypes = groupBy(trash, 'type')
+        const groupRules = groupBy(groupTypes['nat-rule'], package)
         /**
         for (var item of trash) {
                 if (item.name) {
@@ -202,6 +203,7 @@ async function garbagecollection(trash) {
         }
         */
         console.log(groupTypes)
+        console.log(groupRules)
         return
         /**
 	startSession(mycred)
