@@ -195,7 +195,7 @@ async function garbagecollection(trash) {
                 console.log(type)
         }
         for (var pkg in groupRules) {
-                console.log(pkg)
+                console.log(groupRules[pkg])
         }
         /**
                 if (item.name) {
