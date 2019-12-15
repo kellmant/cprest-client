@@ -76,7 +76,7 @@ async function showObjects() {
         objarr = objarr.concat(objdata.objects)
         if (objdata.total > objdata.to) {
                 while (objdata.total >= mydata.offset) {
-                        console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
+                        console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await fun.cpapi(mydata, mycmd)
                         objarr = objarr.concat(objdata.objects)
