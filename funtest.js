@@ -52,7 +52,8 @@ const CPobj = require('./cpobj')
 let allobjs = []
 
 //main()
-console.dir(module)
+//console.dir(module)
+testme()
 
 async function main() {
 	startSession(mycred)
