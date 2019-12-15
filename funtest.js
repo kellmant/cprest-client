@@ -51,15 +51,12 @@ const CPobj = require('./cpobj')
 
 let allobjs = []
 
-//main()
-//console.dir(module)
-fun.testme()
 main()
 
 async function main() {
 	fun.startSession(mycred)
         .then(() => showObjects())
-        .then(() => fun.writeJson(allobjs, 'funout'))
+        .then(myobjs => fun.writeJson(myobjs, 'funout'))
 	.then(() => fun.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(fun.endSession)
@@ -86,9 +83,9 @@ async function showObjects() {
                         objarr = objarr.concat(objdata.objects)
                 }
         }
-        indexObjects(objarr)
-        console.log(fun.countOf(allobjs))
-        return allobjs
+        //indexObjects(objarr)
+        console.log(fun.countOf(objarr))
+        return objarr
     } catch (err) {
         console.log('error in showObjects : ' + err)
     }
@@ -100,19 +97,6 @@ function indexObjects(arr) {
         });
 }
 
-function groupBy(list, keyGetter) {
-        const map = new Map();
-        list.forEach((item) => {
-             const key = keyGetter(item);
-             const collection = map.get(key);
-             if (!collection) {
-                 map.set(key, [item]);
-             } else {
-                 collection.push(item);
-             }
-        });
-        return map;
-}
     
 
 
