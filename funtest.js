@@ -59,7 +59,7 @@ main()
 async function main() {
 	fun.startSession(mycred)
         .then(() => showObjects())
-        .then(() => fun.writeJson(allobjs))
+        .then(() => fun.writeJson(allobjs, 'funout'))
 	.then(() => fun.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(fun.endSession)
