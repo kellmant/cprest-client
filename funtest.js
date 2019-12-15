@@ -53,7 +53,7 @@ let allobjs = []
 
 //main()
 //console.dir(module)
-modfun.testme()
+modfun()
 
 async function main() {
 	startSession(mycred)
