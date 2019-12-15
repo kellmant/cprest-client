@@ -2,7 +2,7 @@
  */
 //process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 'use strict'
-const modfun = require('./fun')
+const fun = require('./fun')
 //const https = require('https')
 //const fs = require('fs');
 var limit = '500'
@@ -53,17 +53,16 @@ let allobjs = []
 
 //main()
 //console.dir(module)
-modfun.testme()
+fun.testme()
+main()
 
 async function main() {
-	startSession(mycred)
-	//.then(sessiontoken => setSession(sessiontoken))
+	fun.startSession(mycred)
         .then(() => showObjects())
-        //.then(mygroups => console.log(mygroups.get('host')))
-        .then(() => writeJson(allobjs))
-	.then(() => endSession())
+        .then(() => fun.writeJson(allobjs))
+	.then(() => fun.endSession())
 	.then(exitstat => console.log(exitstat))
-	.catch(endSession)
+	.catch(fun.endSession)
 }
 
 async function showObjects() {
