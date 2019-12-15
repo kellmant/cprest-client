@@ -25,18 +25,6 @@ const mycred = require('./auth/mycpauth')
  * @property {Boolean} show-hits
  */
 
-/**
- * Variable required from auth/mycpauth.json
- * @params {Object} credentials - auth/mycpauth.json
- * @example 
- * create auth/mycpauth.json file
- * {
- *		"user": "apiuser",
- *		"password": "PASSWORD"
- * }
- */
-const mycred = require('./auth/mycpauth')
-
 //const CPrule = require('./cprule')
 const limit = 500
 
