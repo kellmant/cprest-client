@@ -66,35 +66,32 @@ async function main() {
 }
 
 async function showObjects() {
-        try {
-                let mycmd = 'show-objects'                
-                let mydata = {}
-		var objdata = {}
-		var objarr = []
-                mydata.offset = 0
-                mydata['details-level'] = details
-                mydata.limit = limit
-                console.log('getting all objects')
-                let setit = toApi.doPost(mydata, mycmd)
-                objdata = await fun.callOut(setit.options, setit.postData)
-                objarr = objarr.concat(objdata.objects)
-                if (objdata.total > objdata.to) {
-                        while (objdata.total >= mydata.offset) {
-                                console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
-                                console.log(fun.countOf(objarr) + ' objects in build array')
-                                mydata.offset = Number(objdata.to)
-                                setit = toApi.doPost(mydata, mycmd)
-                                objdata = await callOut(setit.options, setit.postData)
-                                objarr = objarr.concat(objdata.objects)
-                        }
+    try {
+        let mycmd = 'show-objects'                
+        let mydata = {}
+	var objdata = {}
+	var objarr = []
+        mydata.offset = 0
+        mydata['details-level'] = details
+        mydata.limit = limit
+        console.log('getting all objects')
+        objdata = await fun.cpapi(mydata, mycmd)
+        objarr = objarr.concat(objdata.objects)
+        if (objdata.total > objdata.to) {
+                while (objdata.total >= mydata.offset) {
+                        console.log('From ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' indexed')
+                        console.log(fun.countOf(objarr) + ' objects in build array')
+                        mydata.offset = Number(objdata.to)
+                        objdata = await fun.cpapi(mydata, mycmd)
+                        objarr = objarr.concat(objdata.objects)
                 }
-                indexObjects(objarr)
-                console.log(fun.countOf(allobjs))
-                //const grouped = groupBy(objarr, obj => obj.type)
-                return allobjs
-        } catch (err) {
-                console.log('error in showObjects : ' + err)
         }
+        indexObjects(objarr)
+        console.log(fun.countOf(allobjs))
+        return allobjs
+    } catch (err) {
+        console.log('error in showObjects : ' + err)
+    }
 }
 
 function indexObjects(arr) {

@@ -29,6 +29,21 @@ async function startSession(myauth) {
 			console.log('error in startSession :' + err)
 	}
 }
+
+/** 
+ * accept post data and command and send API call
+ * return post data
+ * 
+ * */
+async function cpapi(mydata, mycmd) {
+    try {
+        let setit = toApi.doPost(mydata, mycmd)
+        return await callOut(setit.options, setit.postData)
+    } catch (err) {
+            console.log('error in cpapi : ' + err)
+    }
+}
+
 /**
  * set a description before you publish you changes
  * to the check point API
@@ -136,12 +151,13 @@ function sleep(ms) {
 
 module.exports = {
     startSession,
+    cpapi,
     setDescription,
     pubSession,
     endSession,
     callOut,
     writeJson,
     countOf,
-    testme: testme,
+    testme,
     sleep
 }
