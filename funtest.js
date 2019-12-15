@@ -26,7 +26,7 @@ var details = 'full'
  *	}
  * }
  */
-const myapisite = require('./auth/mycpapi')
+//const myapisite = require('./auth/mycpapi')
 
 /**
  * Variable required from auth/mycpauth.json
@@ -45,8 +45,8 @@ const mycred = require('./auth/mycpauth')
  * @class
  *
  */
-const CpApiClass = require('./cpclass')
-const toApi = new CpApiClass(myapisite.chkp)
+//const CpApiClass = require('./cpclass')
+//const toApi = new CpApiClass(myapisite.chkp)
 const CPobj = require('./cpobj')
 
 let allobjs = []

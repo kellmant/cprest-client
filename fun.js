@@ -6,7 +6,9 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const https = require('https')
 const fs = require('fs');
 //const CpApiClass = require('./cpclass')
-
+const CpApiClass = require('./cpclass')
+const myapisite = require('./auth/mycpapi')
+const toApi = new CpApiClass(myapisite.chkp)
 // Check Point API session auth and token management
 /**
  * Create an authenticated session with the Check Point API
