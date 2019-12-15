@@ -69,6 +69,7 @@ async function main() {
 
 async function showPackages() {
     try {
+        var mydata = {}
         var mycmd = 'show-packages'                
 	var objdata = {}
         var objarr = []
@@ -88,6 +89,6 @@ async function showPackages() {
         }
         return objtypes
     } catch (err) {
-        console.log('error in showObjects : ' + err)
+        console.log('error in showPackages : ' + err)
         }
 }
