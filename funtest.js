@@ -83,8 +83,8 @@ async function showObjects() {
                 }
         }
         //indexObjects(objarr)
-        console.log(fun.countOf(objarr))
-        return objarr
+        let objtypes = fun.groupBy(objarr, 'type')
+        return objtypes
     } catch (err) {
         console.log('error in showObjects : ' + err)
     }
