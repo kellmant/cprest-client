@@ -44,7 +44,7 @@ const mycred = require('./auth/mycpauth')
 const CpApiClass = require('./cpclass')
 const toApi = new CpApiClass(myapisite.chkp)
 const objdata = require('./' + process.argv[2])
-const CPrule = require('./cprule')
+const CPrule = require('./cprule').default
 
 const setlog = 'set-session'
 const sessionstat = {}
