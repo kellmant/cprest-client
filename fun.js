@@ -140,6 +140,6 @@ module.exports = {
     callOut,
     writeJson,
     countOf,
-    testme,
+    testme: testme,
     sleep
 }
