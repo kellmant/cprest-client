@@ -123,6 +123,9 @@ function countOf(obj) {
     return Object.keys(obj).length
 }
 
+function testme() {
+    console.log('testme responded')
+}
 
 // easy way to wait
 function sleep(ms) {
@@ -137,5 +140,6 @@ module.exports = {
     callOut,
     writeJson,
     countOf,
+    testme,
     sleep
 }
