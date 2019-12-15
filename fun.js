@@ -7,6 +7,24 @@ const https = require('https')
 const fs = require('fs');
 //const CpApiClass = require('./cpclass')
 const CpApiClass = require('./cpclass')
+/**
+ * Variable required from auth/mycpapi.json file
+ * @param {Object[]} myapisite - Setup API hostname
+ * @param {Object} myapisite.apihost - mycpapi.json
+ * @example
+ * create auth/mycpapi.json file
+ * {
+ *	"chkp": {
+ *		"host": "SET.YOUR.HOSTNAME",
+ *		"port": "443",
+ *		"path": "/web_api",
+ *		"method": "POST",
+ *		"headers": {
+ *			"Content-Type": "application/json"
+ *		}
+ *	}
+ * }
+ */
 const myapisite = require('./auth/mycpapi')
 const toApi = new CpApiClass(myapisite.chkp)
 // Check Point API session auth and token management
