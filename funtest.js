@@ -52,7 +52,7 @@ const CPobj = require('./cpobj')
 let allobjs = []
 
 //main()
-console.log(module.exports)
+console.dir(module)
 
 async function main() {
 	startSession(mycred)
