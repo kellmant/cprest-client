@@ -53,28 +53,12 @@ async function startSession(myauth) {
  * return post data
  * 
  * */
-async function cpapi(mydata, mycmd) {
+async function apicall(mydata, mycmd) {
     try {
         let setit = toApi.doPost(mydata, mycmd)
         return await callOut(setit.options, setit.postData)
     } catch (err) {
             console.log('error in cpapi : ' + err)
-    }
-}
-
-/**
- * set a description before you publish you changes
- * to the check point API
- */
-async function setDescription(sessionstat) {
-    try {
-        let mycmd = 'set-session'
-        let setit = toApi.doPost(sessionstat, mycmd)
-        let objreturn = await callOut(setit.options, setit.postData)
-        console.log(sessionstat.description)
-        return objreturn
-    } catch (err) {
-            console.log('error in setDescription : ' + err)
     }
 }
 
@@ -158,10 +142,6 @@ function countOf(obj) {
     return Object.keys(obj).length
 }
 
-function testme() {
-    console.log('testme responded')
-}
-
 // Accepts the array and key
 const groupBy = (array, key) => {
     // Return the end result
@@ -182,14 +162,10 @@ function sleep(ms) {
 
 module.exports = {
     startSession,
-    cpapi,
-    setDescription,
+    apicall,
     pubSession,
     endSession,
-    callOut,
     writeJson,
     countOf,
-    testme,
-    groupBy,
-    sleep
+    groupBy
 }
