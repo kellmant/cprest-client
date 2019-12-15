@@ -87,7 +87,7 @@ async function showPackages() {
                         objarr = objarr.concat(objdata.objects)
                 }
         }
-        return objtypes
+        return objarr
     } catch (err) {
         console.log('error in showPackages : ' + err)
         }
