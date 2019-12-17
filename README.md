@@ -255,7 +255,7 @@ Rule properties
 
 * [CPrule](#CPrule)
     * [new CPrule(uid, layer)](#new_CPrule_new)
-    * [.dump(dump)](#CPrule+dump) ⇒ [<code>rule</code>](#rule)
+    * [.dump()](#CPrule+dump) ⇒ [<code>rule</code>](#rule)
     * [.prep()](#CPrule+prep) ⇒ [<code>rule</code>](#rule)
     * [.nowarn()](#CPrule+nowarn)
     * [.overwrite()](#CPrule+overwrite)
@@ -266,21 +266,16 @@ Rule properties
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | <code>rule.uid</code> | this is a uid |
-| layer | <code>rule.layer</code> | this is a layer |
+| uid | [<code>rule</code>](#rule) | the uid of the rule |
+| layer | [<code>rule</code>](#rule) | security policy layer of the rule |
 
 <a name="CPrule+dump"></a>
 
-### cPrule.dump(dump) ⇒ [<code>rule</code>](#rule)
-dump object properties
+### cPrule.dump() ⇒ [<code>rule</code>](#rule)
+show object properties
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
 **Returns**: [<code>rule</code>](#rule) - The value of the new object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| dump | <code>function</code> | show object properties |
-
 <a name="CPrule+prep"></a>
 
 ### cPrule.prep() ⇒ [<code>rule</code>](#rule)

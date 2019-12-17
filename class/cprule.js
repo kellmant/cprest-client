@@ -17,8 +17,8 @@
  
  /**
   * Rule properties
-  * @param {rule.uid} uid this is a uid
-  * @param {rule.layer} layer this is a layer
+  * @param {rule} uid the uid of the rule
+  * @param {rule} layer security policy layer of the rule
   * @class 
   */
 const CPrule = class CheckPointRule {
@@ -45,8 +45,7 @@ const CPrule = class CheckPointRule {
             this.tags = x.tags
 	}
 	/** 
-	 * dump object properties
-	 * @param {Function} dump show object properties
+	 * show object properties
 	 * @return {rule} The value of the new object
 	 */
 	dump () {	
