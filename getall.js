@@ -52,8 +52,8 @@ async function showObjects() {
                 }
         }
         //indexObjects(objarr)
-        //let objtypes = cp.groupBy(, 'type')
-        return objarr
+        let objtypes = cp.groupBy(objarr, 'type')
+        return objtypes
     } catch (err) {
         console.log('error in showObjects : ' + err)
     }
@@ -63,4 +63,5 @@ function indexObjects(arr) {
         Object.keys(arr).forEach(obj => {
                 allobjs = allobjs.concat(new CPobj(arr[obj]))
         });
+        return allobjs
 }
