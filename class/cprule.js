@@ -17,6 +17,8 @@
  
  /**
   * Rule properties
+  * @param {rule.uid} uid this is a uid
+  * @param {rule.layer} layer this is a layer
   * @class 
   */
 const CPrule = class CheckPointRule {

@@ -254,10 +254,20 @@ Rule properties
 **Kind**: global class  
 
 * [CPrule](#CPrule)
+    * [new CPrule(uid, layer)](#new_CPrule_new)
     * [.dump(dump)](#CPrule+dump) ⇒ [<code>rule</code>](#rule)
     * [.prep()](#CPrule+prep) ⇒ [<code>rule</code>](#rule)
     * [.nowarn()](#CPrule+nowarn)
     * [.overwrite()](#CPrule+overwrite)
+
+<a name="new_CPrule_new"></a>
+
+### new CPrule(uid, layer)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>rule.uid</code> | this is a uid |
+| layer | <code>rule.layer</code> | this is a layer |
 
 <a name="CPrule+dump"></a>
 
