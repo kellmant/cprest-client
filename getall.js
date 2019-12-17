@@ -1,7 +1,7 @@
 /** cprest client access for API
  */
 'use strict'
-const cp = require('./cp')
+const cp = require('./fun/cp')
 const CPobj = require('./class/cpobj')
 var limit = '500'
 var details = 'full'

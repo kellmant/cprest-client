@@ -11,6 +11,9 @@
 ## Constants
 
 <dl>
+<dt><a href="#mycred">mycred</a></dt>
+<dd><p>Variable required from auth/mycpauth.json</p>
+</dd>
 <dt><a href="#myapisite">myapisite</a></dt>
 <dd><p>API Site configuration required from auth/mycpapi.json file</p>
 </dd>
@@ -22,6 +25,9 @@
 ## Functions
 
 <dl>
+<dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code><a href="#rule">rule</a></code></dt>
+<dd><p>Determine where a set of objects is used in Check Point policies</p>
+</dd>
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
@@ -64,6 +70,11 @@
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
+<dt><a href="#access-rule">access-rule</a> : <code>Object</code></dt>
+<dd><p>Properties for accessing specific check point rules</p>
+</dd>
+<dt><a href="#rule">rule</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -240,6 +251,21 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | [<code>options</code>](#options) | API function to be called |
 
+<a name="mycred"></a>
+
+## mycred
+Variable required from auth/mycpauth.json
+
+**Kind**: global constant  
+**Params**: <code>Object</code> credentials - auth/mycpauth.json  
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
+}
+```
 <a name="myapisite"></a>
 
 ## myapisite
@@ -277,6 +303,19 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
+<a name="getRule"></a>
+
+## getRule(uid, layer) ⇒ [<code>rule</code>](#rule)
+Determine where a set of objects is used in Check Point policies
+
+**Kind**: global function  
+**Returns**: [<code>rule</code>](#rule) - the rule properties as an object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>String</code> | the UID of the rule |
+| layer | <code>String</code> | the name or UID of the policy layer that holds the rule |
+
 <a name="startSession"></a>
 
 ## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
@@ -521,6 +560,56 @@ Define API call object options and data
 	  }
 }
 ```
+<a name="access-rule"></a>
+
+## access-rule : <code>Object</code>
+Properties for accessing specific check point rules
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| layer | <code>String</code> | Layer that the rule belongs to identified by the name or UID. |
+| uid | <code>String</code> | Object unique identifier. |
+| name | <code>String</code> | Object unique name. |
+| rule-number | <code>Number</code> | Rule number in policy layer. |
+| show-hits | <code>Boolean</code> | set to true for rule activity counter |
+
+<a name="rule"></a>
+
+## rule : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| action | <code>Object</code> | 
+| action-settings | <code>Object</code> | 
+| comments | <code>String</code> | 
+| content | <code>Array</code> | 
+| content-direction | <code>String</code> | 
+| content-negate | <code>Boolean</code> | 
+| custom-fields | <code>Object</code> | 
+| destination | <code>Array</code> | 
+| destination-negate | <code>Boolean</code> | 
+| domain | <code>Object</code> | 
+| enabled | <code>Boolean</code> | 
+| hits | <code>Object</code> | 
+| install-on | <code>Array</code> | 
+| layer | <code>String</code> | 
+| meta-info | <code>Object</code> | 
+| name | <code>String</code> | 
+| service | <code>Array</code> | 
+| service-negate | <code>Boolean</code> | 
+| source | <code>Array</code> | 
+| source-negate | <code>Boolean</code> | 
+| time | <code>Array</code> | 
+| track | <code>Object</code> | 
+| type | <code>String</code> | 
+| uid | <code>String</code> | 
+| vpn | <code>Array</code> | 
+
 <a name="allobjs"></a>
 
 ## allobjs : <code>Object</code>

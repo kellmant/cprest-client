@@ -17,12 +17,12 @@ const mycred = require('./auth/mycpauth')
 
 /** 
  * Properties for accessing specific check point rules
- * @typedef {Object} rulechk
+ * @typedef {Object} access-rule
  * @property {String} layer Layer that the rule belongs to identified by the name or UID.
  * @property {String} uid Object unique identifier.
  * @property {String} name Object unique name.
  * @property {Number} rule-number Rule number in policy layer. 
- * @property {Boolean} show-hits
+ * @property {Boolean} show-hits set to true for rule activity counter
  */
 
 //const CPrule = require('./cprule')
@@ -67,7 +67,7 @@ async function main() {
  * @property {Array} vpn
  */
 
-async function showPackages() {
+async function getPackages() {
     try {
         var mydata = {}
         var mycmd = 'show-packages'                
@@ -93,7 +93,7 @@ async function showPackages() {
         }
 }
 
-async function showLayers() {
+async function getLayers() {
         try {
             var mydata = {}
             var mycmd = 'show-access-layers'                
@@ -103,6 +103,35 @@ async function showLayers() {
             mydata['details-level'] = 'standard'
             mydata.limit = limit
             console.log('getting layers')
+            objdata = await cp.apicall(mydata, mycmd)
+            objarr = objarr.concat(objdata)
+            if (objdata.total > objdata.to) {
+                    while (objdata.total >= mydata.offset) {
+                            console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                            mydata.offset = Number(objdata.to)
+                            objdata = await cp.apicall(mydata, mycmd)
+                            objarr = objarr.concat(objdata)
+                    }
+            }
+            return objarr
+        } catch (err) {
+            console.log('error in showPackages : ' + err)
+    }
+} 
+ /**
+  * Determine where a set of objects is used in Check Point policies
+  * @param {String} uid the UID of the rule
+  * @param {String} layer the name or UID of the policy layer that holds the rule
+  * @returns {rule} the rule properties as an object
+  */ 
+async function getRule(uid, layer) {
+        try {
+            var mydata = {}
+            var mycmd = 'show-access-rule'                
+            var objdata = {}
+            mydata['details-level'] = 'standard'
+            mydata.uid = uid
+            mydata.layer = layer
             objdata = await cp.apicall(mydata, mycmd)
             objarr = objarr.concat(objdata)
             if (objdata.total > objdata.to) {
