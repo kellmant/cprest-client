@@ -17,8 +17,9 @@
  
  /**
   * Rule properties
-  * @param {rule} uid the uid of the rule
-  * @param {rule} layer security policy layer of the rule
+  * @param {String} uid the uid of the rule
+  * @param {String} layer security policy layer of the rule
+  * @returns {rule}
   * @class 
   */
 const CPrule = class CheckPointRule {
@@ -45,35 +46,19 @@ const CPrule = class CheckPointRule {
             this.tags = x.tags
 	}
 	/** 
-	 * show object properties
-	 * @return {rule} The value of the new object
+	 * if at 1, any further action would expose or break policy
+	 * @return {Number} The number of target objects
 	 */
-	dump () {	
+	source () {	
 		return this
     }
  /** 
  * Ignore errors and prepare the object for POST operations in Check Point 
- * @return {rule} The Check Point Object without warnings
+ * @return {Number} number of target objects
  */
-	prep () {
-		delete this.type
-		delete this.uid
+	destination () {
 		return this
     }
- /** 
- * Ignore warnings when posting changes to the object 
- * @param {Boolean} - ignore-warnings set to true to continue with warnings about the object 
- */
-	nowarn () {
-        this['ignore-warnings'] = true
-	}
-/** 
- * overwrite object if exists 
- * @param {Boolean} - set-if-exists set to true to overwrite object properties 
- */
-	overwrite () {
-        this['set-if-exists'] = true
-	}
 }
 
 module.exports = CPrule

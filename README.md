@@ -255,10 +255,8 @@ Rule properties
 
 * [CPrule](#CPrule)
     * [new CPrule(uid, layer)](#new_CPrule_new)
-    * [.dump()](#CPrule+dump) ⇒ [<code>rule</code>](#rule)
-    * [.prep()](#CPrule+prep) ⇒ [<code>rule</code>](#rule)
-    * [.nowarn()](#CPrule+nowarn)
-    * [.overwrite()](#CPrule+overwrite)
+    * [.source()](#CPrule+source) ⇒ <code>Number</code>
+    * [.destination()](#CPrule+destination) ⇒ <code>Number</code>
 
 <a name="new_CPrule_new"></a>
 
@@ -266,45 +264,23 @@ Rule properties
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | [<code>rule</code>](#rule) | the uid of the rule |
-| layer | [<code>rule</code>](#rule) | security policy layer of the rule |
+| uid | <code>String</code> | the uid of the rule |
+| layer | <code>String</code> | security policy layer of the rule |
 
-<a name="CPrule+dump"></a>
+<a name="CPrule+source"></a>
 
-### cPrule.dump() ⇒ [<code>rule</code>](#rule)
-show object properties
+### cPrule.source() ⇒ <code>Number</code>
+if at 1, any further action would expose or break policy
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
-**Returns**: [<code>rule</code>](#rule) - The value of the new object  
-<a name="CPrule+prep"></a>
+**Returns**: <code>Number</code> - The number of target objects  
+<a name="CPrule+destination"></a>
 
-### cPrule.prep() ⇒ [<code>rule</code>](#rule)
+### cPrule.destination() ⇒ <code>Number</code>
 Ignore errors and prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
-**Returns**: [<code>rule</code>](#rule) - The Check Point Object without warnings  
-<a name="CPrule+nowarn"></a>
-
-### cPrule.nowarn()
-Ignore warnings when posting changes to the object
-
-**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
-
-<a name="CPrule+overwrite"></a>
-
-### cPrule.overwrite()
-overwrite object if exists
-
-**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
-
+**Returns**: <code>Number</code> - number of target objects  
 <a name="myapisite"></a>
 
 ## myapisite
