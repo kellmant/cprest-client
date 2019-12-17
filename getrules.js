@@ -96,7 +96,7 @@ async function showPackages() {
 async function showLayers() {
         try {
             var mydata = {}
-            var mycmd = 'show-layers'                
+            var mycmd = 'show-access-layers'                
             var objdata = {}
             var objarr = []
             mydata.offset = 0
