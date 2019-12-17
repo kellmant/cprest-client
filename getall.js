@@ -2,6 +2,7 @@
  */
 'use strict'
 const cp = require('./cp')
+const CPobj = require('./class/cpobj')
 var limit = '500'
 var details = 'full'
 
@@ -50,8 +51,8 @@ async function showObjects() {
                         objarr = objarr.concat(objdata.objects)
                 }
         }
-        //indexObjects(objarr)
-        let objtypes = cp.groupBy(objarr, 'type')
+        indexObjects(objarr)
+        let objtypes = cp.groupBy(allobjs, 'type')
         return objtypes
     } catch (err) {
         console.log('error in showObjects : ' + err)
