@@ -32,7 +32,7 @@ main()
 
 async function main() {
 	cp.startSession(mycred)
-        .then(() => showPackages())
+        .then(() => showLayers())
         .then(myout => cp.writeJson(myout, 'rules'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
@@ -92,3 +92,29 @@ async function showPackages() {
         console.log('error in showPackages : ' + err)
         }
 }
+
+async function showLayers() {
+        try {
+            var mydata = {}
+            var mycmd = 'show-layers'                
+            var objdata = {}
+            var objarr = []
+            mydata.offset = 0
+            mydata['details-level'] = 'standard'
+            mydata.limit = limit
+            console.log('getting layers')
+            objdata = await cp.apicall(mydata, mycmd)
+            objarr = objarr.concat(objdata)
+            if (objdata.total > objdata.to) {
+                    while (objdata.total >= mydata.offset) {
+                            console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                            mydata.offset = Number(objdata.to)
+                            objdata = await cp.apicall(mydata, mycmd)
+                            objarr = objarr.concat(objdata)
+                    }
+            }
+            return objarr
+        } catch (err) {
+            console.log('error in showPackages : ' + err)
+    }
+    
