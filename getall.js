@@ -52,8 +52,8 @@ async function showObjects() {
                 }
         }
         indexObjects(objarr)
-        let objtypes = cp.groupBy(allobjs, 'type')
-        return objtypes
+        //let objtypes = cp.groupBy(, 'type')
+        return allobjs
     } catch (err) {
         console.log('error in showObjects : ' + err)
     }
