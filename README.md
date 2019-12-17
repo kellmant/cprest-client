@@ -6,14 +6,14 @@
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
 <dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
 </dd>
+<dt><a href="#CPrule">CPrule</a></dt>
+<dd><p>Rule properties</p>
+</dd>
 </dl>
 
 ## Constants
 
 <dl>
-<dt><a href="#mycred">mycred</a></dt>
-<dd><p>Variable required from auth/mycpauth.json</p>
-</dd>
 <dt><a href="#myapisite">myapisite</a></dt>
 <dd><p>API Site configuration required from auth/mycpapi.json file</p>
 </dd>
@@ -25,9 +25,6 @@
 ## Functions
 
 <dl>
-<dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code><a href="#rule">rule</a></code></dt>
-<dd><p>Determine where a set of objects is used in Check Point policies</p>
-</dd>
 <dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
@@ -70,11 +67,9 @@
 <dt><a href="#options">options</a> : <code>Object</code></dt>
 <dd><p>Define API call object options and data</p>
 </dd>
-<dt><a href="#access-rule">access-rule</a> : <code>Object</code></dt>
-<dd><p>Properties for accessing specific check point rules</p>
-</dd>
 <dt><a href="#rule">rule</a> : <code>Object</code></dt>
-<dd></dd>
+<dd><p>Process Check Point rule as a JSON object</p>
+</dd>
 <dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
 <dd><p>allobjs object data format</p>
 </dd>
@@ -251,21 +246,60 @@ Prepare an HTTP DELETE for the given APU function
 | --- | --- | --- |
 | appfunc | [<code>options</code>](#options) | API function to be called |
 
-<a name="mycred"></a>
+<a name="CPrule"></a>
 
-## mycred
-Variable required from auth/mycpauth.json
+## CPrule
+Rule properties
 
-**Kind**: global constant  
-**Params**: <code>Object</code> credentials - auth/mycpauth.json  
-**Example**  
-```js
-create auth/mycpauth.json file
-{
-		"user": "apiuser",
-		"password": "PASSWORD"
-}
-```
+**Kind**: global class  
+
+* [CPrule](#CPrule)
+    * [.dump(dump)](#CPrule+dump) ⇒ [<code>rule</code>](#rule)
+    * [.prep()](#CPrule+prep) ⇒ [<code>rule</code>](#rule)
+    * [.nowarn()](#CPrule+nowarn)
+    * [.overwrite()](#CPrule+overwrite)
+
+<a name="CPrule+dump"></a>
+
+### cPrule.dump(dump) ⇒ [<code>rule</code>](#rule)
+dump object properties
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+**Returns**: [<code>rule</code>](#rule) - The value of the new object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| dump | <code>function</code> | show object properties |
+
+<a name="CPrule+prep"></a>
+
+### cPrule.prep() ⇒ [<code>rule</code>](#rule)
+Ignore errors and prepare the object for POST operations in Check Point
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+**Returns**: [<code>rule</code>](#rule) - The Check Point Object without warnings  
+<a name="CPrule+nowarn"></a>
+
+### cPrule.nowarn()
+Ignore warnings when posting changes to the object
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
+
+<a name="CPrule+overwrite"></a>
+
+### cPrule.overwrite()
+overwrite object if exists
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
+
 <a name="myapisite"></a>
 
 ## myapisite
@@ -303,19 +337,6 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
-<a name="getRule"></a>
-
-## getRule(uid, layer) ⇒ [<code>rule</code>](#rule)
-Determine where a set of objects is used in Check Point policies
-
-**Kind**: global function  
-**Returns**: [<code>rule</code>](#rule) - the rule properties as an object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| uid | <code>String</code> | the UID of the rule |
-| layer | <code>String</code> | the name or UID of the policy layer that holds the rule |
-
 <a name="startSession"></a>
 
 ## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
@@ -560,55 +581,26 @@ Define API call object options and data
 	  }
 }
 ```
-<a name="access-rule"></a>
+<a name="rule"></a>
 
-## access-rule : <code>Object</code>
-Properties for accessing specific check point rules
+## rule : <code>Object</code>
+Process Check Point rule as a JSON object
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| layer | <code>String</code> | Layer that the rule belongs to identified by the name or UID. |
-| uid | <code>String</code> | Object unique identifier. |
-| name | <code>String</code> | Object unique name. |
-| rule-number | <code>Number</code> | Rule number in policy layer. |
-| show-hits | <code>Boolean</code> | set to true for rule activity counter |
-
-<a name="rule"></a>
-
-## rule : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| action | <code>Object</code> | 
-| action-settings | <code>Object</code> | 
-| comments | <code>String</code> | 
-| content | <code>Array</code> | 
-| content-direction | <code>String</code> | 
-| content-negate | <code>Boolean</code> | 
-| custom-fields | <code>Object</code> | 
-| destination | <code>Array</code> | 
-| destination-negate | <code>Boolean</code> | 
-| domain | <code>Object</code> | 
-| enabled | <code>Boolean</code> | 
-| hits | <code>Object</code> | 
-| install-on | <code>Array</code> | 
-| layer | <code>String</code> | 
-| meta-info | <code>Object</code> | 
-| name | <code>String</code> | 
-| service | <code>Array</code> | 
-| service-negate | <code>Boolean</code> | 
-| source | <code>Array</code> | 
-| source-negate | <code>Boolean</code> | 
-| time | <code>Array</code> | 
-| track | <code>Object</code> | 
-| type | <code>String</code> | 
-| uid | <code>String</code> | 
-| vpn | <code>Array</code> | 
+| comments | <code>String</code> | leave tag or UID of any operations to mark the rule as being API managed |
+| destination | <code>Array</code> | an array of destinations. Never an empty object |
+| enabled | <code>Boolean</code> | true/false the rule is active in the policy |
+| hits | <code>Object</code> | number of times this rule has been enforced on a gateway |
+| install-on | <code>Array</code> | target security gateways that enforce this policy |
+| layer | <code>String</code> | the security policy layer the rule is in |
+| name | <code>String</code> | name of the rule |
+| source | <code>Array</code> | an array of source targets. Never and empty object |
+| type | <code>String</code> | the type of object |
+| uid | <code>String</code> | the unique id of this rule in the layer |
 
 <a name="allobjs"></a>
 
