@@ -51,9 +51,9 @@ async function showObjects() {
                         objarr = objarr.concat(objdata.objects)
                 }
         }
-        indexObjects(objarr)
+        //indexObjects(objarr)
         //let objtypes = cp.groupBy(, 'type')
-        return allobjs
+        return objarr
     } catch (err) {
         console.log('error in showObjects : ' + err)
     }
