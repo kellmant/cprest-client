@@ -117,4 +117,4 @@ async function showLayers() {
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
-    
+}    
