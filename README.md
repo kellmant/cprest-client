@@ -257,7 +257,7 @@ Rule properties
     * [new CPrule(uid, layer)](#new_CPrule_new)
     * [.source()](#CPrule+source) ⇒ <code>Number</code>
     * [.destination()](#CPrule+destination) ⇒ <code>Number</code>
-    * [.enabled(state)](#CPrule+enabled) ⇒ [<code>rule</code>](#rule)
+    * [.enabled(true|fale)](#CPrule+enabled) ⇒ [<code>rule</code>](#rule)
 
 <a name="new_CPrule_new"></a>
 
@@ -288,14 +288,14 @@ and still leave a target in the destination
 **Returns**: <code>Number</code> - number of target objects  
 <a name="CPrule+enabled"></a>
 
-### cPrule.enabled(state) ⇒ [<code>rule</code>](#rule)
+### cPrule.enabled(true|fale) ⇒ [<code>rule</code>](#rule)
 enable or disable the rule
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| state | <code>Boolean</code> | true/false on the rule enabled status |
+| true|fale | <code>Boolean</code> | true/false on the rule enabled status |
 
 <a name="myapisite"></a>
 

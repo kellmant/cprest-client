@@ -65,7 +65,7 @@ const CPrule = class CheckPointRule {
 	}
 /**
  * enable or disable the rule
- * @param {Boolean} state true/false on the rule enabled status
+ * @param {Boolean} true|fale true/false on the rule enabled status
  * @return {rule}
  */
 	enabled (x) {
