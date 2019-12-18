@@ -257,6 +257,7 @@ Rule properties
     * [new CPrule(uid, layer)](#new_CPrule_new)
     * [.source()](#CPrule+source) ⇒ <code>Number</code>
     * [.destination()](#CPrule+destination) ⇒ <code>Number</code>
+    * [.hits()](#CPrule+hits) ⇒ <code>Number</code>
     * [.enabled(true|fale)](#CPrule+enabled) ⇒ [<code>rule</code>](#rule)
 
 <a name="new_CPrule_new"></a>
@@ -286,6 +287,14 @@ and still leave a target in the destination
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
 **Returns**: <code>Number</code> - number of target objects  
+<a name="CPrule+hits"></a>
+
+### cPrule.hits() ⇒ <code>Number</code>
+Check to see that hit count is used at all
+if the value is not 0 send warning on potential use
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+**Returns**: <code>Number</code> - rule hit count  
 <a name="CPrule+enabled"></a>
 
 ### cPrule.enabled(true|fale) ⇒ [<code>rule</code>](#rule)

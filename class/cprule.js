@@ -64,6 +64,16 @@ const CPrule = class CheckPointRule {
 		return this
 	}
 /**
+* Check to see that hit count is used at all
+* if the value is not 0 send warning on potential use
+* @return {Number} rule hit count
+*  
+*/
+	hits () {
+		return this.hits.value
+	}
+
+/**
  * enable or disable the rule
  * @param {Boolean} true|fale true/false on the rule enabled status
  * @return {rule}
