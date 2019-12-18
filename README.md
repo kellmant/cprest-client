@@ -25,7 +25,7 @@ return post data</p>
 <dt><a href="#pubSession">pubSession()</a></dt>
 <dd><p>publish changes to Check Point API</p>
 </dd>
-<dt><a href="#endSession expire token and end API session">endSession expire token and end API session()</a></dt>
+<dt><a href="#endSession">endSession()</a></dt>
 <dd><p>end session and expire token from header</p>
 </dd>
 <dt><a href="#Count">Count(obj)</a> ⇒ <code>Number</code></dt>
@@ -281,9 +281,9 @@ return post data
 publish changes to Check Point API
 
 **Kind**: global function  
-<a name="endSession expire token and end API session"></a>
+<a name="endSession"></a>
 
-## endSession expire token and end API session()
+## endSession()
 end session and expire token from header
 
 **Kind**: global function  

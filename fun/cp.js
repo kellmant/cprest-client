@@ -73,7 +73,7 @@ async function pubSession() {
 
 /**
  * end session and expire token from header
- * @function endSession expire token and end API session
+ * @function endSession 
  * 
 */
 async function endSession() {
