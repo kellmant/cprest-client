@@ -15,7 +15,7 @@ that work with Check Point API</p>
 ## Functions
 
 <dl>
-<dt><a href="#startSession">startSession(auth)</a> ⇒ <code><a href="#session">session</a></code></dt>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#session">session</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#apicall">apicall()</a></dt>
@@ -259,14 +259,14 @@ enable or disable the rule
 
 <a name="startSession"></a>
 
-## startSession(auth) ⇒ [<code>session</code>](#session)
+## startSession(myauth) ⇒ [<code>session</code>](#session)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| auth | [<code>credentials</code>](#credentials) | Credentials used for API access |
+| myauth | [<code>credentials</code>](#credentials) | Credentials used for API access |
 
 <a name="apicall"></a>
 

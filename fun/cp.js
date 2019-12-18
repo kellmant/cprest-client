@@ -28,7 +28,7 @@ const toApi = new CpApiClass(myapisite.chkp)
 // Check Point API session auth and token management
 /**
  * Create an authenticated session with the Check Point API
- * @param {credentials} auth Credentials used for API access
+ * @param {credentials} myauth Credentials used for API access
  * @return {session}
  */
 async function startSession(myauth) {
