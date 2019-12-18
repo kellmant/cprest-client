@@ -15,7 +15,7 @@ that work with Check Point API</p>
 ## Functions
 
 <dl>
-<dt><a href="#startSession">startSession(authentication)</a> ⇒ <code><a href="#session">session</a></code></dt>
+<dt><a href="#startSession">startSession(auth)</a> ⇒ <code><a href="#session">session</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#apicall">apicall()</a></dt>
@@ -259,14 +259,14 @@ enable or disable the rule
 
 <a name="startSession"></a>
 
-## startSession(authentication) ⇒ [<code>session</code>](#session)
+## startSession(auth) ⇒ [<code>session</code>](#session)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| authentication | [<code>credentials</code>](#credentials) | Credentials used for API access |
+| auth | [<code>credentials</code>](#credentials) | Credentials used for API access |
 
 <a name="apicall"></a>
 
@@ -306,6 +306,14 @@ API credentials required from auth/mycpauth.json
 
 **Kind**: global typedef  
 **Require**: auth/mycpauth.json  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| user | <code>String</code> | username of API credentials |
+| password | <code>String</code> | password for API user |
+| [domain] | <code>String</code> | specify domain the API will login to |
+
 **Example**  
 ```js
 create auth/mycpauth.json file
