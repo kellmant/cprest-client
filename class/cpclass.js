@@ -84,7 +84,7 @@ const CpApiClass = class ApiCall {
 
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @param {session} sid Session ID Token returned from authenticated login request 
+	 * @param {session} session Session ID Token returned from authenticated login request 
 	 * @return {options} Its own object reference
 	 */
 	setToken (session) {

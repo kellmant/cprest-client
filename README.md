@@ -73,7 +73,7 @@ that work with Check Point API
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
+    * [.setToken(session)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
     * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>\*</code>
     * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>\*</code>
 
@@ -113,7 +113,7 @@ Given data to be delivered and application function path prepare the POST struct
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(sid) ⇒ [<code>options</code>](#options)
+### cpApiClass.setToken(session) ⇒ [<code>options</code>](#options)
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
@@ -121,7 +121,7 @@ Set the 'x-chkp-sid' token field to the current session token
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | [<code>session</code>](#session) | Session ID Token returned from authenticated login request |
+| session | [<code>session</code>](#session) | Session ID Token returned from authenticated login request |
 
 <a name="CpApiClass+doGet"></a>
 
