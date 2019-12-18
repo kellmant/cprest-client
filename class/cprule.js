@@ -84,8 +84,8 @@ const CPrule = class CheckPointRule {
 		} else {
 			this.enabled = x
 			return this
+		}
 	}
-	
 }
 
 module.exports = CPrule
