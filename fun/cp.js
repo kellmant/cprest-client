@@ -5,7 +5,7 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 'use strict'
 const https = require('https')
 const fs = require('fs');
-//const CpApiClass = require('./cpclass')
+
 const CpApiClass = require('../class/cpclass')
 /**
  * Variable required from auth/mycpapi.json file

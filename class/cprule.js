@@ -52,7 +52,7 @@ const CPrule = class CheckPointRule {
 	 * @return {Number} The number of target objects
 	 */
 	source () {	
-		return this
+		return this.source.length
     }
  /** 
  * if at 1, any further action would expose or break policy
@@ -61,7 +61,7 @@ const CPrule = class CheckPointRule {
  * @return {Number} number of target objects
  */
 	destination () {
-		return this
+		return this.destination.length
 	}
 /**
 * Check to see that hit count is used at all
@@ -75,15 +75,17 @@ const CPrule = class CheckPointRule {
 
 /**
  * enable or disable the rule
- * @param {Boolean} true|fale true/false on the rule enabled status
+ * @param {Boolean} true|false true/false on the rule enabled status
  * @return {rule}
  */
 	enabled (x) {
-		this.enabled = x
-		return this
+		if (!x) {
+			return this.enabled
+		} else {
+			this.enabled = x
+			return this
 	}
 	
 }
 
 module.exports = CPrule
-

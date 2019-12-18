@@ -1,20 +1,27 @@
-/*
- * Top level type assignment
- * @typedef {Object} 
- *  
- */
 /**
- * 
  * @typedef {Object} data
  * @property {String} postData This function will stringify the post data before sending 
  */
+
+ /** 
+ * @typedef {Object} session
+ * @property {Object} last-login-was-at
+ * @property {Number} session-timeout
+ * @property {String} sid
+ * @property {String} uid
+ * @property {String} url
+ */
+
 /** 
- * Define API call object options and data
+ * API Site configuration required from auth/mycpapi.json file
+ * Default API callout object options for Check Point
  * @typedef {Object} options 
  * @property {Object} headers - header fields for http calls
  * @property {String} path - path in api to command you call
  * @property {Number} port - port your api server is listening on 
  * @property {String} host - hostname or IP of the api server
+ * API Site configuration required from auth/mycpapi.json file
+ * @require auth/mycpapi.json 
  * @example
  * {
  *	"chkp": {
@@ -28,7 +35,6 @@
  *	  }
  * }
  */
-
 
 /**
  * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
@@ -77,11 +83,11 @@ const CpApiClass = class ApiCall {
 
 	/**
 	 * Set the 'x-chkp-sid' token field to the current session token
-	 * @param {String} sid Session ID Token returned from authenticated login request 
+	 * @param {session} sid Session ID Token returned from authenticated login request 
 	 * @return {options} Its own object reference
 	 */
-	setToken (mysession) {
-		this.options.headers['x-chkp-sid'] = mysession.sid
+	setToken (session) {
+		this.options.headers['x-chkp-sid'] = session.sid
 		return this
 	}
 	/**
