@@ -45,8 +45,9 @@ async function startSession(myauth) {
 
 /** 
  * accept post data and command and send API call
- * return post data
- * 
+ * @param {data} mydata API data to POST for command
+ * @param {String} mycmd API command to use for POST
+ * @return {*} API JSON data returned for request
  * */
 async function apicall(mydata, mycmd) {
     try {
@@ -76,7 +77,6 @@ async function pubSession() {
 
 /**
  * end session and expire token from header
- * @function endSession 
  * 
 */
 async function endSession() {
@@ -115,7 +115,11 @@ async function callOut(options, postData) {
     });
 }
 
-// save api output as json data to file
+/** 
+ * save api output as json data to local file
+ * @param {Object} content JSON data to save to file
+ * @param {String} file name of file to save to (without .json)
+ */
 async function writeJson (content, file) {
     try {
         let newfile = file + '.json'
@@ -129,7 +133,6 @@ async function writeJson (content, file) {
 
 /**
 * the number of keys in use for a given object
-* @function Count 
 * @param {Object} obj The object to be checked for number of keys
 * @return {Number} The number of keys in use
 */
@@ -137,7 +140,10 @@ function countOf(obj) {
     return Object.keys(obj).length
 }
 
-// Accepts the array and key
+/** Accepts the array and groups by key
+ * @param {Object[]} array array of objects to group
+ * @param {String} key name of key to group objects by
+ */
 const groupBy = (array, key) => {
     // Return the end result
     return array.reduce((result, currentValue) => {

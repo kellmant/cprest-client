@@ -18,9 +18,8 @@ that work with Check Point API</p>
 <dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#session">session</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#apicall">apicall()</a></dt>
-<dd><p>accept post data and command and send API call
-return post data</p>
+<dt><a href="#apicall">apicall(mydata, mycmd)</a> ⇒ <code>*</code></dt>
+<dd><p>accept post data and command and send API call</p>
 </dd>
 <dt><a href="#pubSession">pubSession()</a></dt>
 <dd><p>publish changes to Check Point API</p>
@@ -28,8 +27,14 @@ return post data</p>
 <dt><a href="#endSession">endSession()</a></dt>
 <dd><p>end session and expire token from header</p>
 </dd>
-<dt><a href="#Count">Count(obj)</a> ⇒ <code>Number</code></dt>
+<dt><a href="#writeJson">writeJson(content, file)</a></dt>
+<dd><p>save api output as json data to local file</p>
+</dd>
+<dt><a href="#countOf">countOf(obj)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of keys in use for a given object</p>
+</dd>
+<dt><a href="#groupBy">groupBy(array, key)</a></dt>
+<dd><p>Accepts the array and groups by key</p>
 </dd>
 </dl>
 
@@ -270,11 +275,17 @@ Create an authenticated session with the Check Point API
 
 <a name="apicall"></a>
 
-## apicall()
+## apicall(mydata, mycmd) ⇒ <code>\*</code>
 accept post data and command and send API call
-return post data
 
 **Kind**: global function  
+**Returns**: <code>\*</code> - API JSON data returned for request  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mydata | [<code>data</code>](#data) | API data to POST for command |
+| mycmd | <code>String</code> | API command to use for POST |
+
 <a name="pubSession"></a>
 
 ## pubSession()
@@ -287,9 +298,21 @@ publish changes to Check Point API
 end session and expire token from header
 
 **Kind**: global function  
-<a name="Count"></a>
+<a name="writeJson"></a>
 
-## Count(obj) ⇒ <code>Number</code>
+## writeJson(content, file)
+save api output as json data to local file
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| content | <code>Object</code> | JSON data to save to file |
+| file | <code>String</code> | name of file to save to (without .json) |
+
+<a name="countOf"></a>
+
+## countOf(obj) ⇒ <code>Number</code>
 the number of keys in use for a given object
 
 **Kind**: global function  
@@ -298,6 +321,18 @@ the number of keys in use for a given object
 | Param | Type | Description |
 | --- | --- | --- |
 | obj | <code>Object</code> | The object to be checked for number of keys |
+
+<a name="groupBy"></a>
+
+## groupBy(array, key)
+Accepts the array and groups by key
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array.&lt;Object&gt;</code> | array of objects to group |
+| key | <code>String</code> | name of key to group objects by |
 
 <a name="credentials"></a>
 
