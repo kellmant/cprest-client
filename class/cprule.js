@@ -47,18 +47,32 @@ const CPrule = class CheckPointRule {
 	}
 	/** 
 	 * if at 1, any further action would expose or break policy
+	 * any other number and we can safely remove the object 
+	 * and still leave a target in source
 	 * @return {Number} The number of target objects
 	 */
 	source () {	
 		return this
     }
  /** 
- * Ignore errors and prepare the object for POST operations in Check Point 
+ * if at 1, any further action would expose or break policy
+ * any other number and we can remove the object
+ * and still leave a target in the destination
  * @return {Number} number of target objects
  */
 	destination () {
 		return this
-    }
+	}
+/**
+ * enable or disable the rule
+ * @param {Boolean} state true/false on the rule enabled status
+ * @return {rule}
+ */
+	enabled (x) {
+		this.enabled = x
+		return this
+	}
+	
 }
 
 module.exports = CPrule
