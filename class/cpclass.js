@@ -93,7 +93,7 @@ const CpApiClass = class ApiCall {
 	}
 	/**
 	 * Prepare an HTTP GET for the given API function
-	 * @param {options} appfunc API function to be called 
+	 * @param {String} appfunc API command to be called for GET operations 
 	 * @return {*} results of GET request to API
 	 */
 	doGet (appfunc) {
@@ -113,7 +113,7 @@ const CpApiClass = class ApiCall {
 	}
 	/**
 	 * Prepare an HTTP DELETE for the given APU function
-	 * @param {options} appfunc API function to be called 
+	 * @param {String} appfunc API function to be called for DELETE operations
 	 * @return {*} Results of delete request to API
 	 */
 	doDelete (appfunc) {

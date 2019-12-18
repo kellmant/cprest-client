@@ -127,7 +127,7 @@ Prepare an HTTP GET for the given API function
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | [<code>options</code>](#options) | API function to be called |
+| appfunc | <code>String</code> | API command to be called for GET operations |
 
 <a name="CpApiClass+doDelete"></a>
 
@@ -139,7 +139,7 @@ Prepare an HTTP DELETE for the given APU function
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | [<code>options</code>](#options) | API function to be called |
+| appfunc | <code>String</code> | API function to be called for DELETE operations |
 
 <a name="CPobj"></a>
 
