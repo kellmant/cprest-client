@@ -67,7 +67,7 @@ const CpApiClass = class ApiCall {
 	/**
 	 * Given data to be delivered and application function path prepare the POST structure
 	 * @param {data} data Object data to be sent in the HTTP POST
-	 * @param {options} appfunc API command to be called 
+	 * @param {String} appfunc API command to be called 
 	 * @return {*} return result of post action
 	 */
 	doPost (data, appfunc) {

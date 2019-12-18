@@ -103,7 +103,7 @@ Given data to be delivered and application function path prepare the POST struct
 | Param | Type | Description |
 | --- | --- | --- |
 | data | [<code>data</code>](#data) | Object data to be sent in the HTTP POST |
-| appfunc | [<code>options</code>](#options) | API command to be called |
+| appfunc | <code>String</code> | API command to be called |
 
 <a name="CpApiClass+setToken"></a>
 
