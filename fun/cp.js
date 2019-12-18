@@ -143,6 +143,7 @@ function countOf(obj) {
 /** Accepts the array and groups by key
  * @param {Object[]} array array of objects to group
  * @param {String} key name of key to group objects by
+ * @return {Object[]} array of objects grouped by key
  */
 const groupBy = (array, key) => {
     // Return the end result

@@ -33,7 +33,7 @@ that work with Check Point API</p>
 <dt><a href="#countOf">countOf(obj)</a> ⇒ <code>Number</code></dt>
 <dd><p>the number of keys in use for a given object</p>
 </dd>
-<dt><a href="#groupBy">groupBy(array, key)</a></dt>
+<dt><a href="#groupBy">groupBy(array, key)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Accepts the array and groups by key</p>
 </dd>
 </dl>
@@ -324,10 +324,11 @@ the number of keys in use for a given object
 
 <a name="groupBy"></a>
 
-## groupBy(array, key)
+## groupBy(array, key) ⇒ <code>Array.&lt;Object&gt;</code>
 Accepts the array and groups by key
 
 **Kind**: global function  
+**Returns**: <code>Array.&lt;Object&gt;</code> - array of objects grouped by key  
 
 | Param | Type | Description |
 | --- | --- | --- |
