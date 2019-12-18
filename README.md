@@ -158,8 +158,8 @@ Check Point object properties
     * [new CPobj(object)](#new_CPobj_new)
     * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.nowarn()](#CPobj+nowarn)
-    * [.overwrite()](#CPobj+overwrite)
+    * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
+    * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
 
 <a name="new_CPobj_new"></a>
 
@@ -179,32 +179,24 @@ return object properties
 <a name="CPobj+prep"></a>
 
 ### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
-Ignore errors and prepare the object for POST operations in Check Point
+prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without without type and uid values  
 <a name="CPobj+nowarn"></a>
 
-### cPobj.nowarn()
-Ignore warnings when posting changes to the object
+### cPobj.nowarn() ⇒ <code>Boolean</code>
+ignore warnings when posting changes to the object
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
-
+**Returns**: <code>Boolean</code> - ignore-warnings set to true to continue with warnings about the object  
 <a name="CPobj+overwrite"></a>
 
-### cPobj.overwrite()
+### cPobj.overwrite() ⇒ <code>Boolean</code>
 overwrite object if exists
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
-
+**Returns**: <code>Boolean</code> - set-if-exists set to true to overwrite object properties  
 <a name="CPrule"></a>
 
 ## CPrule
@@ -450,8 +442,8 @@ Process Check Point objects
     * [new CPobj(object)](#new_CPobj_new)
     * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.nowarn()](#CPobj+nowarn)
-    * [.overwrite()](#CPobj+overwrite)
+    * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
+    * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
 
 <a name="new_CPobj_new"></a>
 
@@ -471,32 +463,24 @@ return object properties
 <a name="CPobj+prep"></a>
 
 ### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
-Ignore errors and prepare the object for POST operations in Check Point
+prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without without type and uid values  
 <a name="CPobj+nowarn"></a>
 
-### cPobj.nowarn()
-Ignore warnings when posting changes to the object
+### cPobj.nowarn() ⇒ <code>Boolean</code>
+ignore warnings when posting changes to the object
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
-
+**Returns**: <code>Boolean</code> - ignore-warnings set to true to continue with warnings about the object  
 <a name="CPobj+overwrite"></a>
 
-### cPobj.overwrite()
+### cPobj.overwrite() ⇒ <code>Boolean</code>
 overwrite object if exists
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
-
+**Returns**: <code>Boolean</code> - set-if-exists set to true to overwrite object properties  
 <a name="rule"></a>
 
 ## rule : <code>Object</code>

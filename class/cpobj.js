@@ -69,8 +69,8 @@ const CPobj = class CheckPointObject {
 		return this
     }
  /** 
- * Ignore errors and prepare the object for POST operations in Check Point 
- * @return {CPobj} The Check Point Object without warnings
+ * prepare the object for POST operations in Check Point 
+ * @return {CPobj} The Check Point Object without without type and uid values
  */
 	prep () {
 		delete this.type
@@ -78,15 +78,15 @@ const CPobj = class CheckPointObject {
 		return this
     }
  /** 
- * Ignore warnings when posting changes to the object 
- * @param {Boolean} - ignore-warnings set to true to continue with warnings about the object 
+ * ignore warnings when posting changes to the object 
+ * @return {Boolean} ignore-warnings set to true to continue with warnings about the object 
  */
 	nowarn () {
         this['ignore-warnings'] = true
 	}
 /** 
  * overwrite object if exists 
- * @param {Boolean} - set-if-exists set to true to overwrite object properties 
+ * @return {Boolean} set-if-exists set to true to overwrite object properties 
  */
 	overwrite () {
         this['set-if-exists'] = true
