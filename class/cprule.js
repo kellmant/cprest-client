@@ -16,7 +16,7 @@
  */
  
  /**
-  * Rule properties
+  * Check Point object properties for rules
   * @param {String} uid the uid of the rule
   * @param {String} layer security policy layer of the rule
   * @returns {rule}

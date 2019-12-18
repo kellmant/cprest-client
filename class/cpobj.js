@@ -18,6 +18,7 @@
  * @param {String} [description] Description of users in objects
  */
 /**
+ * Check Point object properties
  * @param {Object} object Check Point returned JSON object 
  * @class 
  */ 

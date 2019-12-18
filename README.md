@@ -6,9 +6,10 @@
 that work with Check Point API</p>
 </dd>
 <dt><a href="#CPobj">CPobj</a></dt>
-<dd></dd>
+<dd><p>Check Point object properties</p>
+</dd>
 <dt><a href="#CPrule">CPrule</a></dt>
-<dd><p>Rule properties</p>
+<dd><p>Check Point object properties for rules</p>
 </dd>
 </dl>
 
@@ -149,6 +150,8 @@ Prepare an HTTP DELETE for the given APU function
 <a name="CPobj"></a>
 
 ## CPobj
+Check Point object properties
+
 **Kind**: global class  
 
 * [CPobj](#CPobj)
@@ -205,7 +208,7 @@ overwrite object if exists
 <a name="CPrule"></a>
 
 ## CPrule
-Rule properties
+Check Point object properties for rules
 
 **Kind**: global class  
 
