@@ -70,7 +70,7 @@ const CPobj = class CheckPointObject {
     }
  /** 
  * prepare the object for POST operations in Check Point 
- * @return {CPobj} The Check Point Object without without type and uid values
+ * @return {CPobj} The Check Point Object without type and uid values
  */
 	prep () {
 		delete this.type

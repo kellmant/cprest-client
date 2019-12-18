@@ -182,7 +182,7 @@ return object properties
 prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without without type and uid values  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without type and uid values  
 <a name="CPobj+nowarn"></a>
 
 ### cPobj.nowarn() ⇒ <code>Boolean</code>
@@ -466,7 +466,7 @@ return object properties
 prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without without type and uid values  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without type and uid values  
 <a name="CPobj+nowarn"></a>
 
 ### cPobj.nowarn() ⇒ <code>Boolean</code>
