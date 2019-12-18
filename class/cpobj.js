@@ -16,8 +16,11 @@
  * @param {Array} [groups] add object members to group array
  * @param {Array} [tags] tagged data in objet
  * @param {String} [description] Description of users in objects
- * @class
  */
+/**
+ * @param {Object} object Check Point returned JSON object 
+ * @class 
+ */ 
 const CPobj = class CheckPointObject {
 	constructor(x) {
 		this.name = x.name || 'no name'
@@ -58,11 +61,10 @@ const CPobj = class CheckPointObject {
             this['host-servers'] = x['host-servers']    
 	}
 	/** 
-	 * dump object properties
-	 * @param {Function} dump show object properties
+	 * return object properties
 	 * @return {CPobj} The value of the new object
 	 */
-	dump () {	
+	show () {	
 		return this
     }
  /** 

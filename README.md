@@ -2,10 +2,10 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-to work with Check Point API framework</p>
+<dd><p>Class Method for API callout builder to prepare HTTP functions
+that work with Check Point API</p>
 </dd>
-<dt><a href="#CPobj">CPobj</a> : <code>Object</code></dt>
+<dt><a href="#CPobj">CPobj</a></dt>
 <dd></dd>
 <dt><a href="#CPrule">CPrule</a></dt>
 <dd><p>Rule properties</p>
@@ -76,6 +76,9 @@ return post data</p>
 <dd><p>API Site configuration required from auth/mycpapi.json file
 Default API callout object options for Check Point</p>
 </dd>
+<dt><a href="#CPobj">CPobj</a> : <code>Object</code></dt>
+<dd><p>Process Check Point objects</p>
+</dd>
 <dt><a href="#rule">rule</a> : <code>Object</code></dt>
 <dd><p>Process Check Point rule as a JSON object</p>
 </dd>
@@ -92,8 +95,8 @@ Default API callout object options for Check Point</p>
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
-to work with Check Point API framework
+Class Method for API callout builder to prepare HTTP functions
+that work with Check Point API
 
 **Kind**: global class  
 
@@ -177,56 +180,31 @@ Prepare an HTTP DELETE for the given APU function
 
 <a name="CPobj"></a>
 
-## CPobj : <code>Object</code>
+## CPobj
 **Kind**: global class  
-**Properties**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| name | <code>String</code> | name of object unique |
-| type | <code>String</code> | type of object we can classify on |
-| uid | <code>String</code> | unique ID of object |
-
-
-* [CPobj](#CPobj) : <code>Object</code>
-    * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])](#new_CPobj_new)
-    * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
+* [CPobj](#CPobj)
+    * [new CPobj(object)](#new_CPobj_new)
+    * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
     * [.nowarn()](#CPobj+nowarn)
     * [.overwrite()](#CPobj+overwrite)
 
 <a name="new_CPobj_new"></a>
 
-### new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])
-Process Check Point objects
-
+### new CPobj(object)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [comments] | <code>String</code> | comments |
-| [color] | <code>String</code> | color of object |
-| [ipv4-address] | <code>String</code> | IPv4 of object |
-| [ipv6-address] | <code>String</code> | IPv6 of object |
-| [subnet4] | <code>String</code> | IPv4 network of object |
-| [subnet6] | <code>String</code> | IPv6 network of object |
-| [mask-length4] | <code>String</code> | IPv4 netmask of object |
-| [mask-length6] | <code>String</code> | IPv6 netmask of object |
-| [groups] | <code>Array</code> | add object members to group array |
-| [tags] | <code>Array</code> | tagged data in objet |
-| [description] | <code>String</code> | Description of users in objects |
+| object | <code>Object</code> | Check Point returned JSON object |
 
-<a name="CPobj+dump"></a>
+<a name="CPobj+show"></a>
 
-### cPobj.dump(dump) ⇒ [<code>CPobj</code>](#CPobj)
-dump object properties
+### cPobj.show() ⇒ [<code>CPobj</code>](#CPobj)
+return object properties
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
 **Returns**: [<code>CPobj</code>](#CPobj) - The value of the new object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| dump | <code>function</code> | show object properties |
-
 <a name="CPobj+prep"></a>
 
 ### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
@@ -531,6 +509,87 @@ Default API callout object options for Check Point
 	  }
 }
 ```
+<a name="CPobj"></a>
+
+## CPobj : <code>Object</code>
+Process Check Point objects
+
+**Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [comments] | <code>String</code> | comments |
+| [color] | <code>String</code> | color of object |
+| [ipv4-address] | <code>String</code> | IPv4 of object |
+| [ipv6-address] | <code>String</code> | IPv6 of object |
+| [subnet4] | <code>String</code> | IPv4 network of object |
+| [subnet6] | <code>String</code> | IPv6 network of object |
+| [mask-length4] | <code>String</code> | IPv4 netmask of object |
+| [mask-length6] | <code>String</code> | IPv6 netmask of object |
+| [groups] | <code>Array</code> | add object members to group array |
+| [tags] | <code>Array</code> | tagged data in objet |
+| [description] | <code>String</code> | Description of users in objects |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | name of object unique |
+| type | <code>String</code> | type of object we can classify on |
+| uid | <code>String</code> | unique ID of object |
+
+
+* [CPobj](#CPobj) : <code>Object</code>
+    * [new CPobj(object)](#new_CPobj_new)
+    * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.nowarn()](#CPobj+nowarn)
+    * [.overwrite()](#CPobj+overwrite)
+
+<a name="new_CPobj_new"></a>
+
+### new CPobj(object)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> | Check Point returned JSON object |
+
+<a name="CPobj+show"></a>
+
+### cPobj.show() ⇒ [<code>CPobj</code>](#CPobj)
+return object properties
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>CPobj</code>](#CPobj) - The value of the new object  
+<a name="CPobj+prep"></a>
+
+### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
+Ignore errors and prepare the object for POST operations in Check Point
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
+<a name="CPobj+nowarn"></a>
+
+### cPobj.nowarn()
+Ignore warnings when posting changes to the object
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
+
+<a name="CPobj+overwrite"></a>
+
+### cPobj.overwrite()
+overwrite object if exists
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
+
 <a name="rule"></a>
 
 ## rule : <code>Object</code>

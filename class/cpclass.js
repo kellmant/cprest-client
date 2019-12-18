@@ -37,8 +37,8 @@
  */
 
 /**
- * Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
- * to work with Check Point API framework
+ * Class Method for API callout builder to prepare HTTP functions
+ * that work with Check Point API
  * @class
  */
 const CpApiClass = class ApiCall {
