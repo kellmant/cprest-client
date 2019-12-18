@@ -53,7 +53,7 @@ that work with Check Point API</p>
 <dd><p>API Site configuration required from auth/mycpapi.json file
 Default API callout object options for Check Point</p>
 </dd>
-<dt><a href="#CPobj">CPobj</a> : <code>Object</code></dt>
+<dt><a href="#cpobj">cpobj</a> : <code>Object</code></dt>
 <dd><p>Process Check Point objects</p>
 </dd>
 <dt><a href="#rule">rule</a> : <code>Object</code></dt>
@@ -156,8 +156,8 @@ Check Point object properties
 
 * [CPobj](#CPobj)
     * [new CPobj(object)](#new_CPobj_new)
-    * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.show()](#CPobj+show) ⇒ [<code>cpobj</code>](#cpobj)
+    * [.prep()](#CPobj+prep) ⇒ [<code>cpobj</code>](#cpobj)
     * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
     * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
 
@@ -171,18 +171,18 @@ Check Point object properties
 
 <a name="CPobj+show"></a>
 
-### cPobj.show() ⇒ [<code>CPobj</code>](#CPobj)
+### cPobj.show() ⇒ [<code>cpobj</code>](#cpobj)
 return object properties
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The value of the new object  
+**Returns**: [<code>cpobj</code>](#cpobj) - The value of the new object  
 <a name="CPobj+prep"></a>
 
-### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
+### cPobj.prep() ⇒ [<code>cpobj</code>](#cpobj)
 prepare the object for POST operations in Check Point
 
 **Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without type and uid values  
+**Returns**: [<code>cpobj</code>](#cpobj) - The Check Point Object without type and uid values  
 <a name="CPobj+nowarn"></a>
 
 ### cPobj.nowarn() ⇒ <code>Boolean</code>
@@ -408,9 +408,9 @@ Default API callout object options for Check Point
 	  }
 }
 ```
-<a name="CPobj"></a>
+<a name="cpobj"></a>
 
-## CPobj : <code>Object</code>
+## cpobj : <code>Object</code>
 Process Check Point objects
 
 **Kind**: global typedef  
@@ -437,50 +437,6 @@ Process Check Point objects
 | type | <code>String</code> | type of object we can classify on |
 | uid | <code>String</code> | unique ID of object |
 
-
-* [CPobj](#CPobj) : <code>Object</code>
-    * [new CPobj(object)](#new_CPobj_new)
-    * [.show()](#CPobj+show) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
-    * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
-    * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
-
-<a name="new_CPobj_new"></a>
-
-### new CPobj(object)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| object | <code>Object</code> | Check Point returned JSON object |
-
-<a name="CPobj+show"></a>
-
-### cPobj.show() ⇒ [<code>CPobj</code>](#CPobj)
-return object properties
-
-**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The value of the new object  
-<a name="CPobj+prep"></a>
-
-### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
-prepare the object for POST operations in Check Point
-
-**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without type and uid values  
-<a name="CPobj+nowarn"></a>
-
-### cPobj.nowarn() ⇒ <code>Boolean</code>
-ignore warnings when posting changes to the object
-
-**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: <code>Boolean</code> - ignore-warnings set to true to continue with warnings about the object  
-<a name="CPobj+overwrite"></a>
-
-### cPobj.overwrite() ⇒ <code>Boolean</code>
-overwrite object if exists
-
-**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
-**Returns**: <code>Boolean</code> - set-if-exists set to true to overwrite object properties  
 <a name="rule"></a>
 
 ## rule : <code>Object</code>

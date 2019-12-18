@@ -1,7 +1,7 @@
 "use strict";
 /**
  * Process Check Point objects 
- * @typedef {Object} CPobj Check Point JSON representation
+ * @typedef {Object} cpobj Check Point JSON representation
  * @property {String} name name of object unique
  * @property {String} type type of object we can classify on
  * @property {String} uid unique ID of object
@@ -63,14 +63,14 @@ const CPobj = class CheckPointObject {
 	}
 	/** 
 	 * return object properties
-	 * @return {CPobj} The value of the new object
+	 * @return {cpobj} The value of the new object
 	 */
 	show () {	
 		return this
     }
  /** 
  * prepare the object for POST operations in Check Point 
- * @return {CPobj} The Check Point Object without type and uid values
+ * @return {cpobj} The Check Point Object without type and uid values
  */
 	prep () {
 		delete this.type
