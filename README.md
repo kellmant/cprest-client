@@ -26,7 +26,7 @@ that work with Check Point API</p>
 ## Functions
 
 <dl>
-<dt><a href="#startSession">startSession(authentication)</a></dt>
+<dt><a href="#startSession">startSession(authentication)</a> ⇒ <code><a href="#session">session</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#apicall">apicall()</a></dt>
@@ -333,7 +333,7 @@ create auth/mycpauth.json file
 ```
 <a name="startSession"></a>
 
-## startSession(authentication)
+## startSession(authentication) ⇒ [<code>session</code>](#session)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
