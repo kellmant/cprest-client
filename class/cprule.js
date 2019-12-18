@@ -1,7 +1,7 @@
 "use strict";
 /**
  * Process Check Point rule as a JSON object
- * @typedef {Object} rule
+ * @typedef {Object} cprule
  * @property {String} comments leave tag or UID of any operations to mark the rule as being API managed
  * @property {Array} destination an array of destinations. Never an empty object
  * @property {Boolean} enabled true/false the rule is active in the policy
@@ -19,7 +19,7 @@
   * Check Point object properties for rules
   * @param {String} uid the uid of the rule
   * @param {String} layer security policy layer of the rule
-  * @returns {rule}
+  * @returns {cprule}
   * @class 
   */
 const CPrule = class CheckPointRule {
@@ -76,7 +76,7 @@ const CPrule = class CheckPointRule {
 /**
  * enable or disable the rule
  * @param {Boolean} true|false true/false on the rule enabled status
- * @return {rule}
+ * @return {cprule}
  */
 	enabled (x) {
 		if (!x) {

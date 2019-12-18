@@ -56,7 +56,7 @@ Default API callout object options for Check Point</p>
 <dt><a href="#cpobj">cpobj</a> : <code>Object</code></dt>
 <dd><p>Process Check Point objects</p>
 </dd>
-<dt><a href="#rule">rule</a> : <code>Object</code></dt>
+<dt><a href="#cprule">cprule</a> : <code>Object</code></dt>
 <dd><p>Process Check Point rule as a JSON object</p>
 </dd>
 </dl>
@@ -209,7 +209,7 @@ Check Point object properties for rules
     * [.source()](#CPrule+source) ⇒ <code>Number</code>
     * [.destination()](#CPrule+destination) ⇒ <code>Number</code>
     * [.hits()](#CPrule+hits) ⇒ <code>Number</code>
-    * [.enabled(true|false)](#CPrule+enabled) ⇒ [<code>rule</code>](#rule)
+    * [.enabled(true|false)](#CPrule+enabled) ⇒ [<code>cprule</code>](#cprule)
 
 <a name="new_CPrule_new"></a>
 
@@ -248,7 +248,7 @@ if the value is not 0 send warning on potential use
 **Returns**: <code>Number</code> - rule hit count  
 <a name="CPrule+enabled"></a>
 
-### cPrule.enabled(true|false) ⇒ [<code>rule</code>](#rule)
+### cPrule.enabled(true|false) ⇒ [<code>cprule</code>](#cprule)
 enable or disable the rule
 
 **Kind**: instance method of [<code>CPrule</code>](#CPrule)  
@@ -437,9 +437,9 @@ Process Check Point objects
 | type | <code>String</code> | type of object we can classify on |
 | uid | <code>String</code> | unique ID of object |
 
-<a name="rule"></a>
+<a name="cprule"></a>
 
-## rule : <code>Object</code>
+## cprule : <code>Object</code>
 Process Check Point rule as a JSON object
 
 **Kind**: global typedef  
