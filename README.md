@@ -2,7 +2,8 @@
 
 <dl>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+to work with Check Point API framework</p>
 </dd>
 <dt><a href="#CPobj">CPobj</a> : <code>Object</code></dt>
 <dd></dd>
@@ -15,9 +16,6 @@
 
 <dl>
 <dt><a href="#myapisite">myapisite</a></dt>
-<dd><p>Variable required from auth/mycpapi.json file</p>
-</dd>
-<dt><a href="#myapisite">myapisite</a></dt>
 <dd><p>API Site configuration required from auth/mycpapi.json file</p>
 </dd>
 <dt><a href="#mycred">mycred</a></dt>
@@ -28,7 +26,7 @@
 ## Functions
 
 <dl>
-<dt><a href="#startSession">startSession(credentials, sessionid)</a> ⇒ <code>myapicall</code></dt>
+<dt><a href="#startSession">startSession(authentication)</a></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
 <dt><a href="#apicall">apicall()</a></dt>
@@ -67,6 +65,9 @@ return post data</p>
 ## Typedefs
 
 <dl>
+<dt><a href="#credentials">credentials</a> : <code>Object</code></dt>
+<dd><p>API credentials required from auth/mycpauth.json</p>
+</dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#session">session</a> : <code>Object</code></dt>
@@ -92,6 +93,7 @@ Default API callout object options for Check Point</p>
 
 ## CpApiClass
 Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+to work with Check Point API framework
 
 **Kind**: global class  
 
@@ -317,33 +319,6 @@ enable or disable the rule
 <a name="myapisite"></a>
 
 ## myapisite
-Variable required from auth/mycpapi.json file
-
-**Kind**: global constant  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| myapisite | <code>Array.&lt;Object&gt;</code> | Setup API hostname |
-| myapisite.apihost | <code>Object</code> | mycpapi.json |
-
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	}
-}
-```
-<a name="myapisite"></a>
-
-## myapisite
 API Site configuration required from auth/mycpapi.json file
 
 **Kind**: global constant  
@@ -380,17 +355,14 @@ create auth/mycpauth.json file
 ```
 <a name="startSession"></a>
 
-## startSession(credentials, sessionid) ⇒ <code>myapicall</code>
+## startSession(authentication)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: <code>myapicall</code> - Header token set for session  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
-| sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
-| options.headers | <code>Api</code> | x-chkp-sid Session ID token applied to header |
+| authentication | [<code>credentials</code>](#credentials) | Credentials used for API access |
 
 <a name="apicall"></a>
 
@@ -421,7 +393,7 @@ the number of keys in use for a given object
 
 | Param | Type | Description |
 | --- | --- | --- |
-| obj | <code>Object</code> | The object to be checked |
+| obj | <code>Object</code> | The object to be checked for number of keys |
 
 <a name="startSession"></a>
 
@@ -489,6 +461,21 @@ Operations Object created with filter logic
 end session and expire token from header
 
 **Kind**: global function  
+<a name="credentials"></a>
+
+## credentials : <code>Object</code>
+API credentials required from auth/mycpauth.json
+
+**Kind**: global typedef  
+**Require**: auth/mycpauth.json  
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
+}
+```
 <a name="data"></a>
 
 ## data : <code>Object</code>

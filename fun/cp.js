@@ -7,34 +7,25 @@ const https = require('https')
 const fs = require('fs');
 
 const CpApiClass = require('../class/cpclass')
-/**
- * Variable required from auth/mycpapi.json file
- * @param {Object[]} myapisite - Setup API hostname
- * @param {Object} myapisite.apihost - mycpapi.json
- * @example
- * create auth/mycpapi.json file
- * {
- *	"chkp": {
- *		"host": "SET.YOUR.HOSTNAME",
- *		"port": "443",
- *		"path": "/web_api",
- *		"method": "POST",
- *		"headers": {
- *			"Content-Type": "application/json"
- *		}
- *	}
- * }
- */
 const myapisite = require('../auth/mycpapi')
 const toApi = new CpApiClass(myapisite.chkp)
+
+/**
+ * API credentials required from auth/mycpauth.json
+ * @typedef {Object} credentials
+ * @require auth/mycpauth.json
+ * @example 
+ * create auth/mycpauth.json file
+ * {
+ *		"user": "apiuser",
+ *		"password": "PASSWORD"
+ * }
+ */
+
 // Check Point API session auth and token management
 /**
  * Create an authenticated session with the Check Point API
- * @param {mycred} credentials Credentials used for API access
- * @param {sessionid} sessionid A Check Point API session ID handler
- * @param {Api} options.headers x-chkp-sid Session ID token applied to header
- * @returns {myapicall} Header token set for session 
-
+ * @param {credentials} authentication Credentials used for API access
  */
 async function startSession(myauth) {
 	try {
@@ -135,7 +126,7 @@ async function writeJson (content, file) {
 /**
 * the number of keys in use for a given object
 * @function Count 
-* @param {Object} obj The object to be checked
+* @param {Object} obj The object to be checked for number of keys
 * @return {Number} The number of keys in use
 */
 function countOf(obj) {
