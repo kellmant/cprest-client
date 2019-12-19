@@ -176,7 +176,7 @@ async function getRulebase(layer) {
                     process.stdout.write(id + '\r')
                     ruledata = ruledata.concat(myout)
             }
-            console.log(ruledata.length)
+            console.log('rules: ' + ruledata.length + '                          ')
             return ruledata
         } catch (err) {
             console.log('error in getRulebase : ' + err)
