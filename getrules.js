@@ -210,7 +210,9 @@ async function getRule(uid, layer) {
 async function processRules(myrules) {
         try {
                 Object.keys(myrules).forEach(mylayer => {
-                        console.log(typeof myrules[mylayer])
+                        let myrule = myrules[mylayer]
+                        console.log(myrule)
+                        console.log('----')
                         //console.log(Object.values())
                 });
                 /*
