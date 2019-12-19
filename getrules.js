@@ -176,6 +176,7 @@ async function getRulebase(layer) {
                     process.stdout.write(id + '\r')
                     ruledata = ruledata.concat(myout)
             }
+            console.log(ruledata.length)
             return ruledata
         } catch (err) {
             console.log('error in getRulebase : ' + err)
@@ -193,7 +194,7 @@ async function getRule(uid, layer) {
             var mydata = {}
             var mycmd = 'show-access-rule'                
             var objdata = {}
-            mydata['details-level'] = 'uid'
+            mydata['details-level'] = 'standard'
             mydata['show-hits'] = true
             mydata.uid = uid
             mydata.layer = layer
