@@ -158,23 +158,23 @@ async function getRulebase(layer) {
                             objarr = objarr.concat(objdata.rulebase)
                     }
             }
-            var rulelist = []
             var ruledata = []
+            console.log(' ')
+            console.log(layer)
             for (var x of objarr) {
                     if (x.type === 'access-section') {
                             for (var y of x.rulebase) {
-                                    rulelist = rulelist.concat(y.uid)
+                                    let myout = await getRule(y.uid, layer)
+                                    process.stdout.write(y.uid + '\r')
+                                    myout['rule-number'] = y['rule-number']
+                                    ruledata = ruledata.concat(myout)
                             }
                     } else {
-                        rulelist = rulelist.concat(x.uid)
+                        let myout = await getRule(x.uid, layer)
+                        process.stdout.write(x.uid + '\r')
+                        myout['rule-number'] = x['rule-number']
+                        ruledata = ruledata.concat(myout)
                     }
-            }
-            console.log(' ')
-            console.log(layer)
-            for (var id of rulelist) {
-                    let myout = await getRule(id, layer)
-                    process.stdout.write(id + '\r')
-                    ruledata = ruledata.concat(myout)
             }
             console.log('rules: ' + ruledata.length + '                          ')
             return ruledata
@@ -194,7 +194,7 @@ async function getRule(uid, layer) {
             var mydata = {}
             var mycmd = 'show-access-rule'                
             var objdata = {}
-            mydata['details-level'] = 'standard'
+            mydata['details-level'] = 'uid'
             mydata['show-hits'] = true
             mydata.uid = uid
             mydata.layer = layer
