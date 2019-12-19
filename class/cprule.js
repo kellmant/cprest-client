@@ -24,6 +24,7 @@
   */
 const CPrule = class CheckPointRule {
 	constructor(x) {
+		this['rule-number'] = 0
 		this.name = x.name || 'no name'
 		this.type = x.type || 'no type'
         this.uid = x.uid || 'no uid'

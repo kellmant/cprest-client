@@ -59,6 +59,23 @@ async function apicall(mydata, mycmd) {
 }
 
 /** 
+ * return name of object UID
+ * @param {String} uid UID of object to identify
+ * @return {String} name of the object
+ * */
+async function getname(uid) {
+    try {
+        let mycmd = 'show-object'
+        let mydata = {}
+        mydata.uid = uid
+        let myobj = await callOut(toApi.doPost(mydata, mycmd).options, toApi.doPost(mydata, mycmd).postData)
+        return myobj.object.name
+    } catch (err) {
+            console.log('error in fun/cp.getname : ' + err)
+    }
+}
+
+/** 
  * publish changes to Check Point API
 */
 async function pubSession() {
@@ -165,6 +182,7 @@ function sleep(ms) {
 module.exports = {
     startSession,
     apicall,
+    getname,
     pubSession,
     endSession,
     writeJson,

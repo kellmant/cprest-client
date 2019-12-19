@@ -22,6 +22,9 @@ that work with Check Point API</p>
 <dt><a href="#apicall">apicall(mydata, mycmd)</a> ⇒ <code>*</code></dt>
 <dd><p>accept post data and command and send API call</p>
 </dd>
+<dt><a href="#getname">getname(uid)</a> ⇒ <code>String</code></dt>
+<dd><p>return name of object UID</p>
+</dd>
 <dt><a href="#pubSession">pubSession()</a></dt>
 <dd><p>publish changes to Check Point API</p>
 </dd>
@@ -254,6 +257,18 @@ accept post data and command and send API call
 | --- | --- | --- |
 | mydata | [<code>data</code>](#data) | API data to POST for command |
 | mycmd | <code>String</code> | API command to use for POST |
+
+<a name="getname"></a>
+
+## getname(uid) ⇒ <code>String</code>
+return name of object UID
+
+**Kind**: global function  
+**Returns**: <code>String</code> - name of the object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>String</code> | UID of object to identify |
 
 <a name="pubSession"></a>
 
