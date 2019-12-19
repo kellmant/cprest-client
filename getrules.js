@@ -78,13 +78,16 @@ async function getPackages() {
         mydata.limit = limit
         console.log('getting packages')
         objdata = await cp.apicall(mydata, mycmd)
-        objarr = objarr.concat(objdata)
+        if (!objdata.packages) {
+                throw new Error(objdata)
+        }
+        objarr = objarr.concat(objdata.packages)
         if (objdata.total > objdata.to) {
                 while (objdata.total >= mydata.offset) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, mycmd)
-                        objarr = objarr.concat(objdata)
+                        objarr = objarr.concat(objdata.packages)
                 }
         }
         return objarr
