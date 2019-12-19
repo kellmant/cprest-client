@@ -156,7 +156,11 @@ async function getRulebase(layer) {
                     }
             }
             for (var x of objarr) {
-                    console.log(x.type, x.name)
+                    if (x.type === 'access-section') {
+                            console.log(x.type.rulebase)
+                    } else {
+                        console.log(x.type, x.name)
+                    }
             }
             return objarr
         } catch (err) {
