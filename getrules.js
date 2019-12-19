@@ -159,6 +159,7 @@ async function getRulebase(layer) {
                     }
             }
             var rulelist = []
+            var ruledata = []
             for (var x of objarr) {
                     if (x.type === 'access-section') {
                             for (var y of x.rulebase) {
@@ -169,9 +170,10 @@ async function getRulebase(layer) {
                     }
             }
             for (var id of rulelist) {
-                    console.log(getRule(id, layer))
+                    let myout = await getRule(id, layer)
+                    ruledata = ruledata.concat(myout)
             }
-            return rulelist
+            return ruledata
         } catch (err) {
             console.log('error in getRulebase : ' + err)
     }
