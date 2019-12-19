@@ -203,7 +203,7 @@ async function getRule(uid, layer) {
             //return objdata
             return new CPrule(objdata)
         } catch (err) {
-            console.log('error in showPackages : ' + err)
+            console.log('error in getRule : ' + err)
     }
 }
 
@@ -213,7 +213,7 @@ async function processRules(myrules) {
                         console.log(mylayer)
                         console.log(typeof mylayer)
                         let myrule = myrules[mylayer]
-                        myrule.seeaction()
+                        //myrule.seeaction()
                         console.log(typeof myrule)
                 }
                 return myrules
