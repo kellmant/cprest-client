@@ -92,7 +92,7 @@ async function getPackages() {
         }
         var pkgs = {}
         for (var x of objarr) {
-                pkgs[x.type].push(x.name)
+                pkgs[x.type] = pkgs.concat(x.name)
                 console.dir(pkgs)
                 console.log(x.name)
         }
