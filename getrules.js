@@ -167,7 +167,7 @@ async function getRulebase(layer) {
                                     let myout = {}
                                     myout['rule-number'] = y['rule-number']
                                     myout += await getRule(y.uid, layer)
-                                    process.stdout.write(y.uid + '\r')
+                                    process.stdout.write(' ' + y.uid + '\r')
                                     //myout['rule-number'] = y['rule-number']
                                     ruledata = ruledata.concat(myout)
                             }
@@ -175,12 +175,12 @@ async function getRulebase(layer) {
                         let myout = {}
                         myout['rule-number'] = x['rule-number']
                         myout += await getRule(x.uid, layer)
-                        process.stdout.write(x.uid + '\r')
+                        process.stdout.write(' ' + x.uid + '\r')
                         //myout['rule-number'] = x['rule-number']
                         ruledata = ruledata.concat(myout)
                     }
             }
-            console.log('    rules: ' + ruledata.length + '                          ')
+            console.log('    rules: ' + ruledata.length + '                            ')
             return ruledata
         } catch (err) {
             console.log('error in getRulebase : ' + err)
