@@ -207,13 +207,13 @@ async function getRule(uid, layer) {
     }
 }
 
-async function processRules(rules) {
+async function processRules(myrules) {
         try {
-                for (var layer in rules) {
-                        console.log(typeof rules)
-                        let myrule = new CPrule(rules[layer])
-                        console.log(typeof myrule)
-                        myrule.action()
+                for (var mylayer in myrules) {
+                        console.log(mylayer)
+                        console.log(typeof mylayer)
+                        //let myrule = new CPrule(myrules[mylayer])
+                        //console.log(typeof myrule)
                 }
                 return rules
         } catch (err) {
