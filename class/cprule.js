@@ -29,7 +29,7 @@ const CPrule = class CheckPointRule {
         this.uid = x.uid || 'no uid'
 		this.layer = x.layer
         this.enabled = x.enabled
-        this.hits = x.hits
+        this.hits = x.hits.value
 		if (x.comments) 
 		    this.comments = x.comments
         if (x.source) 
@@ -74,7 +74,7 @@ const CPrule = class CheckPointRule {
 *  
 */
 	hits () {
-		return this.hits.value
+		return this.hits
 	}
 
 /**
