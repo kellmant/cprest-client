@@ -100,7 +100,7 @@ async function getLayers() {
             var objdata = {}
             var objarr = []
             mydata.offset = 0
-            mydata['details-level'] = 'full'
+            mydata['details-level'] = 'standard'
             mydata.limit = limit
             console.log('getting layers')
             objdata = await cp.apicall(mydata, mycmd)
