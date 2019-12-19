@@ -211,10 +211,9 @@ async function processRules(myrules) {
         try {
                 for (var mylayer in myrules) {
                         console.log(mylayer)
-                        console.log(typeof mylayer)
                         let myrule = myrules[mylayer]
                         //myrule.seeaction()
-                        console.log(myrule.action)
+                        console.log(myrule)
                 }
                 return myrules
         } catch (err) {
