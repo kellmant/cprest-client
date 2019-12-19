@@ -32,7 +32,7 @@ main()
 
 async function main() {
 	cp.startSession(mycred)
-        .then(() => getPackages())
+        .then(() => getLayers())
         .then(myout => cp.writeJson(myout, 'rules'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
@@ -122,6 +122,12 @@ async function getLayers() {
                             objarr = objarr.concat(objdata)
                     }
             }
+        var pkgs = {}
+        for (var x of objarr) {
+                pkgs[x.type] = x.name
+                console.dir(pkgs)
+                console.log(x.name)
+        }
             return objarr
         } catch (err) {
             console.log('error in showPackages : ' + err)
