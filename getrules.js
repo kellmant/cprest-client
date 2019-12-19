@@ -91,6 +91,7 @@ async function getPackages() {
                 }
         }
         for (var x of objarr) {
+                console.log(x)
                 console.log(x.name)
         }
         return objarr
