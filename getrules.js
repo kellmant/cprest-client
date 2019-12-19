@@ -214,7 +214,7 @@ async function processRules(myrules) {
                         console.log(typeof mylayer)
                         let myrule = myrules[mylayer]
                         //myrule.seeaction()
-                        console.log(typeof myrule)
+                        console.log(myrule.action)
                 }
                 return myrules
         } catch (err) {
