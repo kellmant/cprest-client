@@ -166,7 +166,7 @@ async function getRulebase(layer) {
                             for (var y of x.rulebase) {
                                     let myout = {}
                                     myout['rule-number'] = y['rule-number']
-                                    myout += await getRule(y.uid, layer)
+                                    myout = await getRule(y.uid, layer)
                                     process.stdout.write(' ' + y.uid + '\r')
                                     //myout['rule-number'] = y['rule-number']
                                     ruledata = ruledata.concat(myout)
