@@ -165,7 +165,7 @@ async function getRulebase(layer) {
                     if (x.type === 'access-section') {
                             for (var y of x.rulebase) {
                                     let myout = await getRule(y.uid, layer)
-                                    process.stdout.write('  ' + y.uid + '\r')
+                                    process.stdout.write('  rule: ' + y['rule-number'] + ' => ' + y.uid + '\r')
                                     myout['rule-number'] = y['rule-number']
                                     ruledata = ruledata.concat(myout)
                             }
@@ -176,7 +176,7 @@ async function getRulebase(layer) {
                         ruledata = ruledata.concat(myout)
                     }
             }
-            console.log('    rules: ' + ruledata.length + '                                 ')
+            console.log('    rules: ' + ruledata.length + '                                   ')
             return ruledata
         } catch (err) {
             console.log('error in getRulebase : ' + err)
