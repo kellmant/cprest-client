@@ -143,6 +143,8 @@ async function getRulebase(layer) {
             var mycmd = 'show-access-rulebase'                
             var objdata = {}
             var objarr = []
+            mydata.offset = 0
+            mydata.limit = limit
             mydata['details-level'] = 'uid'
             mydata.name = layer
             objdata = await cp.apicall(mydata, mycmd)
