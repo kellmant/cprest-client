@@ -90,7 +90,7 @@ async function getPackages() {
                         objarr = objarr.concat(objdata.packages)
                 }
         }
-        for (x in objarr) {
+        for (var x in objarr) {
                 console.log(x.name)
         }
         return objarr
