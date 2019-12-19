@@ -155,16 +155,17 @@ async function getRulebase(layer) {
                             objarr = objarr.concat(objdata.rulebase)
                     }
             }
+            var rulelist = []
             for (var x of objarr) {
                     if (x.type === 'access-section') {
                             for (var y of x.rulebase) {
-                                    console.log(y.name, y['rule-number'])
+                                    rulelist = rulelist.concat(y.uid, y['rule-number'])
                             }
                     } else {
-                        console.log(x.name, x['rule-number'])
+                        rulelist = rulelist.concat(x.uid, x['rule-number'])
                     }
             }
-            return objarr
+            return rulelist
         } catch (err) {
             console.log('error in getRulebase : ' + err)
     }
