@@ -197,8 +197,8 @@ async function getRule(uid, layer) {
             mydata.uid = uid
             mydata.layer = layer
             objdata = await cp.apicall(mydata, mycmd)
-            return objdata
-            //return new CPrule(objdata)
+            //return objdata
+            return new CPrule(objdata)
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
