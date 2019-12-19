@@ -113,13 +113,16 @@ async function getLayers() {
             mydata.limit = limit
             console.log('getting layers')
             objdata = await cp.apicall(mydata, mycmd)
-            objarr = objarr.concat(objdata)
+            if (!objdata['access-layers']) {
+                    throw new Error(objdata)
+            }
+            objarr = objarr.concat(objdata['access-layer'])
             if (objdata.total > objdata.to) {
                     while (objdata.total >= mydata.offset) {
                             console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                             mydata.offset = Number(objdata.to)
                             objdata = await cp.apicall(mydata, mycmd)
-                            objarr = objarr.concat(objdata)
+                            objarr = objarr.concat(objdata['access-layer'])
                     }
             }
         var pkgs = {}
