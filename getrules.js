@@ -90,6 +90,9 @@ async function getPackages() {
                         objarr = objarr.concat(objdata.packages)
                 }
         }
+        for (x of objarr) {
+                console.log(x.name)
+        }
         return objarr
     } catch (err) {
         console.log('error in showPackages : ' + err)
