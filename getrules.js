@@ -25,7 +25,8 @@ const mycred = require('./auth/mycpauth')
  * @property {Boolean} show-hits set to true for rule activity counter
  */
 
-//const CPrule = require('./cprule')
+const CPrule = require('./class/cprule')
+
 const limit = 500
 
 main()
@@ -168,7 +169,7 @@ async function getRulebase(layer) {
                     }
             }
             for (var id of rulelist) {
-                    console.log(id, layer)
+                    console.log(getRule(id, layer))
             }
             return rulelist
         } catch (err) {
@@ -193,6 +194,7 @@ async function getRule(uid, layer) {
             mydata.layer = layer
             objdata = await cp.apicall(mydata, mycmd)
             return objdata
+            //return new CPrule(objdata)
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
