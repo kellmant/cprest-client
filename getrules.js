@@ -127,7 +127,7 @@ async function getLayers() {
             }
         var pkgs = {}
         for (var x of objarr) {
-                pkgs[x.type] = x.name
+                pkgs[x.name] = await getRulebase(x.name)                
                 console.dir(pkgs)
                 console.log(x.name)
         }
@@ -135,7 +135,31 @@ async function getLayers() {
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
-} 
+}
+
+async function getRulebase(layer) {
+        try {
+            var mydata = {}
+            var mycmd = 'show-access-rulebase'                
+            var objdata = {}
+            mydata['details-level'] = 'uid'
+            mydata.name = layer
+            objdata = await cp.apicall(mydata, mycmd)
+            objarr = objarr.concat(objdata)
+            if (objdata.total > objdata.to) {
+                    while (objdata.total >= mydata.offset) {
+                            console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                            mydata.offset = Number(objdata.to)
+                            objdata = await cp.apicall(mydata, mycmd)
+                            objarr = objarr.concat(objdata)
+                    }
+            }
+            return objarr
+        } catch (err) {
+            console.log('error in showPackages : ' + err)
+    }
+}    
+
  /**
   * Determine where a set of objects is used in Check Point policies
   * @param {String} uid the UID of the rule
