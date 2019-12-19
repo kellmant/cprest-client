@@ -129,9 +129,9 @@ async function getLayers() {
         for (var x of objarr) {
                 pkgs[x.name] = await getRulebase(x.name)                
                 console.dir(pkgs)
-                console.log(x.name)
+                //console.log(x.name)
         }
-            return objarr
+            return pkgs
         } catch (err) {
             console.log('error in getLayers : ' + err)
     }
