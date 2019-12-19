@@ -169,8 +169,10 @@ async function getRulebase(layer) {
                         rulelist = rulelist.concat(x.uid)
                     }
             }
+            console.log(layer)
             for (var id of rulelist) {
                     let myout = await getRule(id, layer)
+                    console.log(id)
                     ruledata = ruledata.concat(myout)
             }
             return ruledata
@@ -190,7 +192,7 @@ async function getRule(uid, layer) {
             var mydata = {}
             var mycmd = 'show-access-rule'                
             var objdata = {}
-            mydata['details-level'] = 'standard'
+            mydata['details-level'] = 'uid'
             mydata['show-hits'] = true
             mydata.uid = uid
             mydata.layer = layer
