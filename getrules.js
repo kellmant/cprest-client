@@ -32,7 +32,7 @@ main()
 
 async function main() {
 	cp.startSession(mycred)
-        .then(() => getPackages())
+        .then(() => getLayers())
         .then(myout => cp.writeJson(myout, 'rules'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
