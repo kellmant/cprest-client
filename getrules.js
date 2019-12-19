@@ -213,7 +213,7 @@ async function processRules(myrules) {
                         console.log('----' + mylayer)
                         let myrule = myrules[mylayer]
                         Object.values(myrule).forEach(val => {
-                                console.log(val.action)
+                                console.log(await cp.getname(val.action))
                         });
                 });
                 return myrules
