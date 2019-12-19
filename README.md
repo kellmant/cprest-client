@@ -74,8 +74,6 @@ that work with Check Point API
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
     * [.setToken(session)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>\*</code>
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>\*</code>
 
 <a name="new_CpApiClass_new"></a>
 
@@ -122,30 +120,6 @@ Set the 'x-chkp-sid' token field to the current session token
 | Param | Type | Description |
 | --- | --- | --- |
 | session | [<code>session</code>](#session) | Session ID Token returned from authenticated login request |
-
-<a name="CpApiClass+doGet"></a>
-
-### cpApiClass.doGet(appfunc) ⇒ <code>\*</code>
-Prepare an HTTP GET for the given API function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>\*</code> - results of GET request to API  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>String</code> | API command to be called for GET operations |
-
-<a name="CpApiClass+doDelete"></a>
-
-### cpApiClass.doDelete(appfunc) ⇒ <code>\*</code>
-Prepare an HTTP DELETE for the given APU function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>\*</code> - Results of delete request to API  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| appfunc | <code>String</code> | API function to be called for DELETE operations |
 
 <a name="CPobj"></a>
 
