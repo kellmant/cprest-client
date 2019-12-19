@@ -212,8 +212,8 @@ async function processRules(myrules) {
                 for (var mylayer in myrules) {
                         console.log(mylayer)
                         console.log(typeof mylayer)
-                        let myrule = myrules[mylayer]
-                        console.log(myrule)
+                        let myrule = new CPrule(myrules[mylayer])
+                        myrule.action()
                         console.log(typeof myrule)
                 }
                 return myrules
