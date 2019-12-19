@@ -133,7 +133,7 @@ async function getLayers() {
         }
             return objarr
         } catch (err) {
-            console.log('error in showPackages : ' + err)
+            console.log('error in getLayers : ' + err)
     }
 }
 
@@ -156,7 +156,7 @@ async function getRulebase(layer) {
             }
             return objarr
         } catch (err) {
-            console.log('error in showPackages : ' + err)
+            console.log('error in getRulebase : ' + err)
     }
 }    
 
