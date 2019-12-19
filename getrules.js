@@ -210,7 +210,7 @@ async function getRule(uid, layer) {
 async function processRules(rules) {
         try {
                 for (var layer in rules) {
-                        console.log(rules[layer])
+                        layer.show()
                 }
                 return rules
         } catch (err) {

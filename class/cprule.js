@@ -50,6 +50,9 @@ const CPrule = class CheckPointRule {
         if (x['install-on'])
             this['install-on'] = x['install-on']
 	}
+	action () {
+		console.log(this.action)
+	}
 	/** 
 	 * if at 1, any further action would expose or break policy
 	 * any other number and we can safely remove the object 
