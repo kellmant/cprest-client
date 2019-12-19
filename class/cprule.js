@@ -50,7 +50,7 @@ const CPrule = class CheckPointRule {
         if (x['install-on'])
             this['install-on'] = x['install-on']
 	}
-	action () {
+	seeAction () {
 		console.log(this.action)
 	}
 	/** 
