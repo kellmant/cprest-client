@@ -209,7 +209,7 @@ async function getRule(uid, layer) {
 
 async function processRules(rules) {
         try {
-                for (var layer of rules) {
+                for (var layer in rules) {
                         console.log(typeof rules)
                         let myrule = new CPrule(rules[layer])
                         console.log(typeof myrule)
