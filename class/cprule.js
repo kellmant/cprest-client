@@ -27,7 +27,8 @@ const CPrule = class CheckPointRule {
 		this.name = x.name || 'no name'
 		this.type = x.type || 'no type'
         this.uid = x.uid || 'no uid'
-        this.layer = x.layer
+		this.layer = x.layer
+		this['rule-number'] = x['rule-number']
         this.enabled = x.enabled
         this.hits = x.hits
 		if (x.comments) 

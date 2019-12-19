@@ -170,9 +170,10 @@ async function getRulebase(layer) {
                     }
             }
             console.log(layer)
+            console.log(' ')
             for (var id of rulelist) {
                     let myout = await getRule(id, layer)
-                    console.log(id)
+                    process.stdout.write(id)
                     ruledata = ruledata.concat(myout)
             }
             return ruledata
