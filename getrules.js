@@ -34,6 +34,7 @@ main()
 async function main() {
 	cp.startSession(mycred)
         .then(() => getLayers())
+        .then(mylayers => processRules(mylayers))
         .then(myout => cp.writeJson(myout, 'rules'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
@@ -204,4 +205,15 @@ async function getRule(uid, layer) {
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
-}    
+}
+
+async function processRules(rules) {
+        try {
+                for (var layer of rules) {
+                        console.log(layer.action)
+                }
+                return rules
+        } catch (err) {
+                console.log('error in processRules : ' + err)
+        }
+}
