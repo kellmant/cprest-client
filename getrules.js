@@ -74,7 +74,7 @@ async function getPackages() {
 	var objdata = {}
         var objarr = []
         mydata.offset = 0
-        mydata['details-level'] = 'standard'
+        mydata['details-level'] = 'full'
         mydata.limit = limit
         console.log('getting packages')
         objdata = await cp.apicall(mydata, mycmd)
