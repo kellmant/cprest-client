@@ -32,18 +32,22 @@ const CPrule = class CheckPointRule {
         this.hits = x.hits
 		if (x.comments) 
 		    this.comments = x.comments
-		if (x.destination)
-            this.destination = x.destination
         if (x.source) 
-            this.source = x.source
-        if (x.description) 
-            this.description = x.description
+			this.source = x.source
+		if (x['source-negate'] === true)
+			this['source-negate'] = true
+		if (x.destination)
+			this.destination = x.destination
+		if (x['destination-negate'] === true)
+			this['destination-negate'] = true
+		if (x.service)
+			this.service = x.service
+		if (x['service-negate'] === true)
+			this['service-negate'] = true
+        if (x.action) 
+            this.action = x.action
         if (x['install-on'])
             this['install-on'] = x['install-on']
-        //if (x.groups) 
-        //    this.groups = x.groups
-        if (x.tags)
-            this.tags = x.tags
 	}
 	/** 
 	 * if at 1, any further action would expose or break policy
