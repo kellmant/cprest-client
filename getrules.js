@@ -209,9 +209,11 @@ async function getRule(uid, layer) {
 
 async function processRules(rules) {
         try {
-                for (var layer of rules) {
-                        console.log(layer)
-                }
+                //for (var layer of rules) {
+                        console.log(typeof rules)
+                        console.log(rules.length)
+                        console.log(rules.name)
+                //}
                 return rules
         } catch (err) {
                 console.log('error in processRules : ' + err)
