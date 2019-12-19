@@ -159,10 +159,10 @@ async function getRulebase(layer) {
             for (var x of objarr) {
                     if (x.type === 'access-section') {
                             for (var y of x.rulebase) {
-                                    rulelist = rulelist.concat(y.uid, y['rule-number'])
+                                    rulelist = rulelist.concat(y.uid)
                             }
                     } else {
-                        rulelist = rulelist.concat(x.uid, x['rule-number'])
+                        rulelist = rulelist.concat(x.uid)
                     }
             }
             return rulelist
