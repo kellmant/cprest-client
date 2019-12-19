@@ -211,8 +211,10 @@ async function processRules(myrules) {
         try {
                 Object.keys(myrules).forEach(mylayer => {
                         let myrule = myrules[mylayer]
-                        console.log(myrule)
-                        console.log('----')
+                        Object.keys(myrule).forEach(val => {
+                                console.log(val)
+                        });
+                        console.log('----' + mylayer)
                         //console.log(Object.values())
                 });
                 /*
