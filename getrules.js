@@ -167,6 +167,9 @@ async function getRulebase(layer) {
                         rulelist = rulelist.concat(x.uid)
                     }
             }
+            for (var id of rulelist) {
+                    console.log(id, layer)
+            }
             return rulelist
         } catch (err) {
             console.log('error in getRulebase : ' + err)
@@ -185,19 +188,11 @@ async function getRule(uid, layer) {
             var mycmd = 'show-access-rule'                
             var objdata = {}
             mydata['details-level'] = 'standard'
+            mydata['show-hits'] = true
             mydata.uid = uid
             mydata.layer = layer
             objdata = await cp.apicall(mydata, mycmd)
-            objarr = objarr.concat(objdata)
-            if (objdata.total > objdata.to) {
-                    while (objdata.total >= mydata.offset) {
-                            console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
-                            mydata.offset = Number(objdata.to)
-                            objdata = await cp.apicall(mydata, mycmd)
-                            objarr = objarr.concat(objdata)
-                    }
-            }
-            return objarr
+            return objdata
         } catch (err) {
             console.log('error in showPackages : ' + err)
     }
