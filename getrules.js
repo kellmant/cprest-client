@@ -213,10 +213,10 @@ async function processRules(myrules) {
                         console.log('----' + mylayer)
                         let myrule = myrules[mylayer]
                         Object.values(myrule).forEach(val => {
+                                if (val.hits > 0)
                                 let rlno = 'Rule: ' + val['rule-number']
-                                let enab = 'Enabled: ' + val.enabled
                                 let cnt = 'Hits: ' + val.hits
-                                console.log(rlno, enab, cnt)
+                                console.log(rlno, cnt)
                         });
                 });
                 return myrules
