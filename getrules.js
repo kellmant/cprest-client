@@ -155,6 +155,9 @@ async function getRulebase(layer) {
                             objarr = objarr.concat(objdata.rulebase)
                     }
             }
+            for (var x of objarr) {
+                    console.log(x.type, x.name)
+            }
             return objarr
         } catch (err) {
             console.log('error in getRulebase : ' + err)
