@@ -157,7 +157,7 @@ async function getRulebase(layer) {
             }
             for (var x of objarr) {
                     if (x.type === 'access-section') {
-                            console.log(x.type.rulebase)
+                            console.log(x.rulebase)
                     } else {
                         console.log(x.type, x.name)
                     }
