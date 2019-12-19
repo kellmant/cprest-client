@@ -146,13 +146,13 @@ async function getRulebase(layer) {
             mydata['details-level'] = 'uid'
             mydata.name = layer
             objdata = await cp.apicall(mydata, mycmd)
-            objarr = objarr.concat(objdata)
+            objarr = objarr.concat(objdata.rulebase)
             if (objdata.total > objdata.to) {
                     while (objdata.total >= mydata.offset) {
                             console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                             mydata.offset = Number(objdata.to)
                             objdata = await cp.apicall(mydata, mycmd)
-                            objarr = objarr.concat(objdata)
+                            objarr = objarr.concat(objdata.rulebase)
                     }
             }
             return objarr
