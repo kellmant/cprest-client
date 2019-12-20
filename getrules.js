@@ -34,7 +34,7 @@ main()
 async function main() {
 	cp.startSession(mycred)
         .then(() => getLayers())
-        //.then(mylayers => processRules(mylayers))
+        .then(mylayers => processRules(mylayers))
         .then(myout => cp.writeJson(myout, 'rules'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
