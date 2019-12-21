@@ -33,7 +33,9 @@ const toApi = new CpApiClass(myapisite.chkp)
  */
 async function startSession(myauth) {
 	try {
-		console.log('starting session')
+        if (myauth.domain) {
+            console.log('starting session in domain ' + myauth.domain)
+        }
 		var setit = toApi.doPost(myauth, 'login')
         let sessionid = await callOut(setit.options, setit.postData)
         if (sessionid.message) {
