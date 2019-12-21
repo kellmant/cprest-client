@@ -177,6 +177,10 @@ async function testcmd(newcmd) {
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
         console.log(Object.keys(objdata))
+        if (!objdata.total) {
+            await cp.writeJson(objdata, 'dump')
+            return objdata
+        }
         //objarr = objarr.concat(objdata)
 //        if (objdata.total > objdata.to) {
                 while (Number(objdata.total) >= Number(objdata.to)) {
