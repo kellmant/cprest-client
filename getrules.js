@@ -222,7 +222,7 @@ async function processRules(myrules) {
                                         let rlno = 'Rule: ' + val['rule-number']
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
-                                        let rsrc = 'Source: ' + val.source
+                                        let rsrc = 'Source: ' + objdict[val.source]
                                         console.log(rlno, rsrc, cnt, rname)
                                 }
                         });
