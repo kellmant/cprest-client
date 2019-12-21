@@ -223,7 +223,7 @@ async function processRules(myrules) {
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
                                         let rsrc = 'Source: ' + val.source
-                                        console.log(rlno, ract, cnt, rname)
+                                        console.log(rlno, rsrc, cnt, rname)
                                 }
                         });
                 });
