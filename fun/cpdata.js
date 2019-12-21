@@ -186,7 +186,7 @@ async function testcmd(newcmd) {
                         objarr = objarr.concat(objdata)
                 }
         }
-        cp.writeJson(objarr, 'dump')
+        await cp.writeJson(objarr, 'dump')
         return objarr
     } catch (err) {
         console.log('error in testcmd : ' + err)
