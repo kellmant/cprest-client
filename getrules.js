@@ -29,7 +29,11 @@ const CPrule = require('./class/cprule')
 
 const limit = 500
 
-main()
+const allrules = require('./MDS_SMC User')
+
+processRules(allrules)
+
+//main()
 
 async function main() {
 	cp.startSession(mycred)
