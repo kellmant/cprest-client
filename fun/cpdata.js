@@ -167,8 +167,35 @@ async function getRule(uid, layer) {
     }
 }
 
+async function testcmd(newcmd) {
+    try {                
+        let mydata = {}
+	    var objdata = {}
+	    var objarr = []
+        //mydata['details-level'] = details
+        //mydata.limit = limit
+        console.log('testing command ' + newcmd)
+        objdata = await cp.apicall(mydata, newcmd)
+        console.log(Object.keys(objdata))
+        objarr = objarr.concat(objdata)
+        if (objdata.total > objdata.to) {
+                while (objdata.total > mydata.offset) {
+                        console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                        mydata.offset = Number(objdata.to)
+                        objdata = await cp.apicall(mydata, newcmd)
+                        objarr = objarr.concat(objdata)
+                }
+        }
+        cp.writeJson(objarr, 'dump')
+        return objarr
+    } catch (err) {
+        console.log('error in testcmd : ' + err)
+    }
+}
+
 module.exports = {
     domains,
     layers,
-    policy
+    policy,
+    testcmd
 }

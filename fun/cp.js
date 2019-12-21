@@ -84,6 +84,7 @@ async function getname(uid) {
     }
 }
 
+
 /** 
  * publish changes to Check Point API
 */

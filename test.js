@@ -23,13 +23,13 @@ main()
 
 async function main() {
 	cp.startSession(mycred)
-        .then(() => testcmd())
-        .then(myobjs => cp.writeJson(myobjs, 'dump'))
+        .then(() => cpdata.testcmd(mycmd))
+        //.then(myobjs => cp.writeJson(myobjs, 'dump'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(cp.endSession)
 }
-
+/*
 async function testcmd() {
     try {                
         let mydata = {}
@@ -51,6 +51,7 @@ async function testcmd() {
         }
         return objarr
     } catch (err) {
-        console.log('error in showObjects : ' + err)
+        console.log('error in testcmd : ' + err)
     }
 }
+*/
