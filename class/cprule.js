@@ -51,12 +51,26 @@ const CPrule = class CheckPointRule {
 		}
 		if (x['source-negate'] === true)
 			this['source-negate'] = true
-		if (x.destination)
+		if (x.destination[0].name) {
+			let returned = []
+			for (var n in x.destination) {
+				returned = returned.concat(x.destination[n].name)
+			}
+			this.destination = returned
+		} else {
 			this.destination = x.destination
+		}
 		if (x['destination-negate'] === true)
 			this['destination-negate'] = true
-		if (x.service)
+		if (x.service[0].name) {
+			let returned = []
+			for (var n in x.service) {
+				returned = returned.concat(x.service[n].name)
+			}
+			this.service = returned
+		} else {
 			this.service = x.service
+		}
 		if (x['service-negate'] === true)
 			this['service-negate'] = true
         if (x.action.name) {
@@ -64,8 +78,15 @@ const CPrule = class CheckPointRule {
 		} else {
 			this.action = x.action
 		}
-        if (x['install-on'])
-            this['install-on'] = x['install-on']
+        if (x['install-on'][0].name) {
+			let returned = []
+			for (var n in x['install-on']) {
+				returned = returned.concat(x['install-on'][n].name)
+			}
+			this['install-on'] = returned
+		} else {
+			this['install-on'] = x['install-on']
+		}
 	}
 	seeAction () {
 		console.log(this.action)
