@@ -31,7 +31,7 @@ async function getdomains() {
         objdata = await cp.apicall(mydata, mycmd)
         objarr = objarr.concat(objdata.objects)
         if (objdata.total > objdata.to) {
-                while (objdata.total >= mydata.offset) {
+                while (objdata.total > mydata.offset) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, mycmd)
@@ -70,7 +70,7 @@ async function getlayers() {
         objdata = await cp.apicall(mydata, mycmd)
         objarr = objarr.concat(objdata['access-layers'])
         if (objdata.total > objdata.to) {
-                while (objdata.total >= mydata.offset) {
+                while (objdata.total > mydata.offset) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, mycmd)
@@ -112,7 +112,7 @@ async function getRulebase(layer) {
         objdata = await cp.apicall(mydata, mycmd)
         objarr = objarr.concat(objdata.rulebase)
         if (objdata.total > objdata.to) {
-                while (objdata.total >= mydata.offset) {
+                while (objdata.total > mydata.offset) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, mycmd)
