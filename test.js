@@ -24,7 +24,7 @@ main()
 async function main() {
 	cp.startSession(mycred)
         .then(() => testcmd())
-        .then(myobjs => cp.writeJson(myobjs, 'test'))
+        .then(myobjs => cp.writeJson(myobjs, 'dump'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(cp.endSession)
@@ -39,6 +39,7 @@ async function testcmd() {
         mydata.limit = limit
         console.log('testing command ' + mycmd)
         objdata = await cp.apicall(mydata, mycmd)
+        console.log(Object.keys(objdata))
         objarr = objarr.concat(objdata)
         if (objdata.total > objdata.to) {
                 while (objdata.total > mydata.offset) {
