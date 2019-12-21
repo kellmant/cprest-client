@@ -220,7 +220,8 @@ async function processRules(myrules) {
                                 if (val.hits > 0) {
                                         let rlno = 'Rule: ' + val['rule-number']
                                         let cnt = 'Hits: ' + val.hits
-                                        console.log(rlno, cnt)
+                                        let rname = 'Name: ' + val.name || 'no name'
+                                        console.log(rlno, cnt, rname)
                                 }
                         });
                 });
