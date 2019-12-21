@@ -180,9 +180,11 @@ const groupBy = (array, key) => {
 };
 
 const uidDict = (array) => {
-    array.reduce((obj, item) => ( obj[item.uid] = item.name, obj) ,{});
-    return obj
-}
+    return array.reduce((obj, item) => {
+        ( obj[item.uid] = item.name );
+        return obj;
+     }, {});
+};
 
 
 // easy way to wait
