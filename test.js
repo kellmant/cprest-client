@@ -2,6 +2,7 @@
  */
 'use strict'
 const cp = require('./fun/cp')
+const cpdata = require('./fun/cpdata')
 var limit = '500'
 var details = 'full'
 
