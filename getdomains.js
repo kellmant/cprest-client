@@ -42,7 +42,7 @@ async function layarr(doms) {
             mycred.domain = x
             let ruledata = await cpdata.layers(mycred)
             if (ruledata.length) {
-                console.log(ruledata.length)
+                console.log(ruledata.length + ' policy layers found')
                 response[x] = ruledata
             }
         }
