@@ -39,7 +39,7 @@ async function testcmd() {
         //mydata.limit = limit
         console.log('testing command ' + mycmd)
         objdata = await cp.apicall(mydata, mycmd)
-        console.log(Object.keys(objdata))
+        console.log(Object.keys(objdata[0]))
         objarr = objarr.concat(objdata)
         if (objdata.total > objdata.to) {
                 while (objdata.total > mydata.offset) {
@@ -49,7 +49,6 @@ async function testcmd() {
                         objarr = objarr.concat(objdata)
                 }
         }
-        //indexObjects(objarr)
         return objarr
     } catch (err) {
         console.log('error in showObjects : ' + err)
