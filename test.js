@@ -35,7 +35,6 @@ async function testcmd() {
         let mydata = {}
 	var objdata = {}
 	var objarr = []
-        mydata.offset = 0
         mydata['details-level'] = details
         mydata.limit = limit
         console.log('testing command ' + mycmd)
