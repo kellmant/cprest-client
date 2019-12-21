@@ -180,7 +180,7 @@ async function testcmd(newcmd) {
         objarr = objarr.concat(objdata)
         console.log(objdata.total, objdata.to)
 //        if (objdata.total > objdata.to) {
-                while (objdata.total > mydata.to) {
+                while (Number(objdata.total) > Number(objdata.to)) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, newcmd)
