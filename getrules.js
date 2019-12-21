@@ -222,7 +222,7 @@ async function processRules(myrules) {
                                         let rlno = 'Rule: ' + val['rule-number']
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
-                                        let rsrc = {}
+                                        let rsrc = ''
                                         for (var s in val.source) {
                                                 rsrc += objdict[val.source[s]] + ', '
                                         }
