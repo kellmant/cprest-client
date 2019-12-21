@@ -52,8 +52,11 @@ const CPrule = class CheckPointRule {
 			this.service = x.service
 		if (x['service-negate'] === true)
 			this['service-negate'] = true
-        if (x.action) 
-            this.action = x.action
+        if (x.action.name) {
+			this.action = x.action.name
+		} else {
+			this.action = x.action
+		}
         if (x['install-on'])
             this['install-on'] = x['install-on']
 	}
