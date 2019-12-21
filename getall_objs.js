@@ -52,7 +52,7 @@ async function showObjects() {
                 }
         }
         //indexObjects(objarr)
-        let result = objarr.map(a => a.uid: a.name)
+        let result = objarr.map(a => { a.uid: a.name })
         //let objtypes = cp.groupBy(objarr, 'type')
         return result
     } catch (err) {
