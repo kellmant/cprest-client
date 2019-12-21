@@ -59,7 +59,7 @@ async function apicall(mydata, mycmd) {
         let setit = toApi.doPost(mydata, mycmd)
         let myout = await callOut(setit.options, setit.postData)
         if (myout.message) {
-            throw new Error(myout.message)
+            console.log(myout.message)
         }
         return myout
     } catch (err) {
