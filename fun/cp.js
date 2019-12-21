@@ -179,6 +179,11 @@ const groupBy = (array, key) => {
     }, {}); // empty object is the initial value for result object
 };
 
+const uidDict = (array) => {
+    array.reduce((obj, item) => ( obj[item.uid] = item.name, obj) ,{});
+}
+
+
 // easy way to wait
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -192,5 +197,6 @@ module.exports = {
     endSession,
     writeJson,
     countOf,
-    groupBy
+    groupBy,
+    uidDict
 }
