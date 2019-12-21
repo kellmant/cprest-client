@@ -225,10 +225,12 @@ async function processRules(myrules) {
                                         let csrc = 'SRC: ' + JSON.stringify(val.source)
                                         let cdst = 'DST: ' + JSON.stringify(val.destination)
                                         let csvc = 'SVC: ' + JSON.stringify(val.service)
+                                        let cact = 'ACTION: ' + val.action
                                         console.log(rlno, cnt, rname)
                                         console.log(csrc)
                                         console.log(cdst)
                                         console.log(csvc)
+                                        console.log(cact)
                                         console.log('')
                                 }
                         });
