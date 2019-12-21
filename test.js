@@ -36,7 +36,7 @@ async function testcmd() {
 	var objdata = {}
 	var objarr = []
         //mydata['details-level'] = details
-        mydata.limit = limit
+        //mydata.limit = limit
         console.log('testing command ' + mycmd)
         objdata = await cp.apicall(mydata, mycmd)
         console.log(Object.keys(objdata))
