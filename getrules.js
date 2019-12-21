@@ -222,21 +222,9 @@ async function processRules(myrules) {
                                         let rlno = 'Rule: ' + val['rule-number']
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
-                                        let rsrc = []
-                                        let rdst = []
-                                        let rsvc = []
-                                        for (var s in val.source) {
-                                                rsrc = rsrc.concat(objdict[val.source[s]])
-                                        }
-                                        for (var d in val.destination) {
-                                                rdst = rdst.concat(objdict[val.destination[d]])
-                                        }
-                                        for (var p in val.service) {
-                                                rsvc = rsvc.concat(objdict[val.service[p]])
-                                        }
-                                        let csrc = 'SRC: ' + JSON.stringify(rsrc)
-                                        let cdst = 'DST: ' + JSON.stringify(rdst)
-                                        let csvc = 'SVC: ' + JSON.stringify(rsvc)
+                                        let csrc = 'SRC: ' + JSON.stringify(val.source)
+                                        let cdst = 'DST: ' + JSON.stringify(val.destination)
+                                        let csvc = 'SVC: ' + JSON.stringify(val.service)
                                         console.log(rlno, cnt, rname)
                                         console.log(csrc)
                                         console.log(cdst)
