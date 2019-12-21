@@ -40,8 +40,15 @@ const CPrule = class CheckPointRule {
 			this.creator = x['meta-info']['creator']
 		if (x.comments) 
 		    this.comments = x.comments
-        if (x.source) 
+        if (x.source[0].name) {
+			let returned = []
+			for (var n in x.source) {
+				returned = returned.concat(x.source[n].name)
+			}
+			this.source = returned
+		} else { 
 			this.source = x.source
+		}
 		if (x['source-negate'] === true)
 			this['source-negate'] = true
 		if (x.destination)
