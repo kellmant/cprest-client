@@ -30,6 +30,7 @@ const CPrule = require('./class/cprule')
 const limit = 500
 
 const allrules = require('./MDS_SMC User')
+const objdict = require('./objdict')
 
 processRules(allrules)
 
@@ -221,7 +222,8 @@ async function processRules(myrules) {
                                         let rlno = 'Rule: ' + val['rule-number']
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
-                                        console.log(rlno, cnt, rname)
+                                        let ract = 'Action: ' + objdict(val.action)
+                                        console.log(rlno, ract, cnt, rname)
                                 }
                         });
                 });
