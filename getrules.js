@@ -223,11 +223,19 @@ async function processRules(myrules) {
                                         let cnt = 'Hits: ' + val.hits
                                         let rname = 'Name: ' + val.name || 'no name'
                                         let rsrc = []
+                                        let rdst = []
                                         for (var s in val.source) {
                                                 rsrc = rsrc.concat(objdict[val.source[s]])
                                         }
-                                        let csrc = 'Source: ' + JSON.stringify(rsrc)
-                                        console.log(rlno, csrc, cnt, rname)
+                                        for (var d in val.destination) {
+                                                rdst = rdst.concat(objdict[val.destination[d]])
+                                        }
+                                        let csrc = 'SRC: ' + JSON.stringify(rsrc)
+                                        let cdst = 'DST: ' + JSON.stringify(rdst)
+                                        console.log(rlno, cnt, rname)
+                                        console.log(csrc)
+                                        console.log(cdst)
+                                        console.log('')
                                 }
                         });
                 });
