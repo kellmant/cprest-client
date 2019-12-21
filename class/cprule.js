@@ -29,8 +29,15 @@ const CPrule = class CheckPointRule {
 		this.type = x.type || 'no type'
         this.uid = x.uid || 'no uid'
 		this.layer = x.layer
+		if (x.domain) 
+			this.domain = x.domain.name
         this.enabled = x.enabled
-        this.hits = x.hits.value
+		this.hits = x.hits.value
+		if (this['meta-info'])
+			this['last-modify-time'] = x['meta-info']['last-modify-time']['iso-8601']
+			this['last-modifier'] = x['meta-info']['last-modifier']
+			this['creation-time'] = x['meta-info']['creation-time']['iso-8601']
+			this.creator = x['meta-info']['creator']
 		if (x.comments) 
 		    this.comments = x.comments
         if (x.source) 

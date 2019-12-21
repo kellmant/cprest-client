@@ -29,12 +29,12 @@ const CPrule = require('./class/cprule')
 
 const limit = 500
 
-const allrules = require('./MDS_SMC User')
+//const allrules = require('./MDS_SMC User')
 const objdict = require('./objdict')
 
-processRules(allrules)
+//processRules(allrules)
 
-//main()
+main()
 
 async function main() {
 	cp.startSession(mycred)
@@ -125,7 +125,7 @@ async function getLayers() {
             }
             objarr = objarr.concat(objdata['access-layers'])
             if (objdata.total > objdata.to) {
-                    while (objdata.total >= mydata.offset) {
+                    while (objdata.total > mydata.offset) {
                             console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                             mydata.offset = Number(objdata.to)
                             objdata = await cp.apicall(mydata, mycmd)
@@ -157,7 +157,7 @@ async function getRulebase(layer) {
             objdata = await cp.apicall(mydata, mycmd)
             objarr = objarr.concat(objdata.rulebase)
             if (objdata.total > objdata.to) {
-                    while (objdata.total >= mydata.offset) {
+                    while (objdata.total > mydata.offset) {
                             console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                             mydata.offset = Number(objdata.to)
                             objdata = await cp.apicall(mydata, mycmd)
@@ -200,7 +200,7 @@ async function getRule(uid, layer) {
             var mydata = {}
             var mycmd = 'show-access-rule'                
             var objdata = {}
-            mydata['details-level'] = 'uid'
+            mydata['details-level'] = 'standard'
             mydata['show-hits'] = true
             mydata.uid = uid
             mydata.layer = layer
