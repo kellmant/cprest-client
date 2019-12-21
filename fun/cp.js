@@ -57,7 +57,11 @@ async function startSession(myauth) {
 async function apicall(mydata, mycmd) {
     try {
         let setit = toApi.doPost(mydata, mycmd)
-        return await callOut(setit.options, setit.postData)
+        let myout = await callOut(setit.options, setit.postData)
+        if (myout.message) {
+            throw new Error(myout.message)
+        }
+        return myout
     } catch (err) {
             console.log('error in cpapi : ' + err)
     }
