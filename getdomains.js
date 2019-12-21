@@ -34,15 +34,6 @@ domarr()
 .then(mylayers => rulearr(mylayers))
 .catch(console.log('error in getdomains'))
 
-const domarr = async () => {
-    try {
-        const response = await cpdata.domains(mycred)
-        cp.writeJson(response, 'domains')
-        return response
-    } catch (err) {
-        console.log('cant get domain array ' + err)
-    }
-}
 
 async function layarr(doms) {
     try {
