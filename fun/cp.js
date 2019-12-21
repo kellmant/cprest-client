@@ -35,7 +35,10 @@ async function startSession(myauth) {
 	try {
 		console.log('starting session')
 		var setit = toApi.doPost(myauth, 'login')
-		let sessionid = await callOut(setit.options, setit.postData)
+        let sessionid = await callOut(setit.options, setit.postData)
+        if (sessionid.message) {
+            throw new Error(sessionid.message)
+        }
         toApi.setToken(sessionid)
 		return sessionid
 	} catch (err) {
@@ -113,7 +116,7 @@ async function callOut(options, postData) {
         var req = https.request(options, (res) => {
             var myret = ''
             if (res.statusCode > 200) {
-                process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path);
+                process.stdout.write(res.statusCode + ' : ' + res.statusMessage + ' ' + options.path + ' \n');
             }
             res.on('data', (d) => {
                 myret += d
