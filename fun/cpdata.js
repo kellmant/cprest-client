@@ -176,7 +176,7 @@ async function testcmd(newcmd) {
         //mydata.limit = limit
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
-        console.log(Object.keys(objdata))
+        //console.log(Object.keys(objdata))
         objarr = objarr.concat(objdata)
         if (objdata.total > objdata.to) {
                 while (objdata.total > mydata.offset) {
