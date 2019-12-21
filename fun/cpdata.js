@@ -155,7 +155,7 @@ async function getRule(uid, layer) {
         var mydata = {}
         var mycmd = 'show-access-rule'                
         var objdata = {}
-        mydata['details-level'] = 'uid'
+        mydata['details-level'] = 'standard'
         mydata['show-hits'] = true
         mydata.uid = uid
         mydata.layer = layer
