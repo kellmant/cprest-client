@@ -53,7 +53,7 @@ async function showObjects() {
         }
         //indexObjects(objarr)
         //let result = objarr.map(a => ({ [a.uid]: a.name}))
-        let result = objarr.reduce(obj, item) => ( obj[item.uid] = item.name, obj, {});
+        let result = objarr.reduce((obj, item) => ( obj[item.uid] = item.name, obj) ,{});
         //let objtypes = cp.groupBy(objarr, 'type')
         console.log(result['ff00208c-b5c2-4a8b-ae9c-37286e4ac340'])
         return result
