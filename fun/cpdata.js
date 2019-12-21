@@ -169,7 +169,7 @@ async function getRule(uid, layer) {
 
 async function testcmd(newcmd) {
     try {                
-        let mydata = {}
+        var mydata = {}
 	    var objdata = {}
 	    var objarr = []
         //mydata['details-level'] = details
