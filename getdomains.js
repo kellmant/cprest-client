@@ -32,7 +32,6 @@ const rulearr = async (mydata) => {
 domarr()
 .then(mydoms => layarr(mydoms))
 .then(mylayers => rulearr(mylayers))
-.catch(console.log(err))
 
 
 async function layarr(doms) {
