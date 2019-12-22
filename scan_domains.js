@@ -67,10 +67,11 @@ const domarr = async () => {
 }
 
 /**
- * 
+ * Scan and index all domains policies and objects
  * @function scan_domains
  * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
- * dataset saved as DOM_ALL.json, indexed by domain 
+ * dataset saved as DOM_ALL.json, indexed by domain
+ * @example node scan_domains 
  */
 const rulearr = async (mydata) => {
     try {

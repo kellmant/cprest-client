@@ -10,7 +10,8 @@
 
 <dl>
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code>JSON</code></dt>
-<dd></dd>
+<dd><p>Scan and index all domains policies and objects</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -35,9 +36,15 @@ Check Point API authorization
 <a name="scan_domains"></a>
 
 ## scan\_domains() ⇒ <code>JSON</code>
+Scan and index all domains policies and objects
+
 **Kind**: global function  
 **Returns**: <code>JSON</code> - Each domain is saved with objects and policy indexes, and complete
 dataset saved as DOM_ALL.json, indexed by domain  
+**Example**  
+```js
+node scan_domains 
+```
 <a name="Credentials"></a>
 
 ## Credentials : <code>Object</code>
