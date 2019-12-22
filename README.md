@@ -4,41 +4,53 @@
 <dt><a href="#CPobj">CPobj</a> : <code>Object</code></dt>
 <dd></dd>
 <dt><a href="#CpApiClass">CpApiClass</a></dt>
-<dd><p>Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions</p>
+<dd><p>Class Method for API callout builder to prepare HTTP functions
+that work with Check Point API</p>
 </dd>
-</dl>
-
-## Constants
-
-<dl>
-<dt><a href="#myapisite">myapisite</a></dt>
-<dd><p>API Site configuration required from auth/mycpapi.json file</p>
+<dt><a href="#CPobj">CPobj</a></dt>
+<dd><p>Check Point object properties</p>
 </dd>
-<dt><a href="#mycred">mycred</a></dt>
-<dd><p>API credentials required from auth/mycpauth.json</p>
+<dt><a href="#CPrule">CPrule</a></dt>
+<dd><p>Check Point object properties for rules</p>
+</dd>
+<dt><a href="#CPsession">CPsession</a></dt>
+<dd><p>Check Point object properties</p>
 </dd>
 </dl>
 
 ## Functions
 
 <dl>
-<dt><a href="#startSession">startSession(credentials)</a> ⇒ <code><a href="#sessionid">sessionid</a></code></dt>
+<dt><a href="#startSession">startSession(myauth)</a> ⇒ <code><a href="#session">session</a></code></dt>
 <dd><p>Create an authenticated session with the Check Point API</p>
 </dd>
-<dt><a href="#setSession">setSession(sessionid)</a> ⇒ <code>myapicall</code></dt>
-<dd><p>Set the session handler for a Check Point API connection</p>
+<dt><a href="#apicall">apicall(mydata, mycmd)</a> ⇒ <code>*</code></dt>
+<dd><p>accept post data and command and send API call</p>
 </dd>
-<dt><a href="#checkObject">checkObject(uid)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
-<dd><p>Object verify IP matches filter</p>
+<dt><a href="#getname">getname(uid)</a> ⇒ <code>String</code></dt>
+<dd><p>return name of object UID</p>
 </dd>
-<dt><a href="#whereUsed">whereUsed(uid)</a> ⇒ <code><a href="#usage">usage</a></code></dt>
-<dd><p>Determine where a set of objects is used in Check Point policies</p>
-</dd>
-<dt><a href="#doParse">doParse(usage)</a> ⇒ <code><a href="#allobjs">allobjs</a></code></dt>
-<dd><p>Operations Object created with filter logic</p>
+<dt><a href="#pubSession">pubSession()</a></dt>
+<dd><p>publish changes to Check Point API</p>
 </dd>
 <dt><a href="#endSession">endSession()</a></dt>
 <dd><p>end session and expire token from header</p>
+</dd>
+<dt><a href="#writeJson">writeJson(content, file)</a></dt>
+<dd><p>save api output as json data to local file</p>
+</dd>
+<dt><a href="#countOf">countOf(obj)</a> ⇒ <code>Number</code></dt>
+<dd><p>the number of keys in use for a given object</p>
+</dd>
+<dt><a href="#groupBy">groupBy(array, key)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Accepts the array and groups by key</p>
+</dd>
+<dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code>rule</code></dt>
+<dd><p>Determine where a set of objects is used in Check Point policies</p>
+</dd>
+<dt><a href="#testcmd">testcmd(newcmd, [uid|full|standard], [data])</a></dt>
+<dd><p>test API commands and save return data
+to dump.json</p>
 </dd>
 </dl>
 
@@ -59,18 +71,25 @@
 <dd></dd>
 <dt><a href="#access">access</a> : <code>Object</code></dt>
 <dd></dd>
+<dt><a href="#credentials">credentials</a> : <code>Object</code></dt>
+<dd><p>API credentials required from auth/mycpauth.json</p>
+</dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#options">options</a> : <code>Object</code></dt>
-<dd><p>Define API call object options and data</p>
-</dd>
-<dt><a href="#allobjs">allobjs</a> : <code>Object</code></dt>
-<dd><p>allobjs object data format</p>
-</dd>
-<dt><a href="#sessionid">sessionid</a> : <code>Object</code></dt>
+<dt><a href="#session">session</a> : <code>Object</code></dt>
 <dd></dd>
-<dt><a href="#usage">usage</a> : <code>Array.&lt;Object&gt;</code></dt>
-<dd><p>where-used returned data format by UID of each host</p>
+<dt><a href="#options">options</a> : <code>Object</code></dt>
+<dd><p>API Site configuration required from auth/mycpapi.json file
+Default API callout object options for Check Point</p>
+</dd>
+<dt><a href="#cpobj">cpobj</a> : <code>Object</code></dt>
+<dd><p>Process Check Point objects</p>
+</dd>
+<dt><a href="#cprule">cprule</a> : <code>Object</code></dt>
+<dd><p>Process Check Point rule as a JSON object</p>
+</dd>
+<dt><a href="#cpsession">cpsession</a> : <code>Object</code></dt>
+<dd><p>Process Check Point session object</p>
 </dd>
 </dl>
 
@@ -89,10 +108,15 @@
 
 * [CPobj](#CPobj) : <code>Object</code>
     * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])](#new_CPobj_new)
+    * [new CPobj(object)](#new_CPobj_new)
     * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
     * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
     * [.nowarn()](#CPobj+nowarn)
     * [.overwrite()](#CPobj+overwrite)
+    * [.show()](#CPobj+show) ⇒ [<code>cpobj</code>](#cpobj)
+    * [.prep()](#CPobj+prep) ⇒ [<code>cpobj</code>](#cpobj)
+    * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
+    * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
 
 <a name="new_CPobj_new"></a>
 
@@ -113,6 +137,14 @@ Process Check Point objects
 | [groups] | <code>Array</code> | add object members to group array |
 | [tags] | <code>Array</code> | tagged data in objet |
 | [description] | <code>String</code> | Description of users in objects |
+
+<a name="new_CPobj_new"></a>
+
+### new CPobj(object)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | <code>Object</code> | Check Point returned JSON object |
 
 <a name="CPobj+dump"></a>
 
@@ -155,10 +187,39 @@ overwrite object if exists
 | --- | --- | --- |
 |  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
 
+<a name="CPobj+show"></a>
+
+### cPobj.show() ⇒ [<code>cpobj</code>](#cpobj)
+return object properties
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>cpobj</code>](#cpobj) - The value of the new object  
+<a name="CPobj+prep"></a>
+
+### cPobj.prep() ⇒ [<code>cpobj</code>](#cpobj)
+prepare the object for POST operations in Check Point
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>cpobj</code>](#cpobj) - The Check Point Object without type and uid values  
+<a name="CPobj+nowarn"></a>
+
+### cPobj.nowarn() ⇒ <code>Boolean</code>
+ignore warnings when posting changes to the object
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: <code>Boolean</code> - ignore-warnings set to true to continue with warnings about the object  
+<a name="CPobj+overwrite"></a>
+
+### cPobj.overwrite() ⇒ <code>Boolean</code>
+overwrite object if exists
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: <code>Boolean</code> - set-if-exists set to true to overwrite object properties  
 <a name="CpApiClass"></a>
 
 ## CpApiClass
-Class Method for API callout builder to prepare GET, POST, and DELETE HTTP functions
+Class Method for API callout builder to prepare HTTP functions
+that work with Check Point API
 
 **Kind**: global class  
 
@@ -166,9 +227,7 @@ Class Method for API callout builder to prepare GET, POST, and DELETE HTTP funct
     * [new CpApiClass(myapisite)](#new_CpApiClass_new)
     * [.showOpt()](#CpApiClass+showOpt) ⇒ [<code>options</code>](#options)
     * [.doPost(data, appfunc)](#CpApiClass+doPost) ⇒ <code>\*</code>
-    * [.setToken(sid)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
-    * [.doGet(appfunc)](#CpApiClass+doGet) ⇒ <code>\*</code>
-    * [.doDelete(appfunc)](#CpApiClass+doDelete) ⇒ <code>\*</code>
+    * [.setToken(session)](#CpApiClass+setToken) ⇒ [<code>options</code>](#options)
 
 <a name="new_CpApiClass_new"></a>
 
@@ -202,11 +261,11 @@ Given data to be delivered and application function path prepare the POST struct
 | Param | Type | Description |
 | --- | --- | --- |
 | data | [<code>data</code>](#data) | Object data to be sent in the HTTP POST |
-| appfunc | [<code>options</code>](#options) | API command to be called |
+| appfunc | <code>String</code> | API command to be called |
 
 <a name="CpApiClass+setToken"></a>
 
-### cpApiClass.setToken(sid) ⇒ [<code>options</code>](#options)
+### cpApiClass.setToken(session) ⇒ [<code>options</code>](#options)
 Set the 'x-chkp-sid' token field to the current session token
 
 **Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
@@ -214,135 +273,311 @@ Set the 'x-chkp-sid' token field to the current session token
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sid | <code>String</code> | Session ID Token returned from authenticated login request |
+| session | [<code>session</code>](#session) | Session ID Token returned from authenticated login request |
 
-<a name="CpApiClass+doGet"></a>
+<a name="CPobj"></a>
 
-### cpApiClass.doGet(appfunc) ⇒ <code>\*</code>
-Prepare an HTTP GET for the given API function
+## CPobj
+Check Point object properties
 
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>\*</code> - results of GET request to API  
+**Kind**: global class  
+
+* [CPobj](#CPobj)
+    * [new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])](#new_CPobj_new)
+    * [new CPobj(object)](#new_CPobj_new)
+    * [.dump(dump)](#CPobj+dump) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.prep()](#CPobj+prep) ⇒ [<code>CPobj</code>](#CPobj)
+    * [.nowarn()](#CPobj+nowarn)
+    * [.overwrite()](#CPobj+overwrite)
+    * [.show()](#CPobj+show) ⇒ [<code>cpobj</code>](#cpobj)
+    * [.prep()](#CPobj+prep) ⇒ [<code>cpobj</code>](#cpobj)
+    * [.nowarn()](#CPobj+nowarn) ⇒ <code>Boolean</code>
+    * [.overwrite()](#CPobj+overwrite) ⇒ <code>Boolean</code>
+
+<a name="new_CPobj_new"></a>
+
+### new CPobj([comments], [color], [ipv4-address], [ipv6-address], [subnet4], [subnet6], [mask-length4], [mask-length6], [groups], [tags], [description])
+Process Check Point objects
+
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | [<code>options</code>](#options) | API function to be called |
+| [comments] | <code>String</code> | comments |
+| [color] | <code>String</code> | color of object |
+| [ipv4-address] | <code>String</code> | IPv4 of object |
+| [ipv6-address] | <code>String</code> | IPv6 of object |
+| [subnet4] | <code>String</code> | IPv4 network of object |
+| [subnet6] | <code>String</code> | IPv6 network of object |
+| [mask-length4] | <code>String</code> | IPv4 netmask of object |
+| [mask-length6] | <code>String</code> | IPv6 netmask of object |
+| [groups] | <code>Array</code> | add object members to group array |
+| [tags] | <code>Array</code> | tagged data in objet |
+| [description] | <code>String</code> | Description of users in objects |
 
-<a name="CpApiClass+doDelete"></a>
+<a name="new_CPobj_new"></a>
 
-### cpApiClass.doDelete(appfunc) ⇒ <code>\*</code>
-Prepare an HTTP DELETE for the given APU function
-
-**Kind**: instance method of [<code>CpApiClass</code>](#CpApiClass)  
-**Returns**: <code>\*</code> - Results of delete request to API  
+### new CPobj(object)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| appfunc | [<code>options</code>](#options) | API function to be called |
+| object | <code>Object</code> | Check Point returned JSON object |
 
-<a name="myapisite"></a>
+<a name="CPobj+dump"></a>
 
-## myapisite
-API Site configuration required from auth/mycpapi.json file
+### cPobj.dump(dump) ⇒ [<code>CPobj</code>](#CPobj)
+dump object properties
 
-**Kind**: global constant  
-**Require**: auth/mycpapi.json  
-**Example**  
-```js
-create auth/mycpapi.json file
-{
-	"chkp": {
-		"host": "SET.YOUR.HOSTNAME",
-		"port": "443",
-		"path": "/web_api",
-		"method": "POST",
-		"headers": {
-			"Content-Type": "application/json"
-		}
-	  }
-}
-```
-<a name="mycred"></a>
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>CPobj</code>](#CPobj) - The value of the new object  
 
-## mycred
-API credentials required from auth/mycpauth.json
+| Param | Type | Description |
+| --- | --- | --- |
+| dump | <code>function</code> | show object properties |
 
-**Kind**: global constant  
-**Require**: auth/mycpauth.json  
-**Example**  
-```js
-create auth/mycpauth.json file
-{
-		"user": "apiuser",
-		"password": "PASSWORD"
-}
-```
+<a name="CPobj+prep"></a>
+
+### cPobj.prep() ⇒ [<code>CPobj</code>](#CPobj)
+Ignore errors and prepare the object for POST operations in Check Point
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>CPobj</code>](#CPobj) - The Check Point Object without warnings  
+<a name="CPobj+nowarn"></a>
+
+### cPobj.nowarn()
+Ignore warnings when posting changes to the object
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | ignore-warnings set to true to continue with warnings about the object |
+
+<a name="CPobj+overwrite"></a>
+
+### cPobj.overwrite()
+overwrite object if exists
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+|  | <code>Boolean</code> | set-if-exists set to true to overwrite object properties |
+
+<a name="CPobj+show"></a>
+
+### cPobj.show() ⇒ [<code>cpobj</code>](#cpobj)
+return object properties
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>cpobj</code>](#cpobj) - The value of the new object  
+<a name="CPobj+prep"></a>
+
+### cPobj.prep() ⇒ [<code>cpobj</code>](#cpobj)
+prepare the object for POST operations in Check Point
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: [<code>cpobj</code>](#cpobj) - The Check Point Object without type and uid values  
+<a name="CPobj+nowarn"></a>
+
+### cPobj.nowarn() ⇒ <code>Boolean</code>
+ignore warnings when posting changes to the object
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: <code>Boolean</code> - ignore-warnings set to true to continue with warnings about the object  
+<a name="CPobj+overwrite"></a>
+
+### cPobj.overwrite() ⇒ <code>Boolean</code>
+overwrite object if exists
+
+**Kind**: instance method of [<code>CPobj</code>](#CPobj)  
+**Returns**: <code>Boolean</code> - set-if-exists set to true to overwrite object properties  
+<a name="CPrule"></a>
+
+## CPrule
+Check Point object properties for rules
+
+**Kind**: global class  
+
+* [CPrule](#CPrule)
+    * [new CPrule(uid, layer)](#new_CPrule_new)
+    * [.count()](#CPrule+count) ⇒ <code>Number</code>
+    * [.hits()](#CPrule+hits) ⇒ <code>Number</code>
+    * [.enabled([true|false])](#CPrule+enabled) ⇒ [<code>cprule</code>](#cprule)
+
+<a name="new_CPrule_new"></a>
+
+### new CPrule(uid, layer)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>String</code> | the uid of the rule |
+| layer | <code>String</code> | security policy layer of the rule |
+
+<a name="CPrule+count"></a>
+
+### cPrule.count() ⇒ <code>Number</code>
+if at 1, any further action would expose or break policy
+any other number and we can safely remove the object 
+and still leave a target in source
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+**Returns**: <code>Number</code> - The number of target objects  
+<a name="CPrule+hits"></a>
+
+### cPrule.hits() ⇒ <code>Number</code>
+show rule hit counter
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+**Returns**: <code>Number</code> - number of hits against the rule  
+<a name="CPrule+enabled"></a>
+
+### cPrule.enabled([true|false]) ⇒ [<code>cprule</code>](#cprule)
+enable or disable the rule
+
+**Kind**: instance method of [<code>CPrule</code>](#CPrule)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [true|false] | <code>Boolean</code> | true/false on the rule enabled status |
+
+<a name="CPsession"></a>
+
+## CPsession
+Check Point object properties
+
+**Kind**: global class  
+
+* [CPsession](#CPsession)
+    * [new CPsession(object)](#new_CPsession_new)
+    * [.show()](#CPsession+show) ⇒ [<code>cpsession</code>](#cpsession)
+
+<a name="new_CPsession_new"></a>
+
+### new CPsession(object)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object | [<code>cpsession</code>](#cpsession) | Check Point returned JSON object |
+
+<a name="CPsession+show"></a>
+
+### cPsession.show() ⇒ [<code>cpsession</code>](#cpsession)
+return object properties
+
+**Kind**: instance method of [<code>CPsession</code>](#CPsession)  
+**Returns**: [<code>cpsession</code>](#cpsession) - The value of the new object  
 <a name="startSession"></a>
 
-## startSession(credentials) ⇒ [<code>sessionid</code>](#sessionid)
+## startSession(myauth) ⇒ [<code>session</code>](#session)
 Create an authenticated session with the Check Point API
 
 **Kind**: global function  
-**Returns**: [<code>sessionid</code>](#sessionid) - The prepared session handler  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| credentials | [<code>mycred</code>](#mycred) | Credentials used for API access |
+| myauth | [<code>credentials</code>](#credentials) | Credentials used for API access |
 
-<a name="setSession"></a>
+<a name="apicall"></a>
 
-## setSession(sessionid) ⇒ <code>myapicall</code>
-Set the session handler for a Check Point API connection
+## apicall(mydata, mycmd) ⇒ <code>\*</code>
+accept post data and command and send API call
 
 **Kind**: global function  
-**Returns**: <code>myapicall</code> - Header token set for session  
+**Returns**: <code>\*</code> - API JSON data returned for request  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| sessionid | [<code>sessionid</code>](#sessionid) | A Check Point API session ID handler |
+| mydata | <code>Object</code> | API data to POST for command |
+| mycmd | <code>String</code> | API command to use for POST |
 
-<a name="checkObject"></a>
+<a name="getname"></a>
 
-## checkObject(uid) ⇒ <code>Array.&lt;String&gt;</code>
-Object verify IP matches filter
+## getname(uid) ⇒ <code>String</code>
+return name of object UID
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;String&gt;</code> - array of safe UID's to verify usage against  
+**Returns**: <code>String</code> - name of the object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| uid | <code>Array.&lt;String&gt;</code> | UID to verify IP address filter |
+| uid | <code>String</code> | UID of object to identify |
 
-<a name="whereUsed"></a>
+<a name="pubSession"></a>
 
-## whereUsed(uid) ⇒ [<code>usage</code>](#usage)
-Determine where a set of objects is used in Check Point policies
+## pubSession()
+publish changes to Check Point API
 
 **Kind**: global function  
-**Returns**: [<code>usage</code>](#usage) - An array of objects where the parameter values were found in policy  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| uid | <code>Array.&lt;String&gt;</code> | Any array of objects containing filter values by UID |
-
-<a name="doParse"></a>
-
-## doParse(usage) ⇒ [<code>allobjs</code>](#allobjs)
-Operations Object created with filter logic
-
-**Kind**: global function  
-**Returns**: [<code>allobjs</code>](#allobjs) - -  array of operational changes  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| usage | [<code>usage</code>](#usage) | return values from API where-used |
-
 <a name="endSession"></a>
 
 ## endSession()
 end session and expire token from header
 
 **Kind**: global function  
+<a name="writeJson"></a>
+
+## writeJson(content, file)
+save api output as json data to local file
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| content | <code>Object</code> | JSON data to save to file |
+| file | <code>String</code> | name of file to save to (without .json) |
+
+<a name="countOf"></a>
+
+## countOf(obj) ⇒ <code>Number</code>
+the number of keys in use for a given object
+
+**Kind**: global function  
+**Returns**: <code>Number</code> - The number of keys in use  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>Object</code> | The object to be checked for number of keys |
+
+<a name="groupBy"></a>
+
+## groupBy(array, key) ⇒ <code>Array.&lt;Object&gt;</code>
+Accepts the array and groups by key
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;Object&gt;</code> - array of objects grouped by key  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| array | <code>Array.&lt;Object&gt;</code> | array of objects to group |
+| key | <code>String</code> | name of key to group objects by |
+
+<a name="getRule"></a>
+
+## getRule(uid, layer) ⇒ <code>rule</code>
+Determine where a set of objects is used in Check Point policies
+
+**Kind**: global function  
+**Returns**: <code>rule</code> - the rule properties as an object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| uid | <code>String</code> | the UID of the rule |
+| layer | <code>String</code> | the name or UID of the policy layer that holds the rule |
+
+<a name="testcmd"></a>
+
+## testcmd(newcmd, [uid|full|standard], [data])
+test API commands and save return data
+to dump.json
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newcmd | <code>String</code> | Check Point api command to test |
+| [uid|full|standard] | <code>String</code> | set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level |
+| [data] | <code>Object</code> | json object to load for POST data to send to API (optional), leave out the details parameter if loading JSON data to test and no details are needed |
+
 <a name="ports"></a>
 
 ## ports : <code>Object</code>
@@ -482,6 +717,29 @@ end session and expire token from header
 | token | <code>Object</code> | The authentication token. |
 | user | <code>Object</code> | A user object, which shows the username, roles_links, id, roles, and name. |
 
+<a name="credentials"></a>
+
+## credentials : <code>Object</code>
+API credentials required from auth/mycpauth.json
+
+**Kind**: global typedef  
+**Require**: auth/mycpauth.json  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| user | <code>String</code> | username of API credentials |
+| password | <code>String</code> | password for API user |
+| [domain] | <code>String</code> | specify domain the API will login to |
+
+**Example**  
+```js
+create auth/mycpauth.json file
+{
+		"user": "apiuser",
+		"password": "PASSWORD"
+}
+```
 <a name="data"></a>
 
 ## data : <code>Object</code>
@@ -492,12 +750,28 @@ end session and expire token from header
 | --- | --- | --- |
 | postData | <code>String</code> | This function will stringify the post data before sending |
 
+<a name="session"></a>
+
+## session : <code>Object</code>
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| last-login-was-at | <code>Object</code> | 
+| session-timeout | <code>Number</code> | 
+| sid | <code>String</code> | 
+| uid | <code>String</code> | 
+| url | <code>String</code> | 
+
 <a name="options"></a>
 
 ## options : <code>Object</code>
-Define API call object options and data
+API Site configuration required from auth/mycpapi.json file
+Default API callout object options for Check Point
 
 **Kind**: global typedef  
+**Require**: auth/mycpapi.json  
 **Properties**
 
 | Name | Type | Description |
@@ -505,7 +779,7 @@ Define API call object options and data
 | headers | <code>Object</code> | header fields for http calls |
 | path | <code>String</code> | path in api to command you call |
 | port | <code>Number</code> | port your api server is listening on |
-| host | <code>String</code> | hostname or IP of the api server |
+| host | <code>String</code> | hostname or IP of the api server API Site configuration required from auth/mycpapi.json file |
 
 **Example**  
 ```js
@@ -521,83 +795,79 @@ Define API call object options and data
 	  }
 }
 ```
-<a name="allobjs"></a>
+<a name="cpobj"></a>
 
-## allobjs : <code>Object</code>
-allobjs object data format
+## cpobj : <code>Object</code>
+Process Check Point objects
 
 **Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [comments] | <code>String</code> | comments |
+| [color] | <code>String</code> | color of object |
+| [ipv4-address] | <code>String</code> | IPv4 of object |
+| [ipv6-address] | <code>String</code> | IPv6 of object |
+| [subnet4] | <code>String</code> | IPv4 network of object |
+| [subnet6] | <code>String</code> | IPv6 network of object |
+| [mask-length4] | <code>String</code> | IPv4 netmask of object |
+| [mask-length6] | <code>String</code> | IPv6 netmask of object |
+| [groups] | <code>Array</code> | add object members to group array |
+| [tags] | <code>Array</code> | tagged data in objet |
+| [description] | <code>String</code> | Description of users in objects |
+
 **Properties**
 
-| Name | Type |
-| --- | --- |
-| access-rule | <code>Array.&lt;Object&gt;</code> | 
-| backup | <code>Array.&lt;String&gt;</code> | 
-| garbage | <code>Array.&lt;Object&gt;</code> | 
-| group | <code>Array.&lt;Object&gt;</code> | 
-| hosts | <code>Array.&lt;String&gt;</code> | 
-| restore | <code>Array.&lt;Object&gt;</code> | 
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>String</code> | name of object unique |
+| type | <code>String</code> | type of object we can classify on |
+| uid | <code>String</code> | unique ID of object |
 
-<a name="sessionid"></a>
+<a name="cprule"></a>
 
-## sessionid : <code>Object</code>
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type |
-| --- | --- |
-| last-login-was-at | <code>Object</code> | 
-| session-timeout | <code>Number</code> | 
-| sid | <code>String</code> | 
-| uid | <code>String</code> | 
-| url | <code>String</code> | 
-
-<a name="usage"></a>
-
-## usage : <code>Array.&lt;Object&gt;</code>
-where-used returned data format by UID of each host
+## cprule : <code>Object</code>
+Process Check Point rule as a JSON object
 
 **Kind**: global typedef  
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| used-directly | <code>Object</code> | Direct use of object |
-| used-directly.total | <code>Number</code> | Total count of usage |
-| used-directly.objects | <code>Array.&lt;Object&gt;</code> | Array of object dependencies |
-| used-directly.access-control-rules | <code>Array.&lt;Object&gt;</code> | Array of access rule dependencies |
-| used-directly.nat-rules | <code>Array.&lt;Object&gt;</code> | Array of nat rule dependencies |
-| used-directly.threat-prevention-rules | <code>Array.&lt;Object&gt;</code> | Array of threat inspection rules |
-| used-indirectly | <code>Object</code> | Indirect or nested use of object |
-| used-indirectly.total | <code>Number</code> | Total count of indirect use |
-| used-indirectly.objects | <code>Array.&lt;Object&gt;</code> | Array of object references |
-| used-indirectly.access-control-rules | <code>Array.&lt;Object&gt;</code> | Array of nested access rule |
-| used-indirectly.nat-rules | <code>Array.&lt;Object&gt;</code> | Array of indirect nat rules |
-| used-indirectly.threat-prevention-rules | <code>Array.&lt;Object&gt;</code> | Array of nested threat rules |
+| comments | <code>String</code> | leave tag or UID of any operations to mark the rule as being API managed |
+| destination | <code>Array</code> | an array of destinations. Never an empty object |
+| enabled | <code>Boolean</code> | true/false the rule is active in the policy |
+| hits | <code>Object</code> | number of times this rule has been enforced on a gateway |
+| install-on | <code>Array</code> | target security gateways that enforce this policy |
+| layer | <code>String</code> | the security policy layer the rule is in |
+| name | <code>String</code> | name of the rule |
+| source | <code>Array</code> | an array of source targets. Never and empty object |
+| type | <code>String</code> | the type of object |
+| uid | <code>String</code> | the unique id of this rule in the layer |
 
-**Example**  
-```js
-{ ip: [
-       {
-         uid: [
-         	  { 
-	          used-directly: {
-	       			  total: 0,
-	        		  access-control-rules[],
-	        		  nat-rules[],
-	        		  threat-prevention-rules[],
-	        		  objects[]
-	        		  },
-	      	  used-indirectly: {
-	       			  total: 0,
-	        		  access-control-rules[],
-	        		  nat-rules[],
-	        		  threat-prevention-rules[],
-	        		  objects[]
-	        		  }
-             }
-          ] 
-       }
-    ]
- }
-```
+<a name="cpsession"></a>
+
+## cpsession : <code>Object</code>
+Process Check Point session object
+
+**Kind**: global typedef  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| comments | <code>String</code> | comments on this session |
+| meta-info | <code>Object</code> | session date and time activity |
+| changes | <code>Number</code> | number of changes in this session |
+| ip-address | <code>String</code> | IP address the user is at for this session |
+| tags | <code>Array</code> | tagged data for this session |
+| description | <code>String</code> | Description of this session |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | type of object is session |
+| uid | <code>String</code> | unique ID of the session |
+| domain | <code>Object</code> | domain the session is in |
+| state | <code>String</code> | session state |
+| user-name | <code>String</code> | name of admin who owns the session |
+
