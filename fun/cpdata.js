@@ -6,6 +6,18 @@ const CPrule = require('../class/cprule')
 var limit = 500
 var details = 'standard'
 
+/**
+ * @typedef {Object} Credentials Authentication object for API credentials
+ * @property {String} user API username 
+ * @property {String} password API authentication password
+ * @property {String} [domain] optional domain name to login to 
+ */
+
+/**
+ * 
+ * @param {Credentials} myauth
+ * @returns {String[]} an array of domain names found 
+ */
 async function domains(myauth) {
     try {
         myauth.domain = 'System Data'
@@ -57,7 +69,10 @@ async function layers(myauth) {
     }
 }
 
-
+/**
+ * get access policy layers in a domain as an array of names
+ * @returns {String[]} array of policy layer names
+ */
 async function getlayers() {
     try {                
         let mycmd = 'show-access-layers'
@@ -87,6 +102,11 @@ async function getlayers() {
     }
 }
 
+/**
+ * scan and index rules by policy layer in each domain
+ * @param {Credentials} myauth authentication details for the domain 
+ * @param {String[]} getlayers use getlayers return value to process all policies and all rules, otherwise specify layers to index in an array 
+ */
 async function policy(myauth, myarr) {
     try {
         var objreturn = {}
@@ -174,7 +194,7 @@ async function getRule(uid, layer) {
  * test API commands and save return data
  * to dump.json
  * @param {String} newcmd Check Point api command to test 
- * @param {String} [uid|full|standard] set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level  
+ * @param {String} [details] set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level  
  * @param {Object} [data] json object to load for POST data to send to API (optional), leave out the details parameter if loading JSON data to test and no details are needed
  */
 async function testcmd(newcmd, details, data) {
@@ -227,7 +247,11 @@ async function testcmd(newcmd, details, data) {
         console.log('error in testcmd : ' + err)
     }
 }
-
+/**
+ * Get all objects in a security domain and group by type
+ * @param {Credentials} myauth credentials to access API
+ * @returns {Object[]} array of Check Point objects by type of object 
+ */
 async function getall(myauth) {
     try {
         await cp.startSession(myauth)

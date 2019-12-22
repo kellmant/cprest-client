@@ -43,12 +43,23 @@ that work with Check Point API</p>
 <dt><a href="#groupBy">groupBy(array, key)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Accepts the array and groups by key</p>
 </dd>
+<dt><a href="#domains">domains(myauth)</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
+<dd></dd>
+<dt><a href="#getlayers">getlayers()</a> ⇒ <code>Array.&lt;String&gt;</code></dt>
+<dd><p>get access policy layers in a domain as an array of names</p>
+</dd>
+<dt><a href="#policy">policy(myauth, getlayers)</a></dt>
+<dd><p>scan and index rules by policy layer in each domain</p>
+</dd>
 <dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code>rule</code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
-<dt><a href="#testcmd">testcmd(newcmd, [uid|full|standard], [data])</a></dt>
+<dt><a href="#testcmd">testcmd(newcmd, [details], [data])</a></dt>
 <dd><p>test API commands and save return data
 to dump.json</p>
+</dd>
+<dt><a href="#getall">getall(myauth)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dd><p>Get all objects in a security domain and group by type</p>
 </dd>
 </dl>
 
@@ -57,6 +68,9 @@ to dump.json</p>
 <dl>
 <dt><a href="#credentials">credentials</a> : <code>Object</code></dt>
 <dd><p>API credentials required from auth/mycpauth.json</p>
+</dd>
+<dt><a href="#Credentials">Credentials</a> : <code>Object</code></dt>
+<dd><p>Authentication object for API credentials</p>
 </dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
@@ -347,6 +361,35 @@ Accepts the array and groups by key
 | array | <code>Array.&lt;Object&gt;</code> | array of objects to group |
 | key | <code>String</code> | name of key to group objects by |
 
+<a name="domains"></a>
+
+## domains(myauth) ⇒ <code>Array.&lt;String&gt;</code>
+**Kind**: global function  
+**Returns**: <code>Array.&lt;String&gt;</code> - an array of domain names found  
+
+| Param | Type |
+| --- | --- |
+| myauth | [<code>Credentials</code>](#Credentials) | 
+
+<a name="getlayers"></a>
+
+## getlayers() ⇒ <code>Array.&lt;String&gt;</code>
+get access policy layers in a domain as an array of names
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;String&gt;</code> - array of policy layer names  
+<a name="policy"></a>
+
+## policy(myauth, getlayers)
+scan and index rules by policy layer in each domain
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| myauth | [<code>Credentials</code>](#Credentials) | authentication details for the domain |
+| getlayers | <code>Array.&lt;String&gt;</code> | use getlayers return value to process all policies and all rules, otherwise specify layers to index in an array |
+
 <a name="getRule"></a>
 
 ## getRule(uid, layer) ⇒ <code>rule</code>
@@ -362,7 +405,7 @@ Determine where a set of objects is used in Check Point policies
 
 <a name="testcmd"></a>
 
-## testcmd(newcmd, [uid|full|standard], [data])
+## testcmd(newcmd, [details], [data])
 test API commands and save return data
 to dump.json
 
@@ -371,8 +414,20 @@ to dump.json
 | Param | Type | Description |
 | --- | --- | --- |
 | newcmd | <code>String</code> | Check Point api command to test |
-| [uid|full|standard] | <code>String</code> | set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level |
+| [details] | <code>String</code> | set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level |
 | [data] | <code>Object</code> | json object to load for POST data to send to API (optional), leave out the details parameter if loading JSON data to test and no details are needed |
+
+<a name="getall"></a>
+
+## getall(myauth) ⇒ <code>Array.&lt;Object&gt;</code>
+Get all objects in a security domain and group by type
+
+**Kind**: global function  
+**Returns**: <code>Array.&lt;Object&gt;</code> - array of Check Point objects by type of object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| myauth | [<code>Credentials</code>](#Credentials) | credentials to access API |
 
 <a name="credentials"></a>
 
@@ -397,6 +452,20 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
+<a name="Credentials"></a>
+
+## Credentials : <code>Object</code>
+Authentication object for API credentials
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| user | <code>String</code> | API username |
+| password | <code>String</code> | API authentication password |
+| [domain] | <code>String</code> | optional domain name to login to |
+
 <a name="data"></a>
 
 ## data : <code>Object</code>
