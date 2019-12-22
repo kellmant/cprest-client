@@ -10,7 +10,7 @@
 
 <dl>
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
-<dd><p>Scan and index all domains policies and objects</p>
+<dd><p>Scan and index all policies and objects in each security domain</p>
 </dd>
 </dl>
 
@@ -39,7 +39,7 @@ Check Point API authorization
 <a name="scan_domains"></a>
 
 ## scan\_domains() ⇒ [<code>all\_domains</code>](#all_domains)
-Scan and index all domains policies and objects
+Scan and index all policies and objects in each security domain
 
 **Kind**: global function  
 **Returns**: [<code>all\_domains</code>](#all_domains) - Each domain is saved with objects and policy indexes, and complete

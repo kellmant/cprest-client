@@ -75,7 +75,7 @@ const domarr = async () => {
 }
 
 /**
- * Scan and index all domains policies and objects
+ * Scan and index all policies and objects in each security domain
  * @function scan_domains
  * @returns {all_domains} Each domain is saved with objects and policy indexes, and complete
  * dataset saved as DOM_ALL.json, indexed by domain
