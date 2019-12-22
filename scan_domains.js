@@ -47,7 +47,7 @@ const cp = require('./fun/cp')
  */
 const cpdata = require('./fun/cpdata')
 /**
- * @const {Credentials} mycred Check Point API authorization
+ * @require {Credentials} mycred Check Point API authorization
  */
 const mycred = require('./auth/mycpauth')
 
