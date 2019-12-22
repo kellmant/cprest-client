@@ -201,7 +201,7 @@ async function testcmd(newcmd, details, data) {
         console.log(typeof objdata[objret][0])
         console.log(' ')
         if (typeof objdata[objret][0] === 'string') {
-            console.log(Object.keys(objdata[objret]).length)
+            console.log(Object.keys(objdata[objret]).length + ' uids returned')
         } else {
             console.log(JSON.stringify(Object.keys(objdata[objret][0])))
         }
