@@ -68,6 +68,9 @@ async function getlayers() {
         mydata['details-level'] = details
         mydata.limit = limit
         objdata = await cp.apicall(mydata, mycmd)
+        if (!objdata['access-layers']) {
+            return objdata
+        }
         objarr = objarr.concat(objdata['access-layers'])
         if (objdata.total > objdata.to) {
                 while (objdata.total > mydata.offset) {
