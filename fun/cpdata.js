@@ -6,13 +6,20 @@ const CPrule = require('../class/cprule')
 var limit = 500
 var details = 'standard'
 
-/*
- * @typedef {Object} Credentials Authentication object for API credentials
- * @property {String} user API username 
- * @property {String} password API authentication password
- * @property {String} [domain] optional domain name to login to 
+/**
+ * API credentials required from auth/mycpauth.json
+ * @typedef {Object} Credentials
+ * @property {String} user username of API credentials
+ * @property {String} password password for API user
+ * @property {String} [domain] specify domain the API will login to
+ * @require auth/mycpauth.json
+ * @example 
+ * create auth/mycpauth.json file
+ * {
+ *		"user": "apiuser",
+ *		"password": "PASSWORD"
+ * }
  */
-
 /**
  * 
  * @param {Credentials} myauth

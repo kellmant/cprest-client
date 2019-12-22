@@ -10,20 +10,7 @@ const CpApiClass = require('../class/cpclass')
 const myapisite = require('../auth/mycpapi')
 const toApi = new CpApiClass(myapisite.chkp)
 
-/**
- * API credentials required from auth/mycpauth.json
- * @typedef {Object} Credentials
- * @property {String} user username of API credentials
- * @property {String} password password for API user
- * @property {String} [domain] specify domain the API will login to
- * @require auth/mycpauth.json
- * @example 
- * create auth/mycpauth.json file
- * {
- *		"user": "apiuser",
- *		"password": "PASSWORD"
- * }
- */
+
 
 // Check Point API session auth and token management
 /**

@@ -1,11 +1,20 @@
 'use strict'
+/**
+ * @require fun/cp Check Point API session functions
+ * @require fun/cpdata Check Point API data access functions
+ */
 const cp = require('./fun/cp')
 const cpdata = require('./fun/cpdata')
-
+/**
+ * @const {Credentials} mycred Check Point API authorization
+ */
 const mycred = require('./auth/mycpauth')
 
 const alldata = {}
 
+/**
+ * @returns {String[]} an array of domain names
+ */
 const domarr = async () => {
     try {
         const response = await cpdata.domains(mycred)
@@ -16,6 +25,12 @@ const domarr = async () => {
     }
 }
 
+/**
+ * 
+ * @param {String[]} layarr array of policy layers indexed by domain
+ * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
+ * dataset saved as DOM_ALL.json, indexed by domain 
+ */
 const rulearr = async (mydata) => {
     try {
         for (var dom in mydata) {
@@ -38,7 +53,11 @@ domarr()
 .then(mylayers => rulearr(mylayers))
 .then(() => cp.writeJson(alldata, 'DOM_ALL'))
 
-
+/**
+ * 
+ * @param {String[]} domarr uses returned data from previous function
+ * @returns {String[]} an array of layer policy names 
+ */
 async function layarr(doms) {
     try {
         var response = {}
