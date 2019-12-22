@@ -4,6 +4,8 @@ const cpdata = require('./fun/cpdata')
 
 const mycred = require('./auth/mycpauth')
 
+const alldata = {}
+
 const domarr = async () => {
     try {
         const response = await cpdata.domains(mycred)
@@ -19,14 +21,14 @@ const rulearr = async (mydata) => {
         for (var dom in mydata) {
             let myrules = mydata[dom]
             mycred.domain = dom
-            let rulefile = 'MDS_' + dom + '_policy'
-            let objfile = 'MDS_' + dom + '_objects'
-            let myobjreturn = await cpdata.getall(mycred)
-            await cp.writeJson(myobjreturn, objfile)
-            let myrulereturn = await cpdata.policy(mycred, myrules)
-            await cp.writeJson(myrulereturn, rulefile)
+            alldata[dom] = {}
+            let domfile = 'DOMAIN_' + dom
+            alldata[dom].objects = await cpdata.getall(mycred)
+            //await cp.writeJson(myobjreturn, objfile)
+            alldata[dom].policy = await cpdata.policy(mycred, myrules)
+            await cp.writeJson(alldata[dom], domfile)
         }
-        return mydata
+        return alldata
     } catch (err) {
         console.log('error in rulearr ' + err)
     }
@@ -35,6 +37,7 @@ const rulearr = async (mydata) => {
 domarr()
 .then(mydoms => layarr(mydoms))
 .then(mylayers => rulearr(mylayers))
+.then(() => cp.writeJson(alldata, 'DOMAINS'))
 
 
 async function layarr(doms) {

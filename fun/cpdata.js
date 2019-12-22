@@ -236,7 +236,7 @@ async function getall(myauth) {
 	var objdata = {}
 	var objarr = []
         mydata.offset = 0
-        mydata['details-level'] = 'full'
+        mydata['details-level'] = details
         mydata.limit = limit
         console.log('getting all objects')
         objdata = await cp.apicall(mydata, mycmd)
