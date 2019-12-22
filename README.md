@@ -51,7 +51,7 @@ that work with Check Point API</p>
 <dt><a href="#policy">policy(myauth, getlayers)</a></dt>
 <dd><p>scan and index rules by policy layer in each domain</p>
 </dd>
-<dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code>rule</code></dt>
+<dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code><a href="#cprule">cprule</a></code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
 <dt><a href="#testcmd">testcmd(newcmd, [details], [data])</a> ⇒ <code>*</code></dt>
@@ -389,11 +389,11 @@ scan and index rules by policy layer in each domain
 
 <a name="getRule"></a>
 
-## getRule(uid, layer) ⇒ <code>rule</code>
+## getRule(uid, layer) ⇒ [<code>cprule</code>](#cprule)
 Determine where a set of objects is used in Check Point policies
 
 **Kind**: global function  
-**Returns**: <code>rule</code> - the rule properties as an object  
+**Returns**: [<code>cprule</code>](#cprule) - the rule properties as an object  
 
 | Param | Type | Description |
 | --- | --- | --- |

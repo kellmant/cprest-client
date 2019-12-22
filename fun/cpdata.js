@@ -171,7 +171,7 @@ async function getRulebase(layer) {
 * Determine where a set of objects is used in Check Point policies
 * @param {String} uid the UID of the rule
 * @param {String} layer the name or UID of the policy layer that holds the rule
-* @returns {rule} the rule properties as an object
+* @returns {cprule} the rule properties as an object
 */ 
 async function getRule(uid, layer) {
     try {
