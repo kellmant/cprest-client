@@ -243,7 +243,7 @@ async function getall(myauth) {
         objarr = objarr.concat(objdata.objects)
         if (objdata.total > objdata.to) {
                 while (objdata.total > mydata.offset) {
-                        console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                    process.stdout.write('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects' + '                \r')
                         mydata.offset = Number(objdata.to)
                         objdata = await cp.apicall(mydata, mycmd)
                         objarr = objarr.concat(objdata.objects)
