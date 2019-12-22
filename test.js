@@ -17,9 +17,13 @@ const cpdata = require('./fun/cpdata')
 const mycred = require('./auth/mycpauth')
 
 const mycmd = process.argv[2]
-if (process.argv[3])
-        var details = process.argv[3]
-if (process.argv[4])
+if ((process.argv[3] === 'full') || (process.argv[3] === 'standard') || (process.argv[3] === 'uid')) {
+                var details = process.argv[3]
+        } else {
+                var details = 'null'
+                var datafile = require ('./' + process.argv[3])
+        }
+if ((process.argv[4]) 
         var datafile = require ('./' + process.argv[4])
 
 
