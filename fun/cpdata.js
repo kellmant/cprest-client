@@ -177,7 +177,8 @@ async function testcmd(newcmd) {
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
         Object.keys(objdata).forEach(obj => {
-            console.log(objdata[obj].length)
+            if (objdata[obj].length > 1)
+                console.log(obj)
         });
         console.log(Object.keys(objdata))
         console.log(objdata.keys())
