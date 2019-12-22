@@ -12,6 +12,10 @@
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
 <dd><p>Scan and index all policies and objects in each security domain</p>
 </dd>
+<dt><a href="#test test API commands">test test API commands(command, [details], [data])</a> ⇒ <code>*</code></dt>
+<dd><p>test API commands and save return data to file
+dump.json</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -47,6 +51,27 @@ dataset saved as DOM_ALL.json, indexed by domain
 **Example**  
 ```js
 node scan_domains 
+```
+<a name="test test API commands"></a>
+
+## test test API commands(command, [details], [data]) ⇒ <code>\*</code>
+test API commands and save return data to file
+dump.json
+
+**Kind**: global function  
+**Returns**: <code>\*</code> - dump.json capture of return values and objects written to local directory  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| command | <code>String</code> | Check Point api command to test |
+| [details] | <code>String</code> | (optional) level of detail on returned data - set to uid for array of UID, full for all object properties, or standard for default values (can be empty if not used or for standard) |
+| [data] | <code>Object</code> | (optional) json file to load for POST data to include in API call leave out the details parameter if loading JSON data to test and no details are needed |
+
+**Example**  
+```js
+node test show-commands
+node test show-hosts full
+node test show-task task.json
 ```
 <a name="Credentials"></a>
 
