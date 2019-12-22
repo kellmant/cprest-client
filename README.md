@@ -25,7 +25,7 @@
 be sure to set your hostname or IP of the
 Check Point management server with API access enabled</p>
 </dd>
-<dt><a href="#all_domains">all_domains</a> : <code>Object</code></dt>
+<dt><a href="#all_domains">all_domains</a> : <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Policy and object data from Check Point API</p>
 </dd>
 </dl>
@@ -104,7 +104,7 @@ Check Point management server with API access enabled
 ```
 <a name="all_domains"></a>
 
-## all\_domains : <code>Object</code>
+## all\_domains : <code>Array.&lt;Object&gt;</code>
 Policy and object data from Check Point API
 
 **Kind**: global typedef  

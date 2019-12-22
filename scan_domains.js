@@ -55,7 +55,7 @@ const alldata = {}
 
 /**
  * Policy and object data from Check Point API
- * @typedef {Object} all_domains All domain information in the security manager
+ * @typedef {Object[]} all_domains All domain information in the security manager
  * @property {Object} domain Check Point security domain
  * @property {Object[]} domain.policy security policy with array of rules
  * @property {Object[]} domain.objects Check Point objects and properties of the domain
