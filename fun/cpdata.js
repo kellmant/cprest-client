@@ -184,8 +184,9 @@ async function testcmd(newcmd) {
         Object.keys(objdata).forEach(obj => {
             if (objdata[obj].length > 1)
                 objret = obj
+                console.log('index array from return key ' + obj)
         });
-        console.log(Object.keys(objdata[objret]))
+        console.log(Object.keys(objdata[objret][0]))
         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
         objarr = objarr.concat(objdata[objret])
         if (objdata.total > objdata.to) {
