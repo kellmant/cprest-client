@@ -12,7 +12,7 @@
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
 <dd><p>Scan and index all policies and objects in each security domain</p>
 </dd>
-<dt><a href="#test test API commands">test test API commands(command, [details], [data])</a> ⇒ <code>*</code></dt>
+<dt><a href="#test">test(command, [details], [data])</a> ⇒ <code>*</code></dt>
 <dd><p>test API commands and save return data to file
 dump.json</p>
 </dd>
@@ -52,9 +52,9 @@ dataset saved as DOM_ALL.json, indexed by domain
 ```js
 node scan_domains 
 ```
-<a name="test test API commands"></a>
+<a name="test"></a>
 
-## test test API commands(command, [details], [data]) ⇒ <code>\*</code>
+## test(command, [details], [data]) ⇒ <code>\*</code>
 test API commands and save return data to file
 dump.json
 
