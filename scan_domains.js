@@ -45,7 +45,6 @@ const domarr = async () => {
 
 /**
  * @function show_domain
- * @param {String[]} layarr array of policy layers indexed by domain
  * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
  * dataset saved as DOM_ALL.json, indexed by domain 
  */

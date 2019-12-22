@@ -13,7 +13,7 @@
 ## Functions
 
 <dl>
-<dt><a href="#show_domain">show_domain(layarr)</a> ⇒ <code>JSON</code></dt>
+<dt><a href="#show_domain">show_domain()</a> ⇒ <code>JSON</code></dt>
 <dd></dd>
 </dl>
 
@@ -43,15 +43,10 @@ Check Point API authorization
 **Kind**: global constant  
 <a name="show_domain"></a>
 
-## show\_domain(layarr) ⇒ <code>JSON</code>
+## show\_domain() ⇒ <code>JSON</code>
 **Kind**: global function  
 **Returns**: <code>JSON</code> - Each domain is saved with objects and policy indexes, and complete
 dataset saved as DOM_ALL.json, indexed by domain  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| layarr | <code>Array.&lt;String&gt;</code> | array of policy layers indexed by domain |
-
 <a name="Credentials"></a>
 
 ## Credentials : <code>Object</code>
