@@ -3,6 +3,8 @@
 <dl>
 <dt><a href="#cp">cp</a></dt>
 <dd></dd>
+<dt><a href="#cpdata">cpdata</a></dt>
+<dd></dd>
 <dt><a href="#mycred">mycred</a> : <code>Credentials</code></dt>
 <dd><p>Check Point API authorization</p>
 </dd>
@@ -24,6 +26,10 @@
 ## cp
 **Kind**: global constant  
 **Require**: fun/cp Check Point API session functions  
+<a name="cpdata"></a>
+
+## cpdata
+**Kind**: global constant  
 **Require**: fun/cpdata Check Point API data access functions  
 <a name="mycred"></a>
 

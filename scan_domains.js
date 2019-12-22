@@ -1,9 +1,11 @@
 'use strict'
 /**
  * @require fun/cp Check Point API session functions
- * @require fun/cpdata Check Point API data access functions
  */
 const cp = require('./fun/cp')
+/**
+ * @require fun/cpdata Check Point API data access functions
+ */
 const cpdata = require('./fun/cpdata')
 /**
  * @const {Credentials} mycred Check Point API authorization
