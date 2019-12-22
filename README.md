@@ -1,10 +1,6 @@
 ## Constants
 
 <dl>
-<dt><a href="#cp">cp</a></dt>
-<dd></dd>
-<dt><a href="#cpdata">cpdata</a></dt>
-<dd></dd>
 <dt><a href="#mycred">mycred</a> : <code><a href="#Credentials">Credentials</a></code></dt>
 <dd><p>Check Point API authorization</p>
 </dd>
@@ -25,16 +21,6 @@
 </dd>
 </dl>
 
-<a name="cp"></a>
-
-## cp
-**Kind**: global constant  
-**Require**: fun/cp Check Point API session functions  
-<a name="cpdata"></a>
-
-## cpdata
-**Kind**: global constant  
-**Require**: fun/cpdata Check Point API data access functions  
 <a name="mycred"></a>
 
 ## mycred : [<code>Credentials</code>](#Credentials)
