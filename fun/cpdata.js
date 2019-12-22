@@ -172,7 +172,7 @@ async function getRule(uid, layer) {
  * to dump.json
  * @param {String} newcmd Check Point api command to test 
  * @param {String} [uid|full] set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard properties  
- * @param {Object} data json file to load for POST data to send to API (optional), must include details parameter if loading JSON data to test 
+ * @param {Object} data json object to load for POST data to send to API (optional), must include details parameter if loading JSON data to test 
  */
 async function testcmd(newcmd, details, data) {
     try {                
@@ -182,7 +182,7 @@ async function testcmd(newcmd, details, data) {
         var objret = ''
         if (data) {
             console.log('loading extra data from ' + data)
-            mydata = require('./' + data)
+            mydata = data
         }
         if (details) {
             mydata['details-level'] = details

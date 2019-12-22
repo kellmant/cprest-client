@@ -20,7 +20,7 @@ const mycmd = process.argv[2]
 if (process.argv[3])
         var details = process.argv[3]
 if (process.argv[4])
-        var datafile = process.argv[4]
+        var datafile = require ('./' + process.argv[4])
 
 
 main()
