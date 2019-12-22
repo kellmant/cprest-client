@@ -1,8 +1,9 @@
 ## Constants
 
 <dl>
-<dt><a href="#mycred">mycred</a></dt>
-<dd></dd>
+<dt><a href="#mycred">mycred</a> : <code><a href="#Credentials">Credentials</a></code></dt>
+<dd><p>Check Point API authorization</p>
+</dd>
 </dl>
 
 ## Functions
@@ -35,9 +36,10 @@ Check Point management server with API access enabled</p>
 
 <a name="mycred"></a>
 
-## mycred
+## mycred : [<code>Credentials</code>](#Credentials)
+Check Point API authorization
+
 **Kind**: global constant  
-**Require**: [<code>Credentials</code>](#Credentials) mycred Check Point API authorization  
 <a name="scan_domains"></a>
 
 ## scan\_domains() ⇒ [<code>all\_domains</code>](#all_domains)
