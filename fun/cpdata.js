@@ -185,6 +185,7 @@ async function testcmd(newcmd) {
             if (objdata[obj].length > 1)
                 objret = obj
         });
+        console.log(Object.keys(objdata[obj]))
         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
         objarr = objarr.concat(objdata[objret])
         if (objdata.total > objdata.to) {
