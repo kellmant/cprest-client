@@ -176,6 +176,9 @@ async function testcmd(newcmd) {
         //mydata.limit = limit
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
+        Object.keys(objdata).forEach(obj => {
+            console.log(objdata[obj].length)
+        });
         console.log(Object.keys(objdata))
         console.log(objdata.keys())
         if (!objdata.total) {
