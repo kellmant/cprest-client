@@ -50,7 +50,7 @@ async function startSession(myauth) {
 
 /** 
  * accept post data and command and send API call
- * @param {data} mydata API data to POST for command
+ * @param {Object} mydata API data to POST for command
  * @param {String} mycmd API command to use for POST
  * @return {*} API JSON data returned for request
  * */

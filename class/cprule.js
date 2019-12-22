@@ -98,31 +98,20 @@ const CPrule = class CheckPointRule {
 	 * and still leave a target in source
 	 * @return {Number} The number of target objects
 	 */
-	source () {	
-		return this.source.length
+	count (target) {	
+		return this.target.length
     }
- /** 
- * if at 1, any further action would expose or break policy
- * any other number and we can remove the object
- * and still leave a target in the destination
- * @return {Number} number of target objects
+/** 
+ * show rule hit counter
+ * @return {Number} number of hits against the rule
  */
-	destination () {
-		return this.destination.length
-	}
-/**
-* Check to see that hit count is used at all
-* if the value is not 0 send warning on potential use
-* @return {Number} rule hit count
-*  
-*/
 	hits () {
 		return this.hits
 	}
 
 /**
  * enable or disable the rule
- * @param {Boolean} true|false true/false on the rule enabled status
+ * @param {Boolean} [true|false] true/false on the rule enabled status
  * @return {cprule}
  */
 	enabled (x) {
