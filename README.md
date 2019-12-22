@@ -12,7 +12,7 @@
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
 <dd><p>Scan and index all policies and objects in each security domain</p>
 </dd>
-<dt><a href="#test">test(command, [details], [data])</a> ⇒ <code>*</code></dt>
+<dt><a href="#test">test(command, [details], [data])</a> ⇒ <code>dump.json</code></dt>
 <dd><p>test API commands and save return data to file
 dump.json</p>
 </dd>
@@ -54,12 +54,12 @@ node scan_domains
 ```
 <a name="test"></a>
 
-## test(command, [details], [data]) ⇒ <code>\*</code>
+## test(command, [details], [data]) ⇒ <code>dump.json</code>
 test API commands and save return data to file
 dump.json
 
 **Kind**: global function  
-**Returns**: <code>\*</code> - dump.json capture of return values and objects written to local directory  
+**Returns**: <code>dump.json</code> - file of return values and objects written to local directory  
 
 | Param | Type | Description |
 | --- | --- | --- |
