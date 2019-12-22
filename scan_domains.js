@@ -53,6 +53,14 @@ const mycred = require('./auth/mycpauth')
 
 const alldata = {}
 
+/**
+ * Policy and object data from Check Point API
+ * @typedef {Object} all_domains All domain information in the security manager
+ * @property {Object} domain Check Point security domain
+ * @property {Object[]} domain.policy security policy with array of rules
+ * @property {Object[]} domain.objects Check Point objects and properties of the domain
+ */
+
 /*
  * @returns {String[]} an array of domain names
  */
@@ -69,7 +77,7 @@ const domarr = async () => {
 /**
  * Scan and index all domains policies and objects
  * @function scan_domains
- * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
+ * @returns {all_domains} Each domain is saved with objects and policy indexes, and complete
  * dataset saved as DOM_ALL.json, indexed by domain
  * @example node scan_domains 
  */

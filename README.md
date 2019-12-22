@@ -9,7 +9,7 @@
 ## Functions
 
 <dl>
-<dt><a href="#scan_domains">scan_domains()</a> ⇒ <code>JSON</code></dt>
+<dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
 <dd><p>Scan and index all domains policies and objects</p>
 </dd>
 </dl>
@@ -25,6 +25,9 @@
 be sure to set your hostname or IP of the
 Check Point management server with API access enabled</p>
 </dd>
+<dt><a href="#all_domains">all_domains</a> : <code>Object</code></dt>
+<dd><p>Policy and object data from Check Point API</p>
+</dd>
 </dl>
 
 <a name="mycred"></a>
@@ -35,11 +38,11 @@ Check Point API authorization
 **Kind**: global constant  
 <a name="scan_domains"></a>
 
-## scan\_domains() ⇒ <code>JSON</code>
+## scan\_domains() ⇒ [<code>all\_domains</code>](#all_domains)
 Scan and index all domains policies and objects
 
 **Kind**: global function  
-**Returns**: <code>JSON</code> - Each domain is saved with objects and policy indexes, and complete
+**Returns**: [<code>all\_domains</code>](#all_domains) - Each domain is saved with objects and policy indexes, and complete
 dataset saved as DOM_ALL.json, indexed by domain  
 **Example**  
 ```js
@@ -99,3 +102,17 @@ Check Point management server with API access enabled
 	  }
 }
 ```
+<a name="all_domains"></a>
+
+## all\_domains : <code>Object</code>
+Policy and object data from Check Point API
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| domain | <code>Object</code> | Check Point security domain |
+| domain.policy | <code>Array.&lt;Object&gt;</code> | security policy with array of rules |
+| domain.objects | <code>Array.&lt;Object&gt;</code> | Check Point objects and properties of the domain |
+
