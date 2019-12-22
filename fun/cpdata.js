@@ -196,6 +196,7 @@ async function getRule(uid, layer) {
  * @param {String} newcmd Check Point api command to test 
  * @param {String} [details] set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard detail level  
  * @param {Object} [data] json object to load for POST data to send to API (optional), leave out the details parameter if loading JSON data to test and no details are needed
+ * @returns {*} dump.json capture of return values and objects
  */
 async function testcmd(newcmd, details, data) {
     try {                

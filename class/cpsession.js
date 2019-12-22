@@ -7,12 +7,12 @@
  * @property {Object} domain domain the session is in
  * @property {String} state session state 
  * @property {String} user-name name of admin who owns the session
- * @param {String} comments comments on this session
- * @param {Object} meta-info session date and time activity
- * @param {Number} changes number of changes in this session
- * @param {String} ip-address IP address the user is at for this session
- * @param {Array} tags tagged data for this session
- * @param {String} description Description of this session
+ * @property {String} comments comments on this session
+ * @property {Object} meta-info session date and time activity
+ * @property {Number} changes number of changes in this session
+ * @property {String} ip-address IP address the user is at for this session
+ * @property {Array} tags tagged data for this session
+ * @property {String} description Description of this session
  */
 /**
  * Check Point object properties

@@ -54,7 +54,7 @@ that work with Check Point API</p>
 <dt><a href="#getRule">getRule(uid, layer)</a> ⇒ <code>rule</code></dt>
 <dd><p>Determine where a set of objects is used in Check Point policies</p>
 </dd>
-<dt><a href="#testcmd">testcmd(newcmd, [details], [data])</a></dt>
+<dt><a href="#testcmd">testcmd(newcmd, [details], [data])</a> ⇒ <code>*</code></dt>
 <dd><p>test API commands and save return data
 to dump.json</p>
 </dd>
@@ -402,11 +402,12 @@ Determine where a set of objects is used in Check Point policies
 
 <a name="testcmd"></a>
 
-## testcmd(newcmd, [details], [data])
+## testcmd(newcmd, [details], [data]) ⇒ <code>\*</code>
 test API commands and save return data
 to dump.json
 
 **Kind**: global function  
+**Returns**: <code>\*</code> - dump.json capture of return values and objects  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -560,16 +561,6 @@ Process Check Point rule as a JSON object
 Process Check Point session object
 
 **Kind**: global typedef  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| comments | <code>String</code> | comments on this session |
-| meta-info | <code>Object</code> | session date and time activity |
-| changes | <code>Number</code> | number of changes in this session |
-| ip-address | <code>String</code> | IP address the user is at for this session |
-| tags | <code>Array</code> | tagged data for this session |
-| description | <code>String</code> | Description of this session |
-
 **Properties**
 
 | Name | Type | Description |
@@ -579,4 +570,10 @@ Process Check Point session object
 | domain | <code>Object</code> | domain the session is in |
 | state | <code>String</code> | session state |
 | user-name | <code>String</code> | name of admin who owns the session |
+| comments | <code>String</code> | comments on this session |
+| meta-info | <code>Object</code> | session date and time activity |
+| changes | <code>Number</code> | number of changes in this session |
+| ip-address | <code>String</code> | IP address the user is at for this session |
+| tags | <code>Array</code> | tagged data for this session |
+| description | <code>String</code> | Description of this session |
 
