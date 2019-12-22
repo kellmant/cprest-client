@@ -30,7 +30,7 @@ const mycred = require('./auth/mycpauth')
 
 const alldata = {}
 
-/**
+/*
  * @returns {String[]} an array of domain names
  */
 const domarr = async () => {
@@ -44,7 +44,7 @@ const domarr = async () => {
 }
 
 /**
- * 
+ * @function show_domain
  * @param {String[]} layarr array of policy layers indexed by domain
  * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
  * dataset saved as DOM_ALL.json, indexed by domain 
@@ -71,7 +71,7 @@ domarr()
 .then(mylayers => rulearr(mylayers))
 .then(() => cp.writeJson(alldata, 'DOM_ALL'))
 
-/**
+/*
  * 
  * @param {String[]} domarr uses returned data from previous function
  * @returns {String[]} an array of layer policy names 
