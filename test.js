@@ -17,13 +17,28 @@ const cpdata = require('./fun/cpdata')
 const mycred = require('./auth/mycpauth')
 
 const mycmd = process.argv[2]
+if (process.argv[3])
+        const details = process.argv[3]
+if (process.argv[4])
+        const datafile = process.argv[4]
+
 
 main()
 
 async function main() {
 	cp.startSession(mycred)
-        .then(() => cpdata.testcmd(mycmd))
+        .then(() => runtest())
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(cp.endSession)
+}
+
+async function runtest() {
+        if (datafile) {
+                return await cpdata.testcmd(mycmd, details, datafile)
+        } 
+        if (details) {
+                return await cpdata.testcmd(mycmd, details)
+        }
+        return await cpdata.testcmd(mycmd)
 }
