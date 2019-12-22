@@ -223,7 +223,7 @@ async function runcmd(newcmd, details, data) {
         if (!objdata.total) {
             console.log(typeof objdata + ' \n')
             console.log(JSON.stringify(Object.keys(objdata)) + ' \n')
-            await cp.writeJson(objdata, 'dump')
+            //await cp.writeJson(objdata, 'dump')
             return objdata
         }
         Object.keys(objdata).forEach(obj => {
