@@ -181,7 +181,7 @@ async function testcmd(newcmd, details, data) {
         var objarr = []
         var objret = ''
         if (data) {
-            console.log('loading extra data from ' + data)
+            console.log('loading extra data : ' + JSON.stringify(data))
             mydata = data
         }
         if ((details === 'full') || (details === 'standard') || (details === 'uid')) {
