@@ -18,9 +18,9 @@ const mycred = require('./auth/mycpauth')
 
 const mycmd = process.argv[2]
 if (process.argv[3])
-        const details = process.argv[3]
+        var details = process.argv[3]
 if (process.argv[4])
-        const datafile = process.argv[4]
+        var datafile = process.argv[4]
 
 
 main()
