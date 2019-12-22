@@ -200,7 +200,11 @@ async function testcmd(newcmd, details, data) {
         console.log(newcmd + ': indexing from array: ' + objret)
         console.log(typeof objdata[objret][0])
         console.log(' ')
-        console.log(JSON.stringify(Object.keys(objdata[objret][0])))
+        if (typeof objdata[objret][0] === 'string') {
+            console.log(Object.keys(objdata[objret][0]))
+        } else {
+            console.log(JSON.stringify(Object.keys(objdata[objret][0])))
+        }
         console.log(' ')
         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total ' + objret)
         objarr = objarr.concat(objdata[objret])
