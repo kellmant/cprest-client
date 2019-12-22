@@ -50,7 +50,7 @@ const CPsession = class CheckPointSession {
         }
 	/** 
 	 * return object properties
-	 * @return {cpsession} The value of the new object
+	 * @returns {cpsession} The value of the new object
 	 */
 	show () {	
 		return this
