@@ -171,23 +171,22 @@ async function testcmd(newcmd) {
     try {                
         var mydata = {}
 	    var objdata = {}
-	    var objarr = []
+        var objarr = []
+        var objret = ''
         mydata['details-level'] = 'full'
         //mydata.limit = limit
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
-        Object.keys(objdata).forEach(obj => {
-            if (objdata[obj].length > 1)
-                console.log(obj)
-        });
-        console.log(Object.keys(objdata))
-        console.log(objdata.keys())
         if (!objdata.total) {
             await cp.writeJson(objdata, 'dump')
             return objdata
         }
+        Object.keys(objdata).forEach(obj => {
+            if (objdata[obj].length > 1)
+                objret = obj
+        });
         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
-        objarr = objarr.concat(objdata)
+        objarr = objarr.concat(objdata[objret])
         if (objdata.total > objdata.to) {
 //            objarr = objarr.concat(objdata)
                 while (Number(objdata.total) >= Number(objdata.to)) {
@@ -195,7 +194,7 @@ async function testcmd(newcmd) {
                         mydata.offset = Number(objdata.to)
                         mydata.limit = limit
                         objdata = await cp.apicall(mydata, newcmd)
-                        objarr = objarr.concat(objdata)
+                        objarr = objarr.concat(objdata[objret])
                 }
        }
         await cp.writeJson(objarr, 'dump')
