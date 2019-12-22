@@ -181,17 +181,18 @@ async function testcmd(newcmd) {
             await cp.writeJson(objdata, 'dump')
             return objdata
         }
-        //objarr = objarr.concat(objdata)
-//        if (objdata.total > objdata.to) {
+        console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+        objarr = objarr.concat(objdata)
+        if (objdata.total > objdata.to) {
+//            objarr = objarr.concat(objdata)
                 while (Number(objdata.total) >= Number(objdata.to)) {
-                        objarr = objarr.concat(objdata)
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
                         mydata.offset = Number(objdata.to)
                         mydata.limit = limit
                         objdata = await cp.apicall(mydata, newcmd)
                         objarr = objarr.concat(objdata)
                 }
-//        }
+       }
         await cp.writeJson(objarr, 'dump')
         return objarr
     } catch (err) {
