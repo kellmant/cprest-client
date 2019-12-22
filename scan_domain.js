@@ -23,7 +23,6 @@ const rulearr = async (mydata) => {
             mycred.domain = dom
             alldata[dom] = {}
             let domfile = 'DOM_' + dom
-            //await cp.writeJson(myobjreturn, objfile)
             alldata[dom].policy = await cpdata.policy(mycred, myrules)
             alldata[dom].objects = await cpdata.getall(mycred)
             await cp.writeJson(alldata[dom], domfile)
