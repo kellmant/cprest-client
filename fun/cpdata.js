@@ -225,9 +225,38 @@ async function testcmd(newcmd, details, data) {
     }
 }
 
+async function getall(myauth) {
+    try {
+        await cp.startSession(myauth)
+        let mycmd = 'show-objects'                
+        let mydata = {}
+	var objdata = {}
+	var objarr = []
+        mydata.offset = 0
+        mydata['details-level'] = 'full'
+        mydata.limit = limit
+        console.log('getting all objects')
+        objdata = await cp.apicall(mydata, mycmd)
+        objarr = objarr.concat(objdata.objects)
+        if (objdata.total > objdata.to) {
+                while (objdata.total > mydata.offset) {
+                        console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total objects')
+                        mydata.offset = Number(objdata.to)
+                        objdata = await cp.apicall(mydata, mycmd)
+                        objarr = objarr.concat(objdata.objects)
+                }
+        }
+        let objtypes = cp.groupBy(objarr, 'type')
+        return objtypes
+    } catch (err) {
+        console.log('error in showObjects : ' + err)
+    }
+}
+
 module.exports = {
     domains,
     layers,
     policy,
-    testcmd
+    testcmd,
+    getall
 }
