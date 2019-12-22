@@ -53,6 +53,7 @@ async function layarr(doms) {
         return response
     } catch (err) {
         console.log('errors in layarr function : ' + err)
+        return
     }
 }
 
