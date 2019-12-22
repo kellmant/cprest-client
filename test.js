@@ -21,10 +21,10 @@ if ((process.argv[3] === 'full') || (process.argv[3] === 'standard') || (process
                 var details = process.argv[3]
         } else {
                 var details = 'null'
-                var datafile = require ('./' + process.argv[3])
+                process.argv[4] = process.argv[3]
         }
-if ((process.argv[4]) 
-        datafile = require ('./' + process.argv[4])
+if (process.argv[4]) 
+                var datafile = require ('./' + process.argv[4])
 
 
 main()
