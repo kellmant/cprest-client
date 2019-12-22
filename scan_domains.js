@@ -14,6 +14,30 @@
  * }
  */
 
+/** 
+ * Define API call object options and data,
+ * be sure to set your hostname or IP of the
+ * Check Point management server with API access enabled
+ * @typedef {Object} options 
+ * @property {Object} headers - header fields for http calls
+ * @property {String} path - path in api to command you call
+ * @property {Number} port - port your api server is listening on 
+ * @property {String} host - hostname or IP of the api server
+ * @require auth/mycpapi.json
+ * @example
+ * {
+ *	"chkp": {
+ *		"host": "SET.YOUR.HOSTNAME",
+ *		"port": "443",
+ *		"path": "/web_api",
+ *		"method": "POST",
+ *		"headers": {
+ *			"Content-Type": "application/json"
+ *		}
+ *	  }
+ * }
+ */ 
+
 /*
  * @require fun/cp Check Point API session functions
  */
@@ -43,7 +67,8 @@ const domarr = async () => {
 }
 
 /**
- * @function show_domain
+ * 
+ * @function scan_domains
  * @returns {JSON} Each domain is saved with objects and policy indexes, and complete
  * dataset saved as DOM_ALL.json, indexed by domain 
  */
