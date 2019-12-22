@@ -22,10 +22,10 @@ const rulearr = async (mydata) => {
             let myrules = mydata[dom]
             mycred.domain = dom
             alldata[dom] = {}
-            let domfile = 'DOMAIN_' + dom
-            alldata[dom].objects = await cpdata.getall(mycred)
+            let domfile = 'DOM_' + dom
             //await cp.writeJson(myobjreturn, objfile)
             alldata[dom].policy = await cpdata.policy(mycred, myrules)
+            alldata[dom].objects = await cpdata.getall(mycred)
             await cp.writeJson(alldata[dom], domfile)
         }
         return alldata
@@ -37,7 +37,7 @@ const rulearr = async (mydata) => {
 domarr()
 .then(mydoms => layarr(mydoms))
 .then(mylayers => rulearr(mylayers))
-.then(() => cp.writeJson(alldata, 'DOMAINS'))
+.then(() => cp.writeJson(alldata, 'DOM_ALL'))
 
 
 async function layarr(doms) {
