@@ -205,7 +205,7 @@ async function getRule(uid, layer) {
  * @param {Object} [data] json object to load for POST data to send to API (optional), leave out the details parameter if loading JSON data to test and no details are needed
  * @returns {*} dump.json capture of return values and objects
  */
-async function testcmd(newcmd, details, data) {
+async function runcmd(newcmd, details, data) {
     try {                
         var mydata = {}
 	    var objdata = {}
@@ -249,7 +249,7 @@ async function testcmd(newcmd, details, data) {
                         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total ' + objret)
                 }
        }
-        await cp.writeJson(objarr, 'dump')
+        //await cp.writeJson(objarr, 'dump')
         return objarr
     } catch (err) {
         console.log('error in testcmd : ' + err)
@@ -292,6 +292,6 @@ module.exports = {
     domains,
     layers,
     policy,
-    testcmd,
+    runcmd,
     getall
 }

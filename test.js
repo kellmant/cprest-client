@@ -47,6 +47,7 @@ main()
 async function main() {
 	cp.startSession(mycred)
         .then(() => runtest())
+        .then(testout => cp.writeJson(testout, 'dump'))
 	.then(() => cp.endSession())
 	.then(exitstat => console.log(exitstat))
 	.catch(cp.endSession)
@@ -54,10 +55,10 @@ async function main() {
 
 async function runtest() {
         if (datafile) {
-                return await cpdata.testcmd(mycmd, details, datafile)
+                return await cpdata.runcmd(mycmd, details, datafile)
         } 
         if (details) {
-                return await cpdata.testcmd(mycmd, details)
+                return await cpdata.runcmd(mycmd, details)
         }
-        return await cpdata.testcmd(mycmd)
+        return await cpdata.runcmd(mycmd)
 }
