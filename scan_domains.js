@@ -1,4 +1,20 @@
 'use strict'
+
+/**
+ * API credentials required from auth/mycpauth.json
+ * @typedef {Object} Credentials
+ * @property {String} user username of API credentials
+ * @property {String} password password for API user
+ * @property {String} [domain] specify domain the API will login to
+ * @require auth/mycpauth.json
+ * @example 
+ * create auth/mycpauth.json file
+ * {
+ *		"user": "apiuser",
+ *		"password": "PASSWORD"
+ * }
+ */
+
 /**
  * @require fun/cp Check Point API session functions
  */
