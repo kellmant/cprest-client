@@ -177,7 +177,7 @@ async function testcmd(newcmd) {
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
         console.log(Object.keys(objdata))
-        console.log(objdata[0])
+        console.log(objdata.[0])
         if (!objdata.total) {
             await cp.writeJson(objdata, 'dump')
             return objdata
