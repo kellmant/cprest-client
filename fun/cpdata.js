@@ -167,14 +167,26 @@ async function getRule(uid, layer) {
     }
 }
 
-async function testcmd(newcmd) {
+/**
+ * test API commands and save return data
+ * to dump.json
+ * @param {String} newcmd Check Point api command to test 
+ * @param {String} [uid|full] set to uid to return only object UIDs, full for all object data. Optional, leave empty for standard properties  
+ * @param {Object} data json file to load for POST data to send to API (optional), must include details parameter if loading JSON data to test 
+ */
+async function testcmd(newcmd, details, data) {
     try {                
         var mydata = {}
 	    var objdata = {}
         var objarr = []
         var objret = ''
-        mydata['details-level'] = 'full'
-        //mydata.limit = limit
+        if (data) {
+            console.log('loading extra data from ' + data)
+            mydata = require('./' + data)
+        }
+        if (details) {
+            mydata['details-level'] = details
+        }
         console.log('testing command ' + newcmd)
         objdata = await cp.apicall(mydata, newcmd)
         if (!objdata.total) {
@@ -185,8 +197,9 @@ async function testcmd(newcmd) {
             if (objdata[obj].length > 1)
                 objret = obj
         });
-        console.log('index array from ' + objret)
-        console.log(Object.keys(objdata[objret][0]))
+        console.log(newcmd + ': indexing from array: ' + objret)
+        console.log(JSON.stringify(Object.keys(objdata[objret][0])))
+        console.log(' ')
         console.log('Indexed from ' + objdata.from + ' to ' + objdata.to + ' of ' + objdata.total + ' total ' + objret)
         objarr = objarr.concat(objdata[objret])
         if (objdata.total > objdata.to) {
