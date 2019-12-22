@@ -5,7 +5,6 @@
  * @typedef {Object} Credentials
  * @property {String} user username of API credentials
  * @property {String} password password for API user
- * @property {String} [domain] specify domain the API will login to
  * @require auth/mycpauth.json
  * @example 
  * create auth/mycpauth.json file

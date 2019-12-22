@@ -46,7 +46,6 @@ API credentials required from auth/mycpauth.json
 | --- | --- | --- |
 | user | <code>String</code> | username of API credentials |
 | password | <code>String</code> | password for API user |
-| [domain] | <code>String</code> | specify domain the API will login to |
 
 **Example**  
 ```js
