@@ -184,7 +184,7 @@ async function testcmd(newcmd, details, data) {
             console.log('loading extra data from ' + data)
             mydata = data
         }
-        if (details) {
+        if ((details === 'full') || (details === 'standard') || (details === 'uid')) {
             mydata['details-level'] = details
         }
         console.log('testing command ' + newcmd)
