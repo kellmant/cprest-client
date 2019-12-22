@@ -250,7 +250,7 @@ async function testcmd(newcmd, details, data) {
 /**
  * Get all objects in a security domain and group by type
  * @param {Credentials} myauth credentials to access API
- * @returns {Object[]} array of Check Point objects by type of object 
+ * @returns {cpobj[]} array of Check Point objects by type of object 
  */
 async function getall(myauth) {
     try {

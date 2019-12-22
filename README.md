@@ -58,7 +58,7 @@ that work with Check Point API</p>
 <dd><p>test API commands and save return data
 to dump.json</p>
 </dd>
-<dt><a href="#getall">getall(myauth)</a> ⇒ <code>Array.&lt;Object&gt;</code></dt>
+<dt><a href="#getall">getall(myauth)</a> ⇒ <code><a href="#cpobj">Array.&lt;cpobj&gt;</a></code></dt>
 <dd><p>Get all objects in a security domain and group by type</p>
 </dd>
 </dl>
@@ -416,11 +416,11 @@ to dump.json
 
 <a name="getall"></a>
 
-## getall(myauth) ⇒ <code>Array.&lt;Object&gt;</code>
+## getall(myauth) ⇒ [<code>Array.&lt;cpobj&gt;</code>](#cpobj)
 Get all objects in a security domain and group by type
 
 **Kind**: global function  
-**Returns**: <code>Array.&lt;Object&gt;</code> - array of Check Point objects by type of object  
+**Returns**: [<code>Array.&lt;cpobj&gt;</code>](#cpobj) - array of Check Point objects by type of object  
 
 | Param | Type | Description |
 | --- | --- | --- |
