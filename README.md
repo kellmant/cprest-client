@@ -66,11 +66,8 @@ to dump.json</p>
 ## Typedefs
 
 <dl>
-<dt><a href="#credentials">credentials</a> : <code>Object</code></dt>
-<dd><p>API credentials required from auth/mycpauth.json</p>
-</dd>
 <dt><a href="#Credentials">Credentials</a> : <code>Object</code></dt>
-<dd><p>Authentication object for API credentials</p>
+<dd><p>API credentials required from auth/mycpauth.json</p>
 </dd>
 <dt><a href="#data">data</a> : <code>Object</code></dt>
 <dd></dd>
@@ -285,7 +282,7 @@ Create an authenticated session with the Check Point API
 
 | Param | Type | Description |
 | --- | --- | --- |
-| myauth | [<code>credentials</code>](#credentials) | Credentials used for API access |
+| myauth | [<code>Credentials</code>](#Credentials) | Credentials used for API access |
 
 <a name="apicall"></a>
 
@@ -429,9 +426,9 @@ Get all objects in a security domain and group by type
 | --- | --- | --- |
 | myauth | [<code>Credentials</code>](#Credentials) | credentials to access API |
 
-<a name="credentials"></a>
+<a name="Credentials"></a>
 
-## credentials : <code>Object</code>
+## Credentials : <code>Object</code>
 API credentials required from auth/mycpauth.json
 
 **Kind**: global typedef  
@@ -452,20 +449,6 @@ create auth/mycpauth.json file
 		"password": "PASSWORD"
 }
 ```
-<a name="Credentials"></a>
-
-## Credentials : <code>Object</code>
-Authentication object for API credentials
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| user | <code>String</code> | API username |
-| password | <code>String</code> | API authentication password |
-| [domain] | <code>String</code> | optional domain name to login to |
-
 <a name="data"></a>
 
 ## data : <code>Object</code>

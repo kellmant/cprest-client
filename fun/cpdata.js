@@ -6,7 +6,7 @@ const CPrule = require('../class/cprule')
 var limit = 500
 var details = 'standard'
 
-/**
+/*
  * @typedef {Object} Credentials Authentication object for API credentials
  * @property {String} user API username 
  * @property {String} password API authentication password

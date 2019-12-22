@@ -12,7 +12,7 @@ const toApi = new CpApiClass(myapisite.chkp)
 
 /**
  * API credentials required from auth/mycpauth.json
- * @typedef {Object} credentials
+ * @typedef {Object} Credentials
  * @property {String} user username of API credentials
  * @property {String} password password for API user
  * @property {String} [domain] specify domain the API will login to
@@ -28,7 +28,7 @@ const toApi = new CpApiClass(myapisite.chkp)
 // Check Point API session auth and token management
 /**
  * Create an authenticated session with the Check Point API
- * @param {credentials} myauth Credentials used for API access
+ * @param {Credentials} myauth Credentials used for API access
  * @return {session}
  */
 async function startSession(myauth) {
