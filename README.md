@@ -1,8 +1,11 @@
 ## Constants
 
 <dl>
-<dt><a href="#mycred">mycred</a> : <code><a href="#Credentials">Credentials</a></code></dt>
+<dt><a href="#myauth">myauth</a> : <code><a href="#Credentials">Credentials</a></code></dt>
 <dd><p>Check Point API authorization</p>
+</dd>
+<dt><a href="#myoptions">myoptions</a> : <code><a href="#options">options</a></code></dt>
+<dd><p>Check Point API configuration and settings</p>
 </dd>
 </dl>
 
@@ -10,7 +13,8 @@
 
 <dl>
 <dt><a href="#scan_domains">scan_domains()</a> ⇒ <code><a href="#all_domains">all_domains</a></code></dt>
-<dd><p>Scan and index all policies and objects in each security domain</p>
+<dd><p>Scan and index all policies and objects in each security domain using
+scan_domains.js.</p>
 </dd>
 <dt><a href="#test">test(command, [details], [data])</a> ⇒ <code>dump.json</code></dt>
 <dd><p>test API commands and save return data to file
@@ -34,16 +38,23 @@ Check Point management server with API access enabled</p>
 </dd>
 </dl>
 
-<a name="mycred"></a>
+<a name="myauth"></a>
 
-## mycred : [<code>Credentials</code>](#Credentials)
+## myauth : [<code>Credentials</code>](#Credentials)
 Check Point API authorization
+
+**Kind**: global constant  
+<a name="myoptions"></a>
+
+## myoptions : [<code>options</code>](#options)
+Check Point API configuration and settings
 
 **Kind**: global constant  
 <a name="scan_domains"></a>
 
 ## scan\_domains() ⇒ [<code>all\_domains</code>](#all_domains)
-Scan and index all policies and objects in each security domain
+Scan and index all policies and objects in each security domain using
+scan_domains.js.
 
 **Kind**: global function  
 **Returns**: [<code>all\_domains</code>](#all_domains) - Each domain is saved with objects and policy indexes, and complete
@@ -89,6 +100,7 @@ API credentials required from auth/mycpauth.json
 
 **Example**  
 ```js
+see auth/mycpauth.EXAMPLE
 create auth/mycpauth.json file
 {
 		"user": "apiuser",
@@ -115,6 +127,8 @@ Check Point management server with API access enabled
 
 **Example**  
 ```js
+see auth/mycpapi.EXAMPLE
+create auth/mycpapi.json file
 {
 	"chkp": {
 		"host": "SET.YOUR.HOSTNAME",
