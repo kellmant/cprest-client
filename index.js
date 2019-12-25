@@ -1,4 +1,5 @@
 /** cprest client access for API
+ * REFECTORING FROM OLD CLASS AND FUNCTIONS
  */
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 'use strict'
